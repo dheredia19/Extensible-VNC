@@ -1,0 +1,22 @@
+[Wed Feb 13 16:56:37.358222 2019] [ssl:warn] [pid 15888:tid 520] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Feb 13 16:56:37.570725 2019] [ssl:warn] [pid 15888:tid 520] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Feb 13 16:56:37.571225 2019] [mpm_winnt:notice] [pid 15888:tid 520] AH00455: Apache/2.4.38 (Win64) OpenSSL/1.0.2q configured -- resuming normal operations
+[Wed Feb 13 16:56:37.571225 2019] [mpm_winnt:notice] [pid 15888:tid 520] AH00456: Server built: Jan 17 2019 18:16:00
+[Wed Feb 13 16:56:37.572220 2019] [core:notice] [pid 15888:tid 520] AH00094: Command line: 'httpd -d C:/Users/Danie/Dropbox (Choate)/Home Sync/Documents/GitHub/Extensible-VNC/Apache24'
+[Wed Feb 13 16:56:37.579221 2019] [mpm_winnt:notice] [pid 15888:tid 520] AH00418: Parent: Created child process 14284
+Apache server interrupted...
+019] [ssl:warn] [pid 14284:tid 124] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Feb 13 16:56:38.526724 2019] [ssl:warn] [pid 14284:tid 124] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Feb 13 16:56:38.531224 2019] [mpm_winnt:notice] [pid 14284:tid 124] AH00354: Child: Starting 64 worker threads.
+[Wed Feb 13 16:56:46.954313 2019] [mpm_winnt:notice] [pid 15888:tid 520] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Wed Feb 13 16:56:48.954828 2019] [mpm_winnt:notice] [pid 14284:tid 124] AH00364: Child: All worker threads have exited.
+[Wed Feb 13 16:56:48.974348 2019] [mpm_winnt:notice] [pid 15888:tid 520] AH00430: Parent: Child process 14284 exited successfully.
+[Wed Feb 13 16:56:51.325814 2019] [ssl:warn] [pid 16452:tid 560] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Feb 13 16:56:51.470778 2019] [ssl:warn] [pid 16452:tid 560] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Feb 13 16:56:51.471278 2019] [mpm_winnt:notice] [pid 16452:tid 560] AH00455: Apache/2.4.38 (Win64) OpenSSL/1.0.2q configured -- resuming normal operations
+[Wed Feb 13 16:56:51.471278 2019] [mpm_winnt:notice] [pid 16452:tid 560] AH00456: Server built: Jan 17 2019 18:16:00
+[Wed Feb 13 16:56:51.471278 2019] [core:notice] [pid 16452:tid 560] AH00094: Command line: 'httpd -d C:/Users/Danie/Dropbox (Choate)/Home Sync/Documents/GitHub/Extensible-VNC/Apache24'
+[Wed Feb 13 16:56:51.475775 2019] [mpm_winnt:notice] [pid 16452:tid 560] AH00418: Parent: Created child process 7292
+[Wed Feb 13 16:56:52.079274 2019] [ssl:warn] [pid 7292:tid 564] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Feb 13 16:56:52.230440 2019] [ssl:warn] [pid 7292:tid 564] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Feb 13 16:56:52.232901 2019] [mpm_winnt:notice] [pid 7292:tid 564] AH00354: Child: Starting 64 worker threads.
