@@ -1,0 +1,18 @@
+Server.EncryptionLevel
+======================
+
+.. py:class:: vncsdk.Server.EncryptionLevel
+
+    Enumeration of encryption levels.
+
+Enumeration Attributes
+----------------------
+
+.. py:attribute:: vncsdk.Server.EncryptionLevel.DEFAULT
+
+    Use strong encryption.  This is the default.
+
+.. py:attribute:: vncsdk.Server.EncryptionLevel.MAXIMUM
+
+    Use the strongest available encryption, possibly at the cost of speed.
+

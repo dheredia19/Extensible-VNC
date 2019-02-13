@@ -1,0 +1,28 @@
+Viewer.ConnectionStatus
+=======================
+
+.. js:data:: vncsdk.Viewer.ConnectionStatus
+
+    Enumeration of connection statuses.
+
+Enum Constants
+--------------
+
+.. js:attribute:: vncsdk.Viewer.ConnectionStatus.DISCONNECTED
+
+    The viewer is not connected to a server.
+
+.. js:attribute:: vncsdk.Viewer.ConnectionStatus.CONNECTING
+
+    The viewer is negotiating a connection to a server (includes
+    authentication).
+
+.. js:attribute:: vncsdk.Viewer.ConnectionStatus.CONNECTED
+
+    The viewer is connected to a server.
+
+.. js:attribute:: vncsdk.Viewer.ConnectionStatus.DISCONNECTING
+
+    :js:func:`vncsdk.Viewer.disconnect()` has been called but we've not yet disconnected
+    from the server.
+

@@ -1,0 +1,90 @@
+Logger
+======
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class Logger
+
+   A container for static methods.
+
+Nested Classes
+--------------
+* interface :java:type:`Logger.Callback`
+* enum :java:type:`Logger.Level`
+
+Method Summary
+--------------
+================= =================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                           
+================= =================================================================================================================================================
+:java:type:`void` :java:meth:`createAndroidLogger <Logger.createAndroidLogger()>`\ ()                                                                              
+                                                                                                                                                                   
+                  Creates a logger implementation that writes data to the Android log.                                                                             
+----------------- -------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`createCustomLogger <Logger.createCustomLogger(Logger.Callback) throws Library.VncException>`\ (:java:type:`Logger.Callback` callback)
+                                                                                                                                                                   
+                  Creates a logger implementation that calls the given callback whenever a log message is written.                                                 
+----------------- -------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`createFileLogger <Logger.createFileLogger(String) throws Library.VncException>`\ (:java:type:`String` path)                          
+                                                                                                                                                                   
+                  Creates a logger that writes data to the specified log file.                                                                                     
+----------------- -------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`createStderrLogger <Logger.createStderrLogger()>`\ ()                                                                                
+                                                                                                                                                                   
+                  Creates a logger implementation that writes data to stderr.                                                                                      
+----------------- -------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`destroyLogger <Logger.destroyLogger()>`\ ()                                                                                          
+                                                                                                                                                                   
+                  Destroys any previously created logger.                                                                                                          
+----------------- -------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`setLevel <Logger.setLevel(Level)>`\ (:java:type:`Level` level)                                                                       
+                                                                                                                                                                   
+                  Sets the current log level.                                                                                                                      
+================= =================================================================================================================================================
+
+Methods
+-------
+
+.. java:method:: public static void createAndroidLogger()
+   :outertype: Logger
+
+   Creates a logger implementation that writes data to the Android log.
+
+   For more information, see :cpp:func:`vnc_Logger_createAndroidLogger`.
+
+.. java:method:: public static void createCustomLogger(Logger.Callback callback) throws Library.VncException
+   :outertype: Logger
+
+   Creates a logger implementation that calls the given callback whenever a log message is written.
+
+   For more information, see :cpp:func:`vnc_Logger_createCustomLogger`.
+
+.. java:method:: public static void createFileLogger(String path) throws Library.VncException
+   :outertype: Logger
+
+   Creates a logger that writes data to the specified log file.
+
+   For more information, see :cpp:func:`vnc_Logger_createFileLogger`.
+
+.. java:method:: public static void createStderrLogger()
+   :outertype: Logger
+
+   Creates a logger implementation that writes data to stderr.
+
+   For more information, see :cpp:func:`vnc_Logger_createStderrLogger`.
+
+.. java:method:: public static void destroyLogger()
+   :outertype: Logger
+
+   Destroys any previously created logger.
+
+   For more information, see :cpp:func:`vnc_Logger_destroyLogger`.
+
+.. java:method:: public static void setLevel(Level level)
+   :outertype: Logger
+
+   Sets the current log level.
+
+   For more information, see :cpp:func:`vnc_Logger_setLevel`.
+

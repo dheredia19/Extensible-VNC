@@ -1,0 +1,92 @@
+.. _CloudAddressMonitor.Callback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudAddressMonitor.Callback
+----------------------------
+
+.. class:: CloudAddressMonitor.Callback
+
+    Callback for a :type:`CloudAddressMonitor`\ .
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_Callback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`CloudAddressMonitor.Callback.AvailabilityChangedType`
+- :ref:`CloudAddressMonitor.Callback.MonitorPausedType`
+
+**Constructor summary**
+
+================= ============================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                      
+================= ============================================================================================================================================================
+\                 :meth:`CloudAddressMonitor.Callback`\ (:attr:`CloudAddressMonitor.Callback.AvailabilityChangedType`, :attr:`CloudAddressMonitor.Callback.MonitorPausedType`)
+                                                                                                                                                                              
+                  Initializes a new Callback class instance.                                                                                                                  
+================= ============================================================================================================================================================
+
+
+**Method summary**
+
+================= ==========================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                    
+================= ==========================================================================================================================================================
+:type:`void`      :meth:`CloudAddressMonitor.Callback.OnAvailabilityChanged`\ (:type:`CloudAddressMonitor`, :type:`System.String`, :type:`CloudAddressMonitor.Availability`)
+                                                                                                                                                                            
+                  Handles the AvailabilityChanged event.                                                                                                                    
+                  By default, calls the AvailabilityChanged delegate.                                                                                                       
+----------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`CloudAddressMonitor.Callback.OnMonitorPaused`\ (:type:`CloudAddressMonitor`)                                                                       
+                                                                                                                                                                            
+                  Handles the MonitorPaused event.                                                                                                                          
+                  By default, calls the MonitorPaused delegate.                                                                                                             
+================= ==========================================================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: CloudAddressMonitor.Callback(CloudAddressMonitor.Callback.AvailabilityChangedType a, CloudAddressMonitor.Callback.MonitorPausedType b)
+
+    Initializes a new Callback class instance.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_Callback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void CloudAddressMonitor.Callback.OnAvailabilityChanged(CloudAddressMonitor a, System.String b, CloudAddressMonitor.Availability c)
+
+    Handles the AvailabilityChanged event.
+    By default, calls the AvailabilityChanged delegate.
+
+    
+
+.. method:: void CloudAddressMonitor.Callback.OnMonitorPaused(CloudAddressMonitor a)
+
+    Handles the MonitorPaused event.
+    By default, calls the MonitorPaused delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  CloudAddressMonitor.Callback.AvailabilityChanged
+
+    Notification that the availability information for a Cloud address has
+    changed.
+
+    For more information, see :cpp:member:`vnc_CloudAddressMonitor_Callback::availabilityChanged`\  in the C API documentation.
+
+.. attribute::  CloudAddressMonitor.Callback.MonitorPaused
+
+    Notification that monitoring has been paused by an outgoing connection
+    starting.
+
+    For more information, see :cpp:member:`vnc_CloudAddressMonitor_Callback::monitorPaused`\  in the C API documentation.
+

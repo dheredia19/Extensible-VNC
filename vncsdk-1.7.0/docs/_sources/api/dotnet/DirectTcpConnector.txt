@@ -1,0 +1,77 @@
+.. _DirectTcpConnector:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DirectTcpConnector
+------------------
+
+.. class:: DirectTcpConnector
+
+    Connector used to make outgoing TCP connections
+
+    For more information, see :cpp:class:`vnc_DirectTcpConnector`\  in the C API documentation.
+
+
+**Constructor summary**
+
+========================== ======================================================================
+Modifier and Type          Method and Description                                                
+========================== ======================================================================
+:type:`DirectTcpConnector` :meth:`DirectTcpConnector`\ ()                                        
+                                                                                                 
+                           Creates a new TCP Connector which is used to make outgoing connections
+                           to TCP listeners.                                                     
+========================== ======================================================================
+
+
+**Method summary**
+
+================= ============================================================================================================
+Modifier and Type Method and Description                                                                                      
+================= ============================================================================================================
+:type:`void`      :meth:`DirectTcpConnector.SetProxySettings`\ (:type:`System.Boolean`, :type:`System.String`)                
+                                                                                                                              
+                  Set proxy server settings for this TCP Connector.                                                           
+----------------- ------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`DirectTcpConnector.Dispose`\ ()                                                                      
+                                                                                                                              
+                  Destroys the TCP Connector.                                                                                 
+----------------- ------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`DirectTcpConnector.Connect`\ (:type:`System.String`, :type:`System.Int32`, :type:`ConnectionHandler`)
+                                                                                                                              
+                  Begins an outgoing TCP connection to the given hostname or IP address.                                      
+================= ============================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: DirectTcpConnector()
+
+    Creates a new TCP Connector which is used to make outgoing connections
+    to TCP listeners.
+
+    For more information, see :cpp:func:`vnc_DirectTcpConnector_create`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void DirectTcpConnector.SetProxySettings(System.Boolean a, System.String b)
+
+    Set proxy server settings for this TCP Connector.
+
+    For more information, see :cpp:func:`vnc_DirectTcpConnector_setProxySettings`\  in the C API documentation.
+
+.. method:: void DirectTcpConnector.Dispose()
+
+    Destroys the TCP Connector.
+
+    For more information, see :cpp:func:`vnc_DirectTcpConnector_destroy`\  in the C API documentation.
+
+.. method:: void DirectTcpConnector.Connect(System.String a, System.Int32 b, ConnectionHandler c)
+
+    Begins an outgoing TCP connection to the given hostname or IP address.
+
+    For more information, see :cpp:func:`vnc_DirectTcpConnector_connect`\  in the C API documentation.
+

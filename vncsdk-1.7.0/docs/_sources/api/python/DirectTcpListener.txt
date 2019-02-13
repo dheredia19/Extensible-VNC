@@ -1,0 +1,64 @@
+DirectTcpListener
+=================
+
+.. py:class:: vncsdk.DirectTcpListener
+
+    Listener used to receive incoming TCP connections
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.DirectTcpListener.Callback`
+
+
+Constructor Summary
+-------------------
+================= ===============================================================================
+Modifier and Type Method and Description                                                         
+================= ===============================================================================
+\                 `__init__ <#constructor>`_\ (port, address_list, connection_handler, callback) 
+                                                                                                 
+                  Begin listening for incoming TCP connections on the given port (IPv4 and IPv6).
+================= ===============================================================================
+
+
+Method Summary
+--------------
+================= ==================================================
+Modifier and Type Method and Description                            
+================= ==================================================
+\                 :py:func:`destroy <DirectTcpListener.destroy>`\ ()
+                                                                    
+                  Destroys the TCP listener.                        
+================= ==================================================
+
+
+Constructor
+-----------
+
+.. py:method:: vncsdk.DirectTcpListener.__init__(port, address_list, connection_handler, callback)
+
+    Begin listening for incoming TCP connections on the given port (IPv4 and
+    IPv6).
+
+    For more information, see :cpp:func:`vnc_DirectTcpListener_create`.
+
+    :param port:
+    :type port: int
+    :param address_list:
+    :type address_list: str or None
+    :param connection_handler:
+    :type connection_handler: :py:class:`vncsdk.ConnectionHandler`
+    :param callback:
+    :type callback: :py:class:`vncsdk.DirectTcpListener.Callback` or None
+
+Methods
+-------
+
+.. py:method:: DirectTcpListener.destroy()
+
+    Destroys the TCP listener.
+
+    For more information, see :cpp:func:`vnc_DirectTcpListener_destroy`.
+
+

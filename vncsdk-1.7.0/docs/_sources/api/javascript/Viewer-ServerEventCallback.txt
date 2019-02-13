@@ -1,0 +1,49 @@
+Viewer.ServerEventCallback
+==========================
+
+.. js:attribute:: vncsdk.Viewer.ServerEventCallback
+
+    Callback receiving server event notifications for a Viewer.
+
+Method Summary
+--------------
+================= =============================================================================================================
+Modifier and Type Method and Description                                                                                       
+================= =============================================================================================================
+\                 :js:func:`serverClipboardTextChanged <Viewer.ServerEventCallback.serverClipboardTextChanged>`\ (viewer, text)
+                                                                                                                               
+                  Notification that the server's clipboard contains new text.                                                  
+----------------- -------------------------------------------------------------------------------------------------------------
+\                 :js:func:`serverFriendlyNameChanged <Viewer.ServerEventCallback.serverFriendlyNameChanged>`\ (viewer, name)  
+                                                                                                                               
+                  Notification that the server's friendly name has changed.                                                    
+================= =============================================================================================================
+
+
+Methods
+-------
+
+.. js:function:: Viewer.ServerEventCallback.serverClipboardTextChanged(viewer, text)
+
+    Notification that the server's clipboard contains new text.
+
+    For more information, see :cpp:member:`vnc_Viewer_ServerEventCallback::serverClipboardTextChanged`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :param text:
+    :type text: string or null
+    :return: Ignored
+
+.. js:function:: Viewer.ServerEventCallback.serverFriendlyNameChanged(viewer, name)
+
+    Notification that the server's friendly name has changed.
+
+    For more information, see :cpp:member:`vnc_Viewer_ServerEventCallback::serverFriendlyNameChanged`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :param name:
+    :type name: string or null
+    :return: Ignored
+

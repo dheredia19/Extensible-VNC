@@ -1,0 +1,196 @@
+/*
+Copyright (C) 2016-2017 RealVNC Limited. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors
+may be used to endorse or promote products derived from this software without
+specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+body
+{
+  -webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Desktop - container <div> element that contains the canvas element
+ */
+
+#desktop
+{
+  overflow: hidden;
+  display: none;
+  margin: auto;
+  background-color: white; /* Color for letterbox (desktop padding) */
+}
+
+#desktop-content
+{
+  position:relative;
+}
+
+canvas
+{
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile Webkit */
+}
+
+#message {
+  position: absolute;
+  left: 10px;
+  height: 60px;
+  line-height:60px;
+  vertical-align: middle;
+  color: #888;
+}
+
+/* Disconnect button that is situated below the desktop */
+
+#desktopBarFrame
+{
+  background-color: white;
+  position: absolute;
+  margin: auto;
+  float: center;
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  justify-content: center;
+    -webkit-justify-content: center; /* Safari 6.1+ */
+}
+
+#disconnectBtn, #ctrlAltDelBtn
+{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* Status Dialog styles */
+
+#container
+{
+   position: absolute;
+   top: 50%;
+   margin-top: -195px;
+   left: 0;
+   width: 100%;
+}
+
+#mainView
+{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  width: 588px;
+  height: 388px;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 450px 74px;
+  vertical-align: middle;
+}
+
+#statusDialog
+{
+  position: relative;
+  height: 200px;
+  width: 80%;
+  float: center;
+  top: 15%;
+  left: 12.5%;
+}
+
+#statusFrame
+{
+  position: relative;
+  margin: auto;
+  float: center;
+  width: 100%;
+  height: 50px;
+  top: 5px;
+}
+
+#statusTitle
+{
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 16px;
+}
+
+#statusContent
+{
+  font-weight: normal;
+  font-size: 16px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+#buttonBarFrame
+{
+  position: absolute;
+  margin: auto;
+  float: center;
+  width: 590px;
+  bottom: 20px;
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  justify-content: center;
+    -webkit-justify-content: center; /* Safari 6.1+ */
+}
+
+#connectBtnFrame
+{
+  display: none; /* Connect button is not displayed initially */
+}
+
+#ctrlAltDelBtn
+{
+  display: none; /* Ctrl-Alt-Del button is not displayed when not connected to server */
+}
+
+.status-dlg-button
+{
+  padding: 5px 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.center-align
+{
+  padding-left: 10px;
+  padding-right: 10px;
+}

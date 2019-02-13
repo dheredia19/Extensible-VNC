@@ -1,0 +1,1121 @@
+/* 1. Main */
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format('woff2'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc.woff2) format('woff2'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxh_xHqYgAV9Bl_ZQbYUxnQU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2) format('woff2'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxl2umOyRU7PgRiv8DXcgJjk.woff2) format('woff2'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxn5HxGBcBvicCpTp6spHfNo.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxolIZu-HDpmDIZMigmsroc4.woff2) format('woff2'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
+}
+
+html, body {
+    height: auto;
+    color: #333;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body, h1, h2, h3, h4, h5, h6, button, .button, .top-bar-section ul li > a, .pricing-table .title, .pricing-table .price, .label {
+    font-family: "Open Sans", sans-serif;
+}
+
+body, p {
+    line-height: 1.7rem;
+    word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 1.25rem;
+    text-align: center;
+    line-height: normal;
+    font-size: 2.6rem;
+    font-weight: 300;
+}
+h2 {
+    margin: 1.5rem 0 1rem;
+    font-size: 1.7rem;
+}
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+}
+h4 {
+    font-size: 1.3rem;
+}
+h5 {
+    font-size: 1.1rem;
+}
+
+h1:last-child, .columns > p:last-child, .rich-text:last-child > p:last-child, p:last-child .button {
+    margin-bottom: 0;
+}
+
+ol ul {
+    list-style-type: disc;
+}
+
+.row li {
+    line-height: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+pre {
+    margin-bottom: 1.5rem;
+}
+
+/* 1.1. Top bar */
+
+.top-bar, .tab-bar {
+    background-color: #fff;
+}
+.top-bar { height: auto; padding: 0.55rem 0 0.5rem; }
+
+.tab-bar h1 {
+    text-align: left;
+}
+
+.inner-wrap span.logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 293px;
+    height: 26px;
+    margin-bottom: 0.25rem;
+    background-image: url("/static/img/logos/developer.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 0;
+}
+@media (max-width: 640px) {
+    .inner-wrap span.logo {
+        width: 250px;
+        height: 35px;
+        background-size: 250px;
+    }
+}
+.no-svg span.logo {
+    background-image: url("/static/img/logos/developer.png");
+}
+
+.top-bar-section ul li,
+.top-bar-section li:not(.has-form) a:not(.button),
+.top-bar-section ul li:hover:not(.has-form) > a,
+.top-bar-section li:not(.has-form) a:hover:not(.button) {
+    background: none;
+}
+
+.top-bar .name h1 a,
+.top-bar-section ul li > a,
+.top-bar-section ul li:hover:not(.has-form) > a {
+    padding-left: 1.25rem;
+    color: inherit;
+}
+
+.top-bar-section ul li {
+    margin-right: 0.9375rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.top-bar-section li a .highlight {
+    padding: 10px 15px;
+    border-radius: 50px;
+    background-color: #85BC28;
+    transition: background-color 300ms ease-out 0s;
+    color: #fff;
+    font-weight: bold;
+}
+.top-bar-section li a:hover .highlight {
+    background-color: #91CA2F;
+}
+
+nav.tab-bar > .right-small {
+    border-left: none; /* Override foundation.css */
+}
+.tab-bar .menu-icon span::after {
+    box-shadow: 0px 0px 0px 1px #333, 0px 7px 0px 1px #333, 0px 14px 0px 1px #333;
+}
+
+#wagtail-userbar {
+    top: 63px;
+}
+
+/* 1.2. Content */
+
+.row-wrapper {
+    padding: 4rem 0;
+    min-height: 350px;
+}
+.row-wrapper:nth-child(2n+1) {
+    background-color: #f8f8f8;
+}
+
+.row {
+    max-width: 1500px;
+    margin: 4rem auto;
+}
+.row-wrapper > .row {
+    margin: 0 auto;
+}
+
+.row-wrapper h2:first-child, .row h2:first-child {
+    margin-top: 0;
+}
+
+#hero, .hero-image {
+    text-align: center;
+}
+#hero {
+    padding: 3rem 0 4rem;
+    background-color: #000000;
+    background-position: center;
+    background-size: cover;
+    border-top: none;
+    color: #fff;
+}
+#hero .row {
+    margin: 0 auto;
+}
+#hero h1 {
+    color: #fff;
+    text-transform: uppercase;
+}
+#hero .rich-text {
+    margin-top: 2rem;
+}
+#hero p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.3rem;
+}
+#hero-button {
+    margin-top: 2rem;
+}
+
+.main-section > hr {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.responsive-object {
+    position: relative;
+}
+.responsive-object iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.richtext-image.left {
+    margin: 0 1em 1em 0;
+}
+.richtext-image.right {
+    margin: 0 0 1em 1em;
+}
+.richtext-image.full-width {
+    display: block;
+    margin: 0 auto;
+}
+
+button, .button {
+    background-color: #85BC28;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+button:hover,
+button:focus,
+.button:hover,
+.button:focus,
+button.disabled,
+button[disabled],
+.button.disabled,
+.button[disabled],
+button.disabled:hover,
+button.disabled:focus,
+button[disabled]:hover,
+button[disabled]:focus,
+.button.disabled:hover,
+.button.disabled:focus,
+.button[disabled]:hover,
+.button[disabled]:focus {
+    background-color: #91CA2F;
+}
+
+/* 1.3. Sidebar/toctree */
+/* This is only used in the docs so it should probably go under section 3. */
+
+#sidebar {
+    padding: 0;
+    background-color: #f8f8f8;
+    border: 1px solid #e8e8e8;
+}
+
+@media (min-width: 641px) {
+    #sidebar.sticky {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+    #sidebar.sticky #toctree {
+        position: absolute;
+        top: 37px;
+        right: 0;
+        bottom: 37px;
+        left: 0;
+        overflow: auto;
+    }
+    #sidebar.sticky #toctree:first-child {
+        top: 0;
+    }
+    #sidebar.sticky #toctree:last-child {
+        bottom: 0;
+    }
+}
+
+#sidebar-placeholder, #sidebar-overlay {
+    display: none;
+}
+
+#rtd-search-form input {
+    margin-bottom: 0;
+    border-width: 0 0 1px;
+}
+
+#version-dropdown {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    border-width: 1px 0 0;
+    background-color: #fff;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) inset;
+    cursor: pointer;
+}
+#version-dropdown:hover {
+    border-top-color: #ccc;
+}
+
+#sidebar ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+#toctree > ul {
+    padding: 0.25em 0;
+}
+
+#sidebar li {
+    margin: 0;
+    line-height: 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.01rem;
+}
+
+#sidebar li:not(.current) ul {
+    display: none;
+}
+
+#sidebar ul a {
+    display: block;
+    padding: 0.125rem 0.5rem 0.125rem 1.25rem;
+    white-space: nowrap;
+}
+
+#sidebar ul ul a {
+    padding-left: 1.75rem;
+}
+
+#sidebar ul ul ul a {
+    padding-left: 2.25rem;
+}
+
+#sidebar ul ul ul ul a {
+    padding-left: 2.75rem;
+}
+
+.toctree-expand {
+    float: left;
+    margin-left: -1em;
+    color: #666;
+    font-weight: normal;
+}
+
+.toctree-expand::before {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: FontAwesome;
+    content: "\f196";
+    font-size: 0.8rem;
+}
+
+.current > a > .toctree-expand::before {
+    content: "\f147";
+}
+
+#sidebar a.current {
+    font-weight: bold;
+}
+
+/* 1.3.1. Mobile sidebar */
+
+@media (max-width: 640px) {
+
+    #sidebar {
+        margin: 0 -0.9375rem;
+        border-color: #d8d8d8;
+    }
+    #sidebar.mobile-sticky {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 3;
+        margin: 0;
+    }
+    .mobile-sticky + #sidebar-placeholder {
+        display: block;
+    }
+
+    .toctree-expand {
+        margin-left: -2em;
+        padding: 0 5px;
+    }
+    .toctree-expand::before {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+
+    #sidebar.show-toctree {
+        bottom: 0;
+    }
+
+    .show-toctree .show-for-medium-up {
+        display: block !important;
+    }
+    #sidebar.show-toctree #toctree {
+        position: absolute;
+        top: 93px;
+        right: 0;
+        bottom: 37px;
+        left: 0;
+        overflow: auto;
+    }
+    #mobile-breadcrumb:empty ~ div > #toctree {
+        top: 67px;
+    }
+    #sidebar.show-toctree #toctree:first-child {
+        top: 0;
+    }
+    #sidebar.show-toctree #toctree:last-child {
+        bottom: 0;
+    }
+
+    #sidebar ul a {
+        padding-left: 2rem;
+    }
+    #sidebar ul ul a {
+        padding-left: 2.5rem;
+    }
+    #sidebar ul ul ul a {
+        padding-left: 3rem;
+    }
+    #sidebar ul ul ul ul a {
+        padding-left: 3.5rem;
+    }
+
+}
+
+#mobile-title, #mobile-breadcrumb {
+    padding: 0 0.5rem;
+    background-color: #d8d8d8;
+}
+#mobile-breadcrumb {
+    font-size: 0.8rem;
+}
+#mobile-title {
+    cursor: pointer;
+    word-wrap: break-word;
+}
+#mobile-title::before {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: FontAwesome;
+    content: "\f0d7";
+    padding-right: 0.5rem;
+}
+.show-toctree #mobile-title::before {
+    content: "\f0d8";
+}
+
+/* 1.4. Footer */
+
+footer#main-footer {
+    /* Prevent border collapsing because that messes up the height calculation. */
+    padding: 1px 0;
+    background-color: #555;
+    color: #fff;
+}
+footer#main-footer .row {
+    max-width: none;
+    margin: 2rem auto;
+}
+footer#main-footer p {
+    margin: 0.1rem 0 0;
+}
+footer#main-footer p:first-child {
+    margin-top: 0;
+}
+footer#main-footer a,
+footer#main-footer a:hover {
+    color: #91CA2F;
+}
+#footer-left {
+    text-align: left;
+}
+@media (max-width: 640px) {
+    #footer-left {
+        text-align: center;
+    }
+    #footer-left p {
+        display: inline;
+        margin: 0 0.5rem;
+    }
+}
+#subscribe-form {
+    position: relative;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+@media (min-width: 641px) {
+    #subscribe-form {
+        margin-bottom: 0;
+        border-right: 1px solid #888;
+        border-left: 1px solid #888;
+    }
+}
+footer#main-footer #subscribe-form .row {
+    max-width: 400px;
+    margin: 2.5rem auto;
+}
+footer#main-footer #subscribe-form .columns:last-child {
+    padding-left: 1rem;
+}
+@media (min-width: 641px) {
+    #subscribe-form input {
+        margin: 0;
+    }
+}
+#subscribe-form button {
+    margin: 0;
+    padding: 0 0.5rem;
+    border: 0;
+}
+#subscribe-response {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: -2rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1rem;
+}
+#subscribe-response.error {
+    color: #FF4F33;
+}
+#footer-right {
+    margin-top: 3.25rem;
+    text-align: center;
+}
+@media (max-width: 640px) {
+    #footer-right {
+        margin: 2rem 0 0;
+    }
+}
+#copyright {
+}
+
+/* 2. Homepage */
+
+.template-home-page h2 {
+    font-weight: 300;
+    font-size: 1.75rem;
+}
+.template-home-page h3 {
+    font-weight: 600;
+}
+
+.template-home-page .main-section {
+    text-align: center;
+}
+
+.template-home-page .hero-text h2 {
+    margin-top: 1rem;
+}
+
+#feature-boxes {
+    padding: 4rem 0;
+    background-color: #f8f8f8;
+}
+#feature-boxes .row {
+    margin: 0 auto;
+}
+#feature-boxes img {
+    margin-bottom: 0.5rem;
+}
+@media (max-width: 640px) {
+    #feature-boxes img {
+        margin-top: 3rem;
+    }
+    #feature-boxes div:first-child > img {
+        margin-top: 0;
+    }
+}
+#feature-boxes .row .row {
+    margin-bottom: 3rem;
+}
+@media (min-width: 1025px) {
+    #feature-boxes .row .row .columns {
+        padding: 0 3rem;
+    }
+}
+
+#partner-logo-wrapper, #call-to-action {
+    padding: 1px 0;
+    text-align: center;
+}
+
+#call-to-action {
+    background-color: #f8f8f8;
+}
+#call-to-action h2 {
+    font-weight: 300;
+}
+
+@media (min-width: 641px) {
+    #partner-logo-wrapper h2, #call-to-action h2 {
+        margin-top: 0;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+    #call-to-action .rich-text {
+        margin: 0 0 4rem;
+    }
+}
+
+#partner-logos {
+    margin-top: 0;
+}
+#partner-logos img {
+    margin: 5px 20px;
+}
+
+/* 3. Features */
+
+.template-features-page #hero {
+    background-color: #8ec046;
+}
+
+@media (max-width: 640px){
+    .template-features-page .feature-image {
+        margin-bottom: 1.25rem;
+        text-align: center;
+    }
+}
+.template-features-page h2 {
+        margin: 0 0 1rem;
+}
+@media (min-width: 1025px){
+    .template-features-page .large-10 {
+        padding-left: 2rem;
+    }
+}
+
+/* 4. Pricing/General pages */
+
+.template-general-page #hero {
+    background-color: #248cad;
+}
+.page-subscribe-to-mailing-list #hero {
+    background-color: #d64943;
+}
+
+.template-general-page .main-section > .row {
+    max-width: 700px;
+}
+
+/* 5. Blog */
+
+.template-blog-index #hero, .template-blog-entry #hero {
+    background-color: #34424d;
+}
+
+.template-blog-index h2, .template-blog-entry h2:first-child {
+    margin: 0 0 1.75rem;
+}
+.template-blog-index h2 a {
+    color: inherit;
+}
+.template-blog-index h2 + .row.blog-index-info {
+    margin-bottom: 1.5rem;
+}
+.row.blog-index-info {
+    clear: both;
+    margin: 0.5rem -0.9375rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+.blog-index-info div:last-child {
+    text-align: right;
+}
+.blog-index-info + .rich-text + p {
+    clear: both;
+}
+.template-blog-index .richtext-image {
+    display: inline-block;
+    max-width: 200px;
+}
+
+#pagination {
+    min-height: auto;
+}
+@media (min-width: 641px) {
+    #pagination {
+        font-size: 1.25rem;
+    }
+}
+#pagination-previous {
+    float: left;
+}
+#pagination-next {
+    float: right;
+}
+#pagination-current {
+    margin: 0 90px;
+    font: inherit;
+    text-align: center;
+}
+
+#blog-entry-info-container {
+    margin-top: 4rem;
+    text-align: center;
+}
+#blog-entry-info {
+    display: inline-block;
+    vertical-align: middle;
+}
+img + #blog-entry-info {
+    margin-left: 1rem;
+}
+#blog-entry-info p {
+    margin-bottom: 0;
+}
+#blog-entry-share {
+    margin-top: 2rem;
+}
+#blog-entry-share > span {
+    display: inline-block;
+    vertical-align: middle!important;
+    margin: 0 0.5rem;
+    line-height: 1;
+}
+
+/* 6. Docs */
+
+.template-sphinx #hero {
+    background-color: #997689;
+}
+
+@media (max-width: 640px) {
+    .template-sphinx #hero {
+        display: none;
+    }
+    .template-sphinx #hero + .row {
+        margin-top: 0;
+    }
+}
+
+.rst-body {
+    min-height: 500px;
+}
+
+.rst-body h1 {
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.source-button {
+    float: right;
+}
+
+.headerlink {
+    display: none;
+}
+
+.figure {
+    max-width: 100%;
+    margin: 1em auto;
+}
+@media (min-width: 1025px) {
+    .figure.align-left {
+        float: left;
+        margin: 0 1em 1em 0;
+    }
+    .figure.align-right {
+        float: right;
+        margin: 0 0 1em 1em;
+    }
+}
+.figure img {
+    height: auto !important;
+}
+
+.reference.internal em {
+    font-style: normal;
+}
+
+.rst-body dt {
+    word-wrap: break-word;
+}
+
+.rst-body dd {
+    padding-left: 1rem;
+}
+
+.rst-body pre {
+    padding: 0.75em 1em;
+    background-color: #f8f8f8;
+    border: 1px solid #dfdfdf;
+    font-size: 0.9rem;
+}
+
+.responsive-table {
+    max-width: 100%;
+    overflow: auto;
+}
+.responsive-table col {
+    min-width: 150px;
+}
+
+.rst-body th { background-color: #e8e8e8; }
+.rst-body td code { white-space: nowrap; }
+
+.rst-body td p, .rst-body ul, .rst-body table li {
+    font-size: inherit;
+    line-height: 1.4rem;
+}
+
+.rst-body table li {
+    margin-bottom: 0.25rem;
+}
+
+.rst-body td {
+    line-height: 1.4rem;
+}
+
+.rst-body td p.last, .rst-body tr:last-child ul, .rst-body tr:last-child li:last-child {
+    margin-bottom: 0;
+}
+
+#rst-footer-buttons a {
+    margin-bottom: 0;
+}
+
+#rst-next-button {
+    float: right;
+}
+
+/* 6.1. Breathe */
+
+@media (max-width: 640px) {
+    #method-tables {
+        display: none;
+    }
+}
+#method-tables table col:first-child {
+    max-width: 20%;
+}
+.breathe th {
+    white-space: nowrap;
+}
+#method-tables table td:first-child {
+    text-align: right;
+}
+#method-tables table p {
+    font-size: inherit;
+    line-height: inherit;
+    margin-bottom: 0.25rem;
+}
+#method-tables table td:last-child p:last-child {
+    margin-bottom: 0;
+    color: #555;
+}
+
+.breathe > .section > .breathe-sectiondef > .breathe-sectiondef-title, .breathe .class > dt {
+    font-size: 1.75em;
+    font-weight: normal;
+}
+.breathe .class .breathe-sectiondef-title {
+    font-size: 1.25em;
+}
+.breathe > .section > .breathe-sectiondef > dl, .breathe .class dl.member {
+    margin: 1.25rem 0;
+    padding: 0 1rem 0.75rem;
+    background-color: #f8f8f8;
+    border: 1px solid #e8e8e8;
+}
+.breathe > .section > .breathe-sectiondef > dl > :last-child, .breathe .class dl.member > :last-child {
+    margin-bottom: -0.75rem;
+}
+.breathe > .section > .breathe-sectiondef > dl > dt, .breathe .class dl.member > dt {
+    margin: 0 -1rem 0.75rem;
+    padding: 0.25rem 1rem;
+    background-color: #e8e8e8;
+    color: #444;
+    font-weight: normal;
+}
+.breathe > .section > .breathe-sectiondef > dl > dd, .breathe .class > dd, .breathe .class dl.member > dd {
+    padding-left: 0;
+}
+.breathe dt code {
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: inherit;
+    font-weight: bold;
+}
+.breatheparameterlist > li, .breatheenumvalues > li {
+    margin: 0.5rem 0;
+}
+.breatheparameterlist > li > code, .breatheenumvalues > li > code {
+    padding: 0;
+    border: 0;
+    font-family: inherit;
+    font-weight: bold;
+}
+.breatheparameterlist > li > p, .breatheenumvalues > li > p {
+    display: inline;
+}
+
+/* 6.2. Java and JavaScript */
+
+@media (max-width: 640px) {
+    #constructor-summary, #method-summary {
+        display: none;
+    }
+}
+#constructor-summary li {
+    font-size: 0.875rem;
+    line-height: 1.4rem;
+}
+#constructor-summary p, #method-summary td p {
+    font-size: inherit;
+    line-height: inherit;
+    margin-bottom: 0.25rem;
+}
+#constructor-summary p + p, #method-summary td:last-child p:last-child {
+    margin-bottom: 0;
+    color: #555;
+}
+#method-summary td:first-child {
+    text-align: right;
+}
+.rst-body a code, #constructor-summary code, #method-summary code {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+.field-list {
+    background: none;
+    border: none;
+}
+.field-name,
+.field-body {
+    display: block;
+    padding: 0;
+    font-size: 1rem;
+}
+.rst-body .field-name {
+    margin: 0.5rem 0px;
+    background: none;
+}
+.field-body {
+    margin-bottom: 0.75rem;
+    padding-left: 1rem;
+    line-height: 1.6rem;
+}
+tr:last-child .field-body {
+    margin-bottom: 0;
+}
+.field-body li {
+    margin-bottom: 0.5em;
+}
+
+.javadoc > .section > .section > dl,
+.jsdoc .section > dl,
+.python .section > dl {
+    margin: 1.25rem 0;
+    padding: 0 0 0.75rem;
+    background-color: #f8f8f8;
+    border: 1px solid #e8e8e8;
+}
+.javadoc > .section > .section > dl > :last-child,
+.jsdoc .section > dl > :last-child,
+.python .section > dl > :last-child {
+    margin-bottom: -0.75rem;
+}
+.javadoc > .section > .section > dl > dt,
+.jsdoc .section > dl > dt,
+.python .section > dl > dt {
+    margin: 0 0 0.75rem;
+    padding: 0.25rem 1rem;
+    background-color: #e8e8e8;
+    color: #444;
+    font-weight: normal;
+}
+.javadoc dt code,
+.jsdoc dt code,
+.python dt code {
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: inherit;
+    font-weight: bold;
+}
+.javadoc .section > dl > dd,
+.jsdoc .section > dl > dd,
+.python .section > dl > dd {
+    padding-right: 1rem;
+}
+
+.csharp .descclassname,
+.jsdoc #methods .descclassname,
+.python #methods .descclassname,
+.jsdoc #vncexception #attributes .descclassname {
+    display: none;
+}
+
+/* See corporate-cms developer_docs.scss section 6.5 */
+.csharp dl.method dt em {
+    display: none;
+}
+
+.csharp .class .data .descclassname {
+    display: initial;
+}
+
+h1 + dl.attribute dt code::before {
+    content: "delegate ";  /* Part of the C# delegate hack, see C# docs build script */
+}
+/* </See> */
+
+
+/* 7. Try VNC SDK */
+
+.template-sign-up-page #hero, .template-eula-page #hero, .template-download-page #hero {
+    background-color: #ffa74b;
+}
+
+#validation-error {
+    margin-top: 1.5rem;
+    color: #ff0000;
+}
+#validation-error:empty {
+    display: none;
+}
+
+fieldset > button:last-child {
+    margin-bottom: 0;
+}
+
+#success-row, #sign-up-row, #instructions-row {
+    max-width: 700px;
+}
+#success-row, .success #sign-up-row, .success #instructions-row {
+    display: none;
+}
+#sign-up input[type="radio"] {
+    margin: 0 0.5rem 0 0;
+    vertical-align: middle;
+}
+#sign-up label {
+    font-size: inherit;
+}
+#sign-up button {
+    display: block;
+    margin: 0 auto;
+}
+.success #success-row {
+    display: block;
+}
+
+#eula {
+    max-height: 600px;
+    overflow: auto;
+    margin: 1.5rem 0 3rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+#eula-form {
+    text-align: center;
+}
+
+#eula-form button, #eula-form .button {
+    margin: 0 1.5rem;
+}
+
+#download-button-wrapper {
+    margin-top: 3rem;
+    text-align: center;
+}

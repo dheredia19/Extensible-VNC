@@ -1,0 +1,83 @@
+.. _Logger:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Logger
+------
+
+.. class:: Logger
+
+    A container for static methods.
+
+    For more information, see :cpp:class:`vnc_Logger`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Logger.Callback`
+- :ref:`Logger.Level`
+
+**Method summary**
+
+================= ============================================================================
+Modifier and Type Method and Description                                                      
+================= ============================================================================
+:type:`void`      :meth:`Logger.SetLevel`\ (:type:`Logger.Level`)                             
+                                                                                              
+                  Sets the current log level.                                                 
+----------------- ----------------------------------------------------------------------------
+:type:`void`      :meth:`Logger.CreateCustomLogger`\ (:type:`Logger.Callback`)                
+                                                                                              
+                  Creates a logger implementation that calls the given callback whenever a log
+                  message is written.                                                         
+----------------- ----------------------------------------------------------------------------
+:type:`void`      :meth:`Logger.CreateFileLogger`\ (:type:`System.String`)                    
+                                                                                              
+                  Creates a logger that writes data to the specified log file.                
+----------------- ----------------------------------------------------------------------------
+:type:`void`      :meth:`Logger.CreateStderrLogger`\ ()                                       
+                                                                                              
+                  Creates a logger implementation that writes data to stderr.                 
+----------------- ----------------------------------------------------------------------------
+:type:`void`      :meth:`Logger.DestroyLogger`\ ()                                            
+                                                                                              
+                  Destroys any previously created logger.                                     
+================= ============================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: void Logger.SetLevel(Logger.Level a)
+
+    Sets the current log level.
+
+    For more information, see :cpp:func:`vnc_Logger_setLevel`\  in the C API documentation.
+
+.. method:: void Logger.CreateCustomLogger(Logger.Callback a)
+
+    Creates a logger implementation that calls the given callback whenever a log
+    message is written.
+
+    For more information, see :cpp:func:`vnc_Logger_createCustomLogger`\  in the C API documentation.
+
+.. method:: void Logger.CreateFileLogger(System.String a)
+
+    Creates a logger that writes data to the specified log file.
+
+    For more information, see :cpp:func:`vnc_Logger_createFileLogger`\  in the C API documentation.
+
+.. method:: void Logger.CreateStderrLogger()
+
+    Creates a logger implementation that writes data to stderr.
+
+    For more information, see :cpp:func:`vnc_Logger_createStderrLogger`\  in the C API documentation.
+
+.. method:: void Logger.DestroyLogger()
+
+    Destroys any previously created logger.
+
+    For more information, see :cpp:func:`vnc_Logger_destroyLogger`\  in the C API documentation.
+

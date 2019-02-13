@@ -1,0 +1,29 @@
+Viewer.MouseButton
+==================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum MouseButton
+   :outertype: Viewer
+
+   Enumeration of mouse buttons.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final Viewer.MouseButton MOUSE_BUTTON_LEFT
+   :outertype: Viewer.MouseButton
+
+   The logical left mouse button.
+
+.. java:field:: public static final Viewer.MouseButton MOUSE_BUTTON_MIDDLE
+   :outertype: Viewer.MouseButton
+
+   The logical middle mouse button.
+
+.. java:field:: public static final Viewer.MouseButton MOUSE_BUTTON_RIGHT
+   :outertype: Viewer.MouseButton
+
+   The logical right mouse button.
+

@@ -1,0 +1,31 @@
+DirectTcpListener.Callback
+==========================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface Callback
+   :outertype: DirectTcpListener
+
+   Callback for filtering incoming TCP connections.
+
+Method Summary
+--------------
+==================== ==========================================================================================================================================================================================
+Modifier and Type    Method and Description                                                                                                                                                                    
+==================== ==========================================================================================================================================================================================
+:java:type:`boolean` :java:meth:`filterConnection <Callback.filterConnection(DirectTcpListener, String, int)>`\ (:java:type:`DirectTcpListener` listener, :java:type:`String` ipAddress, :java:type:`int` port)
+                                                                                                                                                                                                               
+                     Notification to provide address-based filtering of incoming connections.                                                                                                                  
+==================== ==========================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  boolean filterConnection(DirectTcpListener listener, String ipAddress, int port)
+   :outertype: DirectTcpListener.Callback
+
+   Notification to provide address-based filtering of incoming connections.
+
+   For more information, see :cpp:member:`vnc_DirectTcpListener_Callback::filterConnection`.
+

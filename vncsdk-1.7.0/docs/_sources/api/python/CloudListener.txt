@@ -1,0 +1,64 @@
+CloudListener
+=============
+
+.. py:class:: vncsdk.CloudListener
+
+    Listener used to join VNC Cloud and listen for a connection.
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.CloudListener.Callback`
+
+* :py:class:`vncsdk.CloudListener.Status`
+
+Constructor Summary
+-------------------
+================= =====================================================================================================
+Modifier and Type Method and Description                                                                               
+================= =====================================================================================================
+\                 `__init__ <#constructor>`_\ (local_cloud_address, local_cloud_password, connection_handler, callback)
+                                                                                                                       
+                  Begins listening for incoming connections on the given Cloud address.                                
+================= =====================================================================================================
+
+
+Method Summary
+--------------
+================= ==============================================
+Modifier and Type Method and Description                        
+================= ==============================================
+\                 :py:func:`destroy <CloudListener.destroy>`\ ()
+                                                                
+                  Destroys the Cloud listener.                  
+================= ==============================================
+
+
+Constructor
+-----------
+
+.. py:method:: vncsdk.CloudListener.__init__(local_cloud_address, local_cloud_password, connection_handler, callback)
+
+    Begins listening for incoming connections on the given Cloud address.
+
+    For more information, see :cpp:func:`vnc_CloudListener_create`.
+
+    :param local_cloud_address:
+    :type local_cloud_address: str
+    :param local_cloud_password:
+    :type local_cloud_password: str
+    :param connection_handler:
+    :type connection_handler: :py:class:`vncsdk.ConnectionHandler`
+    :param callback:
+    :type callback: :py:class:`vncsdk.CloudListener.Callback`
+
+Methods
+-------
+
+.. py:method:: CloudListener.destroy()
+
+    Destroys the Cloud listener.
+
+    For more information, see :cpp:func:`vnc_CloudListener_destroy`.
+
+

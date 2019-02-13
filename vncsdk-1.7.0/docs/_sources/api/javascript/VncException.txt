@@ -1,0 +1,64 @@
+VncException
+============
+
+:extends: Error
+
+.. js:data:: vncsdk.VncException
+
+    Thrown to indicate that the SDK has encountered an exceptional condition.
+
+Constructor Summary
+-------------------
+================= ======================================================================================================
+Modifier and Type Method and Description                                                                                
+================= ======================================================================================================
+\                 `VncException <#constructor>`_\ (errorCode, callingFunction)                                          
+                                                                                                                        
+                  Constructs a ``VncException`` with the given error code and the name of the function that produced it.
+================= ======================================================================================================
+
+
+Method Summary
+--------------
+================= ===============================================
+Modifier and Type Method and Description                         
+================= ===============================================
+string            :js:func:`toString <VncException.toString>`\ ()
+                                                                 
+                  Returns the name of this error.                
+================= ===============================================
+
+
+Constructor
+-----------
+
+.. js:class:: vncsdk.VncException(errorCode, callingFunction)
+
+    Constructs a ``VncException`` with the given error code and the
+    name of the function that produced it.
+
+    :param errorCode: The error code string.
+    :type errorCode: string
+    :param callingFunction: The name of the function that produced the error.
+    :type callingFunction: string
+    
+Methods
+-------
+
+.. js:function:: VncException.toString()
+
+    Returns the name of this error.
+
+    :rtype: string
+    
+Attributes
+----------
+
+.. js:attribute:: VncException.errorCode
+
+    Contains the string code; values are listed for each function in the
+    C API reference.
+
+    :type: string
+
+        

@@ -1,0 +1,30 @@
+ImmutableDataBuffer
+===================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public class ImmutableDataBuffer
+
+   An immutable \ :java:ref:`DataBuffer`\ , owned by the SDK.
+
+Method Summary
+--------------
+=================== ========================================================
+Modifier and Type   Method and Description                                  
+=================== ========================================================
+:java:type:`byte[]` :java:meth:`getData <ImmutableDataBuffer.getData()>`\ ()
+                                                                            
+                    Gets the data contained in the buffer.                  
+=================== ========================================================
+
+Methods
+-------
+
+.. java:method:: public byte[] getData()
+   :outertype: ImmutableDataBuffer
+
+   Gets the data contained in the buffer.
+
+   For more information, see :cpp:func:`vnc_DataBuffer_getData`.
+

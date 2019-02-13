@@ -1,0 +1,64 @@
+Server.SecurityCallback
+=======================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface SecurityCallback
+   :outertype: Server
+
+   Callback receiving security-related notifications for a Server.
+
+Method Summary
+--------------
+============================================ ====================================================================================================================================================================================================================================================================
+Modifier and Type                            Method and Description                                                                                                                                                                                                                                              
+============================================ ====================================================================================================================================================================================================================================================================
+:java:type:`java.lang.Iterable<Permissions>` :java:meth:`authenticateUser <SecurityCallback.authenticateUser(Server, Connection, String, String)>`\ (:java:type:`Server` server, :java:type:`Connection` connection, :java:type:`String` username, :java:type:`String` password)                                 
+                                                                                                                                                                                                                                                                                                                 
+                                             Authenticate credentials presented by a Viewer.                                                                                                                                                                                                                     
+-------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`boolean`                         :java:meth:`isPasswordRequired <SecurityCallback.isPasswordRequired(Server, Connection)>`\ (:java:type:`Server` server, :java:type:`Connection` connection)                                                                                                         
+                                                                                                                                                                                                                                                                                                                 
+                                             Decide if a connecting Viewer is required to provide a password.                                                                                                                                                                                                    
+-------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`boolean`                         :java:meth:`isUserNameRequired <SecurityCallback.isUserNameRequired(Server, Connection)>`\ (:java:type:`Server` server, :java:type:`Connection` connection)                                                                                                         
+                                                                                                                                                                                                                                                                                                                 
+                                             Decide if a connecting Viewer is required to provide a user name.                                                                                                                                                                                                   
+-------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`boolean`                         :java:meth:`verifyPeer <SecurityCallback.verifyPeer(Server, Connection, String, ImmutableDataBuffer)>`\ (:java:type:`Server` server, :java:type:`Connection` connection, :java:type:`String` viewerHexFingerprint, :java:type:`ImmutableDataBuffer` viewerRsaPublic)
+                                                                                                                                                                                                                                                                                                                 
+                                             Verify a Viewer's cryptographic identity.                                                                                                                                                                                                                           
+============================================ ====================================================================================================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  java.lang.Iterable<Permissions> authenticateUser(Server server, Connection connection, String username, String password)
+   :outertype: Server.SecurityCallback
+
+   Authenticate credentials presented by a Viewer.
+
+   For more information, see :cpp:member:`vnc_Server_SecurityCallback::authenticateUser`.
+
+.. java:method::  boolean isPasswordRequired(Server server, Connection connection)
+   :outertype: Server.SecurityCallback
+
+   Decide if a connecting Viewer is required to provide a password.
+
+   For more information, see :cpp:member:`vnc_Server_SecurityCallback::isPasswordRequired`.
+
+.. java:method::  boolean isUserNameRequired(Server server, Connection connection)
+   :outertype: Server.SecurityCallback
+
+   Decide if a connecting Viewer is required to provide a user name.
+
+   For more information, see :cpp:member:`vnc_Server_SecurityCallback::isUserNameRequired`.
+
+.. java:method::  boolean verifyPeer(Server server, Connection connection, String viewerHexFingerprint, ImmutableDataBuffer viewerRsaPublic)
+   :outertype: Server.SecurityCallback
+
+   Verify a Viewer's cryptographic identity.
+
+   For more information, see :cpp:member:`vnc_Server_SecurityCallback::verifyPeer`.
+

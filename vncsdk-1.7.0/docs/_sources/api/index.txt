@@ -1,0 +1,21 @@
+API reference
+=============
+
+The canonical reference for the VNC SDK is the :doc:`C API </api/c/index>`. 
+
+The :doc:`Java API </api/java/index>`, :doc:`JavaScript API </api/javascript/index>`, :doc:`Python API </api/python/index>` and  :doc:`.NET API </api/dotnet/index>` documentation 
+highlight differences with the C API.
+
+The :doc:`VNC Cloud API </api/cloud/index>` is a REST API for obtaining and managing cloud addresses, to manage connectivity using VNC Cloud.
+
+.. toctree::
+    :maxdepth: 2
+    :hidden:
+
+    c/index
+    java/index
+    javascript/index
+    python/index
+    dotnet/index
+    cloud/index
+

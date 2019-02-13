@@ -1,0 +1,79 @@
+CloudConnector
+==============
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class CloudConnector
+
+   Connector used to join VNC Cloud and establish an outgoing connection.
+
+Constructor Summary
+-------------------
+* :java:construct:`CloudConnector <CloudConnector(String, String) throws Library.VncException>`\ (:java:type:`String` localCloudAddress, :java:type:`String` localCloudPassword)
+
+  Creates a connector, which is used used to create connections to Cloud addresses.
+
+Method Summary
+--------------
+================= ==============================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                        
+================= ==============================================================================================================================================================================================
+:java:type:`void` :java:meth:`connect <CloudConnector.connect(String, ConnectionHandler) throws Library.VncException>`\ (:java:type:`String` peerCloudAddress, :java:type:`ConnectionHandler` connectionHandler)
+                                                                                                                                                                                                                
+                  Begins an outgoing connection to the given Cloud address.                                                                                                                                     
+----------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`destroy <CloudConnector.destroy()>`\ ()                                                                                                                                           
+                                                                                                                                                                                                                
+                  Destroys the Cloud connector.                                                                                                                                                                 
+----------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`setRelayBandwidthLimit <CloudConnector.setRelayBandwidthLimit(int) throws Library.VncException>`\ (:java:type:`int` relayBandwidthLimit)                                          
+                                                                                                                                                                                                                
+                  Set the bandwidth limit applied to relayed Cloud connections.                                                                                                                                 
+----------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`setWaitForPeer <CloudConnector.setWaitForPeer(boolean)>`\ (:java:type:`boolean` waitForPeer)                                                                                      
+                                                                                                                                                                                                                
+                  Sets whether new connections created by the connector wait for the peer to start listening.                                                                                                   
+================= ==============================================================================================================================================================================================
+
+Constructors
+------------
+
+.. java:constructor:: public CloudConnector(String localCloudAddress, String localCloudPassword) throws Library.VncException
+   :outertype: CloudConnector
+
+   Creates a connector, which is used used to create connections to Cloud addresses.
+
+   For more information, see :cpp:func:`vnc_CloudConnector_create`.
+
+Methods
+-------
+
+.. java:method:: public void connect(String peerCloudAddress, ConnectionHandler connectionHandler) throws Library.VncException
+   :outertype: CloudConnector
+
+   Begins an outgoing connection to the given Cloud address.
+
+   For more information, see :cpp:func:`vnc_CloudConnector_connect`.
+
+.. java:method:: public void destroy()
+   :outertype: CloudConnector
+
+   Destroys the Cloud connector.
+
+   For more information, see :cpp:func:`vnc_CloudConnector_destroy`.
+
+.. java:method:: public void setRelayBandwidthLimit(int relayBandwidthLimit) throws Library.VncException
+   :outertype: CloudConnector
+
+   Set the bandwidth limit applied to relayed Cloud connections.
+
+   For more information, see :cpp:func:`vnc_CloudConnector_setRelayBandwidthLimit`.
+
+.. java:method:: public void setWaitForPeer(boolean waitForPeer)
+   :outertype: CloudConnector
+
+   Sets whether new connections created by the connector wait for the peer to start listening.
+
+   For more information, see :cpp:func:`vnc_CloudConnector_setWaitForPeer`.
+

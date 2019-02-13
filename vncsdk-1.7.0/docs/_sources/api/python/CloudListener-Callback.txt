@@ -1,0 +1,68 @@
+CloudListener.Callback
+======================
+
+.. py:attribute:: vncsdk.CloudListener.Callback
+
+    Callback for a :py:class:`vncsdk.CloudListener`.
+
+Method Summary
+--------------
+================= ===============================================================================================================
+Modifier and Type Method and Description                                                                                         
+================= ===============================================================================================================
+bool              :py:func:`filter_connection <CloudListener.Callback.filter_connection>`\ (listener, peer_cloud_address)        
+                                                                                                                                 
+                  Notification to provide address-based filtering of incoming connections.                                       
+----------------- ---------------------------------------------------------------------------------------------------------------
+\                 :py:func:`listening_failed <CloudListener.Callback.listening_failed>`\ (listener, cloud_error, retry_time_secs)
+                                                                                                                                 
+                  Notification that the Cloud listener has stopped listening and is unable to accept any more connections.       
+----------------- ---------------------------------------------------------------------------------------------------------------
+\                 :py:func:`listening_status_changed <CloudListener.Callback.listening_status_changed>`\ (listener, status)      
+                                                                                                                                 
+                  Notification that the listener status has changed.                                                             
+================= ===============================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: CloudListener.Callback.filter_connection(listener, peer_cloud_address)
+
+    Notification to provide address-based filtering of incoming connections.
+
+    For more information, see :cpp:member:`vnc_CloudListener_Callback::filterConnection`.
+
+    :param listener:
+    :type listener: :py:class:`vncsdk.CloudListener`
+    :param peer_cloud_address:
+    :type peer_cloud_address: str or None
+    :rtype: bool
+
+.. py:function:: CloudListener.Callback.listening_failed(listener, cloud_error, retry_time_secs)
+
+    Notification that the Cloud listener has stopped listening and is unable
+    to accept any more connections.
+
+    For more information, see :cpp:member:`vnc_CloudListener_Callback::listeningFailed`.
+
+    :param listener:
+    :type listener: :py:class:`vncsdk.CloudListener`
+    :param cloud_error:
+    :type cloud_error: str or None
+    :param retry_time_secs:
+    :type retry_time_secs: int
+    :return: None
+
+.. py:function:: CloudListener.Callback.listening_status_changed(listener, status)
+
+    Notification that the listener status has changed.
+
+    For more information, see :cpp:member:`vnc_CloudListener_Callback::listeningStatusChanged`.
+
+    :param listener:
+    :type listener: :py:class:`vncsdk.CloudListener`
+    :param status:
+    :type status: :py:class:`vncsdk.CloudListener.Status`
+    :return: None
+

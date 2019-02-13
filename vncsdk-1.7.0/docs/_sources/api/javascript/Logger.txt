@@ -1,0 +1,70 @@
+Logger
+======
+
+Nested Classes
+--------------
+
+* :js:data:`vncsdk.Logger.Level`
+* :js:attr:`vncsdk.Logger.Callback`
+
+Method Summary
+--------------
+================= ================================================================================================
+Modifier and Type Method and Description                                                                          
+================= ================================================================================================
+\                 :js:func:`createBrowserLogger <vncsdk.Logger.createBrowserLogger>`\ ()                          
+                                                                                                                  
+                  Creates a logger implementation that writes data to the web browser's debugging console.        
+----------------- ------------------------------------------------------------------------------------------------
+\                 :js:func:`createCustomLogger <vncsdk.Logger.createCustomLogger>`\ (callback)                    
+                                                                                                                  
+                  Creates a logger implementation that calls the given callback whenever a log message is written.
+----------------- ------------------------------------------------------------------------------------------------
+\                 :js:func:`destroyLogger <vncsdk.Logger.destroyLogger>`\ ()                                      
+                                                                                                                  
+                  Destroys any previously created logger.                                                         
+----------------- ------------------------------------------------------------------------------------------------
+\                 :js:func:`setLevel <vncsdk.Logger.setLevel>`\ (level)                                           
+                                                                                                                  
+                  Sets the current log level.                                                                     
+================= ================================================================================================
+
+
+Static methods
+--------------
+
+.. js:function:: vncsdk.Logger.createBrowserLogger()
+
+    Creates a logger implementation that writes data to the web browser's
+    debugging console.
+
+    For more information, see :cpp:func:`vnc_Logger_createBrowserLogger`.
+
+
+.. js:function:: vncsdk.Logger.createCustomLogger(callback)
+
+    Creates a logger implementation that calls the given callback whenever a log
+    message is written.
+
+    For more information, see :cpp:func:`vnc_Logger_createCustomLogger`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.Logger.Callback`
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: vncsdk.Logger.destroyLogger()
+
+    Destroys any previously created logger.
+
+    For more information, see :cpp:func:`vnc_Logger_destroyLogger`.
+
+
+.. js:function:: vncsdk.Logger.setLevel(level)
+
+    Sets the current log level.
+
+    For more information, see :cpp:func:`vnc_Logger_setLevel`.
+
+    :param level:
+    :type level: :js:attr:`vncsdk.Logger.Level`
+

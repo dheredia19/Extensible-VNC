@@ -1,0 +1,24 @@
+Server.DisconnectFlags
+======================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum DisconnectFlags
+   :outertype: Server
+
+   Enumeration of disconnection flags.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final Server.DisconnectFlags DISCONNECT_ALERT
+   :outertype: Server.DisconnectFlags
+
+   The disconnection message is deemed to be sufficiently important that the Viewer should alert the Viewer user.
+
+.. java:field:: public static final Server.DisconnectFlags DISCONNECT_RECONNECT
+   :outertype: Server.DisconnectFlags
+
+   Set the peer's \ ``CAN_RECONNECT``\  flag, that is, the Server informs the Viewer that the server may start again soon.
+

@@ -1,0 +1,64 @@
+DataBuffer
+==========
+
+.. js:data:: vncsdk.DataBuffer
+
+    Buffer containing data managed by the SDK.
+
+Constructor Summary
+-------------------
+================= ==========================================================
+Modifier and Type Method and Description                                    
+================= ==========================================================
+\                 `DataBuffer <#constructor>`_\ (data)                      
+                                                                            
+                  Creates a data buffer containing a copy of the given data.
+================= ==========================================================
+
+
+Method Summary
+--------------
+================== ===========================================
+Modifier and Type  Method and Description                     
+================== ===========================================
+\                  :js:func:`destroy <DataBuffer.destroy>`\ ()
+                                                              
+                   Destroys the data buffer.                  
+------------------ -------------------------------------------
+Uint8Array or null :js:func:`getData <DataBuffer.getData>`\ ()
+                                                              
+                   Gets the data contained in the buffer.     
+================== ===========================================
+
+
+Constructor
+-----------
+
+.. js:class:: vncsdk.DataBuffer(data)
+
+    Creates a data buffer containing a copy of the given data.
+
+    For more information, see :cpp:func:`vnc_DataBuffer_create`.
+
+    :param data:
+    :type data: Uint8Array or Array<number>
+    :throws: :js:data:`vncsdk.VncException` on error
+
+Methods
+-------
+
+.. js:function:: DataBuffer.destroy()
+
+    Destroys the data buffer.
+
+    For more information, see :cpp:func:`vnc_DataBuffer_destroy`.
+
+
+.. js:function:: DataBuffer.getData()
+
+    Gets the data contained in the buffer.
+
+    For more information, see :cpp:func:`vnc_DataBuffer_getData`.
+
+    :rtype: Uint8Array or null
+

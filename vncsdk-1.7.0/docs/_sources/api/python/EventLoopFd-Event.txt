@@ -1,0 +1,25 @@
+EventLoopFd.Event
+=================
+
+.. py:class:: vncsdk.EventLoopFd.Event
+
+    Enumeration of file descriptor events for event selection.
+
+Enumeration Attributes
+----------------------
+
+.. py:attribute:: vncsdk.EventLoopFd.Event.READ
+
+    Monitor using ``readfds`` with ``select()`` (the second argument), or
+    ``POLLIN`` with ``poll()``.
+
+.. py:attribute:: vncsdk.EventLoopFd.Event.WRITE
+
+    Monitor using ``writefds`` with ``select()`` (the third argument), or
+    ``POLLOUT`` with ``poll()``.
+
+.. py:attribute:: vncsdk.EventLoopFd.Event.EXCEPT
+
+    Monitor using ``exceptfds`` with ``select()`` (the fourth argument), or
+    ``POLLPRI`` with ``poll()``.
+

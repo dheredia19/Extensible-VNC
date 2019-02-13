@@ -1,0 +1,42 @@
+Server.AgentCallback
+====================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface AgentCallback
+   :outertype: Server
+
+   Callback receiving agent-related notifications for a Server.
+
+Method Summary
+--------------
+================= ============================================================================================
+Modifier and Type Method and Description                                                                      
+================= ============================================================================================
+:java:type:`void` :java:meth:`agentStarted <AgentCallback.agentStarted(Server)>`\ (:java:type:`Server` server)
+                                                                                                              
+                  Notification that the agent has started.                                                    
+----------------- --------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`agentStopped <AgentCallback.agentStopped(Server)>`\ (:java:type:`Server` server)
+                                                                                                              
+                  Notification that the agent has stopped.                                                    
+================= ============================================================================================
+
+Methods
+-------
+
+.. java:method::  void agentStarted(Server server)
+   :outertype: Server.AgentCallback
+
+   Notification that the agent has started.
+
+   For more information, see :cpp:member:`vnc_Server_AgentCallback::agentStarted`.
+
+.. java:method::  void agentStopped(Server server)
+   :outertype: Server.AgentCallback
+
+   Notification that the agent has stopped.
+
+   For more information, see :cpp:member:`vnc_Server_AgentCallback::agentStopped`.
+

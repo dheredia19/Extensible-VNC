@@ -1,0 +1,15 @@
+.. _Viewer.FramebufferCallback.ViewerFbUpdatedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.FramebufferCallback.ViewerFbUpdatedType
+----------------------------------------------
+
+.. attribute:: Viewer.FramebufferCallback.ViewerFbUpdatedType
+
+    The type of the :attr:`Viewer.FramebufferCallback.ViewerFbUpdated`\  callback.
+
+    
+
+

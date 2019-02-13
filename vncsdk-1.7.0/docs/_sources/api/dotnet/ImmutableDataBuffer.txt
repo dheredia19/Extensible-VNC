@@ -1,0 +1,35 @@
+.. _ImmutableDataBuffer:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+ImmutableDataBuffer
+-------------------
+
+.. class:: ImmutableDataBuffer
+
+    An immutable DataBuffer, owned by the SDK.
+
+    For more information, see :cpp:class:`vnc_DataBuffer`\  in the C API documentation.
+
+
+**Method summary**
+
+================= =======================================
+Modifier and Type Method and Description                 
+================= =======================================
+:type:`byte[]`    :meth:`ImmutableDataBuffer.GetData`\ ()
+                                                         
+                  Gets the data contained in the buffer. 
+================= =======================================
+
+
+Methods
+~~~~~~~
+
+.. method:: byte[] ImmutableDataBuffer.GetData()
+
+    Gets the data contained in the buffer.
+
+    For more information, see :cpp:func:`vnc_DataBuffer_getData`\  in the C API documentation.
+

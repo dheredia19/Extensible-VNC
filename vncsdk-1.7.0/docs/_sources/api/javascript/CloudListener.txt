@@ -1,0 +1,64 @@
+CloudListener
+=============
+
+.. js:data:: vncsdk.CloudListener
+
+    Listener used to join VNC Cloud and listen for a connection.
+
+Nested Classes
+--------------
+
+* :js:data:`vncsdk.CloudListener.Status`
+* :js:attr:`vncsdk.CloudListener.Callback`
+
+Constructor Summary
+-------------------
+================= =====================================================================================================
+Modifier and Type Method and Description                                                                               
+================= =====================================================================================================
+\                 `CloudListener <#constructor>`_\ (localCloudAddress, localCloudPassword, connectionHandler, callback)
+                                                                                                                       
+                  Begins listening for incoming connections on the given Cloud address.                                
+================= =====================================================================================================
+
+
+Method Summary
+--------------
+================= ==============================================
+Modifier and Type Method and Description                        
+================= ==============================================
+\                 :js:func:`destroy <CloudListener.destroy>`\ ()
+                                                                
+                  Destroys the Cloud listener.                  
+================= ==============================================
+
+
+Constructor
+-----------
+
+.. js:class:: vncsdk.CloudListener(localCloudAddress, localCloudPassword, connectionHandler, callback)
+
+    Begins listening for incoming connections on the given Cloud address.
+
+    For more information, see :cpp:func:`vnc_CloudListener_create`.
+
+    :param localCloudAddress:
+    :type localCloudAddress: string
+    :param localCloudPassword:
+    :type localCloudPassword: string
+    :param connectionHandler:
+    :type connectionHandler: :js:data:`vncsdk.ConnectionHandler`
+    :param callback:
+    :type callback: :js:attr:`vncsdk.CloudListener.Callback`
+    :throws: :js:data:`vncsdk.VncException` on error
+
+Methods
+-------
+
+.. js:function:: CloudListener.destroy()
+
+    Destroys the Cloud listener.
+
+    For more information, see :cpp:func:`vnc_CloudListener_destroy`.
+
+

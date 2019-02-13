@@ -1,0 +1,35 @@
+RsaKey.Callback
+===============
+
+.. js:attribute:: vncsdk.RsaKey.Callback
+
+    Callback which receives RSA key details.
+
+Method Summary
+--------------
+================= ===========================================================================================================
+Modifier and Type Method and Description                                                                                     
+================= ===========================================================================================================
+\                 :js:func:`detailsReady <RsaKey.Callback.detailsReady>`\ (rsaPublic, hexFingerprint, catchphraseFingerprint)
+                                                                                                                             
+                  Notification that the SDK's RSA key has been retrieved.                                                    
+================= ===========================================================================================================
+
+
+Methods
+-------
+
+.. js:function:: RsaKey.Callback.detailsReady(rsaPublic, hexFingerprint, catchphraseFingerprint)
+
+    Notification that the SDK's RSA key has been retrieved.
+
+    For more information, see :cpp:member:`vnc_RsaKey_Callback::detailsReady`.
+
+    :param rsaPublic:
+    :type rsaPublic: :js:data:`vncsdk.DataBuffer`
+    :param hexFingerprint:
+    :type hexFingerprint: string or null
+    :param catchphraseFingerprint:
+    :type catchphraseFingerprint: string or null
+    :return: Ignored
+

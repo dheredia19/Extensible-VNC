@@ -1,0 +1,58 @@
+EventLoopWin
+============
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.EventLoopWin.Callback`
+
+
+Method Summary
+--------------
+================= =========================================================================
+Modifier and Type Method and Description                                                   
+================= =========================================================================
+{int}             :py:func:`get_events <vncsdk.EventLoopWin.get_events>`\ ()               
+                                                                                           
+                  Gets the array of events that the SDK currently wishes to be notified of.
+----------------- -------------------------------------------------------------------------
+int               :py:func:`handle_event <vncsdk.EventLoopWin.handle_event>`\ (event)      
+                                                                                           
+                  Handles the given event (if any) and process expired timers.             
+----------------- -------------------------------------------------------------------------
+\                 :py:func:`set_callback <vncsdk.EventLoopWin.set_callback>`\ (callback)   
+                                                                                           
+                  Sets the event loop callback.                                            
+================= =========================================================================
+
+
+Static methods
+--------------
+
+.. py:function:: vncsdk.EventLoopWin.get_events()
+
+    Gets the array of events that the SDK currently wishes to be notified of.
+
+    For more information, see :cpp:func:`vnc_EventLoopWin_getEvents`.
+
+    :rtype: {int}
+
+.. py:function:: vncsdk.EventLoopWin.handle_event(event)
+
+    Handles the given event (if any) and process expired timers.
+
+    For more information, see :cpp:func:`vnc_EventLoopWin_handleEvent`.
+
+    :param event:
+    :type event: int
+    :rtype: int
+
+.. py:function:: vncsdk.EventLoopWin.set_callback(callback)
+
+    Sets the event loop callback.
+
+    For more information, see :cpp:func:`vnc_EventLoopWin_setCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.EventLoopWin.Callback` or None
+

@@ -1,0 +1,46 @@
+DataBuffer
+==========
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class DataBuffer extends ImmutableDataBuffer
+
+   Buffer containing data managed by the SDK.
+
+Constructor Summary
+-------------------
+* :java:construct:`DataBuffer <DataBuffer(byte[] data) throws Library.VncException>`\ (byte[] data)
+
+  Creates a data buffer containing a copy of the given data.
+
+Method Summary
+--------------
+================= ===============================================
+Modifier and Type Method and Description                         
+================= ===============================================
+:java:type:`void` :java:meth:`destroy <DataBuffer.destroy()>`\ ()
+                                                                 
+                  Destroys the data buffer.                      
+================= ===============================================
+
+Constructors
+------------
+
+.. java:constructor:: public DataBuffer(byte[] data) throws Library.VncException
+   :outertype: DataBuffer
+
+   Creates a data buffer containing a copy of the given data.
+
+   For more information, see :cpp:func:`vnc_DataBuffer_create`.
+
+Methods
+-------
+
+.. java:method:: public void destroy()
+   :outertype: DataBuffer
+
+   Destroys the data buffer.
+
+   For more information, see :cpp:func:`vnc_DataBuffer_destroy`.
+

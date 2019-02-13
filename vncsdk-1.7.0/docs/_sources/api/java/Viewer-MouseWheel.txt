@@ -1,0 +1,24 @@
+Viewer.MouseWheel
+=================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum MouseWheel
+   :outertype: Viewer
+
+   Enumeration of mouse wheel directions.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final Viewer.MouseWheel MOUSE_WHEEL_HORIZONTAL
+   :outertype: Viewer.MouseWheel
+
+   The horizontal scroll wheel.
+
+.. java:field:: public static final Viewer.MouseWheel MOUSE_WHEEL_VERTICAL
+   :outertype: Viewer.MouseWheel
+
+   The vertical scroll wheel.
+

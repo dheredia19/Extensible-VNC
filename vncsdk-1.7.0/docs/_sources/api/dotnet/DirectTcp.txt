@@ -1,0 +1,24 @@
+.. _DirectTcp:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DirectTcp
+---------
+
+.. class:: DirectTcp
+
+    A container for static methods.
+
+    For more information, see :cpp:class:`vnc_DirectTcp`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  DirectTcp.DefaultPort
+
+    The default port for VNC direct TCP connections.
+
+    
+

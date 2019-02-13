@@ -1,0 +1,90 @@
+.. _Viewer.ServerEventCallback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.ServerEventCallback
+--------------------------
+
+.. class:: Viewer.ServerEventCallback
+
+    Callback receiving server event notifications for a Viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_ServerEventCallback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Viewer.ServerEventCallback.ServerClipboardTextChangedType`
+- :ref:`Viewer.ServerEventCallback.ServerFriendlyNameChangedType`
+
+**Constructor summary**
+
+================= =========================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                   
+================= =========================================================================================================================================================================
+\                 :meth:`Viewer.ServerEventCallback`\ (:attr:`Viewer.ServerEventCallback.ServerClipboardTextChangedType`, :attr:`Viewer.ServerEventCallback.ServerFriendlyNameChangedType`)
+                                                                                                                                                                                           
+                  Initializes a new ServerEventCallback class instance.                                                                                                                    
+================= =========================================================================================================================================================================
+
+
+**Method summary**
+
+================= ========================================================================================================
+Modifier and Type Method and Description                                                                                  
+================= ========================================================================================================
+:type:`void`      :meth:`Viewer.ServerEventCallback.OnServerClipboardTextChanged`\ (:type:`Viewer`, :type:`System.String`)
+                                                                                                                          
+                  Handles the ServerClipboardTextChanged event.                                                           
+                  By default, calls the ServerClipboardTextChanged delegate.                                              
+----------------- --------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Viewer.ServerEventCallback.OnServerFriendlyNameChanged`\ (:type:`Viewer`, :type:`System.String`) 
+                                                                                                                          
+                  Handles the ServerFriendlyNameChanged event.                                                            
+                  By default, calls the ServerFriendlyNameChanged delegate.                                               
+================= ========================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: Viewer.ServerEventCallback(Viewer.ServerEventCallback.ServerClipboardTextChangedType a, Viewer.ServerEventCallback.ServerFriendlyNameChangedType b)
+
+    Initializes a new ServerEventCallback class instance.
+
+    For more information, see :cpp:func:`vnc_Viewer_ServerEventCallback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void Viewer.ServerEventCallback.OnServerClipboardTextChanged(Viewer a, System.String b)
+
+    Handles the ServerClipboardTextChanged event.
+    By default, calls the ServerClipboardTextChanged delegate.
+
+    
+
+.. method:: void Viewer.ServerEventCallback.OnServerFriendlyNameChanged(Viewer a, System.String b)
+
+    Handles the ServerFriendlyNameChanged event.
+    By default, calls the ServerFriendlyNameChanged delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  Viewer.ServerEventCallback.ServerClipboardTextChanged
+
+    Notification that the server's clipboard contains new text.
+
+    For more information, see :cpp:member:`vnc_Viewer_ServerEventCallback::serverClipboardTextChanged`\  in the C API documentation.
+
+.. attribute::  Viewer.ServerEventCallback.ServerFriendlyNameChanged
+
+    Notification that the server's friendly name has changed.
+
+    For more information, see :cpp:member:`vnc_Viewer_ServerEventCallback::serverFriendlyNameChanged`\  in the C API documentation.
+

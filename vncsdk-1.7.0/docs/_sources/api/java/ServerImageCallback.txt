@@ -1,0 +1,43 @@
+.. java:import:: android.media ImageReader
+
+.. java:import:: com.realvnc.vncsdk Server
+
+ServerImageCallback
+===================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public class ServerImageCallback implements ImageReader.OnImageAvailableListener
+
+   ServerImageCallback is used by vnc_Server on Android to receive onImageAvailable callbacks from ImageReader. This source file should not be included in the distribution source jar, only the class file should be distributed.
+
+Constructor Summary
+-------------------
+* :java:construct:`ServerImageCallback <ServerImageCallback(Server)>`\ (:java:type:`Server` server)
+
+Method Summary
+--------------
+================= ====================================================================================================================
+Modifier and Type Method and Description                                                                                              
+================= ====================================================================================================================
+:java:type:`void` :java:meth:`destroy <ServerImageCallback.destroy()>`\ ()                                                            
+----------------- --------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`onImageAvailable <ServerImageCallback.onImageAvailable(ImageReader)>`\ (:java:type:`ImageReader` reader)
+================= ====================================================================================================================
+
+Constructors
+------------
+
+.. java:constructor:: public ServerImageCallback(Server server)
+   :outertype: ServerImageCallback
+
+Methods
+-------
+
+.. java:method:: public void destroy()
+   :outertype: ServerImageCallback
+
+.. java:method:: public void onImageAvailable(ImageReader reader)
+   :outertype: ServerImageCallback
+

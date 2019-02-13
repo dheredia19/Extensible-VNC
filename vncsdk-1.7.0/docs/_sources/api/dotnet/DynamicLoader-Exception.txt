@@ -1,0 +1,15 @@
+.. _DynamicLoader.Exception:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DynamicLoader.Exception
+-----------------------
+
+.. class:: DynamicLoader.Exception
+
+    Abstract base class of exceptions thrown by the DynamicLoader.
+
+    
+
+

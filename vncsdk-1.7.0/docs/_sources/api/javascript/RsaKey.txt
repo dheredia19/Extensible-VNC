@@ -1,0 +1,59 @@
+RsaKey
+======
+
+Nested Classes
+--------------
+
+* :js:attr:`vncsdk.RsaKey.Callback`
+
+Method Summary
+--------------
+================= ===============================================================================
+Modifier and Type Method and Description                                                         
+================= ===============================================================================
+\                 :js:func:`cancelDetails <vncsdk.RsaKey.cancelDetails>`\ (callback)             
+                                                                                                 
+                  Cancels any outstanding notifications for the given callback.                  
+----------------- -------------------------------------------------------------------------------
+\                 :js:func:`clear <vncsdk.RsaKey.clear>`\ ()                                     
+                                                                                                 
+                  Removes any stored RSA key from the data store.                                
+----------------- -------------------------------------------------------------------------------
+\                 :js:func:`getDetails <vncsdk.RsaKey.getDetails>`\ (callback, generateIfMissing)
+                                                                                                 
+                  Requests the details for the machine's identifying RSA public key.             
+================= ===============================================================================
+
+
+Static methods
+--------------
+
+.. js:function:: vncsdk.RsaKey.cancelDetails(callback)
+
+    Cancels any outstanding notifications for the given callback.
+
+    For more information, see :cpp:func:`vnc_RsaKey_cancelDetails`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.RsaKey.Callback`
+
+.. js:function:: vncsdk.RsaKey.clear()
+
+    Removes any stored RSA key from the data store.
+
+    For more information, see :cpp:func:`vnc_RsaKey_clear`.
+
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: vncsdk.RsaKey.getDetails(callback, generateIfMissing)
+
+    Requests the details for the machine's identifying RSA public key.
+
+    For more information, see :cpp:func:`vnc_RsaKey_getDetails`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.RsaKey.Callback` or null
+    :param generateIfMissing:
+    :type generateIfMissing: boolean
+    :throws: :js:data:`vncsdk.VncException` on error
+

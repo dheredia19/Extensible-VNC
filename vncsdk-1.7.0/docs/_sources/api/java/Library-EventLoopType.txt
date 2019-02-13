@@ -1,0 +1,39 @@
+Library.EventLoopType
+=====================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum EventLoopType
+   :outertype: Library
+
+   Enumeration of types of event loop used by the SDK.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final Library.EventLoopType ANDROID
+   :outertype: Library.EventLoopType
+
+   The Android "Looper" event loop is only available on Android.
+
+.. java:field:: public static final Library.EventLoopType CF
+   :outertype: Library.EventLoopType
+
+   The Core Foundation event loop is available on OS X and iOS.
+
+.. java:field:: public static final Library.EventLoopType DEFAULT
+   :outertype: Library.EventLoopType
+
+   The default event loop is a Windows event loop on Windows, a file-descriptor event loop on Linux, a Core Foundation event loop on OS X and iOS, and an Android event loop on Android. There is no event loop in HTML5.
+
+.. java:field:: public static final Library.EventLoopType FD
+   :outertype: Library.EventLoopType
+
+   The file-descriptor event loop is available on Linux, OS X, iOS, and Android.
+
+.. java:field:: public static final Library.EventLoopType WIN
+   :outertype: Library.EventLoopType
+
+   The Windows event loop is only available on Windows.
+

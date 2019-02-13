@@ -1,0 +1,15 @@
+.. _DisplayManager.Callback.DisplaysChangedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DisplayManager.Callback.DisplaysChangedType
+-------------------------------------------
+
+.. attribute:: DisplayManager.Callback.DisplaysChangedType
+
+    The type of the :attr:`DisplayManager.Callback.DisplaysChanged`\  callback.
+
+    
+
+

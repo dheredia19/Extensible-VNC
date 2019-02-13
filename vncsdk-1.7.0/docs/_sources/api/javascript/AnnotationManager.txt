@@ -1,0 +1,196 @@
+AnnotationManager
+=================
+
+.. js:data:: vncsdk.AnnotationManager
+
+    Enables a Viewer or Server to annotate a Server device screen.
+
+Nested Classes
+--------------
+
+* :js:attr:`vncsdk.AnnotationManager.Callback`
+
+Method Summary
+--------------
+================= ==================================================================================
+Modifier and Type Method and Description                                                            
+================= ==================================================================================
+\                 :js:func:`clear <AnnotationManager.clear>`\ (fade, connection)                    
+                                                                                                    
+                  Clears particular annotations.                                                    
+----------------- ----------------------------------------------------------------------------------
+\                 :js:func:`clearAll <AnnotationManager.clearAll>`\ (fade)                          
+                                                                                                    
+                  Clears all annotations.                                                           
+----------------- ----------------------------------------------------------------------------------
+number            :js:func:`getFadeDuration <AnnotationManager.getFadeDuration>`\ ()                
+                                                                                                    
+                  Gets how long annotations take to fade.                                           
+----------------- ----------------------------------------------------------------------------------
+number            :js:func:`getPenColor <AnnotationManager.getPenColor>`\ ()                        
+                                                                                                    
+                  Gets the current pen color.                                                       
+----------------- ----------------------------------------------------------------------------------
+number            :js:func:`getPenSize <AnnotationManager.getPenSize>`\ ()                          
+                                                                                                    
+                  Gets the current pen size.                                                        
+----------------- ----------------------------------------------------------------------------------
+number            :js:func:`getPersistDuration <AnnotationManager.getPersistDuration>`\ ()          
+                                                                                                    
+                  Gets how long annotations persist as a solid color for.                           
+----------------- ----------------------------------------------------------------------------------
+boolean           :js:func:`isAvailable <AnnotationManager.isAvailable>`\ ()                        
+                                                                                                    
+                  Queries whether it is possible to annotate.                                       
+----------------- ----------------------------------------------------------------------------------
+\                 :js:func:`movePenTo <AnnotationManager.movePenTo>`\ (x, y, penDown)               
+                                                                                                    
+                  Draws a line on the Server screen from the current position to a new position.    
+----------------- ----------------------------------------------------------------------------------
+\                 :js:func:`setCallback <AnnotationManager.setCallback>`\ (callback)                
+                                                                                                    
+                  Sets annotation-related callbacks.                                                
+----------------- ----------------------------------------------------------------------------------
+\                 :js:func:`setFadeDuration <AnnotationManager.setFadeDuration>`\ (durationMs)      
+                                                                                                    
+                  Sets how long annotations take to fade.                                           
+----------------- ----------------------------------------------------------------------------------
+\                 :js:func:`setPenColor <AnnotationManager.setPenColor>`\ (color)                   
+                                                                                                    
+                  Sets the pen color, determining the color of the annotation line.                 
+----------------- ----------------------------------------------------------------------------------
+\                 :js:func:`setPenSize <AnnotationManager.setPenSize>`\ (size)                      
+                                                                                                    
+                  Sets the pen size, determining the width of the annotation line.                  
+----------------- ----------------------------------------------------------------------------------
+\                 :js:func:`setPersistDuration <AnnotationManager.setPersistDuration>`\ (durationMs)
+                                                                                                    
+                  Sets how long annotations persist as a solid color for.                           
+================= ==================================================================================
+
+
+Methods
+-------
+
+.. js:function:: AnnotationManager.clear(fade, connection)
+
+    Clears particular annotations.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_clear`.
+
+    :param fade:
+    :type fade: boolean
+    :param connection:
+    :type connection: :js:data:`vncsdk.Connection`
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: AnnotationManager.clearAll(fade)
+
+    Clears all annotations.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_clearAll`.
+
+    :param fade:
+    :type fade: boolean
+
+.. js:function:: AnnotationManager.getFadeDuration()
+
+    Gets how long annotations take to fade.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getFadeDuration`.
+
+    :rtype: number
+
+.. js:function:: AnnotationManager.getPenColor()
+
+    Gets the current pen color.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getPenColor`.
+
+    :rtype: number
+
+.. js:function:: AnnotationManager.getPenSize()
+
+    Gets the current pen size.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getPenSize`.
+
+    :rtype: number
+
+.. js:function:: AnnotationManager.getPersistDuration()
+
+    Gets how long annotations persist as a solid color for.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getPersistDuration`.
+
+    :rtype: number
+
+.. js:function:: AnnotationManager.isAvailable()
+
+    Queries whether it is possible to annotate.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_isAvailable`.
+
+    :rtype: boolean
+
+.. js:function:: AnnotationManager.movePenTo(x, y, penDown)
+
+    Draws a line on the Server screen from the current position to a
+    new position.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_movePenTo`.
+
+    :param x:
+    :type x: number
+    :param y:
+    :type y: number
+    :param penDown:
+    :type penDown: boolean
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: AnnotationManager.setCallback(callback)
+
+    Sets annotation-related callbacks.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setCallback`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.AnnotationManager.Callback` or null
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: AnnotationManager.setFadeDuration(durationMs)
+
+    Sets how long annotations take to fade.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setFadeDuration`.
+
+    :param durationMs:
+    :type durationMs: number
+
+.. js:function:: AnnotationManager.setPenColor(color)
+
+    Sets the pen color, determining the color of the annotation line.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setPenColor`.
+
+    :param color:
+    :type color: number
+
+.. js:function:: AnnotationManager.setPenSize(size)
+
+    Sets the pen size, determining the width of the annotation line.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setPenSize`.
+
+    :param size:
+    :type size: number
+
+.. js:function:: AnnotationManager.setPersistDuration(durationMs)
+
+    Sets how long annotations persist as a solid color for.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setPersistDuration`.
+
+    :param durationMs:
+    :type durationMs: number
+

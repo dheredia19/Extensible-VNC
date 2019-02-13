@@ -1,0 +1,52 @@
+.. _Library.EventLoopType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Library.EventLoopType
+---------------------
+
+.. enum:: Library.EventLoopType
+
+    Enumeration of types of event loop used by the SDK.
+
+    For more information, see :cpp:class:`vnc_EventLoopType`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  Library.EventLoopType.Default
+
+    The default event loop is a Windows event loop on Windows, a
+    file-descriptor event loop on Linux, a Core Foundation event loop on OS X
+    and iOS, and an Android event loop on Android.There is no event loop in
+    HTML5.
+
+    
+
+.. attribute::  Library.EventLoopType.Win
+
+    The Windows event loop is only available on Windows.
+
+    
+
+.. attribute::  Library.EventLoopType.Fd
+
+    The file-descriptor event loop is available on Linux, OS X, iOS, and
+    Android.
+
+    
+
+.. attribute::  Library.EventLoopType.Cf
+
+    The Core Foundation event loop is available on OS X and iOS.
+
+    
+
+.. attribute::  Library.EventLoopType.Android
+
+    The Android "Looper" event loop is only available on Android.
+
+    
+

@@ -1,0 +1,32 @@
+DisplayManager.Callback
+=======================
+
+.. py:attribute:: vncsdk.DisplayManager.Callback
+
+    Callback receiving display changes.
+
+Method Summary
+--------------
+================= ============================================================================================================
+Modifier and Type Method and Description                                                                                      
+================= ============================================================================================================
+\                 :py:func:`displays_changed <DisplayManager.Callback.displays_changed>`\ (display_manager)                   
+                                                                                                                              
+                  Notification that a display has been added or removed, or the resolution of an existing display has changed.
+================= ============================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: DisplayManager.Callback.displays_changed(display_manager)
+
+    Notification that a display has been added or removed, or the resolution 
+    of an existing display has changed.
+
+    For more information, see :cpp:member:`vnc_DisplayManager_Callback::displaysChanged`.
+
+    :param display_manager:
+    :type display_manager: :py:class:`vncsdk.DisplayManager`
+    :return: None
+

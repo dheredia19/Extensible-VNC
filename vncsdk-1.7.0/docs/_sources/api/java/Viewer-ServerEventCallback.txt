@@ -1,0 +1,42 @@
+Viewer.ServerEventCallback
+==========================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface ServerEventCallback
+   :outertype: Viewer
+
+   Callback receiving server event notifications for a Viewer.
+
+Method Summary
+--------------
+================= ================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                          
+================= ================================================================================================================================================================
+:java:type:`void` :java:meth:`serverClipboardTextChanged <ServerEventCallback.serverClipboardTextChanged(Viewer, String)>`\ (:java:type:`Viewer` viewer, :java:type:`String` text)
+                                                                                                                                                                                  
+                  Notification that the server's clipboard contains new text.                                                                                                     
+----------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`serverFriendlyNameChanged <ServerEventCallback.serverFriendlyNameChanged(Viewer, String)>`\ (:java:type:`Viewer` viewer, :java:type:`String` name)  
+                                                                                                                                                                                  
+                  Notification that the server's friendly name has changed.                                                                                                       
+================= ================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void serverClipboardTextChanged(Viewer viewer, String text)
+   :outertype: Viewer.ServerEventCallback
+
+   Notification that the server's clipboard contains new text.
+
+   For more information, see :cpp:member:`vnc_Viewer_ServerEventCallback::serverClipboardTextChanged`.
+
+.. java:method::  void serverFriendlyNameChanged(Viewer viewer, String name)
+   :outertype: Viewer.ServerEventCallback
+
+   Notification that the server's friendly name has changed.
+
+   For more information, see :cpp:member:`vnc_Viewer_ServerEventCallback::serverFriendlyNameChanged`.
+

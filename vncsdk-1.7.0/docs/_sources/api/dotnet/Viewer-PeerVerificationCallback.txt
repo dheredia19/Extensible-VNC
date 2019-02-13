@@ -1,0 +1,90 @@
+.. _Viewer.PeerVerificationCallback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.PeerVerificationCallback
+-------------------------------
+
+.. class:: Viewer.PeerVerificationCallback
+
+    Callback receiving verification requests to check the peer's identity.
+
+    For more information, see :cpp:func:`vnc_Viewer_PeerVerificationCallback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Viewer.PeerVerificationCallback.VerifyPeerType`
+- :ref:`Viewer.PeerVerificationCallback.CancelPeerVerificationType`
+
+**Constructor summary**
+
+================= =====================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                               
+================= =====================================================================================================================================================================
+\                 :meth:`Viewer.PeerVerificationCallback`\ (:attr:`Viewer.PeerVerificationCallback.VerifyPeerType`, :attr:`Viewer.PeerVerificationCallback.CancelPeerVerificationType`)
+                                                                                                                                                                                       
+                  Initializes a new PeerVerificationCallback class instance.                                                                                                           
+================= =====================================================================================================================================================================
+
+
+**Method summary**
+
+================= =================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                           
+================= =================================================================================================================================================
+:type:`void`      :meth:`Viewer.PeerVerificationCallback.OnVerifyPeer`\ (:type:`Viewer`, :type:`System.String`, :type:`System.String`, :type:`ImmutableDataBuffer`)
+                                                                                                                                                                   
+                  Handles the VerifyPeer event.                                                                                                                    
+                  By default, calls the VerifyPeer delegate.                                                                                                       
+----------------- -------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Viewer.PeerVerificationCallback.OnCancelPeerVerification`\ (:type:`Viewer`)                                                               
+                                                                                                                                                                   
+                  Handles the CancelPeerVerification event.                                                                                                        
+                  By default, calls the CancelPeerVerification delegate.                                                                                           
+================= =================================================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: Viewer.PeerVerificationCallback(Viewer.PeerVerificationCallback.VerifyPeerType a, Viewer.PeerVerificationCallback.CancelPeerVerificationType b)
+
+    Initializes a new PeerVerificationCallback class instance.
+
+    For more information, see :cpp:func:`vnc_Viewer_PeerVerificationCallback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void Viewer.PeerVerificationCallback.OnVerifyPeer(Viewer a, System.String b, System.String c, ImmutableDataBuffer d)
+
+    Handles the VerifyPeer event.
+    By default, calls the VerifyPeer delegate.
+
+    
+
+.. method:: void Viewer.PeerVerificationCallback.OnCancelPeerVerification(Viewer a)
+
+    Handles the CancelPeerVerification event.
+    By default, calls the CancelPeerVerification delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  Viewer.PeerVerificationCallback.VerifyPeer
+
+    Request to verify the identity of the peer (the server).
+
+    For more information, see :cpp:member:`vnc_Viewer_PeerVerificationCallback::verifyPeer`\  in the C API documentation.
+
+.. attribute::  Viewer.PeerVerificationCallback.CancelPeerVerification
+
+    Notification to cancel a prior request for peer verification.
+
+    For more information, see :cpp:member:`vnc_Viewer_PeerVerificationCallback::cancelPeerVerification`\  in the C API documentation.
+

@@ -1,0 +1,613 @@
+Acknowledgements
+================
+
+This page provides details of all the free and open source software in the VNC SDK that RealVNC is required to acknowledge copyright, ownership and licensing for.
+
+This does not mean your platform must include this software. This page simply fulfills the obligation above.
+
+X Window System
+---------------
+
+Multiple copyright notices apply:
+
+::
+
+    Copyright 1987, 1988, 1994, 1998  The Open Group
+ 
+    Permission to use, copy, modify, distribute, and sell this software and its
+    documentation for any purpose is hereby granted without fee, provided that
+    the above copyright notice appear in all copies and that both that
+    copyright notice and this permission notice appear in supporting
+    documentation.
+ 
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+ 
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+    OPEN GROUP BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+    AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+    Except as contained in this notice, the name of The Open Group shall not be
+    used in advertising or otherwise to promote the sale, use or other dealings
+    in this Software without prior written authorization from The Open Group.
+ 
+    Copyright 1987, 1988 by Digital Equipment Corporation, Maynard, Massachusetts.
+ 
+                           All Rights Reserved
+ 
+    Permission to use, copy, modify, and distribute this software and its
+    documentation for any purpose and without fee is hereby granted, 
+    provided that the above copyright notice appear in all copies and that
+    both that copyright notice and this permission notice appear in 
+    supporting documentation, and that the name of Digital not be
+    used in advertising or publicity pertaining to distribution of the
+    software without specific, written prior permission.
+ 
+    DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+    ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL
+    DIGITAL BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR
+    ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+    WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+    ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+    SOFTWARE.
+
+mbed TLS
+--------
+
+::
+
+    Copyright (c) 2006 - 2015 ARM Limited
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+AES
+---
+
+::
+
+    Copyright (c) 1998-2006, Dr Brian Gladman, Worcester, UK. All rights reserved.
+
+    LICENSE TERMS
+
+    The free distribution and use of this software in both source and binary form is
+    allowed (with or without changes) provided that:
+
+    1. distributions of this source code include the above copyright notice, this
+    list of conditions and the following disclaimer;
+
+    2. distributions in binary form include the above copyright notice, this list of
+    conditions and the following disclaimer in the documentation and/or other
+    associated materials;
+
+    3. the copyright holder's name is not used to endorse products built using this
+    software without specific written permission.
+
+    DISCLAIMER
+
+    This software is provided 'as is' with no explicit or implied warranties in
+    respect of its properties, including, but not limited to, correctness and/or
+    fitness for purpose.
+
+Zlib
+----
+
+::
+
+    Copyright (C) 1995-2002 Jean-loup Gailly and Mark Adler
+
+    This software is provided 'as-is', without any express or implied warranty. In
+    no event will the authors be held liable for any damages arising from the use of
+    this software.
+
+    Permission is granted to anyone to use this software for any purpose, including
+    commercial applications, and to alter it and redistribute it freely, subject to
+    the following restrictions:
+
+    1. The origin of this software must not be misrepresented; you must not claim
+    that you wrote the original software. If you use this software in a product, an
+    acknowledgment in the product documentation would be appreciated but is not
+    required.
+
+    2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+
+    3. This notice may not be removed or altered from any source distribution.
+
+    Jean-loup Gailly Mark Adler
+
+    jloup@gzip.org madler@alumni.caltech.edu
+
+XML parser
+----------
+
+::
+
+    Copyright (c) 2002, Frank Vanden Berghen. All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without modification,
+    are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright notice, this
+    list of conditions and the following disclaimer in the documentation and/or
+    other materials provided with the distribution.
+
+    * Neither the name of Business-Insight nor the names of its contributors may be
+    used to endorse or promote products derived from this software without specific
+    prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS "AS IS" AND ANY
+    EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE REGENTS AND CONTRIBUTORS BE LIABLE FOR ANY
+    DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+    ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+libpng
+------
+
+::
+
+    COPYRIGHT NOTICE, DISCLAIMER, and LICENSE:
+
+    If you modify libpng you may insert additional notices immediately following
+    this sentence.
+
+    This code is released under the libpng license.
+
+    libpng versions 1.2.6, August 15, 2004, through 1.5.9, February 18, 2012, are
+    Copyright (c) 2004, 2006-2011 Glenn Randers-Pehrson, and are distributed
+    according to the same disclaimer and license as libpng-1.2.5 with the following
+    individual added to the list of Contributing Authors:
+
+    Cosmin Truta
+
+    libpng versions 1.0.7, July 1, 2000, through 1.2.5 - October 3, 2002, are
+    Copyright (c) 2000-2002 Glenn Randers-Pehrson, and are distributed according to
+    the same disclaimer and license as libpng-1.0.6 with the following individuals
+    added to the list of Contributing Authors:
+
+    Simon-Pierre Cadieux
+    Eric S. Raymond
+    Gilles Vollant
+
+    and with the following additions to the disclaimer:
+
+    There is no warranty against interference with your enjoyment of the library or
+    against infringement. There is no warranty that our efforts or the library will
+    fulfill any of your particular purposes or needs. This library is provided with
+    all faults, and the entire risk of satisfactory quality, performance, accuracy,
+    and effort is with the user.
+
+    libpng versions 0.97, January 1998, through 1.0.6, March 20, 2000, are Copyright
+    (c) 1998, 1999 Glenn Randers-Pehrson, and are distributed according to the same
+    disclaimer and license as libpng-0.96, with the following individuals added to
+    the list of Contributing Authors:
+
+    Tom Lane
+    Glenn Randers-Pehrson
+    Willem van Schaik
+
+    libpng versions 0.89, June 1996, through 0.96, May 1997, are Copyright (c) 1996,
+    1997 Andreas Dilger Distributed according to the same disclaimer and license as
+    libpng-0.88, with the following individuals added to the list of Contributing
+    Authors:
+
+    John Bowler
+    Kevin Bracey
+    Sam Bushell
+    Magnus Holmgren
+    Greg Roelofs
+    Tom Tanner
+
+    libpng versions 0.5, May 1995, through 0.88, January 1996, are Copyright (c)
+    1995, 1996 Guy Eric Schalnat, Group 42, Inc.
+
+    For the purposes of this copyright and license, "Contributing Authors" is
+    defined as the following set of individuals:
+
+    Andreas Dilger
+    Dave Martindale
+    Guy Eric Schalnat
+    Paul Schmidt
+    Tim Wegner
+
+    The PNG Reference Library is supplied "AS IS". The Contributing Authors and
+    Group 42, Inc. disclaim all warranties, expressed or implied, including, without
+    limitation, the warranties of merchantability and of fitness for any purpose.
+    The Contributing Authors and Group 42, Inc. assume no liability for direct,
+    indirect, incidental, special, exemplary, or consequential damages, which may
+    result from the use of the PNG Reference Library, even if advised of the
+    possibility of such damage.
+
+    Permission is hereby granted to use, copy, modify, and distribute this source
+    code, or portions hereof, for any purpose, without fee, subject to the following
+    restrictions:
+
+    1. The origin of this source code must not be misrepresented.
+
+    2. Altered versions must be plainly marked as such and must not be
+    misrepresented as being the original source.
+
+    3. This Copyright notice may not be removed or altered from any source or
+    altered source distribution.
+
+    The Contributing Authors and Group 42, Inc. specifically permit, without fee,
+    and encourage the use of this source code as a component to supporting the PNG
+    file format in commercial products. If you use this source code in a product,
+    acknowledgment is not required but would be appreciated.
+
+    A "png_get_copyright" function is available, for convenient use in "about" boxes
+    and the like:
+
+    printf("%s",png_get_copyright(NULL));
+
+    Also, the PNG logo (in PNG format, of course) is supplied in the files
+    "pngbar.png" and "pngbar.jpg (88x31) and "pngnow.png" (98x31).
+
+    Libpng is OSI Certified Open Source Software. OSI Certified Open Source is a
+    certification mark of the Open Source Initiative. 
+
+JPEG
+----
+
+::
+
+    Copyright (c) 1991-1998, Thomas G. Lane
+
+    The authors make NO WARRANTY or representation, either express or implied, with 
+    respect to this software, its quality, accuracy, merchantability, or fitness for a 
+    particular purpose. This software is provided "AS IS", and you, its user, assume 
+    the entire risk as to its quality and accuracy.
+
+    This software is copyright (C) 1991-1998, Thomas G. Lane. All Rights Reserved except 
+    as specified below.
+
+    Permission is hereby granted to use, copy, modify, and distribute this software (or 
+    portions thereof) for any purpose, without fee, subject to these conditions:
+
+    (1) If any part of the source code for this software is distributed, then this README 
+        file must be included, with this copyright and no-warranty notice unaltered; and 
+        any additions, deletions, or changes to the original files must be clearly indicated 
+        in accompanying documentation. 
+    (2) If only executable code is distributed, then the accompanying documentation must 
+        state that "this software is based in part on the work of the Independent JPEG Group". 
+    (3) Permission for use of this software is granted only if the user accepts full 
+        responsibility for any undesirable consequences; the authors accept NO LIABILITY for 
+        damages of any kind.
+
+    These conditions apply to any software derived from or based on the IJG code, not just 
+    to the unmodified library. If you use our work, you ought to acknowledge us.
+
+    Permission is NOT granted for the use of any IJG author's name or company name in 
+    advertising or publicity relating to this software or products derived from it. This 
+    software may be referred to only as "the Independent JPEG Group's software".
+
+    We specifically permit and encourage the use of this software as the basis of commercial 
+    products, provided that all warranty or liability claims are assumed by the product vendor.
+
+    ansi2knr.c is included in this distribution by permission of L. Peter Deutsch, sole 
+    proprietor of its copyright holder, Aladdin Enterprises of Menlo Park, CA. ansi2knr.c is NOT 
+    covered by the above copyright and conditions, but instead by the usual distribution 
+    terms of the Free Software Foundation; principally, that you must include source code 
+    if you redistribute it. (See the file ansi2knr.c for full details.) However, since ansi2knr.c 
+    is not needed as part of any program generated from the IJG code, this does not limit you 
+    more than the foregoing paragraphs do.
+
+    The Unix configuration script "configure" was produced with GNU Autoconf. It is copyright 
+    by the Free Software Foundation but is freely distributable. The same holds for its 
+    supporting scripts (config.guess, config.sub, ltconfig, ltmain.sh). Another support 
+    script, install-sh, is copyright by M.I.T. but is also freely distributable.
+
+    It appears that the arithmetic coding option of the JPEG spec is covered by patents 
+    owned by IBM, AT&T, and Mitsubishi. Hence arithmetic coding cannot legally be used without 
+    obtaining one or more licenses. For this reason, support for arithmetic coding has been 
+    removed from the free JPEG software. (Since arithmetic coding provides only a marginal 
+    gain over the unpatented Huffman mode, it is unlikely that very many implementations will 
+    support it.) So far as we are aware, there are no patent restrictions on the remaining code.
+
+    The IJG distribution formerly included code to read and write GIF files. To avoid entanglement 
+    with the Unisys LZW patent, GIF reading support has been removed altogether, and the GIF 
+    writer has been simplified to produce "uncompressed GIFs". This technique does not use the 
+    LZW algorithm; the resulting GIF files are larger than usual, but are readable by all 
+    standard GIF decoders.
+
+    We are required to state that "The Graphics Interchange Format(c) is the Copyright property of 
+    CompuServe Incorporated. GIF(sm) is a Service Mark property of CompuServe Incorporated."
+
+cJSON
+-----
+
+::
+
+    Copyright (c) 2009 Dave Gamble
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+mnemonicode
+-----------
+
+::
+
+    Copyright (c) 2000 Oren Tirosh
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+ZStandard
+---------
+
+::
+
+    Copyright (c) 2016-present, Facebook, Inc. All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without modification,
+    are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice, this
+      list of conditions and the following disclaimer.
+    
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation
+      and/or other materials provided with the distribution.
+
+    * Neither the name Facebook nor the names of its contributors may be used to
+      endorse or promote products derived from this software without specific
+      prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+    ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+    ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+    ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+libopus
+-------
+
+::
+
+    Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic, Jean-Marc Valin, 
+    Timothy B. Terriberry, CSIRO, Gregory Maxwell, Mark Borgerding,
+    Erik de Castro Lopo
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+
+    * Neither the name of Internet Society, IETF or IETF Trust, nor the
+      names of specific contributors, may be used to endorse or promote
+      products derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
+    OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+    Opus is subject to the royalty-free patent licenses which are
+    specified at:
+
+    Xiph.Org Foundation:
+    https://datatracker.ietf.org/ipr/1524/
+
+    Microsoft Corporation:
+    https://datatracker.ietf.org/ipr/1914/
+
+    Broadcom Corporation:
+    https://datatracker.ietf.org/ipr/1526/
+
+
+speexdsp
+--------
+
+::
+
+    Copyright 2002-2008 Xiph.org Foundation
+    Copyright 2002-2008 Jean-Marc Valin
+    Copyright 2005-2007 Analog Devices Inc.
+    Copyright 2005-2008 Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+    Copyright 1993, 2002, 2006 David Rowe
+    Copyright 2003 EpicGames
+    Copyright 1992-1994 Jutta Degener, Carsten Bormann
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+
+    * Neither the name of the Xiph.org Foundation nor the names of its
+      contributors may be used to endorse or promote products derived from
+      this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FOUNDATION OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+jQuery
+------
+
+::
+
+    Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+jQuery UI
+---------
+
+::
+
+    Copyright 2007, 2014 jQuery Foundation and other contributors,
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+tablesorter
+-----------
+
+::
+
+    Copyright (c) 2014 Christian Bach
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+highlight.js
+------------
+
+::
+
+    Copyright (c) 2006, Ivan Sagalaev
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without modification,
+    are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright notice, this
+    list of conditions and the following disclaimer in the documentation and/or
+    other materials provided with the distribution.
+
+    * Neither the name of highlight.js nor the names of its contributors may be used
+    to endorse or promote products derived from this software without specific prior
+    written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS "AS IS" AND ANY
+    EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE REGENTS AND CONTRIBUTORS BE LIABLE FOR ANY
+    DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+    ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

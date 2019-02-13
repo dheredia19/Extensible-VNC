@@ -1,0 +1,34 @@
+EventLoopType
+=============
+
+.. py:class:: vncsdk.EventLoopType
+
+    Enumeration of types of event loop used by the SDK.
+
+Enumeration Attributes
+----------------------
+
+.. py:attribute:: vncsdk.EventLoopType.DEFAULT
+
+    The default event loop is a Windows event loop on Windows, a
+    file-descriptor event loop on Linux, a Core Foundation event loop on OS X
+    and iOS, and an Android event loop on Android.  There is no event loop in
+    HTML5.
+
+.. py:attribute:: vncsdk.EventLoopType.WIN
+
+    The Windows event loop is only available on Windows.
+
+.. py:attribute:: vncsdk.EventLoopType.FD
+
+    The file-descriptor event loop is available on Linux, OS X, iOS, and
+    Android.
+
+.. py:attribute:: vncsdk.EventLoopType.CF
+
+    The Core Foundation event loop is available on OS X and iOS.
+
+.. py:attribute:: vncsdk.EventLoopType.ANDROID
+
+    The Android "Looper" event loop is only available on Android.
+

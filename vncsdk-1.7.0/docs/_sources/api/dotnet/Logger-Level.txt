@@ -1,0 +1,45 @@
+.. _Logger.Level:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Logger.Level
+------------
+
+.. enum:: Logger.Level
+
+    Enumeration of log levels.
+
+    For more information, see :cpp:class:`vnc_Logger_Level`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  Logger.Level.Error
+
+    Information that the program is likely to stop functioning correctly.
+
+    
+
+.. attribute::  Logger.Level.Basic
+
+    Useful information on the functioning of the system.This is the
+    default log level.
+
+    
+
+.. attribute::  Logger.Level.Full
+
+    Comprehensive logging of all SDK operations (may degrade performance,
+    and the log file will also contain secure information such as keystrokes)
+
+    
+
+.. attribute::  Logger.Level.Debug
+
+    Logging of SDK operations, and for debug purposes, logging of internal
+    information specific to RealVNC's implementation.
+
+    
+

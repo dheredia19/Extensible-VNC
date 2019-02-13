@@ -1,0 +1,89 @@
+Server.SecurityCallback
+=======================
+
+.. py:attribute:: vncsdk.Server.SecurityCallback
+
+    Callback receiving security-related notifications for a Server.
+
+Method Summary
+--------------
+======================================= =============================================================================================================================
+Modifier and Type                       Method and Description                                                                                                       
+======================================= =============================================================================================================================
+{:py:class:`vncsdk.Server.Permissions`} :py:func:`authenticate_user <Server.SecurityCallback.authenticate_user>`\ (server, connection, username, password)           
+                                                                                                                                                                     
+                                        Authenticate credentials presented by a Viewer.                                                                              
+--------------------------------------- -----------------------------------------------------------------------------------------------------------------------------
+bool                                    :py:func:`is_password_required <Server.SecurityCallback.is_password_required>`\ (server, connection)                         
+                                                                                                                                                                     
+                                        Decide if a connecting Viewer is required to provide a password.                                                             
+--------------------------------------- -----------------------------------------------------------------------------------------------------------------------------
+bool                                    :py:func:`is_user_name_required <Server.SecurityCallback.is_user_name_required>`\ (server, connection)                       
+                                                                                                                                                                     
+                                        Decide if a connecting Viewer is required to provide a user name.                                                            
+--------------------------------------- -----------------------------------------------------------------------------------------------------------------------------
+bool                                    :py:func:`verify_peer <Server.SecurityCallback.verify_peer>`\ (server, connection, viewer_hex_fingerprint, viewer_rsa_public)
+                                                                                                                                                                     
+                                        Verify a Viewer's cryptographic identity.                                                                                    
+======================================= =============================================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: Server.SecurityCallback.authenticate_user(server, connection, username, password)
+
+    Authenticate credentials presented by a Viewer.
+
+    For more information, see :cpp:member:`vnc_Server_SecurityCallback::authenticateUser`.
+
+    :param server:
+    :type server: :py:class:`vncsdk.Server`
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :param username:
+    :type username: str or None
+    :param password:
+    :type password: str or None
+    :rtype: {:py:class:`vncsdk.Server.Permissions`}
+
+.. py:function:: Server.SecurityCallback.is_password_required(server, connection)
+
+    Decide if a connecting Viewer is required to provide a password.
+
+    For more information, see :cpp:member:`vnc_Server_SecurityCallback::isPasswordRequired`.
+
+    :param server:
+    :type server: :py:class:`vncsdk.Server`
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :rtype: bool
+
+.. py:function:: Server.SecurityCallback.is_user_name_required(server, connection)
+
+    Decide if a connecting Viewer is required to provide a user name.
+
+    For more information, see :cpp:member:`vnc_Server_SecurityCallback::isUserNameRequired`.
+
+    :param server:
+    :type server: :py:class:`vncsdk.Server`
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :rtype: bool
+
+.. py:function:: Server.SecurityCallback.verify_peer(server, connection, viewer_hex_fingerprint, viewer_rsa_public)
+
+    Verify a Viewer's cryptographic identity.
+
+    For more information, see :cpp:member:`vnc_Server_SecurityCallback::verifyPeer`.
+
+    :param server:
+    :type server: :py:class:`vncsdk.Server`
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :param viewer_hex_fingerprint:
+    :type viewer_hex_fingerprint: str or None
+    :param viewer_rsa_public:
+    :type viewer_rsa_public: :py:class:`vncsdk.DataBuffer`
+    :rtype: bool
+

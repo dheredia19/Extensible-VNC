@@ -1,0 +1,34 @@
+Logger.Level
+============
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum Level
+   :outertype: Logger
+
+   Enumeration of log levels.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final Logger.Level BASIC
+   :outertype: Logger.Level
+
+   Useful information on the functioning of the system. This is the default log level.
+
+.. java:field:: public static final Logger.Level DEBUG
+   :outertype: Logger.Level
+
+   Logging of SDK operations, and for debug purposes, logging of internal information specific to RealVNC's implementation.
+
+.. java:field:: public static final Logger.Level ERROR
+   :outertype: Logger.Level
+
+   Information that the program is likely to stop functioning correctly.
+
+.. java:field:: public static final Logger.Level FULL
+   :outertype: Logger.Level
+
+   Comprehensive logging of all SDK operations (may degrade performance, and the log file will also contain secure information such as keystrokes)
+

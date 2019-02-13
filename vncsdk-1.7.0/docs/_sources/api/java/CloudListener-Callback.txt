@@ -1,0 +1,53 @@
+CloudListener.Callback
+======================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface Callback
+   :outertype: CloudListener
+
+   Callback for a \ :java:ref:`CloudListener`\ .
+
+Method Summary
+--------------
+==================== ==========================================================================================================================================================================================
+Modifier and Type    Method and Description                                                                                                                                                                    
+==================== ==========================================================================================================================================================================================
+:java:type:`boolean` :java:meth:`filterConnection <Callback.filterConnection(CloudListener, String)>`\ (:java:type:`CloudListener` listener, :java:type:`String` peerCloudAddress)                             
+                                                                                                                                                                                                               
+                     Notification to provide address-based filtering of incoming connections.                                                                                                                  
+-------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`listeningFailed <Callback.listeningFailed(CloudListener, String, int)>`\ (:java:type:`CloudListener` listener, :java:type:`String` cloudError, :java:type:`int` retryTimeSecs)
+                                                                                                                                                                                                               
+                     Notification that the Cloud listener has stopped listening and is unable to accept any more connections.                                                                                  
+-------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`listeningStatusChanged <Callback.listeningStatusChanged(CloudListener, Status)>`\ (:java:type:`CloudListener` listener, :java:type:`Status` status)                           
+                                                                                                                                                                                                               
+                     Notification that the listener status has changed.                                                                                                                                        
+==================== ==========================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  boolean filterConnection(CloudListener listener, String peerCloudAddress)
+   :outertype: CloudListener.Callback
+
+   Notification to provide address-based filtering of incoming connections.
+
+   For more information, see :cpp:member:`vnc_CloudListener_Callback::filterConnection`.
+
+.. java:method::  void listeningFailed(CloudListener listener, String cloudError, int retryTimeSecs)
+   :outertype: CloudListener.Callback
+
+   Notification that the Cloud listener has stopped listening and is unable to accept any more connections.
+
+   For more information, see :cpp:member:`vnc_CloudListener_Callback::listeningFailed`.
+
+.. java:method::  void listeningStatusChanged(CloudListener listener, Status status)
+   :outertype: CloudListener.Callback
+
+   Notification that the listener status has changed.
+
+   For more information, see :cpp:member:`vnc_CloudListener_Callback::listeningStatusChanged`.
+

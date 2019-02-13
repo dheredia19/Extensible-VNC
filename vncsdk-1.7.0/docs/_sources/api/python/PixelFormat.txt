@@ -1,0 +1,214 @@
+PixelFormat
+===========
+
+.. py:class:: vncsdk.PixelFormat
+
+    Description of how pixels are stored in a Viewer framebuffer.
+
+Constructor Summary
+-------------------
+================= ==============================================================================================================
+Modifier and Type Method and Description                                                                                        
+================= ==============================================================================================================
+\                 `__init__ <#constructor>`_\ (bits_per_pixel, red_max, green_max, blue_max, red_shift, green_shift, blue_shift)
+                                                                                                                                
+                  Creates a custom pixel format based on the given parameters.                                                  
+================= ==============================================================================================================
+
+
+Method Summary
+--------------
+============================== =============================================================================================================================================================================
+Modifier and Type              Method and Description                                                                                                                                                       
+============================== =============================================================================================================================================================================
+:py:class:`vncsdk.PixelFormat` :py:func:`bgr888 <vncsdk.PixelFormat.bgr888>`\ ()                                                                                                                            
+                                                                                                                                                                                                            
+                               32 bits per pixel stored as XXXXXXXXBBBBBBBBGGGGGGGGRRRRRRRR in most significant to least significant bit order For more information, see :cpp:func:`vnc_PixelFormat_bgr888`.
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.PixelFormat` :py:func:`rgb555 <vncsdk.PixelFormat.rgb555>`\ ()                                                                                                                            
+                                                                                                                                                                                                            
+                               16 bits per pixel stored as XRRRRRGGGGGBBBBB in most significant to least significant bit order For more information, see :cpp:func:`vnc_PixelFormat_rgb555`.                
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.PixelFormat` :py:func:`rgb565 <vncsdk.PixelFormat.rgb565>`\ ()                                                                                                                            
+                                                                                                                                                                                                            
+                               16 bits per pixel stored as RRRRRGGGGGGBBBBB in most significant to least significant bit order For more information, see :cpp:func:`vnc_PixelFormat_rgb565`.                
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.PixelFormat` :py:func:`rgb888 <vncsdk.PixelFormat.rgb888>`\ ()                                                                                                                            
+                                                                                                                                                                                                            
+                               32 bits per pixel stored as XXXXXXXXRRRRRRRRGGGGGGGGBBBBBBBB in most significant to least significant bit order For more information, see :cpp:func:`vnc_PixelFormat_rgb888`.
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+int                            :py:func:`blue_max <PixelFormat.blue_max>`\ ()                                                                                                                               
+                                                                                                                                                                                                            
+                               Gets the maximum value for the blue pixel value.                                                                                                                             
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+int                            :py:func:`blue_shift <PixelFormat.blue_shift>`\ ()                                                                                                                           
+                                                                                                                                                                                                            
+                               Gets the number of bits the blue pixel value is shifted.                                                                                                                     
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+int                            :py:func:`bpp <PixelFormat.bpp>`\ ()                                                                                                                                         
+                                                                                                                                                                                                            
+                               Gets the total number of bits per pixel.                                                                                                                                     
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+int                            :py:func:`depth <PixelFormat.depth>`\ ()                                                                                                                                     
+                                                                                                                                                                                                            
+                               Gets the number of significant bits that are used to store pixel data.                                                                                                       
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\                              :py:func:`destroy <PixelFormat.destroy>`\ ()                                                                                                                                 
+                                                                                                                                                                                                            
+                               Destroy a custom pixel format.                                                                                                                                               
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+int                            :py:func:`green_max <PixelFormat.green_max>`\ ()                                                                                                                             
+                                                                                                                                                                                                            
+                               Gets the maximum value for the green pixel value.                                                                                                                            
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+int                            :py:func:`green_shift <PixelFormat.green_shift>`\ ()                                                                                                                         
+                                                                                                                                                                                                            
+                               Gets the number of bits the green pixel value is shifted.                                                                                                                    
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+int                            :py:func:`red_max <PixelFormat.red_max>`\ ()                                                                                                                                 
+                                                                                                                                                                                                            
+                               Gets the maximum value for the red pixel value.                                                                                                                              
+------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+int                            :py:func:`red_shift <PixelFormat.red_shift>`\ ()                                                                                                                             
+                                                                                                                                                                                                            
+                               Gets the number of bits the red pixel value is shifted.                                                                                                                      
+============================== =============================================================================================================================================================================
+
+
+Constructor
+-----------
+
+.. py:method:: vncsdk.PixelFormat.__init__(bits_per_pixel, red_max, green_max, blue_max, red_shift, green_shift, blue_shift)
+
+    Creates a custom pixel format based on the given parameters.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_create`.
+
+    :param bits_per_pixel:
+    :type bits_per_pixel: int
+    :param red_max:
+    :type red_max: int
+    :param green_max:
+    :type green_max: int
+    :param blue_max:
+    :type blue_max: int
+    :param red_shift:
+    :type red_shift: int
+    :param green_shift:
+    :type green_shift: int
+    :param blue_shift:
+    :type blue_shift: int
+
+Static methods
+--------------
+
+.. py:function:: vncsdk.PixelFormat.bgr888()
+
+    32 bits per pixel stored as XXXXXXXXBBBBBBBBGGGGGGGGRRRRRRRR in most
+    significant to least significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_bgr888`.
+
+    :rtype: :py:class:`vncsdk.PixelFormat`
+
+.. py:function:: vncsdk.PixelFormat.rgb555()
+
+    16 bits per pixel stored as XRRRRRGGGGGBBBBB in most significant to least
+    significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_rgb555`.
+
+    :rtype: :py:class:`vncsdk.PixelFormat`
+
+.. py:function:: vncsdk.PixelFormat.rgb565()
+
+    16 bits per pixel stored as RRRRRGGGGGGBBBBB in most significant to least
+    significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_rgb565`.
+
+    :rtype: :py:class:`vncsdk.PixelFormat`
+
+.. py:function:: vncsdk.PixelFormat.rgb888()
+
+    32 bits per pixel stored as XXXXXXXXRRRRRRRRGGGGGGGGBBBBBBBB in most
+    significant to least significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_rgb888`.
+
+    :rtype: :py:class:`vncsdk.PixelFormat`
+
+Methods
+-------
+
+.. py:method:: PixelFormat.blue_max()
+
+    Gets the maximum value for the blue pixel value.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_blueMax`.
+
+    :rtype: int
+
+.. py:method:: PixelFormat.blue_shift()
+
+    Gets the number of bits the blue pixel value is shifted.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_blueShift`.
+
+    :rtype: int
+
+.. py:method:: PixelFormat.bpp()
+
+    Gets the total number of bits per pixel.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_bpp`.
+
+    :rtype: int
+
+.. py:method:: PixelFormat.depth()
+
+    Gets the number of significant bits that are used to store pixel data.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_depth`.
+
+    :rtype: int
+
+.. py:method:: PixelFormat.destroy()
+
+    Destroy a custom pixel format.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_destroy`.
+
+
+.. py:method:: PixelFormat.green_max()
+
+    Gets the maximum value for the green pixel value.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_greenMax`.
+
+    :rtype: int
+
+.. py:method:: PixelFormat.green_shift()
+
+    Gets the number of bits the green pixel value is shifted.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_greenShift`.
+
+    :rtype: int
+
+.. py:method:: PixelFormat.red_max()
+
+    Gets the maximum value for the red pixel value.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_redMax`.
+
+    :rtype: int
+
+.. py:method:: PixelFormat.red_shift()
+
+    Gets the number of bits the red pixel value is shifted.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_redShift`.
+
+    :rtype: int
+

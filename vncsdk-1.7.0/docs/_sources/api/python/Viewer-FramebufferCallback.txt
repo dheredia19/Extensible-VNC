@@ -1,0 +1,58 @@
+Viewer.FramebufferCallback
+==========================
+
+.. py:attribute:: vncsdk.Viewer.FramebufferCallback
+
+    Callback receiving framebuffer event notifications for a Viewer.
+
+Method Summary
+--------------
+================= =======================================================================================================
+Modifier and Type Method and Description                                                                                 
+================= =======================================================================================================
+\                 :py:func:`server_fb_size_changed <Viewer.FramebufferCallback.server_fb_size_changed>`\ (viewer, w, h)  
+                                                                                                                         
+                  Notification that the server's framebuffer size has changed.                                           
+----------------- -------------------------------------------------------------------------------------------------------
+\                 :py:func:`viewer_fb_updated <Viewer.FramebufferCallback.viewer_fb_updated>`\ (viewer, x, y, w, h)      
+                                                                                                                         
+                  Notification that the given rectangle of the viewer's framebuffer has been updated with new pixel data.
+================= =======================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: Viewer.FramebufferCallback.server_fb_size_changed(viewer, w, h)
+
+    Notification that the server's framebuffer size has changed.
+
+    For more information, see :cpp:member:`vnc_Viewer_FramebufferCallback::serverFbSizeChanged`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :param w:
+    :type w: int
+    :param h:
+    :type h: int
+    :return: None
+
+.. py:function:: Viewer.FramebufferCallback.viewer_fb_updated(viewer, x, y, w, h)
+
+    Notification that the given rectangle of the viewer's framebuffer has been
+    updated with new pixel data.
+
+    For more information, see :cpp:member:`vnc_Viewer_FramebufferCallback::viewerFbUpdated`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :param x:
+    :type x: int
+    :param y:
+    :type y: int
+    :param w:
+    :type w: int
+    :param h:
+    :type h: int
+    :return: None
+

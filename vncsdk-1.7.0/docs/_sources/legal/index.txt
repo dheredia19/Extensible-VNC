@@ -1,0 +1,15 @@
+Legal and support
+=================
+
+Question or comment? developer-support@realvnc.com.
+
+VNC Developer is part of the `RealVNC <http://www.realvnc.com/>`_ family. Copyright © RealVNC Limited 2016-2018. All rights reserved.
+
+RealVNC, VNC and RFB are trademarks of RealVNC Limited and are protected by trademark registrations and/or pending trademark applications in the European Union, United States of America and other jurisdictions. Other trademarks are the property of their respective owners. Protected by UK patent 2481870; US patent 8760366; EU patent 2652951.
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    foss
+    acknowledgements

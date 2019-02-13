@@ -1,0 +1,30 @@
+.. _Server.EncryptionLevel:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.EncryptionLevel
+----------------------
+
+.. enum:: Server.EncryptionLevel
+
+    Enumeration of encryption levels.
+
+    For more information, see :cpp:class:`vnc_Server_EncryptionLevel`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  Server.EncryptionLevel.Default
+
+    Use strong encryption.This is the default.
+
+    
+
+.. attribute::  Server.EncryptionLevel.Maximum
+
+    Use the strongest available encryption, possibly at the cost of speed.
+
+    
+

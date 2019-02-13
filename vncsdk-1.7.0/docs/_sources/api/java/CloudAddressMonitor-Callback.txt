@@ -1,0 +1,42 @@
+CloudAddressMonitor.Callback
+============================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface Callback
+   :outertype: CloudAddressMonitor
+
+   Callback for a \ :java:ref:`CloudAddressMonitor`\ .
+
+Method Summary
+--------------
+================= ================================================================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                                                          
+================= ================================================================================================================================================================================================================================
+:java:type:`void` :java:meth:`availabilityChanged <Callback.availabilityChanged(CloudAddressMonitor, String, Availability)>`\ (:java:type:`CloudAddressMonitor` monitor, :java:type:`String` cloudAddress, :java:type:`Availability` availability)
+                                                                                                                                                                                                                                                  
+                  Notification that the availability information for a Cloud address has changed.                                                                                                                                                 
+----------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`monitorPaused <Callback.monitorPaused(CloudAddressMonitor)>`\ (:java:type:`CloudAddressMonitor` monitor)                                                                                                            
+                                                                                                                                                                                                                                                  
+                  Notification that monitoring has been paused by an outgoing connection starting.                                                                                                                                                
+================= ================================================================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void availabilityChanged(CloudAddressMonitor monitor, String cloudAddress, Availability availability)
+   :outertype: CloudAddressMonitor.Callback
+
+   Notification that the availability information for a Cloud address has changed.
+
+   For more information, see :cpp:member:`vnc_CloudAddressMonitor_Callback::availabilityChanged`.
+
+.. java:method::  void monitorPaused(CloudAddressMonitor monitor)
+   :outertype: CloudAddressMonitor.Callback
+
+   Notification that monitoring has been paused by an outgoing connection starting.
+
+   For more information, see :cpp:member:`vnc_CloudAddressMonitor_Callback::monitorPaused`.
+

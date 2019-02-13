@@ -1,0 +1,99 @@
+CloudAddressMonitor
+===================
+
+.. js:data:: vncsdk.CloudAddressMonitor
+
+    Monitor used to query the availability of VNC Cloud addresses.
+
+Nested Classes
+--------------
+
+* :js:data:`vncsdk.CloudAddressMonitor.Availability`
+* :js:attr:`vncsdk.CloudAddressMonitor.Callback`
+
+Constructor Summary
+-------------------
+================= ================================================================================
+Modifier and Type Method and Description                                                          
+================= ================================================================================
+\                 `CloudAddressMonitor <#constructor>`_\ (connector, cloudAddresses, callback)    
+                                                                                                  
+                  Creates a monitor, which queries whether a list of cloud addresses is available.
+================= ================================================================================
+
+
+Method Summary
+--------------
+================= ============================================================================================
+Modifier and Type Method and Description                                                                      
+================= ============================================================================================
+\                 :js:func:`destroy <CloudAddressMonitor.destroy>`\ ()                                        
+                                                                                                              
+                  Destroys the Cloud monitor.                                                                 
+----------------- --------------------------------------------------------------------------------------------
+\                 :js:func:`pause <CloudAddressMonitor.pause>`\ ()                                            
+                                                                                                              
+                  Pauses the Cloud monitor.                                                                   
+----------------- --------------------------------------------------------------------------------------------
+\                 :js:func:`resume <CloudAddressMonitor.resume>`\ ()                                          
+                                                                                                              
+                  Resumes the Cloud monitor.                                                                  
+----------------- --------------------------------------------------------------------------------------------
+\                 :js:func:`setPauseOnConnect <CloudAddressMonitor.setPauseOnConnect>`\ (pauseOnConnect)      
+                                                                                                              
+                  Sets whether or not the Cloud monitor pauses automatically when a connection is established.
+================= ============================================================================================
+
+
+Constructor
+-----------
+
+.. js:class:: vncsdk.CloudAddressMonitor(connector, cloudAddresses, callback)
+
+    Creates a monitor, which queries whether a list of cloud addresses is
+    available.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_create`.
+
+    :param connector:
+    :type connector: :js:data:`vncsdk.CloudConnector`
+    :param cloudAddresses:
+    :type cloudAddresses: Array<string>
+    :param callback:
+    :type callback: :js:attr:`vncsdk.CloudAddressMonitor.Callback`
+    :throws: :js:data:`vncsdk.VncException` on error
+
+Methods
+-------
+
+.. js:function:: CloudAddressMonitor.destroy()
+
+    Destroys the Cloud monitor.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_destroy`.
+
+
+.. js:function:: CloudAddressMonitor.pause()
+
+    Pauses the Cloud monitor.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_pause`.
+
+
+.. js:function:: CloudAddressMonitor.resume()
+
+    Resumes the Cloud monitor.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_resume`.
+
+
+.. js:function:: CloudAddressMonitor.setPauseOnConnect(pauseOnConnect)
+
+    Sets whether or not the Cloud monitor pauses automatically when a connection
+    is established.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_setPauseOnConnect`.
+
+    :param pauseOnConnect:
+    :type pauseOnConnect: boolean
+

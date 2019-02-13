@@ -1,0 +1,31 @@
+
+.. _api_add_on_8h:
+
+AddOn.h
+=======
+
+.. raw :: html
+
+    <div id="method-tables">
+
+SDK add-on management.  `(more...) <#description>`_
+
+**Functions**
+
+================================================================================= ===================================================================================================
+Modifier and Type                                                                 Name and Description                                                                               
+================================================================================= ===================================================================================================
+function :ref:`vnc_status_t <api_common_8h_1a1f1cf3f7c00704dab3ab0197e3b19e56>`\  :ref:`vnc_enableAddOn <api_add_on_8h_1ab7e9f17c3367f9c64939fa590cc260b4>`\ (const char \*addOnCode)
+                                                                                                                                                                                     
+                                                                                  Enable an SDK add-on by passing in the content of the add-on code, obtained from RealVNC.          
+================================================================================= ===================================================================================================
+
+
+.. raw :: html
+
+    </div><a id="description"></a>
+
+**Detailed description**
+
+.. doxygenfile:: AddOn.h
+   :project: api

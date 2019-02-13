@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<!--
+Copyright (C) 2016-2017 RealVNC Limited. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors
+may be used to endorse or promote products derived from this software without
+specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+{% block head %}
+<title>{% block title %}{%endblock %}</title>
+<!-- Load third party JS libraries and styles -->
+<script src="{{ url_for('static', filename = 'libs/jquery-2.1.1.min.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'libs/tablesorter/jquery.tablesorter.min.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'libs/jquery-ui.min.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'libs/jquery.timers-1.2.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'libs/highlight/highlight.pack.js') }}">
+</script>
+<link rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename = 'libs/highlight/styles/github.css') }}"/>
+<link rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename = 'libs/jquery-ui.min.css') }}"/>
+<link rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename = 'libs/tablesorter/themes/theme.ice.css') }}"/>
+<!-- Load app styles -->
+<link rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename = 'css/app.css') }}"/>
+
+<!-- Setup common widgets used in every page -->
+<script type="text/javascript">
+    // Initialize highlight.js module.
+    hljs.initHighlightingOnLoad();
+
+    // Root used for building URLs from JavaScript.
+    var SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+
+    // Time value used for loading widget.
+    var initialTime = 0;
+
+    /**
+     * Hide "flashed" message after a few seconds.
+     */
+    function hideflash() {
+        if ($("#flash").is(":visible")) {
+            $("#flash").hide("fast");
+        }
+    }
+
+    /**
+     * Set up widgets when this page is loaded.
+     */
+    $(document).ready(function () {
+        window.setInterval(hideflash, 4000);
+        // Show loading animation when making server-side HTTP requests.
+        // We linger the animation for at least ~1 sec as it's perceptually
+        // less annoying.
+        var loading_anim = $('#loading_anim').hide();
+        $(document)
+            .ajaxStart(function () {
+                initialTime = (new Date()).getTime();
+                loading_anim.show(); })
+            .ajaxStop(function () {
+                var diff = (new Date()).getTime() - initialTime;
+                if (diff < 1000) {
+                    setTimeout(function () { loading_anim.hide(); }, 1000-diff);
+                } else {
+                    loading_anim.hide();
+                }
+            });
+    });
+</script>
+{% endblock %}
+</head>
+<body>
+<div class="banner">
+    <div class="banner_text">{% block banner %}{% endblock %}</div>
+    Obtain and manage Cloud addresses while your Viewer and Server apps are in
+    development.<br/>
+    See <a href="https://developer.realvnc.com/docs/latest/overview.html#using-vnc-cloud">https://developer.realvnc.com/docs/latest/overview.html#using-vnc-cloud</a> for more information.
+</div>
+{% block navigation %}
+{% endblock %}
+<div class="main">
+    <noscript>
+    <div class="ui-state-error">
+        <h2>This application requires JavaScript</h2>
+        <p>
+        Please enable JavaScript in your web browser and then refresh the
+        page.
+        </p>
+    </div>
+    </noscript>
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+        <div id="flash" class="ui-state-highlight"
+             style="margin-bottom:20px">{{ message }}</div>
+        {% endfor %}
+    {% endwith %}
+    <div id="content">
+    {% block content %}
+    {% endblock %}
+    </div>
+    <div id="footer">
+    {% block footer %}
+    {% endblock %}
+    </div>
+</div>
+</body>
+</html>

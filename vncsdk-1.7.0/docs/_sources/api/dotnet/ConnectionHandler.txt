@@ -1,0 +1,16 @@
+.. _ConnectionHandler:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+ConnectionHandler
+-----------------
+
+.. class:: ConnectionHandler
+
+    Opaque type for a connection handler, enabling a Viewer or Server to perform
+    a connection operation.
+
+    For more information, see :cpp:class:`vnc_ConnectionHandler`\  in the C API documentation.
+
+

@@ -1,0 +1,68 @@
+DirectTcpConnector
+==================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class DirectTcpConnector
+
+   Connector used to make outgoing TCP connections
+
+Constructor Summary
+-------------------
+* :java:construct:`DirectTcpConnector <DirectTcpConnector() throws Library.VncException>`\ ()
+
+  Creates a new TCP Connector which is used to make outgoing connections to TCP listeners.
+
+Method Summary
+--------------
+================= =============================================================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                                                       
+================= =============================================================================================================================================================================================================================
+:java:type:`void` :java:meth:`connect <DirectTcpConnector.connect(String, int, ConnectionHandler) throws Library.VncException>`\ (:java:type:`String` hostOrIpAddress, :java:type:`int` port, :java:type:`ConnectionHandler` connectionHandler)
+                                                                                                                                                                                                                                               
+                  Begins an outgoing TCP connection to the given hostname or IP address.                                                                                                                                                       
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`destroy <DirectTcpConnector.destroy()>`\ ()                                                                                                                                                                      
+                                                                                                                                                                                                                                               
+                  Destroys the TCP Connector.                                                                                                                                                                                                  
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`setProxySettings <DirectTcpConnector.setProxySettings(boolean, String) throws Library.VncException>`\ (:java:type:`boolean` systemProxy, :java:type:`String` proxyUrl)                                           
+                                                                                                                                                                                                                                               
+                  Set proxy server settings for this TCP Connector.                                                                                                                                                                            
+================= =============================================================================================================================================================================================================================
+
+Constructors
+------------
+
+.. java:constructor:: public DirectTcpConnector() throws Library.VncException
+   :outertype: DirectTcpConnector
+
+   Creates a new TCP Connector which is used to make outgoing connections to TCP listeners.
+
+   For more information, see :cpp:func:`vnc_DirectTcpConnector_create`.
+
+Methods
+-------
+
+.. java:method:: public void connect(String hostOrIpAddress, int port, ConnectionHandler connectionHandler) throws Library.VncException
+   :outertype: DirectTcpConnector
+
+   Begins an outgoing TCP connection to the given hostname or IP address.
+
+   For more information, see :cpp:func:`vnc_DirectTcpConnector_connect`.
+
+.. java:method:: public void destroy()
+   :outertype: DirectTcpConnector
+
+   Destroys the TCP Connector.
+
+   For more information, see :cpp:func:`vnc_DirectTcpConnector_destroy`.
+
+.. java:method:: public void setProxySettings(boolean systemProxy, String proxyUrl) throws Library.VncException
+   :outertype: DirectTcpConnector
+
+   Set proxy server settings for this TCP Connector.
+
+   For more information, see :cpp:func:`vnc_DirectTcpConnector_setProxySettings`.
+

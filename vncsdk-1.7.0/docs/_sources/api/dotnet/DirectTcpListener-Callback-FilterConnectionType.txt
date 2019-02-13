@@ -1,0 +1,15 @@
+.. _DirectTcpListener.Callback.FilterConnectionType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DirectTcpListener.Callback.FilterConnectionType
+-----------------------------------------------
+
+.. attribute:: DirectTcpListener.Callback.FilterConnectionType
+
+    The type of the :attr:`DirectTcpListener.Callback.FilterConnection`\  callback.
+
+    
+
+

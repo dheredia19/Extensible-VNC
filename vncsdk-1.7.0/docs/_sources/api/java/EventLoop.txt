@@ -1,0 +1,56 @@
+EventLoop
+=========
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class EventLoop
+
+   A container for static methods.
+
+Method Summary
+--------------
+==================== ==================================================================================================================================================
+Modifier and Type    Method and Description                                                                                                                            
+==================== ==================================================================================================================================================
+:java:type:`void`    :java:meth:`run <EventLoop.run() throws InterruptedException>`\ ()                                                                                
+                                                                                                                                                                       
+                     Runs the SDK event loop.                                                                                                                          
+-------------------- --------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`boolean` :java:meth:`shouldStop <EventLoop.shouldStop()>`\ ()                                                                                              
+                                                                                                                                                                       
+                     Returns a boolean flag indicating whether the event loop should stop, and immediately clears it.                                                  
+-------------------- --------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`stop <EventLoop.stop()>`\ ()                                                                                                          
+                                                                                                                                                                       
+                     Stops the SDK event loop, causing \ :java:ref:`run`\  to exit if it is already running, or to exit immediately the next time it is entered if not.
+==================== ==================================================================================================================================================
+
+Methods
+-------
+
+.. java:method:: public static void run() throws InterruptedException
+   :outertype: EventLoop
+
+   Runs the SDK event loop. This function may not be used if the \ :java:ref:`Library.init`\  method was called with the \ :java:ref:`ANDROID <Library.EventLoopType.ANDROID>`\  event loop type; instead Android's Looper methods must be used to run the loop.
+
+   The function runs until either the \ :java:ref:`stop`\  method is called, or the thread is interrupted.
+
+   After \ :java:ref:`stop`\  has been called, or the thread has been interrupted, it is acceptable to call the \ ``run``\  method again.
+
+   :throws InterruptedException: Thrown when the \ :java:ref:`Thread.interrupt`\  method is used to break out of the \ ``run``\  method.
+
+.. java:method:: public static boolean shouldStop()
+   :outertype: EventLoop
+
+   Returns a boolean flag indicating whether the event loop should stop, and immediately clears it.
+
+   For more information, see :cpp:func:`vnc_EventLoop_shouldStop`.
+
+.. java:method:: public static void stop()
+   :outertype: EventLoop
+
+   Stops the SDK event loop, causing \ :java:ref:`run`\  to exit if it is already running, or to exit immediately the next time it is entered if not.
+
+   This is the \ *only*\  SDK method which may be called on a thread other than the thread which called \ :java:ref:`Library.init`\ .
+

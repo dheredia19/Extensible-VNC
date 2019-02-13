@@ -1,0 +1,15 @@
+.. _Viewer.FramebufferCallback.ServerFbSizeChangedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.FramebufferCallback.ServerFbSizeChangedType
+--------------------------------------------------
+
+.. attribute:: Viewer.FramebufferCallback.ServerFbSizeChangedType
+
+    The type of the :attr:`Viewer.FramebufferCallback.ServerFbSizeChanged`\  callback.
+
+    
+
+

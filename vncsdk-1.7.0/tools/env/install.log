@@ -1,0 +1,20 @@
+Config variable 'Py_DEBUG' is unset, Python ABI tag may be incorrect
+Config variable 'WITH_PYMALLOC' is unset, Python ABI tag may be incorrect
+Created temporary directory: C:\Users\Danie\AppData\Local\Temp\pip-ephem-wheel-cache-h7mw1ld4
+Created temporary directory: C:\Users\Danie\AppData\Local\Temp\pip-req-tracker-6v5kn_op
+Created requirements tracker 'C:\\Users\\Danie\\AppData\\Local\\Temp\\pip-req-tracker-6v5kn_op'
+Created temporary directory: C:\Users\Danie\AppData\Local\Temp\pip-install-9kjh0nbs
+Requirement already satisfied: argparse==1.4.0 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 1)) (1.4.0)
+Requirement already satisfied: certifi==2018.1.18 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 2)) (2018.1.18)
+Requirement already satisfied: chardet==3.0.4 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 3)) (3.0.4)
+Requirement already satisfied: click==6.7 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 4)) (6.7)
+Requirement already satisfied: Flask==0.12.2 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 5)) (0.12.2)
+Requirement already satisfied: idna==2.6 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 6)) (2.6)
+Requirement already satisfied: itsdangerous==0.24 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 7)) (0.24)
+Requirement already satisfied: Jinja2==2.10 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 8)) (2.10)
+Requirement already satisfied: MarkupSafe==1.0 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 9)) (1.0)
+Requirement already satisfied: requests==2.18.4 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 10)) (2.18.4)
+Requirement already satisfied: urllib3==1.22 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 11)) (1.22)
+Requirement already satisfied: Werkzeug==0.14.1 in c:\users\danie\dropbo~1\homesy~1\downlo~1\vncsdk~1.0\tools\vncclo~1\env\lib\site-packages (from -r C:\Users\Danie\Dropbox (Choate)\Home Sync\Downloads\vncsdk-1.7.0\tools\vnccloudaddresstool\\requirements.txt (line 12)) (0.14.1)
+Cleaning up...
+Removed build tracker 'C:\\Users\\Danie\\AppData\\Local\\Temp\\pip-req-tracker-6v5kn_op'

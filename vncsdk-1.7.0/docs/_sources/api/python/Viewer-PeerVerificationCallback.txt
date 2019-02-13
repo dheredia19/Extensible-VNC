@@ -1,0 +1,51 @@
+Viewer.PeerVerificationCallback
+===============================
+
+.. py:attribute:: vncsdk.Viewer.PeerVerificationCallback
+
+    Callback receiving verification requests to check the peer's identity.
+
+Method Summary
+--------------
+================= ===========================================================================================================================================
+Modifier and Type Method and Description                                                                                                                     
+================= ===========================================================================================================================================
+\                 :py:func:`cancel_peer_verification <Viewer.PeerVerificationCallback.cancel_peer_verification>`\ (viewer)                                   
+                                                                                                                                                             
+                  Notification to cancel a prior request for peer verification.                                                                              
+----------------- -------------------------------------------------------------------------------------------------------------------------------------------
+\                 :py:func:`verify_peer <Viewer.PeerVerificationCallback.verify_peer>`\ (viewer, hex_fingerprint, catchphrase_fingerprint, server_rsa_public)
+                                                                                                                                                             
+                  Request to verify the identity of the peer (the server).                                                                                   
+================= ===========================================================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: Viewer.PeerVerificationCallback.cancel_peer_verification(viewer)
+
+    Notification to cancel a prior request for peer verification.
+
+    For more information, see :cpp:member:`vnc_Viewer_PeerVerificationCallback::cancelPeerVerification`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :return: None
+
+.. py:function:: Viewer.PeerVerificationCallback.verify_peer(viewer, hex_fingerprint, catchphrase_fingerprint, server_rsa_public)
+
+    Request to verify the identity of the peer (the server).
+
+    For more information, see :cpp:member:`vnc_Viewer_PeerVerificationCallback::verifyPeer`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :param hex_fingerprint:
+    :type hex_fingerprint: str or None
+    :param catchphrase_fingerprint:
+    :type catchphrase_fingerprint: str or None
+    :param server_rsa_public:
+    :type server_rsa_public: :py:class:`vncsdk.DataBuffer`
+    :return: None
+

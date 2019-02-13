@@ -1,0 +1,186 @@
+{% import 'macros.html' as macros %}
+{% extends "base.html" %}
+{% block title %}VNC Cloud Address Tool{% endblock %}
+{% block banner %}VNC Cloud Address Tool{% endblock %}
+
+{% block head %}
+{{ super() }}
+<script src="{{ url_for('static', filename = 'js/app.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'js/app-comms.js') }}">
+</script>
+<script>
+    /**
+     *  Argmuments passed in by application.
+     */
+    var record_id = {{ record_id|tojson|safe }};
+    var key = {{ key|tojson|safe }};
+    /**
+     * Set the URLs for retrieving and creating Cloud addresses using
+     * Flask's URL builder.
+     */
+    var get_addresses_app_url = "{{ url_for('_get_cloud_addresses') }}";
+    var create_addresses_app_url = "{{ url_for('_create_cloud_addresses') }}";
+    /**
+     * Set the HTML templates that we will use to generate Cloud address tables
+     * dynamically in JavaScript.
+     */
+    var addr_table_tmpl = '{{ macros.addr_table_tmpl() }}';
+    var addr_row_tmpl = '{{ macros.addr_row_tmpl() }}';
+
+    /**
+     * Set up page elements when this page is loaded.
+     */
+    $(document).ready(function ()
+    {
+        // Initialize jQuery spinner widgets.
+        init_spinner($("#viewer_spinner"));
+        init_spinner($("#server_spinner"));
+
+        // Hide elements.
+        $("#dialog").hide();
+
+        // Get all Cloud addresses for Cloud API key and add them to a table.
+        get_cloud_addresses(record_id);
+
+        $("#show_create").click(function (event) {
+            if ($("#create_cloud_addresses").is(':visible')) {
+                $("#create_cloud_addresses").hide("fast");
+                $("#show_create").prop('value', 'Create');
+            } else {
+                $("#create_cloud_addresses").show("fast");
+                $("#show_create").prop('value', 'Hide');
+            }
+        });
+
+        // Configure "Obtain" button
+        $("#create").click(function (event) {
+            var group = $("#prefix").val().trim();
+            if (!group) {
+                show_error("Please enter a group name.");
+                return;
+            }
+            hide_error();
+            create_cloud_addresses(record_id, group);
+        });
+
+        // Enable or disable "Obtain" button depending if we have in-flight
+        // AJAX POST requests
+        $(document)
+            .ajaxStart(function () {
+                $("#create").prop('disabled', true);
+            })
+            .ajaxStop(function () {
+                $("#create").prop('disabled', false);
+            });
+
+
+        // Hitting Enter on the final textbox initiates the action to
+        // create Cloud addresses
+        $("#prefix").keypress(function (e) {
+            if(e.which == 13) { $("#create").click(); }
+        });
+
+        $("input:text:visible:first").focus();
+
+        jQuery(document).keydown(function (e) {
+            // Select entire snippet if Ctrl-A or Cmd-A is entered
+            if ($("#dialog").is(':visible') && (e.ctrlKey || e.metaKey) &&
+                (e.keyCode == 65 || e.keyCode == 97)) {
+                e.preventDefault();
+                addSelection("select_snippet");
+            }
+        });
+
+  });
+
+</script>
+
+{% endblock %}
+
+<!-- Navigation bar -->
+{% block navigation %}
+<div class="navigation">
+<table>
+<tr>
+    <td id="account">
+    <div class="ui-icon ui-icon-white ui-icon-person"
+         style="float:left; margin-right:10px;"></div>
+    <div id="apikey" style="margin-top:2px">
+    <span>API key: <span id="apikey">{{ key }}</span></span>
+    </div>
+    </td>
+    <td>
+        <div id="logout">( <a href="{{ url_for('logout') }}">log out</a> )</div>
+    </td>
+</tr>
+</table>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<!-- Dialog for creating Cloud addresses for a given group -->
+
+<h2 class="heading">Obtain Cloud addresses</h2>
+
+<div id="create_cloud_addresses">
+<table>
+<tr>
+<td>
+<!-- Inline error notification -->
+{% include 'partial_notification.html' %}
+</td>
+</tr>
+<tr>
+<td>
+<div class="spinner">
+Obtain one Viewer Cloud address for each Viewer device:
+<input id="viewer_spinner" name="value"/>
+</div>
+<div class="spinner">
+Obtain one Server Cloud address for each Server device:
+<input id="server_spinner" name="value"/>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<p class="instructions">
+Specify a group name. Viewers in other groups cannot connect to these Servers:
+<input id="prefix" name="prefix" type="text" size="40" value=""
+       placeholder="Enter a memorable name for group"/>
+</p>
+</td>
+</tr>
+<tr class="action">
+<td>
+<div style="text-align: right">
+    <input class="blue_flat_button" id="create" type="button" value="Obtain"/>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- Loading indicator -->
+<div style="text-align:center; height:30px; padding:10px">
+<div id="loading_anim">
+    <img src="{{ url_for('static', filename = 'images/ajax-loader.gif') }}"/>
+</div>
+</div>
+
+<!-- One or more tables of user's Cloud addresses -->
+<h2 class="heading">Manage Cloud addresses</h2>
+<div id="my_cloud_addresses">
+</div>
+
+<!-- Modal dialog showing sample code -->
+<div id="dialog" title="VNC Cloud addresses">
+<div class="code_sample">
+<pre id="select_snippet"><code id="snippet" class="json"></code></pre>
+</div>
+<p>Enter Ctrl-A or Command-A to select the code snippet</p>
+</div>
+
+{% endblock %}

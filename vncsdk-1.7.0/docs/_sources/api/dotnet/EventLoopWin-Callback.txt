@@ -1,0 +1,90 @@
+.. _EventLoopWin.Callback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+EventLoopWin.Callback
+---------------------
+
+.. class:: EventLoopWin.Callback
+
+    Callback receiving notifications for a Windows HANDLE-based event loop.
+
+    For more information, see :cpp:func:`vnc_EventLoopWin_Callback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`EventLoopWin.Callback.EventUpdatedType`
+- :ref:`EventLoopWin.Callback.TimerUpdatedType`
+
+**Constructor summary**
+
+================= ===============================================================================================================================
+Modifier and Type Method and Description                                                                                                         
+================= ===============================================================================================================================
+\                 :meth:`EventLoopWin.Callback`\ (:attr:`EventLoopWin.Callback.EventUpdatedType`, :attr:`EventLoopWin.Callback.TimerUpdatedType`)
+                                                                                                                                                 
+                  Initializes a new Callback class instance.                                                                                     
+================= ===============================================================================================================================
+
+
+**Method summary**
+
+================= ===========================================================================================================
+Modifier and Type Method and Description                                                                                     
+================= ===========================================================================================================
+:type:`void`      :meth:`EventLoopWin.Callback.OnEventUpdated`\ (:type:`System.Threading.WaitHandle`, :type:`System.Boolean`)
+                                                                                                                             
+                  Handles the EventUpdated event.                                                                            
+                  By default, calls the EventUpdated delegate.                                                               
+----------------- -----------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`EventLoopWin.Callback.OnTimerUpdated`\ (:type:`System.Int32`)                                       
+                                                                                                                             
+                  Handles the TimerUpdated event.                                                                            
+                  By default, calls the TimerUpdated delegate.                                                               
+================= ===========================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: EventLoopWin.Callback(EventLoopWin.Callback.EventUpdatedType a, EventLoopWin.Callback.TimerUpdatedType b)
+
+    Initializes a new Callback class instance.
+
+    For more information, see :cpp:func:`vnc_EventLoopWin_Callback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void EventLoopWin.Callback.OnEventUpdated(System.Threading.WaitHandle a, System.Boolean b)
+
+    Handles the EventUpdated event.
+    By default, calls the EventUpdated delegate.
+
+    
+
+.. method:: void EventLoopWin.Callback.OnTimerUpdated(System.Int32 a)
+
+    Handles the TimerUpdated event.
+    By default, calls the TimerUpdated delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  EventLoopWin.Callback.EventUpdated
+
+    Notification that a Windows event is being added or removed.
+
+    For more information, see :cpp:member:`vnc_EventLoopWin_Callback::eventUpdated`\  in the C API documentation.
+
+.. attribute::  EventLoopWin.Callback.TimerUpdated
+
+    Notification that the timer expiry period has been updated.
+
+    For more information, see :cpp:member:`vnc_EventLoopWin_Callback::timerUpdated`\  in the C API documentation.
+

@@ -1,0 +1,67 @@
+DataStore
+=========
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class DataStore
+
+   A container for static methods.
+
+Nested Classes
+--------------
+* interface :java:type:`DataStore.Callback`
+
+Method Summary
+--------------
+================= ========================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                  
+================= ========================================================================================================================================================
+:java:type:`void` :java:meth:`createCustomStore <DataStore.createCustomStore(DataStore.Callback) throws Library.VncException>`\ (:java:type:`DataStore.Callback` callback)
+                                                                                                                                                                          
+                  Creates a custom data store.                                                                                                                            
+----------------- --------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`createFileStore <DataStore.createFileStore(String) throws Library.VncException>`\ (:java:type:`String` path)                                
+                                                                                                                                                                          
+                  Creates a file data store.                                                                                                                              
+----------------- --------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`createRegistryStore <DataStore.createRegistryStore(String) throws Library.VncException>`\ (:java:type:`String` registryPath)                
+                                                                                                                                                                          
+                  Creates a registry data store.                                                                                                                          
+----------------- --------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`destroyStore <DataStore.destroyStore()>`\ ()                                                                                                
+                                                                                                                                                                          
+                  Destroys the current data store.                                                                                                                        
+================= ========================================================================================================================================================
+
+Methods
+-------
+
+.. java:method:: public static void createCustomStore(DataStore.Callback callback) throws Library.VncException
+   :outertype: DataStore
+
+   Creates a custom data store.
+
+   For more information, see :cpp:func:`vnc_DataStore_createCustomStore`.
+
+.. java:method:: public static void createFileStore(String path) throws Library.VncException
+   :outertype: DataStore
+
+   Creates a file data store.
+
+   For more information, see :cpp:func:`vnc_DataStore_createFileStore`.
+
+.. java:method:: public static void createRegistryStore(String registryPath) throws Library.VncException
+   :outertype: DataStore
+
+   Creates a registry data store.
+
+   For more information, see :cpp:func:`vnc_DataStore_createRegistryStore`.
+
+.. java:method:: public static void destroyStore()
+   :outertype: DataStore
+
+   Destroys the current data store.
+
+   For more information, see :cpp:func:`vnc_DataStore_destroyStore`.
+

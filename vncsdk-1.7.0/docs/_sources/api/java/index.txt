@@ -1,0 +1,84 @@
+Java API
+========
+
+The VNC SDK provides Java bindings, enabling you to create a VNC Viewer or a VNC Server app for a suitable platform, such as Android. Note a VNC Server app for Android is view-only; the device screen can be captured but input events cannot be injected.
+
+The VNC SDK is provided by a shared library (DLL) which can be accessed either using the C API, or using the bindings provided for other programming languages. These Java bindings depend on the SDK shared library being present; although the Java code is cross-platform, the platform-native shared library is required. The shared library is found by Java using library search path system property (\ ``"java.library.path"``\ ); on Android, libraries should be placed in the app's \ ``jniLibs``\  directory.
+
+The primary source for documentation on the VNC SDK is provided by the :doc:`C API reference </api/c/index>`. Most methods provided through the Java bindings are documented by a brief summary only, since the full behaviour and description of each method and argument is contained in the C API reference. This documentation for the Java bindings fully describes only the behaviour which is unique to the Java bindings.
+
+Methods and their types are mapped into Java as follows:
+
+..
+
+* Each structure in the C API is mapped to a corresponding Java class. For example, \ ``vnc_DataBuffer``\  corresponds to \ :java:ref:`com.realvnc.vncsdk.DataBuffer`\ . Each function operating on a C type is mapped to a method on the Java class, such as \ :java:ref:`DataBuffer.getData <com.realvnc.vncsdk.DataBuffer.getData>`\  for \ ``vnc_DataBuffer_getData``\ . The constructors of Java classes correspond to the \ ``create``\  methods in the C API.
+* Each callback and enum is mapped to a corresponding object in the Java API. In order to use the callback, create an object which implements the interface and pass that to any function which accepts a callback structure.
+* Arguments are mapped to their native Java types. Pass in a Java \ :java:ref:`java.lang.String`\  where the C API uses a \ ``const char*``\ , Java arrays for C-style arrays, and Java primitives for C integers.
+* Although Java is a garbage-collected language, every object created by the VNC SDK \ *must*\  be explicitly destroyed by the user with its \ ``destroy``\  method. The Java garbage collector is used to reclaim memory, and is not designed to clean up resources such as open network connections, files, and UI components. Since most SDK objects hold references to shared long-running tasks such as network connections, it is not appropriate to expect the garbage collector to reclaim SDK objects: they must all be closed with the \ ``destroy``\  method.
+* Many functions in the VNC SDK return return an error if an unexpected condition occurred or the arguments were invalid. In the C API, this is indicated by functions returning \ ``vnc_failure``\  or \ ``NULL``\ , and the error condition can be found by calling \ ``vnc_getLastError``\ . In the Java bindings, this function is not available, as all errors are indicated by throwing exceptions. For all cases where C API returns an error, the Java bindings throw a \ :java:ref:`com.realvnc.vncsdk.Library.VncException`\ , whose \ ``errorCode``\  field contains the strings described in the C API reference. Many methods can also throw standard Java exceptions such as \ :java:ref:`java.lang.NullPointerException`\  or \ :java:ref:`java.lang.IllegalArgumentException`\ , if the API is incorrectly used.
+* The \ :java:ref:`com.realvnc.vncsdk.Library`\  class contains global functions from the C API which are not associated with any particular class.
+
+.. java:package:: com.realvnc.vncsdk
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   AnnotationManager
+   AnnotationManager-Callback
+   CloudAddressMonitor
+   CloudAddressMonitor-Availability
+   CloudAddressMonitor-Callback
+   CloudConnector
+   CloudListener
+   CloudListener-Callback
+   CloudListener-Status
+   Connection
+   ConnectionHandler
+   DataBuffer
+   DataStore
+   DataStore-Callback
+   DirectTcp
+   DirectTcpConnector
+   DirectTcpListener
+   DirectTcpListener-Callback
+   DisplayManager
+   DisplayManager-Callback
+   EventLoop
+   ImmutableDataBuffer
+   ImmutablePixelFormat
+   Keyboard
+   Library
+   Library-DestroyedObjectException
+   Library-EventLoopType
+   Library-VncException
+   Logger
+   Logger-Callback
+   Logger-Level
+   MessagingManager
+   MessagingManager-Callback
+   PixelFormat
+   RsaKey
+   RsaKey-Callback
+   Server
+   Server-AgentCallback
+   Server-CaptureMethod
+   Server-ConnectionCallback
+   Server-DisconnectFlags
+   Server-EncryptionLevel
+   Server-Permissions
+   Server-SecurityCallback
+   ServerImageCallback
+   Viewer
+   Viewer-AuthenticationCallback
+   Viewer-ConnectionCallback
+   Viewer-ConnectionStatus
+   Viewer-DisconnectFlags
+   Viewer-EncryptionLevel
+   Viewer-FramebufferCallback
+   Viewer-MouseButton
+   Viewer-MouseWheel
+   Viewer-PeerVerificationCallback
+   Viewer-PictureQuality
+   Viewer-ServerEventCallback
+

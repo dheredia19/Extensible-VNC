@@ -1,0 +1,300 @@
+.. _Server:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server
+------
+
+.. class:: Server
+
+    A VNC-compatible Server enabling a computer to be remotely controlled.
+
+    For more information, see :cpp:class:`vnc_Server`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Server.SecurityCallback`
+- :ref:`Server.ConnectionCallback`
+- :ref:`Server.AgentCallback`
+- :ref:`Server.DisconnectFlags`
+- :ref:`Server.CaptureMethod`
+- :ref:`Server.Permissions`
+- :ref:`Server.EncryptionLevel`
+
+**Constructor summary**
+
+================= =======================================
+Modifier and Type Method and Description                 
+================= =======================================
+:type:`Server`    :meth:`Server`\ (:type:`System.String`)
+                                                         
+                  Creates a Server.                      
+================= =======================================
+
+
+**Method summary**
+
+========================= ======================================================================================================
+Modifier and Type         Method and Description                                                                                
+========================= ======================================================================================================
+:type:`Server`            :meth:`Server.CreateService`\ (:type:`System.String`)                                                 
+                                                                                                                                
+                          Creates a Server running as a service.                                                                
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.Dispose`\ ()                                                                            
+                                                                                                                                
+                          Destroys the Server.                                                                                  
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.SetConnectionCallback`\ (:type:`Server.ConnectionCallback`)                             
+                                                                                                                                
+                          Sets connection-related callbacks for the Server.                                                     
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`int`               :meth:`Server.GetConnectionCount`\ ()                                                                 
+                                                                                                                                
+                          Returns the total number of Viewers currently connected to the Server.                                
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.SetSecurityCallback`\ (:type:`Server.SecurityCallback`)                                 
+                                                                                                                                
+                          Sets security-related callbacks for the Server.                                                       
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.SetPermissions`\ (:type:`Connection`, :type:`Server.Permissions`)                       
+                                                                                                                                
+                          Changes permissions for a Viewer mid-session.                                                         
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`Permissions`       :meth:`Server.GetPermissions`\ (:type:`Connection`)                                                   
+                                                                                                                                
+                          Gets the set of current permissions for a Viewer.                                                     
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.SetAgentCallback`\ (:type:`Server.AgentCallback`)                                       
+                                                                                                                                
+                          Sets agent-related callbacks for the Server.                                                          
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`bool`              :meth:`Server.IsAgentReady`\ ()                                                                       
+                                                                                                                                
+                          Determines if the :code:`vncagent`\  process is ready and available to capture the                    
+                          display and inject input events.                                                                      
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.SetFriendlyName`\ (:type:`System.String`)                                               
+                                                                                                                                
+                          Specifies a friendly name for the Server, to send to connected Viewers.                               
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`ConnectionHandler` :meth:`Server.GetConnectionHandler`\ ()                                                               
+                                                                                                                                
+                          Obtains the Server's :type:`ConnectionHandler`\  for performing connection                            
+                          operations.                                                                                           
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.SetCaptureMethod`\ (:type:`Server.CaptureMethod`)                                       
+                                                                                                                                
+                          Specifies the screen capture method used by the Server.                                               
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`string`            :meth:`Server.GetPeerAddress`\ (:type:`Connection`)                                                   
+                                                                                                                                
+                          Returns the address of a particular connected Viewer.                                                 
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.Disconnect`\ (:type:`Connection`, :type:`System.String`, :type:`Server.DisconnectFlags`)
+                                                                                                                                
+                          Disconnects a particular Viewer, optionally specifying a message.                                     
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.DisconnectAll`\ (:type:`System.String`, :type:`Server.DisconnectFlags`)                 
+                                                                                                                                
+                          Disconnects all Viewers, optionally specifying a message.                                             
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.SetBlacklist`\ (:type:`System.Int32`, :type:`System.Int32`)                             
+                                                                                                                                
+                          Specifies a blacklist threshold and timeout for the Server.                                           
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`AnnotationManager` :meth:`Server.GetAnnotationManager`\ ()                                                               
+                                                                                                                                
+                          Obtains the Server's :type:`AnnotationManager`\  for handling annotation                              
+                          operations.                                                                                           
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`MessagingManager`  :meth:`Server.GetMessagingManager`\ ()                                                                
+                                                                                                                                
+                          Obtains the Server's :type:`MessagingManager`\  for handling messaging.                               
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`DisplayManager`    :meth:`Server.GetDisplayManager`\ ()                                                                  
+                                                                                                                                
+                          Obtains the Server's :type:`DisplayManager`\ , for managing the list of                               
+                          displays made available by the Server.                                                                
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.SetEncryptionLevel`\ (:type:`Server.EncryptionLevel`)                                   
+                                                                                                                                
+                          Sets the desired encryption level of the session from the range of options                            
+                          enumerated by :enum:`Server.EncryptionLevel`\ .                                                       
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`EncryptionLevel`   :meth:`Server.GetEncryptionLevel`\ (:type:`Connection`)                                               
+                                                                                                                                
+                          Returns the encryption level being used with an incoming connection,                                  
+                          or the Server's current encryption level if the connection is NULL.                                   
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`void`              :meth:`Server.SetIdleTimeout`\ (:type:`System.Int32`)                                                 
+                                                                                                                                
+                          Sets the number of seconds to wait before disconnecting idle Viewers.                                 
+------------------------- ------------------------------------------------------------------------------------------------------
+:type:`int`               :meth:`Server.GetIdleTimeout`\ ()                                                                     
+                                                                                                                                
+                          Gets the current number of seconds to wait before disconnecting idle                                  
+                          Viewers.                                                                                              
+========================= ======================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: Server(System.String a)
+
+    Creates a Server.
+
+    For more information, see :cpp:func:`vnc_Server_create`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: Server Server.CreateService(System.String a)
+
+    Creates a Server running as a service.
+
+    For more information, see :cpp:func:`vnc_Server_createService`\  in the C API documentation.
+
+.. method:: void Server.Dispose()
+
+    Destroys the Server.
+
+    For more information, see :cpp:func:`vnc_Server_destroy`\  in the C API documentation.
+
+.. method:: void Server.SetConnectionCallback(Server.ConnectionCallback a)
+
+    Sets connection-related callbacks for the Server.
+
+    For more information, see :cpp:func:`vnc_Server_setConnectionCallback`\  in the C API documentation.
+
+.. method:: int Server.GetConnectionCount()
+
+    Returns the total number of Viewers currently connected to the Server.
+
+    For more information, see :cpp:func:`vnc_Server_getConnectionCount`\  in the C API documentation.
+
+.. method:: void Server.SetSecurityCallback(Server.SecurityCallback a)
+
+    Sets security-related callbacks for the Server.
+
+    For more information, see :cpp:func:`vnc_Server_setSecurityCallback`\  in the C API documentation.
+
+.. method:: void Server.SetPermissions(Connection a, Server.Permissions b)
+
+    Changes permissions for a Viewer mid-session.
+
+    For more information, see :cpp:func:`vnc_Server_setPermissions`\  in the C API documentation.
+
+.. method:: Permissions Server.GetPermissions(Connection a)
+
+    Gets the set of current permissions for a Viewer.
+
+    For more information, see :cpp:func:`vnc_Server_getPermissions`\  in the C API documentation.
+
+.. method:: void Server.SetAgentCallback(Server.AgentCallback a)
+
+    Sets agent-related callbacks for the Server.
+
+    For more information, see :cpp:func:`vnc_Server_setAgentCallback`\  in the C API documentation.
+
+.. method:: bool Server.IsAgentReady()
+
+    Determines if the :code:`vncagent`\  process is ready and available to capture the
+    display and inject input events.
+
+    For more information, see :cpp:func:`vnc_Server_isAgentReady`\  in the C API documentation.
+
+.. method:: void Server.SetFriendlyName(System.String a)
+
+    Specifies a friendly name for the Server, to send to connected Viewers.
+
+    For more information, see :cpp:func:`vnc_Server_setFriendlyName`\  in the C API documentation.
+
+.. method:: ConnectionHandler Server.GetConnectionHandler()
+
+    Obtains the Server's :type:`ConnectionHandler`\  for performing connection
+    operations.
+
+    For more information, see :cpp:func:`vnc_Server_getConnectionHandler`\  in the C API documentation.
+
+.. method:: void Server.SetCaptureMethod(Server.CaptureMethod a)
+
+    Specifies the screen capture method used by the Server.
+
+    For more information, see :cpp:func:`vnc_Server_setCaptureMethod`\  in the C API documentation.
+
+.. method:: string Server.GetPeerAddress(Connection a)
+
+    Returns the address of a particular connected Viewer.
+
+    For more information, see :cpp:func:`vnc_Server_getPeerAddress`\  in the C API documentation.
+
+.. method:: void Server.Disconnect(Connection a, System.String b, Server.DisconnectFlags c)
+
+    Disconnects a particular Viewer, optionally specifying a message.
+
+    For more information, see :cpp:func:`vnc_Server_disconnect`\  in the C API documentation.
+
+.. method:: void Server.DisconnectAll(System.String a, Server.DisconnectFlags b)
+
+    Disconnects all Viewers, optionally specifying a message.
+
+    For more information, see :cpp:func:`vnc_Server_disconnectAll`\  in the C API documentation.
+
+.. method:: void Server.SetBlacklist(System.Int32 a, System.Int32 b)
+
+    Specifies a blacklist threshold and timeout for the Server.
+
+    For more information, see :cpp:func:`vnc_Server_setBlacklist`\  in the C API documentation.
+
+.. method:: AnnotationManager Server.GetAnnotationManager()
+
+    Obtains the Server's :type:`AnnotationManager`\  for handling annotation
+    operations.
+
+    For more information, see :cpp:func:`vnc_Server_getAnnotationManager`\  in the C API documentation.
+
+.. method:: MessagingManager Server.GetMessagingManager()
+
+    Obtains the Server's :type:`MessagingManager`\  for handling messaging.
+
+    For more information, see :cpp:func:`vnc_Server_getMessagingManager`\  in the C API documentation.
+
+.. method:: DisplayManager Server.GetDisplayManager()
+
+    Obtains the Server's :type:`DisplayManager`\ , for managing the list of
+    displays made available by the Server.
+
+    For more information, see :cpp:func:`vnc_Server_getDisplayManager`\  in the C API documentation.
+
+.. method:: void Server.SetEncryptionLevel(Server.EncryptionLevel a)
+
+    Sets the desired encryption level of the session from the range of options
+    enumerated by :enum:`Server.EncryptionLevel`\ .
+
+    For more information, see :cpp:func:`vnc_Server_setEncryptionLevel`\  in the C API documentation.
+
+.. method:: EncryptionLevel Server.GetEncryptionLevel(Connection a)
+
+    Returns the encryption level being used with an incoming connection,
+    or the Server's current encryption level if the connection is NULL.
+
+    For more information, see :cpp:func:`vnc_Server_getEncryptionLevel`\  in the C API documentation.
+
+.. method:: void Server.SetIdleTimeout(System.Int32 a)
+
+    Sets the number of seconds to wait before disconnecting idle Viewers.
+
+    For more information, see :cpp:func:`vnc_Server_setIdleTimeout`\  in the C API documentation.
+
+.. method:: int Server.GetIdleTimeout()
+
+    Gets the current number of seconds to wait before disconnecting idle
+    Viewers.
+
+    For more information, see :cpp:func:`vnc_Server_getIdleTimeout`\  in the C API documentation.
+

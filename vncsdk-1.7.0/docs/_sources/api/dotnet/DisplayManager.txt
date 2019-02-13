@@ -1,0 +1,132 @@
+.. _DisplayManager:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DisplayManager
+--------------
+
+.. class:: DisplayManager
+
+    Manages the list of displays made available by a Server.
+
+    For more information, see :cpp:class:`vnc_DisplayManager`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`DisplayManager.Callback`
+
+**Method summary**
+
+================= ==========================================================================
+Modifier and Type Method and Description                                                    
+================= ==========================================================================
+:type:`int`       :meth:`DisplayManager.GetDisplayCount`\ ()                                
+                                                                                            
+                  Returns the number of displays.                                           
+----------------- --------------------------------------------------------------------------
+:type:`void`      :meth:`DisplayManager.SetCallback`\ (:type:`DisplayManager.Callback`)     
+                                                                                            
+                  Registers a callback notifying when displays are added or removed, or the 
+                  resolution of an existing display changes.                                
+----------------- --------------------------------------------------------------------------
+:type:`void`      :meth:`DisplayManager.SelectDisplay`\ (:type:`System.Int32`)              
+                                                                                            
+                  Chooses a particular display to remote to connected Viewer app users.     
+----------------- --------------------------------------------------------------------------
+:type:`string`    :meth:`DisplayManager.GetId`\ (:type:`System.Int32`)                      
+                                                                                            
+                  Gets the ID of the display (typically a short string).                    
+----------------- --------------------------------------------------------------------------
+:type:`string`    :meth:`DisplayManager.GetName`\ (:type:`System.Int32`)                    
+                                                                                            
+                  Gets the name of the display (typically a human-readable string).         
+----------------- --------------------------------------------------------------------------
+:type:`bool`      :meth:`DisplayManager.IsPrimary`\ (:type:`System.Int32`)                  
+                                                                                            
+                  Returns whether this is the primary (or main) display.                    
+----------------- --------------------------------------------------------------------------
+:type:`int`       :meth:`DisplayManager.GetResolutionX`\ (:type:`System.Int32`)             
+                                                                                            
+                  Gets the horizontal resolution of the display in pixels.                  
+----------------- --------------------------------------------------------------------------
+:type:`int`       :meth:`DisplayManager.GetResolutionY`\ (:type:`System.Int32`)             
+                                                                                            
+                  Gets the vertical resolution of the display in pixels.                    
+----------------- --------------------------------------------------------------------------
+:type:`int`       :meth:`DisplayManager.GetOriginX`\ (:type:`System.Int32`)                 
+                                                                                            
+                  Gets the horizontal origin of the display in pixels.                      
+----------------- --------------------------------------------------------------------------
+:type:`int`       :meth:`DisplayManager.GetOriginY`\ (:type:`System.Int32`)                 
+                                                                                            
+                  Gets the vertical origin of the display in pixels.                        
+================= ==========================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: int DisplayManager.GetDisplayCount()
+
+    Returns the number of displays.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getDisplayCount`\  in the C API documentation.
+
+.. method:: void DisplayManager.SetCallback(DisplayManager.Callback a)
+
+    Registers a callback notifying when displays are added or removed, or the 
+    resolution of an existing display changes.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_setCallback`\  in the C API documentation.
+
+.. method:: void DisplayManager.SelectDisplay(System.Int32 a)
+
+    Chooses a particular display to remote to connected Viewer app users.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_selectDisplay`\  in the C API documentation.
+
+.. method:: string DisplayManager.GetId(System.Int32 a)
+
+    Gets the ID of the display (typically a short string).
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getId`\  in the C API documentation.
+
+.. method:: string DisplayManager.GetName(System.Int32 a)
+
+    Gets the name of the display (typically a human-readable string).
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getName`\  in the C API documentation.
+
+.. method:: bool DisplayManager.IsPrimary(System.Int32 a)
+
+    Returns whether this is the primary (or main) display.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_isPrimary`\  in the C API documentation.
+
+.. method:: int DisplayManager.GetResolutionX(System.Int32 a)
+
+    Gets the horizontal resolution of the display in pixels.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getResolutionX`\  in the C API documentation.
+
+.. method:: int DisplayManager.GetResolutionY(System.Int32 a)
+
+    Gets the vertical resolution of the display in pixels.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getResolutionY`\  in the C API documentation.
+
+.. method:: int DisplayManager.GetOriginX(System.Int32 a)
+
+    Gets the horizontal origin of the display in pixels.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getOriginX`\  in the C API documentation.
+
+.. method:: int DisplayManager.GetOriginY(System.Int32 a)
+
+    Gets the vertical origin of the display in pixels.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getOriginY`\  in the C API documentation.
+

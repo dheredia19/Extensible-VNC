@@ -1,0 +1,15 @@
+.. _RsaKey.Callback.DetailsReadyType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+RsaKey.Callback.DetailsReadyType
+--------------------------------
+
+.. attribute:: RsaKey.Callback.DetailsReadyType
+
+    The type of the :attr:`RsaKey.Callback.DetailsReady`\  callback.
+
+    
+
+

@@ -1,0 +1,90 @@
+.. _DataStore.Callback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DataStore.Callback
+------------------
+
+.. class:: DataStore.Callback
+
+    Callback providing custom storage of data used by the SDK.
+
+    For more information, see :cpp:func:`vnc_DataStore_Callback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`DataStore.Callback.PutType`
+- :ref:`DataStore.Callback.GetType`
+
+**Constructor summary**
+
+================= ====================================================================================================
+Modifier and Type Method and Description                                                                              
+================= ====================================================================================================
+\                 :meth:`DataStore.Callback`\ (:attr:`DataStore.Callback.PutType`, :attr:`DataStore.Callback.GetType`)
+                                                                                                                      
+                  Initializes a new Callback class instance.                                                          
+================= ====================================================================================================
+
+
+**Method summary**
+
+================== ======================================================================================
+Modifier and Type  Method and Description                                                                
+================== ======================================================================================
+:type:`void`       :meth:`DataStore.Callback.OnPut`\ (:type:`System.String`, :type:`ImmutableDataBuffer`)
+                                                                                                         
+                   Handles the Put event.                                                                
+                   By default, calls the Put delegate.                                                   
+------------------ --------------------------------------------------------------------------------------
+:type:`DataBuffer` :meth:`DataStore.Callback.OnGet`\ (:type:`System.String`)                             
+                                                                                                         
+                   Handles the Get event.                                                                
+                   By default, calls the Get delegate.                                                   
+================== ======================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: DataStore.Callback(DataStore.Callback.PutType a, DataStore.Callback.GetType b)
+
+    Initializes a new Callback class instance.
+
+    For more information, see :cpp:func:`vnc_DataStore_Callback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void DataStore.Callback.OnPut(System.String a, ImmutableDataBuffer b)
+
+    Handles the Put event.
+    By default, calls the Put delegate.
+
+    
+
+.. method:: DataBuffer DataStore.Callback.OnGet(System.String a)
+
+    Handles the Get event.
+    By default, calls the Get delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  DataStore.Callback.Put
+
+    Requests storing data in your custom data store.
+
+    For more information, see :cpp:member:`vnc_DataStore_Callback::put`\  in the C API documentation.
+
+.. attribute::  DataStore.Callback.Get
+
+    Requests data stored in your custom data store.
+
+    For more information, see :cpp:member:`vnc_DataStore_Callback::get`\  in the C API documentation.
+

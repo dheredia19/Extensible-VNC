@@ -1,0 +1,35 @@
+AnnotationManager.Callback
+==========================
+
+.. js:attribute:: vncsdk.AnnotationManager.Callback
+
+    Callback receiving annotation-related notifications
+    
+    **See also:** :js:attr:`AnnotationManager.setCallback`
+
+Method Summary
+--------------
+================= =================================================================================================================
+Modifier and Type Method and Description                                                                                           
+================= =================================================================================================================
+\                 :js:func:`availabilityChanged <AnnotationManager.Callback.availabilityChanged>`\ (annotationManager, isAvailable)
+                                                                                                                                   
+                  Notification that annotation availability has changed.                                                           
+================= =================================================================================================================
+
+
+Methods
+-------
+
+.. js:function:: AnnotationManager.Callback.availabilityChanged(annotationManager, isAvailable)
+
+    Notification that annotation availability has changed.
+
+    For more information, see :cpp:member:`vnc_AnnotationManager_Callback::availabilityChanged`.
+
+    :param annotationManager:
+    :type annotationManager: :js:data:`vncsdk.AnnotationManager`
+    :param isAvailable:
+    :type isAvailable: boolean
+    :return: Ignored
+

@@ -1,0 +1,51 @@
+Viewer.PeerVerificationCallback
+===============================
+
+.. js:attribute:: vncsdk.Viewer.PeerVerificationCallback
+
+    Callback receiving verification requests to check the peer's identity.
+
+Method Summary
+--------------
+================= =====================================================================================================================================
+Modifier and Type Method and Description                                                                                                               
+================= =====================================================================================================================================
+\                 :js:func:`cancelPeerVerification <Viewer.PeerVerificationCallback.cancelPeerVerification>`\ (viewer)                                 
+                                                                                                                                                       
+                  Notification to cancel a prior request for peer verification.                                                                        
+----------------- -------------------------------------------------------------------------------------------------------------------------------------
+\                 :js:func:`verifyPeer <Viewer.PeerVerificationCallback.verifyPeer>`\ (viewer, hexFingerprint, catchphraseFingerprint, serverRsaPublic)
+                                                                                                                                                       
+                  Request to verify the identity of the peer (the server).                                                                             
+================= =====================================================================================================================================
+
+
+Methods
+-------
+
+.. js:function:: Viewer.PeerVerificationCallback.cancelPeerVerification(viewer)
+
+    Notification to cancel a prior request for peer verification.
+
+    For more information, see :cpp:member:`vnc_Viewer_PeerVerificationCallback::cancelPeerVerification`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :return: Ignored
+
+.. js:function:: Viewer.PeerVerificationCallback.verifyPeer(viewer, hexFingerprint, catchphraseFingerprint, serverRsaPublic)
+
+    Request to verify the identity of the peer (the server).
+
+    For more information, see :cpp:member:`vnc_Viewer_PeerVerificationCallback::verifyPeer`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :param hexFingerprint:
+    :type hexFingerprint: string or null
+    :param catchphraseFingerprint:
+    :type catchphraseFingerprint: string or null
+    :param serverRsaPublic:
+    :type serverRsaPublic: :js:data:`vncsdk.DataBuffer`
+    :return: Ignored
+

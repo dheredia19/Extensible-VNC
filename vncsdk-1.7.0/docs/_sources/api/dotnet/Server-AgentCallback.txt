@@ -1,0 +1,90 @@
+.. _Server.AgentCallback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.AgentCallback
+--------------------
+
+.. class:: Server.AgentCallback
+
+    Callback receiving agent-related notifications for a Server.
+
+    For more information, see :cpp:func:`vnc_Server_AgentCallback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Server.AgentCallback.AgentStartedType`
+- :ref:`Server.AgentCallback.AgentStoppedType`
+
+**Constructor summary**
+
+================= ============================================================================================================================
+Modifier and Type Method and Description                                                                                                      
+================= ============================================================================================================================
+\                 :meth:`Server.AgentCallback`\ (:attr:`Server.AgentCallback.AgentStartedType`, :attr:`Server.AgentCallback.AgentStoppedType`)
+                                                                                                                                              
+                  Initializes a new AgentCallback class instance.                                                                             
+================= ============================================================================================================================
+
+
+**Method summary**
+
+================= =============================================================
+Modifier and Type Method and Description                                       
+================= =============================================================
+:type:`void`      :meth:`Server.AgentCallback.OnAgentStarted`\ (:type:`Server`)
+                                                                               
+                  Handles the AgentStarted event.                              
+                  By default, calls the AgentStarted delegate.                 
+----------------- -------------------------------------------------------------
+:type:`void`      :meth:`Server.AgentCallback.OnAgentStopped`\ (:type:`Server`)
+                                                                               
+                  Handles the AgentStopped event.                              
+                  By default, calls the AgentStopped delegate.                 
+================= =============================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: Server.AgentCallback(Server.AgentCallback.AgentStartedType a, Server.AgentCallback.AgentStoppedType b)
+
+    Initializes a new AgentCallback class instance.
+
+    For more information, see :cpp:func:`vnc_Server_AgentCallback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void Server.AgentCallback.OnAgentStarted(Server a)
+
+    Handles the AgentStarted event.
+    By default, calls the AgentStarted delegate.
+
+    
+
+.. method:: void Server.AgentCallback.OnAgentStopped(Server a)
+
+    Handles the AgentStopped event.
+    By default, calls the AgentStopped delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  Server.AgentCallback.AgentStarted
+
+    Notification that the agent has started.
+
+    For more information, see :cpp:member:`vnc_Server_AgentCallback::agentStarted`\  in the C API documentation.
+
+.. attribute::  Server.AgentCallback.AgentStopped
+
+    Notification that the agent has stopped.
+
+    For more information, see :cpp:member:`vnc_Server_AgentCallback::agentStopped`\  in the C API documentation.
+

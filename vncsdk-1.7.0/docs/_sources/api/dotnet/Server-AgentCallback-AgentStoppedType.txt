@@ -1,0 +1,15 @@
+.. _Server.AgentCallback.AgentStoppedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.AgentCallback.AgentStoppedType
+-------------------------------------
+
+.. attribute:: Server.AgentCallback.AgentStoppedType
+
+    The type of the :attr:`Server.AgentCallback.AgentStopped`\  callback.
+
+    
+
+

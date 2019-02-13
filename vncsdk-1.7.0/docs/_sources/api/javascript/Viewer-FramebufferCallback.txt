@@ -1,0 +1,58 @@
+Viewer.FramebufferCallback
+==========================
+
+.. js:attribute:: vncsdk.Viewer.FramebufferCallback
+
+    Callback receiving framebuffer event notifications for a Viewer.
+
+Method Summary
+--------------
+================= =======================================================================================================
+Modifier and Type Method and Description                                                                                 
+================= =======================================================================================================
+\                 :js:func:`viewerFbUpdated <Viewer.FramebufferCallback.viewerFbUpdated>`\ (viewer, x, y, w, h)          
+                                                                                                                         
+                  Notification that the given rectangle of the viewer's framebuffer has been updated with new pixel data.
+----------------- -------------------------------------------------------------------------------------------------------
+\                 :js:func:`serverFbSizeChanged <Viewer.FramebufferCallback.serverFbSizeChanged>`\ (viewer, w, h)        
+                                                                                                                         
+                  Notification that the server's framebuffer size has changed.                                           
+================= =======================================================================================================
+
+
+Methods
+-------
+
+.. js:function:: Viewer.FramebufferCallback.viewerFbUpdated(viewer, x, y, w, h)
+
+    Notification that the given rectangle of the viewer's framebuffer has been
+    updated with new pixel data.
+
+    For more information, see :cpp:member:`vnc_Viewer_FramebufferCallback::viewerFbUpdated`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :param x:
+    :type x: number
+    :param y:
+    :type y: number
+    :param w:
+    :type w: number
+    :param h:
+    :type h: number
+    :return: Ignored
+
+.. js:function:: Viewer.FramebufferCallback.serverFbSizeChanged(viewer, w, h)
+
+    Notification that the server's framebuffer size has changed.
+
+    For more information, see :cpp:member:`vnc_Viewer_FramebufferCallback::serverFbSizeChanged`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :param w:
+    :type w: number
+    :param h:
+    :type h: number
+    :return: Ignored
+

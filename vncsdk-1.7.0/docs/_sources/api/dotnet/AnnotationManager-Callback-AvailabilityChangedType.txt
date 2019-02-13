@@ -1,0 +1,15 @@
+.. _AnnotationManager.Callback.AvailabilityChangedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+AnnotationManager.Callback.AvailabilityChangedType
+--------------------------------------------------
+
+.. attribute:: AnnotationManager.Callback.AvailabilityChangedType
+
+    The type of the :attr:`AnnotationManager.Callback.AvailabilityChanged`\  callback.
+
+    
+
+

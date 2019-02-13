@@ -1,0 +1,307 @@
+Server
+======
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class Server
+
+   A VNC-compatible Server enabling a computer to be remotely controlled.
+
+Nested Classes
+--------------
+* interface :java:type:`Server.AgentCallback`
+* enum :java:type:`Server.CaptureMethod`
+* interface :java:type:`Server.ConnectionCallback`
+* enum :java:type:`Server.DisconnectFlags`
+* enum :java:type:`Server.EncryptionLevel`
+* enum :java:type:`Server.Permissions`
+* interface :java:type:`Server.SecurityCallback`
+
+Constructor Summary
+-------------------
+* :java:construct:`Server <Server(String, boolean) throws Library.VncException>`\ (:java:type:`String` agentPath, :java:type:`boolean` isService)
+
+  Creates a Server, optionally specifying whether to run as a service.
+* :java:construct:`Server <Server(String) throws Library.VncException>`\ (:java:type:`String` agentPath)
+
+  Creates a Server.
+* :java:construct:`Server <Server(android.content.Context, android.media.projection.MediaProjection) throws Library.VncException>`\ (:java:type:`android.content.Context` context, :java:type:`android.media.projection.MediaProjection` mediaProjection)
+
+  Creates a Server for Android.
+
+Method Summary
+--------------
+=========================================== ================================================================================================================================================================================================================================================
+Modifier and Type                           Method and Description                                                                                                                                                                                                                          
+=========================================== ================================================================================================================================================================================================================================================
+:java:type:`void`                           :java:meth:`destroy <Server.destroy()>`\ ()                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                            
+                                            Destroys the Server.                                                                                                                                                                                                                            
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`disconnect <Server.disconnect(Connection, String, java.lang.Iterable<DisconnectFlags>)>`\ (:java:type:`Connection` connection, :java:type:`String` message, :java:type:`java.lang.Iterable`\ <:java:type:`DisconnectFlags`\ > flags)
+                                                                                                                                                                                                                                                                                            
+                                            Disconnects a particular Viewer, optionally specifying a message.                                                                                                                                                                               
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`disconnectAll <Server.disconnectAll(String, java.lang.Iterable<DisconnectFlags>)>`\ (:java:type:`String` message, :java:type:`java.lang.Iterable`\ <:java:type:`DisconnectFlags`\ > flags)                                          
+                                                                                                                                                                                                                                                                                            
+                                            Disconnects all Viewers, optionally specifying a message.                                                                                                                                                                                       
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`AnnotationManager`              :java:meth:`getAnnotationManager <Server.getAnnotationManager() throws Library.VncException>`\ ()                                                                                                                                               
+                                                                                                                                                                                                                                                                                            
+                                            Obtains the Server's \ :java:ref:`AnnotationManager`\  for handling annotation operations.                                                                                                                                                      
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`                            :java:meth:`getConnectionCount <Server.getConnectionCount()>`\ ()                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                            
+                                            Returns the total number of Viewers currently connected to the Server.                                                                                                                                                                          
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`ConnectionHandler`              :java:meth:`getConnectionHandler <Server.getConnectionHandler() throws Library.VncException>`\ ()                                                                                                                                               
+                                                                                                                                                                                                                                                                                            
+                                            Obtains the Server's \ :java:ref:`ConnectionHandler`\  for performing connection operations.                                                                                                                                                    
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`DisplayManager`                 :java:meth:`getDisplayManager <Server.getDisplayManager() throws Library.VncException>`\ ()                                                                                                                                                     
+                                                                                                                                                                                                                                                                                            
+                                            Obtains the Server's \ :java:ref:`DisplayManager`\ , for managing the list of displays made available by the Server.                                                                                                                            
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`EncryptionLevel`                :java:meth:`getEncryptionLevel <Server.getEncryptionLevel(Connection)>`\ (:java:type:`Connection` connection)                                                                                                                                   
+                                                                                                                                                                                                                                                                                            
+                                            Returns the encryption level being used with an incoming connection, or the Server's current encryption level if the connection is \ ``null``\ .                                                                                                
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`                            :java:meth:`getIdleTimeout <Server.getIdleTimeout()>`\ ()                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                            
+                                            Gets the current number of seconds to wait before disconnecting idle Viewers.                                                                                                                                                                   
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`MessagingManager`               :java:meth:`getMessagingManager <Server.getMessagingManager() throws Library.VncException>`\ ()                                                                                                                                                 
+                                                                                                                                                                                                                                                                                            
+                                            Obtains the Server's \ :java:ref:`MessagingManager`\  for handling messaging.                                                                                                                                                                   
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`String`                         :java:meth:`getPeerAddress <Server.getPeerAddress(Connection) throws Library.VncException>`\ (:java:type:`Connection` connection)                                                                                                               
+                                                                                                                                                                                                                                                                                            
+                                            Returns the address of a particular connected Viewer.                                                                                                                                                                                           
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`java.util.EnumSet<Permissions>` :java:meth:`getPermissions <Server.getPermissions(Connection) throws Library.VncException>`\ (:java:type:`Connection` connection)                                                                                                               
+                                                                                                                                                                                                                                                                                            
+                                            Gets the set of current permissions for a Viewer.                                                                                                                                                                                               
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`boolean`                        :java:meth:`isAgentReady <Server.isAgentReady()>`\ ()                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                            
+                                            Determines if the \ ``vncagent``\  process is ready and available to capture the display and inject input events.                                                                                                                               
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`setAgentCallback <Server.setAgentCallback(Server.AgentCallback) throws Library.VncException>`\ (:java:type:`Server.AgentCallback` callback)                                                                                         
+                                                                                                                                                                                                                                                                                            
+                                            Sets agent-related callbacks for the Server.                                                                                                                                                                                                    
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`setBlacklist <Server.setBlacklist(int, int) throws Library.VncException>`\ (:java:type:`int` threshold, :java:type:`int` timeout)                                                                                                   
+                                                                                                                                                                                                                                                                                            
+                                            Specifies a blacklist threshold and timeout for the Server.                                                                                                                                                                                     
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`setCaptureMethod <Server.setCaptureMethod(CaptureMethod) throws Library.VncException>`\ (:java:type:`CaptureMethod` captureMethod)                                                                                                  
+                                                                                                                                                                                                                                                                                            
+                                            Specifies the screen capture method used by the Server.                                                                                                                                                                                         
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`setConnectionCallback <Server.setConnectionCallback(Server.ConnectionCallback) throws Library.VncException>`\ (:java:type:`Server.ConnectionCallback` callback)                                                                     
+                                                                                                                                                                                                                                                                                            
+                                            Sets connection-related callbacks for the Server.                                                                                                                                                                                               
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`setEncryptionLevel <Server.setEncryptionLevel(EncryptionLevel) throws Library.VncException>`\ (:java:type:`EncryptionLevel` level)                                                                                                  
+                                                                                                                                                                                                                                                                                            
+                                            Sets the desired encryption level of the session from the range of options enumerated by \ ``ENCRYPTION_LEVEL``\ .                                                                                                                              
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`setFriendlyName <Server.setFriendlyName(String)>`\ (:java:type:`String` name)                                                                                                                                                       
+                                                                                                                                                                                                                                                                                            
+                                            Specifies a friendly name for the Server, to send to connected Viewers.                                                                                                                                                                         
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`setIdleTimeout <Server.setIdleTimeout(int) throws Library.VncException>`\ (:java:type:`int` idleTimeout)                                                                                                                            
+                                                                                                                                                                                                                                                                                            
+                                            Sets the number of seconds to wait before disconnecting idle Viewers.                                                                                                                                                                           
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`setPermissions <Server.setPermissions(Connection, java.lang.Iterable<Permissions>) throws Library.VncException>`\ (:java:type:`Connection` connection, :java:type:`java.lang.Iterable`\ <:java:type:`Permissions`\ > perms)         
+                                                                                                                                                                                                                                                                                            
+                                            Changes permissions for a Viewer mid-session.                                                                                                                                                                                                   
+------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`                           :java:meth:`setSecurityCallback <Server.setSecurityCallback(Server.SecurityCallback) throws Library.VncException>`\ (:java:type:`Server.SecurityCallback` callback)                                                                             
+                                                                                                                                                                                                                                                                                            
+                                            Sets security-related callbacks for the Server.                                                                                                                                                                                                 
+=========================================== ================================================================================================================================================================================================================================================
+
+Constructors
+------------
+
+.. java:constructor:: public Server(String agentPath, boolean isService) throws Library.VncException
+   :outertype: Server
+
+   Creates a Server, optionally specifying whether to run as a service.
+
+   This constructor should not be used on Android.
+
+   :param agentPath: The full path to the \ ``vncagent``\  executable, or null to specify that \ ``vncagent``\  is in the same directory as the app binary at run-time. If you provide a directory, the executable must be called \ ``vncagent``\  (\ ``vncagent.exe``\  on Windows); if you have renamed \ ``vncagent``\  then the filename must be provided.
+   :param isService: Whether to run as a service.
+
+.. java:constructor:: public Server(String agentPath) throws Library.VncException
+   :outertype: Server
+
+   Creates a Server.
+
+   This constructor should not be used on Android.
+
+   :param agentPath: The full path to the \ ``vncagent``\  executable (see \ ``Server(String, boolean)``\  for details).
+
+.. java:constructor:: public Server(android.content.Context context, android.media.projection.MediaProjection mediaProjection) throws Library.VncException
+   :outertype: Server
+
+   Creates a Server for Android.
+
+   :param context: The application context.
+   :param mediaProjection: An \ ``android.media.projection.MediaProjection``\  object.
+
+   The \ ``android.media.projection.MediaProjection``\  object must be obtained from \ ``android.media.projection.MediaProjectionManager``\  - see the Android documentation or sample code for more details on how to do this.
+
+Methods
+-------
+
+.. java:method:: public void destroy()
+   :outertype: Server
+
+   Destroys the Server.
+
+   For more information, see :cpp:func:`vnc_Server_destroy`.
+
+.. java:method:: public void disconnect(Connection connection, String message, java.lang.Iterable<DisconnectFlags> flags)
+   :outertype: Server
+
+   Disconnects a particular Viewer, optionally specifying a message.
+
+   For more information, see :cpp:func:`vnc_Server_disconnect`.
+
+.. java:method:: public void disconnectAll(String message, java.lang.Iterable<DisconnectFlags> flags)
+   :outertype: Server
+
+   Disconnects all Viewers, optionally specifying a message.
+
+   For more information, see :cpp:func:`vnc_Server_disconnectAll`.
+
+.. java:method:: public AnnotationManager getAnnotationManager() throws Library.VncException
+   :outertype: Server
+
+   Obtains the Server's \ :java:ref:`AnnotationManager`\  for handling annotation operations.
+
+.. java:method:: public int getConnectionCount()
+   :outertype: Server
+
+   Returns the total number of Viewers currently connected to the Server.
+
+   For more information, see :cpp:func:`vnc_Server_getConnectionCount`.
+
+.. java:method:: public ConnectionHandler getConnectionHandler() throws Library.VncException
+   :outertype: Server
+
+   Obtains the Server's \ :java:ref:`ConnectionHandler`\  for performing connection operations.
+
+.. java:method:: public DisplayManager getDisplayManager() throws Library.VncException
+   :outertype: Server
+
+   Obtains the Server's \ :java:ref:`DisplayManager`\ , for managing the list of displays made available by the Server.
+
+.. java:method:: public EncryptionLevel getEncryptionLevel(Connection connection)
+   :outertype: Server
+
+   Returns the encryption level being used with an incoming connection, or the Server's current encryption level if the connection is \ ``null``\ .
+
+   For more information, see :cpp:func:`vnc_Server_getEncryptionLevel`.
+
+.. java:method:: public int getIdleTimeout()
+   :outertype: Server
+
+   Gets the current number of seconds to wait before disconnecting idle Viewers.
+
+   For more information, see :cpp:func:`vnc_Server_getIdleTimeout`.
+
+.. java:method:: public MessagingManager getMessagingManager() throws Library.VncException
+   :outertype: Server
+
+   Obtains the Server's \ :java:ref:`MessagingManager`\  for handling messaging.
+
+.. java:method:: public String getPeerAddress(Connection connection) throws Library.VncException
+   :outertype: Server
+
+   Returns the address of a particular connected Viewer.
+
+   For more information, see :cpp:func:`vnc_Server_getPeerAddress`.
+
+.. java:method:: public java.util.EnumSet<Permissions> getPermissions(Connection connection) throws Library.VncException
+   :outertype: Server
+
+   Gets the set of current permissions for a Viewer.
+
+   For more information, see :cpp:func:`vnc_Server_getPermissions`.
+
+.. java:method:: public boolean isAgentReady()
+   :outertype: Server
+
+   Determines if the \ ``vncagent``\  process is ready and available to capture the display and inject input events.
+
+   For more information, see :cpp:func:`vnc_Server_isAgentReady`.
+
+.. java:method:: public void setAgentCallback(Server.AgentCallback callback) throws Library.VncException
+   :outertype: Server
+
+   Sets agent-related callbacks for the Server.
+
+   For more information, see :cpp:func:`vnc_Server_setAgentCallback`.
+
+.. java:method:: public void setBlacklist(int threshold, int timeout) throws Library.VncException
+   :outertype: Server
+
+   Specifies a blacklist threshold and timeout for the Server.
+
+   For more information, see :cpp:func:`vnc_Server_setBlacklist`.
+
+.. java:method:: public void setCaptureMethod(CaptureMethod captureMethod) throws Library.VncException
+   :outertype: Server
+
+   Specifies the screen capture method used by the Server.
+
+   For more information, see :cpp:func:`vnc_Server_setCaptureMethod`.
+
+.. java:method:: public void setConnectionCallback(Server.ConnectionCallback callback) throws Library.VncException
+   :outertype: Server
+
+   Sets connection-related callbacks for the Server.
+
+   For more information, see :cpp:func:`vnc_Server_setConnectionCallback`.
+
+.. java:method:: public void setEncryptionLevel(EncryptionLevel level) throws Library.VncException
+   :outertype: Server
+
+   Sets the desired encryption level of the session from the range of options enumerated by \ ``ENCRYPTION_LEVEL``\ .
+
+   For more information, see :cpp:func:`vnc_Server_setEncryptionLevel`.
+
+.. java:method:: public void setFriendlyName(String name)
+   :outertype: Server
+
+   Specifies a friendly name for the Server, to send to connected Viewers.
+
+   For more information, see :cpp:func:`vnc_Server_setFriendlyName`.
+
+.. java:method:: public void setIdleTimeout(int idleTimeout) throws Library.VncException
+   :outertype: Server
+
+   Sets the number of seconds to wait before disconnecting idle Viewers.
+
+   For more information, see :cpp:func:`vnc_Server_setIdleTimeout`.
+
+.. java:method:: public void setPermissions(Connection connection, java.lang.Iterable<Permissions> perms) throws Library.VncException
+   :outertype: Server
+
+   Changes permissions for a Viewer mid-session.
+
+   For more information, see :cpp:func:`vnc_Server_setPermissions`.
+
+.. java:method:: public void setSecurityCallback(Server.SecurityCallback callback) throws Library.VncException
+   :outertype: Server
+
+   Sets security-related callbacks for the Server.
+
+   For more information, see :cpp:func:`vnc_Server_setSecurityCallback`.
+

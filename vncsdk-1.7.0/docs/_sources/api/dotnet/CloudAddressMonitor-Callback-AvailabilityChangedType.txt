@@ -1,0 +1,15 @@
+.. _CloudAddressMonitor.Callback.AvailabilityChangedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudAddressMonitor.Callback.AvailabilityChangedType
+----------------------------------------------------
+
+.. attribute:: CloudAddressMonitor.Callback.AvailabilityChangedType
+
+    The type of the :attr:`CloudAddressMonitor.Callback.AvailabilityChanged`\  callback.
+
+    
+
+

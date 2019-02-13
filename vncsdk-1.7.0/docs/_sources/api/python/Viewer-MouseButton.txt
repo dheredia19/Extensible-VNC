@@ -1,0 +1,22 @@
+Viewer.MouseButton
+==================
+
+.. py:class:: vncsdk.Viewer.MouseButton
+
+    Enumeration of mouse buttons.
+
+Enumeration Attributes
+----------------------
+
+.. py:attribute:: vncsdk.Viewer.MouseButton.MOUSE_BUTTON_LEFT
+
+    The logical left mouse button.
+
+.. py:attribute:: vncsdk.Viewer.MouseButton.MOUSE_BUTTON_MIDDLE
+
+    The logical middle mouse button.
+
+.. py:attribute:: vncsdk.Viewer.MouseButton.MOUSE_BUTTON_RIGHT
+
+    The logical right mouse button.
+

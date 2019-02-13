@@ -1,0 +1,125 @@
+License Terms & Conditions 
+========================== 
+
+Please read these terms carefully. These terms create an agreement ("the Agreement") between you ("Licensee") and RealVNC Limited a company incorporated and registered in England and Wales with company number 04446945 whose registered office is at Betjeman House, 104 Hills Road, Cambridge, CB2 1LQ ("RealVNC"). 
+
+1 Definitions 
+
+1.1 The definitions in this clause apply in this Agreement: 
+
+1.1.1 "Confidential Information" has the meaning given in clause 7.1. 
+
+1.1.2 "Connection" means a connection made by the Software using the VNC Cloud. 
+
+1.1.3 "Hosting Services" means the services RealVNC shall provide to the Licensee as further set out in clause 3.1 of this Agreement. 
+
+1.1.4 "Platform" means the following platforms: Windows, Mac OS X, Linux, iOS, Android, HTML5. 
+
+1.1.5 "SDK" means the product known as VNC® SDK comprising RealVNC's software development kit for developers and the associated documentation as obtained by Licensee, which can be used to build Software. 
+
+1.1.6 "Software" means any software created by Licensee using the SDK in whole or in part. 
+
+1.1.7 "Term" means the Initial Term and any renewal period as set out in clause 6.1. 
+
+1.1.8 "VNC Cloud" means a combination of hardware, software and networking elements that comprise an information technology system. 
+
+1.1.9 "Export Controls" means laws, regulations and other legally-binding measures of the United Kingdom and/or European Union imposing restrictions on the export, transfer, transit or transhipment of goods, software, and/or technology, including but not limited to the (UK) Export Control Act 2002, the (UK) Export Control Order 2008 and the (EU) Council Regulation 428/2009. 
+
+2 License 
+
+2.1 In consideration of the payment by the Licensee to RealVNC of £1 (receipt and sufficiency of which is hereby acknowledged by RealVNC), RealVNC hereby grants Licensee a non-transferable, non-exclusive, non-sublicensable licence ("Licence") for the Term to (i) use the SDK to develop, modify, test and support the Software on the Platform; and (ii) make Connections, in each case for internal evaluation purposes only. 
+
+2.2 In the event that Licensee wishes to make any commercial use of the SDK, which for the purpose of this Agreement or unless otherwise agreed by RealVNC means any use of the SDK other than for Licensee's internal evaluation of RealVNC's technology, the Licensee shall be entitled to upgrade this Agreement by separate written agreement. 
+
+2.3 The Licensee may make only as many copies of the SDK and Software as the Licensee reasonably needs to exercise its licensed rights under clause 2.1 above. The Licensee will make sure that all copies contain the copyright and other proprietary notices which were provided with the SDK. The SDKs and all intellectual property rights in the SDKs (including all modifications and/or enhancements to the SDKs made by RealVNC) are and will remain RealVNC property. Where the SDK contains third party libraries distributed on an open source basis, RealVNC expressly disclaims any liability for, and does not assert any rights of ownership in, those third party libraries. 
+
+2.4 The Licensee shall not: 
+
+2.4.1 copy the whole or any part of the SDK or adapt modify or alter in any way the whole or any part of the SDK except as required to exercise its rights under this Agreement (except where expressly permitted to do so in respect of code contained within the SDK that is licensed on an open source basis); 
+
+2.4.2 disassemble, decompile, reverse engineer or convert the whole or any part of the software forming part of the SDK except to the extent permitted by law; 
+
+2.4.3 except as expressly permitted by this Agreement, part with possession of, lend, or transfer any part of the SDK to any other person or fail to keep the SDK safe and secure; and 
+
+2.4.4 export, transfer, transit or tranship the SDK or any Software directly or indirectly to any country, territory or person where this would be prohibited by Export Controls; and 
+
+2.4.5 use the Software for any purpose whatsoever other than as set out in clause 2.1. 
+
+3 Hosting Services 
+
+3.1 RealVNC shall provide the Licensee with access to and use of the VNC Cloud solely for the purpose of facilitating Connections. 
+
+3.2 The Hosting Services are subject to fair use restrictions to ensure that one licensee does not use all the available bandwidth and resources on the VNC Cloud resulting in degradation of service to other licensees. 
+
+3.3 Should RealVNC deem that the Licensee is in breach of such fair use restrictions and Licensee's access to and use of the VNC Cloud interferes with other licensees, RealVNC shall notify the Licensee and provide the Licensee with an opportunity to remedy the problem. 
+
+3.4 Should RealVNC deem that the Licensee is in material breach of such fair use restrictions and the Licensee's access to and use of the VNC Cloud significantly interferes with other licensees, RealVNC shall be entitled to suspend or throttle the Licensee's access to and use of the VNC Cloud. 
+
+3.5 It shall be for RealVNC to determine in its sole discretion whether use of the VNC Cloud constitutes a breach or material breach of the fair use restrictions. 
+
+3.6 RealVNC does not guarantee that Connections or the Hosting Services will be uninterrupted or error-free. 
+
+4 Warranty 
+
+4.1 The SDK and any other deliverables under this Agreement are provided "AS IS". Accordingly RealVNC makes no express or implied warranty or representation concerning the SDK, the Hosting Services and deliverables, or their accuracy or completeness and therefore excludes all conditions, warranties and representations (express or implied), statutory or otherwise in respect of the SDK, the Hosting Services and any other deliverable under this Agreement. 
+
+5 Limitation of Liability 
+
+5.1 Save for death and personal injury caused by RealVNC's negligence, in no event will RealVNC be liable to Licensee or its Customers for any damages resulting from loss of, damage to, or corruption of data, loss of use, lost profits, loss of anticipated savings, loss of revenue, loss of opportunity, loss of goodwill, loss of reputation or any indirect or consequential loss. RealVNC's aggregate liability to Licensee and its customers arising out of or in connection with this Agreement, whether in contract, tort, breach of statutory duty or any other cause shall be limited to £100. 
+
+6 Termination 
+
+6.1 This Agreement shall commence upon the Licensee's acceptance of the terms of this Agreement and shall continue for an initial period of 3 months ("the Initial Term"). Upon expiry of the Initial Term, the Agreement shall automatically renew until terminated by either party giving the other party at least 24 hours written notice. 
+
+6.2 This Agreement may be terminated immediately by RealVNC giving written notice if the Licensee is in breach of any of its obligations under this Agreement. The Agreement may be terminated by the Licensee upon seven days' written notice. 
+
+6.3 Upon termination: 
+
+6.3.1 the Licence granted in clause 2 shall immediately end; 
+
+6.3.2 the Licensee shall cease to access or use the VNC Cloud; and 
+
+6.3.3 the Licensee shall within two working days return to RealVNC all copies of all or part of the SDK on any tangible medium and any documents containing any item of RealVNC's Confidential Information and shall completely delete all electronic copies of all or any part of the SDK and/or RealVNC's Confidential Information resident in Licensee's systems or elsewhere. 
+
+7 Non-Disclosure Agreement 
+
+7.1 Each party will keep confidential all information supplied by the other party which is marked or asserted as confidential at the time of its disclosure ("Confidential Information"), and shall not without the prior written consent of the other party use, or make any copies, or disclose to any third party the confidential information for any purpose whatsoever except for the purposes permitted or envisaged under this Agreement and only to the extent necessary for those purposes, and each shall inform its employees and contractors of their duty of confidentiality. Except for code contained within the SDK that is licensed on an open source basis, the SDK will be deemed to be Confidential Information in the hands of the Licensee. This obligation shall survive for five years from termination or expiry of this Agreement. 
+
+7.2 The obligations of confidentiality shall not extend to any part of the Confidential Information which is: 
+
+7.2.1 already known to the recipient prior to its disclosure by the discloser; or 
+
+7.2.2 lawfully received by the recipient from a third party; or 
+
+7.2.3 published at the date of such disclosure or subsequently through no fault of the recipient; or 
+
+7.2.4 independently developed by the receiving party without recourse to the confidential information; or 
+
+7.2.5 required to be disclosed by law to the extent of such required disclosure. 
+
+7.3 Provided each party has given written consent by an authorized representative or its respective company, each party gives the other its consent to publicise the fact that the parties have a business relationship, but not to disclose the terms of this Agreement. 
+
+8 Property Rights 
+
+8.1 RealVNC owns the SDK, its Confidential Information and all related documentation. The Licensee acknowledges that any disclosure pursuant to this Agreement shall not confer on the Licensee any intellectual property or other rights in relation to the SDK or RealVNC's Confidential Information. 
+
+8.2 Ownership of all complete or partial copies of the SDK and related documentation shall at all times remain with RealVNC. The Licensee agrees to mark any copies of the SDK which it may make in any tangible medium with a notice that such copy belongs to RealVNC. 
+
+8.3 If a third party notifies the Licensee of any claim that any rights in the SDK or that use of the SDK infringes any right of that third party, the Licensee agrees to immediately notify RealVNC and, at RealVNC's request, to immediately cease use of the SDK. If RealVNC is unable to allow the Licensee to continue to use the Licence, the provisions of Clause 6.3 shall apply. 
+
+9 General 
+
+9.1 All notices to be given under this Agreement must be in writing and shall be deemed to have been sufficiently given when emailed either by Licensee to RealVNC at enquiries@realvnc.com or by RealVNC to the Licensee at the email address provided at the time of receiving the SDK. Notices shall be deemed served on a party 24 hours after the time at which they are sent to that party in accordance with this clause. 
+
+9.2 Each party to this Agreement is an independent contractor and nothing will be constructed to express or imply a joint venture, partnership or relationship other than vendor and purchaser under contract. 
+
+9.3 Except as expressly permitted by this Agreement, neither party may transfer, sub-license or materially sub-contract any of its rights or obligations under this Agreement without the written consent of the other such consent not to be unreasonably withheld or delayed. 
+
+9.4 Despite anything else contained in this Agreement, neither party will be liable for any delay in performing its obligations under this Agreement if that delay is caused by circumstances beyond its reasonable control (including, without limitation, any delay caused by an act or omission or the other party) and the party affected will be entitled to a reasonable extension of time for the performance of its obligations. 
+
+9.5 No forbearance or delay by either party in enforcing the provisions of this Agreement will prejudice or restrict its rights, nor will any waiver of rights operate as a waiver of any subsequent breach. 
+
+9.6 Licensee agrees that it has not relied on any prior representations in entering into this Agreement. This Agreement supersedes all prior agreements, arrangements and understanding between the parties and constitutes the entire agreement between them relating to the Hosting Services, the SDKs and the Licence. No change to this Agreement is agreed unless signed by both parties. 
+
+9.7 This Agreement will be governed by and construed in accordance with English law and both parties agree to submit to the exclusive jurisdiction of the courts of England over any claim, dispute or matter arising under or in connection with this Agreement. In the event of any dispute between the Licensee and RealVNC under this Agreement, the parties will negotiate with each other in good faith in an attempt to resolve the dispute. 
+

@@ -1,0 +1,67 @@
+.. _DynamicLoader:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DynamicLoader
+-------------
+
+.. class:: DynamicLoader
+
+    Provides run-time loading of dynamic libraries.
+
+    
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`DynamicLoader.Exception`
+
+**Method summary**
+
+================= ======================================================================
+Modifier and Type Method and Description                                                
+================= ======================================================================
+:type:`string`    :meth:`DynamicLoader.LoadLibrary`\ (:type:`System.String` [])         
+                                                                                        
+                  Loads the VNC SDK dynamic library file by searching in                
+                  the specified directories in order.                                   
+                                                                                        
+                  All directories must be specified with absolute paths,                
+                  i.e. they must include a root directory.                              
+----------------- ----------------------------------------------------------------------
+:type:`string`    :meth:`DynamicLoader.GetPlatformSubdirectory`\ (:type:`System.String`)
+                                                                                        
+                  Returns a platform-specific subdirectory of the specified             
+                  directory, following the layout of the "lib" directory of             
+                  the VNC SDK.                                                          
+================= ======================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: string DynamicLoader.LoadLibrary(System.String[] a)
+
+    Loads the VNC SDK dynamic library file by searching in
+    the specified directories in order.
+
+    All directories must be specified with absolute paths,
+    i.e. they must include a root directory.
+
+    
+
+    **Return type:** :type:`string` - Returns the path of the loaded dynamic library file,        
+    or throws an Exception.
+
+.. method:: string DynamicLoader.GetPlatformSubdirectory(System.String a)
+
+    Returns a platform-specific subdirectory of the specified
+    directory, following the layout of the "lib" directory of
+    the VNC SDK.
+
+    
+
+    **Return type:** :type:`string` - A subdirectory of the specified directory.
+

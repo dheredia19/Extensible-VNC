@@ -1,0 +1,15 @@
+.. _MessagingManager.Callback.MessageReceivedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+MessagingManager.Callback.MessageReceivedType
+---------------------------------------------
+
+.. attribute:: MessagingManager.Callback.MessageReceivedType
+
+    The type of the :attr:`MessagingManager.Callback.MessageReceived`\  callback.
+
+    
+
+

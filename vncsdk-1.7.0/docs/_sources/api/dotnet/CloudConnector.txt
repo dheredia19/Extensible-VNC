@@ -1,0 +1,89 @@
+.. _CloudConnector:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudConnector
+--------------
+
+.. class:: CloudConnector
+
+    Connector used to join VNC Cloud and establish an outgoing connection.
+
+    For more information, see :cpp:class:`vnc_CloudConnector`\  in the C API documentation.
+
+
+**Constructor summary**
+
+====================== ======================================================================
+Modifier and Type      Method and Description                                                
+====================== ======================================================================
+:type:`CloudConnector` :meth:`CloudConnector`\ (:type:`System.String`, :type:`System.String`)
+                                                                                             
+                       Creates a connector, which is used used to create connections to Cloud
+                       addresses.                                                            
+====================== ======================================================================
+
+
+**Method summary**
+
+================= ==================================================================================
+Modifier and Type Method and Description                                                            
+================= ==================================================================================
+:type:`void`      :meth:`CloudConnector.Dispose`\ ()                                                
+                                                                                                    
+                  Destroys the Cloud connector.                                                     
+----------------- ----------------------------------------------------------------------------------
+:type:`void`      :meth:`CloudConnector.Connect`\ (:type:`System.String`, :type:`ConnectionHandler`)
+                                                                                                    
+                  Begins an outgoing connection to the given Cloud address.                         
+----------------- ----------------------------------------------------------------------------------
+:type:`void`      :meth:`CloudConnector.SetWaitForPeer`\ (:type:`System.Boolean`)                   
+                                                                                                    
+                  Sets whether new connections created by the connector wait for the peer to        
+                  start listening.                                                                  
+----------------- ----------------------------------------------------------------------------------
+:type:`void`      :meth:`CloudConnector.SetRelayBandwidthLimit`\ (:type:`System.Int32`)             
+                                                                                                    
+                  Set the bandwidth limit applied to relayed Cloud connections.                     
+================= ==================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: CloudConnector(System.String a, System.String b)
+
+    Creates a connector, which is used used to create connections to Cloud
+    addresses.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_create`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void CloudConnector.Dispose()
+
+    Destroys the Cloud connector.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_destroy`\  in the C API documentation.
+
+.. method:: void CloudConnector.Connect(System.String a, ConnectionHandler b)
+
+    Begins an outgoing connection to the given Cloud address.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_connect`\  in the C API documentation.
+
+.. method:: void CloudConnector.SetWaitForPeer(System.Boolean a)
+
+    Sets whether new connections created by the connector wait for the peer to
+    start listening.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_setWaitForPeer`\  in the C API documentation.
+
+.. method:: void CloudConnector.SetRelayBandwidthLimit(System.Int32 a)
+
+    Set the bandwidth limit applied to relayed Cloud connections.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_setRelayBandwidthLimit`\  in the C API documentation.
+

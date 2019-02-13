@@ -1,0 +1,31 @@
+
+.. _api_errors_8h:
+
+Errors.h
+========
+
+.. raw :: html
+
+    <div id="method-tables">
+
+Handle SDK errors. 
+
+**Functions**
+
+====================== ==============================================================================
+Modifier and Type      Name and Description                                                          
+====================== ==============================================================================
+function const char \* :ref:`vnc_getLastError <api_errors_8h_1a25d7cf6861a91b40ac94caec23247972>`\ ()
+                                                                                                     
+                       Gets the error produced by the last API call.                                 
+====================== ==============================================================================
+
+
+.. raw :: html
+
+    </div><a id="description"></a>
+
+**Detailed description**
+
+.. doxygenfile:: Errors.h
+   :project: api

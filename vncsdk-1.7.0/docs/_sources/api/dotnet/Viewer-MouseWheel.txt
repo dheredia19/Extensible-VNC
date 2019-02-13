@@ -1,0 +1,36 @@
+.. _Viewer.MouseWheel:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.MouseWheel
+-----------------
+
+.. enum:: Viewer.MouseWheel
+
+    Enumeration of mouse wheel directions.
+
+    For more information, see :cpp:class:`vnc_Viewer_MouseWheel`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  Viewer.MouseWheel.Zero
+
+    No MouseWheel bits set.
+
+    
+
+.. attribute::  Viewer.MouseWheel.Horizontal
+
+    The horizontal scroll wheel.
+
+    
+
+.. attribute::  Viewer.MouseWheel.Vertical
+
+    The vertical scroll wheel.
+
+    
+

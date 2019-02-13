@@ -1,0 +1,91 @@
+.. _Viewer.FramebufferCallback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.FramebufferCallback
+--------------------------
+
+.. class:: Viewer.FramebufferCallback
+
+    Callback receiving framebuffer event notifications for a Viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_FramebufferCallback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Viewer.FramebufferCallback.ServerFbSizeChangedType`
+- :ref:`Viewer.FramebufferCallback.ViewerFbUpdatedType`
+
+**Constructor summary**
+
+================= ========================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                  
+================= ========================================================================================================================================================
+\                 :meth:`Viewer.FramebufferCallback`\ (:attr:`Viewer.FramebufferCallback.ServerFbSizeChangedType`, :attr:`Viewer.FramebufferCallback.ViewerFbUpdatedType`)
+                                                                                                                                                                          
+                  Initializes a new FramebufferCallback class instance.                                                                                                   
+================= ========================================================================================================================================================
+
+
+**Method summary**
+
+================= ==============================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                        
+================= ==============================================================================================================================================================
+:type:`void`      :meth:`Viewer.FramebufferCallback.OnServerFbSizeChanged`\ (:type:`Viewer`, :type:`System.Int32`, :type:`System.Int32`)                                        
+                                                                                                                                                                                
+                  Handles the ServerFbSizeChanged event.                                                                                                                        
+                  By default, calls the ServerFbSizeChanged delegate.                                                                                                           
+----------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Viewer.FramebufferCallback.OnViewerFbUpdated`\ (:type:`Viewer`, :type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`)
+                                                                                                                                                                                
+                  Handles the ViewerFbUpdated event.                                                                                                                            
+                  By default, calls the ViewerFbUpdated delegate.                                                                                                               
+================= ==============================================================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: Viewer.FramebufferCallback(Viewer.FramebufferCallback.ServerFbSizeChangedType a, Viewer.FramebufferCallback.ViewerFbUpdatedType b)
+
+    Initializes a new FramebufferCallback class instance.
+
+    For more information, see :cpp:func:`vnc_Viewer_FramebufferCallback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void Viewer.FramebufferCallback.OnServerFbSizeChanged(Viewer a, System.Int32 b, System.Int32 c)
+
+    Handles the ServerFbSizeChanged event.
+    By default, calls the ServerFbSizeChanged delegate.
+
+    
+
+.. method:: void Viewer.FramebufferCallback.OnViewerFbUpdated(Viewer a, System.Int32 b, System.Int32 c, System.Int32 d, System.Int32 e)
+
+    Handles the ViewerFbUpdated event.
+    By default, calls the ViewerFbUpdated delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  Viewer.FramebufferCallback.ServerFbSizeChanged
+
+    Notification that the server's framebuffer size has changed.
+
+    For more information, see :cpp:member:`vnc_Viewer_FramebufferCallback::serverFbSizeChanged`\  in the C API documentation.
+
+.. attribute::  Viewer.FramebufferCallback.ViewerFbUpdated
+
+    Notification that the given rectangle of the viewer's framebuffer has been
+    updated with new pixel data.
+
+    For more information, see :cpp:member:`vnc_Viewer_FramebufferCallback::viewerFbUpdated`\  in the C API documentation.
+

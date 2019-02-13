@@ -1,0 +1,28 @@
+Viewer.PictureQuality
+=====================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum PictureQuality
+   :outertype: Viewer
+
+   Enumeration of picture quality levels.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final Viewer.PictureQuality AUTO
+   :outertype: Viewer.PictureQuality
+
+   Auto quality means that the viewer selects an appropriate encoding and colour level based on its own line speed estimate.
+
+.. java:field:: public static final Viewer.PictureQuality HIGH
+   :outertype: Viewer.PictureQuality
+
+.. java:field:: public static final Viewer.PictureQuality LOW
+   :outertype: Viewer.PictureQuality
+
+.. java:field:: public static final Viewer.PictureQuality MEDIUM
+   :outertype: Viewer.PictureQuality
+

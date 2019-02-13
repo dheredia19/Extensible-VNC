@@ -1,0 +1,46 @@
+PixelFormat
+===========
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class PixelFormat extends ImmutablePixelFormat
+
+   Description of how pixels are stored in a Viewer framebuffer.
+
+Constructor Summary
+-------------------
+* :java:construct:`PixelFormat <PixelFormat(int, int, int, int, int, int, int) throws Library.VncException>`\ (:java:type:`int` bitsPerPixel, :java:type:`int` redMax, :java:type:`int` greenMax, :java:type:`int` blueMax, :java:type:`int` redShift, :java:type:`int` greenShift, :java:type:`int` blueShift)
+
+  Creates a custom pixel format based on the given parameters.
+
+Method Summary
+--------------
+================= ================================================
+Modifier and Type Method and Description                          
+================= ================================================
+:java:type:`void` :java:meth:`destroy <PixelFormat.destroy()>`\ ()
+                                                                  
+                  Destroy a custom pixel format.                  
+================= ================================================
+
+Constructors
+------------
+
+.. java:constructor:: public PixelFormat(int bitsPerPixel, int redMax, int greenMax, int blueMax, int redShift, int greenShift, int blueShift) throws Library.VncException
+   :outertype: PixelFormat
+
+   Creates a custom pixel format based on the given parameters.
+
+   For more information, see :cpp:func:`vnc_PixelFormat_create`.
+
+Methods
+-------
+
+.. java:method:: public void destroy()
+   :outertype: PixelFormat
+
+   Destroy a custom pixel format.
+
+   For more information, see :cpp:func:`vnc_PixelFormat_destroy`.
+

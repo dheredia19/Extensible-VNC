@@ -1,0 +1,530 @@
+Viewer
+======
+
+.. js:data:: vncsdk.Viewer
+
+    A VNC-compatible Viewer showing the screen of and controlling a remote computer.
+
+Nested Classes
+--------------
+
+* class :js:class:`vncsdk.Viewer.ViewerCanvasContext`
+* :js:data:`vncsdk.Viewer.ConnectionStatus`
+* :js:data:`vncsdk.Viewer.DisconnectFlags`
+* :js:data:`vncsdk.Viewer.EncryptionLevel`
+* :js:data:`vncsdk.Viewer.MouseButton`
+* :js:data:`vncsdk.Viewer.MouseWheel`
+* :js:data:`vncsdk.Viewer.PictureQuality`
+* :js:attr:`vncsdk.Viewer.AuthenticationCallback`
+* :js:attr:`vncsdk.Viewer.ConnectionCallback`
+* :js:attr:`vncsdk.Viewer.FramebufferCallback`
+* :js:attr:`vncsdk.Viewer.PeerVerificationCallback`
+* :js:attr:`vncsdk.Viewer.ServerEventCallback`
+
+Constructor Summary
+-------------------
+================= =================================
+Modifier and Type Method and Description           
+================= =================================
+\                 `Viewer <#constructor>`_\ ()     
+                                                   
+                  Creates and returns a new viewer.
+================= =================================
+
+
+Method Summary
+--------------
+========================================= ======================================================================================================================================================
+Modifier and Type                         Method and Description                                                                                                                                
+========================================= ======================================================================================================================================================
+Uint8Array or null                        :js:func:`getViewerFbData <Viewer.getViewerFbData>`\ (x, y, w, h)                                                                                     
+                                                                                                                                                                                                
+                                          Returns the viewer framebuffer data for the given rectangle.                                                                                          
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`putViewerFbData <Viewer.putViewerFbData>`\ (x, y, w, h, canvasCtx[, targetX[, targetY]])                                                    
+                                                                                                                                                                                                
+                                          A painting function that paints the framebuffer into a canvas, using the most optimised functions that the browser provides.                          
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`destroy <Viewer.destroy>`\ ()                                                                                                               
+                                                                                                                                                                                                
+                                          Destroys the viewer.                                                                                                                                  
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`disconnect <Viewer.disconnect>`\ ()                                                                                                         
+                                                                                                                                                                                                
+                                          Disconnects this viewer from the server.                                                                                                              
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+:js:data:`vncsdk.AnnotationManager`       :js:func:`getAnnotationManager <Viewer.getAnnotationManager>`\ ()                                                                                     
+                                                                                                                                                                                                
+                                          Obtains the Viewer's :js:class:`vncsdk.AnnotationManager` for handling annotation operations.                                                         
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+:js:data:`vncsdk.ConnectionHandler`       :js:func:`getConnectionHandler <Viewer.getConnectionHandler>`\ ()                                                                                     
+                                                                                                                                                                                                
+                                          Returns the viewer's :js:class:`vncsdk.ConnectionHandler` for accepting connections.                                                                  
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+:js:attr:`vncsdk.Viewer.ConnectionStatus` :js:func:`getConnectionStatus <Viewer.getConnectionStatus>`\ ()                                                                                       
+                                                                                                                                                                                                
+                                          Returns the status of the viewer's connection.                                                                                                        
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+string or null                            :js:func:`getDisconnectMessage <Viewer.getDisconnectMessage>`\ ()                                                                                     
+                                                                                                                                                                                                
+                                          Returns a human-readable message sent by the server for the last disconnection, or ``null`` if the last disconnection was not initiated by the server.
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+string or null                            :js:func:`getDisconnectReason <Viewer.getDisconnectReason>`\ ()                                                                                       
+                                                                                                                                                                                                
+                                          Returns a string ID representing the reason for the last viewer disconnection.                                                                        
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+:js:attr:`vncsdk.Viewer.EncryptionLevel`  :js:func:`getEncryptionLevel <Viewer.getEncryptionLevel>`\ ()                                                                                         
+                                                                                                                                                                                                
+                                          Returns the Viewer's current encryption level.                                                                                                        
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+:js:data:`vncsdk.MessagingManager`        :js:func:`getMessagingManager <Viewer.getMessagingManager>`\ ()                                                                                       
+                                                                                                                                                                                                
+                                          Obtains the Viewer's Messaging Manager for handling messaging For more information, see :cpp:func:`vnc_Viewer_getMessagingManager`.                   
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+string                                    :js:func:`getPeerAddress <Viewer.getPeerAddress>`\ ()                                                                                                 
+                                                                                                                                                                                                
+                                          Returns the address of the viewer's server.                                                                                                           
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+:js:attr:`vncsdk.Viewer.PictureQuality`   :js:func:`getPictureQuality <Viewer.getPictureQuality>`\ ()                                                                                           
+                                                                                                                                                                                                
+                                          Returns the viewer's current picture quality.                                                                                                         
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+number                                    :js:func:`getViewerFbHeight <Viewer.getViewerFbHeight>`\ ()                                                                                           
+                                                                                                                                                                                                
+                                          Gets the height of the viewer framebuffer.                                                                                                            
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+:js:data:`vncsdk.PixelFormat`             :js:func:`getViewerFbPixelFormat <Viewer.getViewerFbPixelFormat>`\ ()                                                                                 
+                                                                                                                                                                                                
+                                          Gets the pixel format of the viewer framebuffer.                                                                                                      
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+number                                    :js:func:`getViewerFbStride <Viewer.getViewerFbStride>`\ ()                                                                                           
+                                                                                                                                                                                                
+                                          Returns the stride of the viewer framebuffer data in pixels, that is, the number of pixels from the start of each row until the start of the next.    
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+number                                    :js:func:`getViewerFbWidth <Viewer.getViewerFbWidth>`\ ()                                                                                             
+                                                                                                                                                                                                
+                                          Gets the width of the viewer framebuffer.                                                                                                             
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`releaseAllKeys <Viewer.releaseAllKeys>`\ ()                                                                                                 
+                                                                                                                                                                                                
+                                          Send key up events for all currently pressed keys.                                                                                                    
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`sendAuthenticationResponse <Viewer.sendAuthenticationResponse>`\ (ok, user, passwd)                                                         
+                                                                                                                                                                                                
+                                          Provides the SDK with the result of a username/password request.                                                                                      
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`sendClipboardText <Viewer.sendClipboardText>`\ (text)                                                                                       
+                                                                                                                                                                                                
+                                          Copies the given text to the server's clipboard.                                                                                                      
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`sendKeyDown <Viewer.sendKeyDown>`\ (keysym, keyCode)                                                                                        
+                                                                                                                                                                                                
+                                          Sends a key down (press) event to the server.                                                                                                         
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`sendKeyUp <Viewer.sendKeyUp>`\ (keyCode)                                                                                                    
+                                                                                                                                                                                                
+                                          Sends a key up (release) event to the server.                                                                                                         
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`sendPeerVerificationResponse <Viewer.sendPeerVerificationResponse>`\ (ok)                                                                   
+                                                                                                                                                                                                
+                                          Provides the SDK with the response to the :js:func:`Viewer.PeerVerificationCallback.verifyPeer()` request.                                            
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`sendPointerEvent <Viewer.sendPointerEvent>`\ (x, y, buttonState, rel)                                                                       
+                                                                                                                                                                                                
+                                          Sends a pointer event to the server.                                                                                                                  
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`sendScrollEvent <Viewer.sendScrollEvent>`\ (delta, axis)                                                                                    
+                                                                                                                                                                                                
+                                          Sends a scroll wheel event to the server.                                                                                                             
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`setAuthenticationCallback <Viewer.setAuthenticationCallback>`\ (callback)                                                                   
+                                                                                                                                                                                                
+                                          Sets the callback to be called when a username and/or password is required.                                                                           
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`setConnectionCallback <Viewer.setConnectionCallback>`\ (callback)                                                                           
+                                                                                                                                                                                                
+                                          Sets the callbacks for the Viewer to call when various events occur during its lifetime.                                                              
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`setEncryptionLevel <Viewer.setEncryptionLevel>`\ (level)                                                                                    
+                                                                                                                                                                                                
+                                          Sets the desired encryption level of the session from the range of options enumerated by :js:class:`vncsdk.Viewer`_EncryptionLevel.                   
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`setFramebufferCallback <Viewer.setFramebufferCallback>`\ (callback)                                                                         
+                                                                                                                                                                                                
+                                          Sets the framebuffer callback for this viewer.                                                                                                        
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`setPeerVerificationCallback <Viewer.setPeerVerificationCallback>`\ (callback)                                                               
+                                                                                                                                                                                                
+                                          Sets the callbacks to be called to verify the identity of the peer (server).                                                                          
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`setPictureQuality <Viewer.setPictureQuality>`\ (quality)                                                                                    
+                                                                                                                                                                                                
+                                          Sets the desired picture quality of the session from the range of options enumerated by :js:class:`vncsdk.Viewer`_PictureQuality.                     
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`setServerEventCallback <Viewer.setServerEventCallback>`\ (callback)                                                                         
+                                                                                                                                                                                                
+                                          Sets the server event callback for this viewer.                                                                                                       
+----------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :js:func:`setViewerFb <Viewer.setViewerFb>`\ (pf, width, height, stride)                                                                              
+                                                                                                                                                                                                
+                                          Sets the viewer framebuffer.                                                                                                                          
+========================================= ======================================================================================================================================================
+
+
+Constructor
+-----------
+
+.. js:class:: vncsdk.Viewer()
+
+    Creates and returns a new viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_create`.
+
+    :throws: :js:data:`vncsdk.VncException` on error
+
+Methods
+-------
+
+.. js:function:: Viewer.getViewerFbData(x, y, w, h)
+
+    Returns the viewer framebuffer data for the given rectangle.  This method is
+    rarely useful, and is inefficient.  Typically, efficient access to the
+    framebuffer is provided by using :js:func:`Viewer.putViewerFbData()` to
+    paint directly into an HTML canvas.
+
+    :param number x:
+    :param number y:
+    :param number w:
+    :param number h:
+    :throws: :js:data:`vncsdk.VncException` on error
+    :rtype: Uint8Array or null
+
+.. js:function:: Viewer.putViewerFbData(x, y, w, h, canvasCtx[, targetX[, targetY]])
+
+    A painting function that paints the framebuffer into a canvas, using the
+    most optimised functions that the browser provides.  It uses a helper class
+    :js:data:`vncsdk.Viewer.ViewerCanvasContext` which stores the canvas and
+    buffer context in between calls. The ``ViewerCanvasContext`` should be created
+    once and passed in to each successive call to ``putViewerFbData()``.
+    If ``targetX`` and ``targetY`` are not provided, they default to 0.  The
+    viewer's pixel format must be set to RGBX (ie. little-endian
+    :js:data:`vncsdk.PixelFormat.bgr888`).
+
+    :param number x:
+    :param number y:
+    :param number w:
+    :param number h:
+    :param canvasCtx:
+    :type canvasCtx: :js:data:`vncsdk.Viewer.ViewerCanvasContext`
+    :param number targetX: Defaults to 0
+    :param number targetY: Defaults to 0
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.destroy()
+
+    Destroys the viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_destroy`.
+
+
+.. js:function:: Viewer.disconnect()
+
+    Disconnects this viewer from the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_disconnect`.
+
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.getAnnotationManager()
+
+    Obtains the Viewer's :js:class:`vncsdk.AnnotationManager` for handling annotation
+    operations.
+
+    For more information, see :cpp:func:`vnc_Viewer_getAnnotationManager`.
+
+    :rtype: :js:data:`vncsdk.AnnotationManager`
+
+.. js:function:: Viewer.getConnectionHandler()
+
+    Returns the viewer's :js:class:`vncsdk.ConnectionHandler` for accepting connections.
+
+    For more information, see :cpp:func:`vnc_Viewer_getConnectionHandler`.
+
+    :rtype: :js:data:`vncsdk.ConnectionHandler`
+
+.. js:function:: Viewer.getConnectionStatus()
+
+    Returns the status of the viewer's connection.
+
+    For more information, see :cpp:func:`vnc_Viewer_getConnectionStatus`.
+
+    :rtype: :js:attr:`vncsdk.Viewer.ConnectionStatus`
+
+.. js:function:: Viewer.getDisconnectMessage()
+
+    Returns a human-readable message sent by the server for the last
+    disconnection, or ``null`` if the last disconnection was not initiated by the
+    server.
+
+    For more information, see :cpp:func:`vnc_Viewer_getDisconnectMessage`.
+
+    :rtype: string or null
+
+.. js:function:: Viewer.getDisconnectReason()
+
+    Returns a string ID representing the reason for the last viewer
+    disconnection.
+
+    For more information, see :cpp:func:`vnc_Viewer_getDisconnectReason`.
+
+    :rtype: string or null
+
+.. js:function:: Viewer.getEncryptionLevel()
+
+    Returns the Viewer's current encryption level.
+
+    For more information, see :cpp:func:`vnc_Viewer_getEncryptionLevel`.
+
+    :rtype: :js:attr:`vncsdk.Viewer.EncryptionLevel`
+
+.. js:function:: Viewer.getMessagingManager()
+
+    Obtains the Viewer's Messaging Manager for handling messaging
+
+    For more information, see :cpp:func:`vnc_Viewer_getMessagingManager`.
+
+    :rtype: :js:data:`vncsdk.MessagingManager`
+
+.. js:function:: Viewer.getPeerAddress()
+
+    Returns the address of the viewer's server.
+
+    For more information, see :cpp:func:`vnc_Viewer_getPeerAddress`.
+
+    :throws: :js:data:`vncsdk.VncException` on error
+    :rtype: string
+
+.. js:function:: Viewer.getPictureQuality()
+
+    Returns the viewer's current picture quality.
+
+    For more information, see :cpp:func:`vnc_Viewer_getPictureQuality`.
+
+    :rtype: :js:attr:`vncsdk.Viewer.PictureQuality`
+
+.. js:function:: Viewer.getViewerFbHeight()
+
+    Gets the height of the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbHeight`.
+
+    :rtype: number
+
+.. js:function:: Viewer.getViewerFbPixelFormat()
+
+    Gets the pixel format of the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbPixelFormat`.
+
+    :throws: :js:data:`vncsdk.VncException` on error
+    :rtype: :js:data:`vncsdk.PixelFormat`
+
+.. js:function:: Viewer.getViewerFbStride()
+
+    Returns the stride of the viewer framebuffer data in pixels, that is, the
+    number of pixels from the start of each row until the start of the next.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbStride`.
+
+    :rtype: number
+
+.. js:function:: Viewer.getViewerFbWidth()
+
+    Gets the width of the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbWidth`.
+
+    :rtype: number
+
+.. js:function:: Viewer.releaseAllKeys()
+
+    Send key up events for all currently pressed keys.
+
+    For more information, see :cpp:func:`vnc_Viewer_releaseAllKeys`.
+
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.sendAuthenticationResponse(ok, user, passwd)
+
+    Provides the SDK with the result of a username/password request.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendAuthenticationResponse`.
+
+    :param ok:
+    :type ok: boolean
+    :param user:
+    :type user: string or null
+    :param passwd:
+    :type passwd: string or null
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.sendClipboardText(text)
+
+    Copies the given text to the server's clipboard.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendClipboardText`.
+
+    :param text:
+    :type text: string
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.sendKeyDown(keysym, keyCode)
+
+    Sends a key down (press) event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendKeyDown`.
+
+    :param keysym:
+    :type keysym: number
+    :param keyCode:
+    :type keyCode: number
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.sendKeyUp(keyCode)
+
+    Sends a key up (release) event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendKeyUp`.
+
+    :param keyCode:
+    :type keyCode: number
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.sendPeerVerificationResponse(ok)
+
+    Provides the SDK with the response to the
+    :js:func:`Viewer.PeerVerificationCallback.verifyPeer()` request.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendPeerVerificationResponse`.
+
+    :param ok:
+    :type ok: boolean
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.sendPointerEvent(x, y, buttonState, rel)
+
+    Sends a pointer event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendPointerEvent`.
+
+    :param x:
+    :type x: number
+    :param y:
+    :type y: number
+    :param buttonState:
+    :type buttonState: Set<:js:attr:`vncsdk.Viewer.MouseButton`>
+    :param rel:
+    :type rel: boolean
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.sendScrollEvent(delta, axis)
+
+    Sends a scroll wheel event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendScrollEvent`.
+
+    :param delta:
+    :type delta: number
+    :param axis:
+    :type axis: :js:attr:`vncsdk.Viewer.MouseWheel`
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.setAuthenticationCallback(callback)
+
+    Sets the callback to be called when a username and/or password is required.
+
+    For more information, see :cpp:func:`vnc_Viewer_setAuthenticationCallback`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.Viewer.AuthenticationCallback` or null
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.setConnectionCallback(callback)
+
+    Sets the callbacks for the Viewer to call when various events occur during
+    its lifetime.
+
+    For more information, see :cpp:func:`vnc_Viewer_setConnectionCallback`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.Viewer.ConnectionCallback` or null
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.setEncryptionLevel(level)
+
+    Sets the desired encryption level of the session from the range of options
+    enumerated by :js:class:`vncsdk.Viewer`_EncryptionLevel.
+
+    For more information, see :cpp:func:`vnc_Viewer_setEncryptionLevel`.
+
+    :param level:
+    :type level: :js:attr:`vncsdk.Viewer.EncryptionLevel`
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.setFramebufferCallback(callback)
+
+    Sets the framebuffer callback for this viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_setFramebufferCallback`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.Viewer.FramebufferCallback` or null
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.setPeerVerificationCallback(callback)
+
+    Sets the callbacks to be called to verify the identity of the peer (server).
+
+    For more information, see :cpp:func:`vnc_Viewer_setPeerVerificationCallback`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.Viewer.PeerVerificationCallback` or null
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.setPictureQuality(quality)
+
+    Sets the desired picture quality of the session from the range of options
+    enumerated by :js:class:`vncsdk.Viewer`_PictureQuality.
+
+    For more information, see :cpp:func:`vnc_Viewer_setPictureQuality`.
+
+    :param quality:
+    :type quality: :js:attr:`vncsdk.Viewer.PictureQuality`
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.setServerEventCallback(callback)
+
+    Sets the server event callback for this viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_setServerEventCallback`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.Viewer.ServerEventCallback` or null
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: Viewer.setViewerFb(pf, width, height, stride)
+
+    Sets the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_setViewerFb`.
+
+    :param pf:
+    :type pf: :js:data:`vncsdk.PixelFormat`
+    :param width:
+    :type width: number
+    :param height:
+    :type height: number
+    :param stride:
+    :type stride: number
+    :throws: :js:data:`vncsdk.VncException` on error
+

@@ -1,0 +1,29 @@
+CloudAddressMonitor.Availability
+================================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum Availability
+   :outertype: CloudAddressMonitor
+
+   Enumeration of availabilities for a Cloud address.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final CloudAddressMonitor.Availability AVAILABLE
+   :outertype: CloudAddressMonitor.Availability
+
+   A peer is currently listening on the Cloud address.
+
+.. java:field:: public static final CloudAddressMonitor.Availability UNAVAILABLE
+   :outertype: CloudAddressMonitor.Availability
+
+   No peer is currently listening on the Cloud address.
+
+.. java:field:: public static final CloudAddressMonitor.Availability UNKNOWN_AVAILABILITY
+   :outertype: CloudAddressMonitor.Availability
+
+   The Cloud address monitor is waiting for the Cloud services to return the availability for the peer address, or an error occurred.
+

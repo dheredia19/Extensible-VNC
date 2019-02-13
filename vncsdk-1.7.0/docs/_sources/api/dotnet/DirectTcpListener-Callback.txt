@@ -1,0 +1,71 @@
+.. _DirectTcpListener.Callback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DirectTcpListener.Callback
+--------------------------
+
+.. class:: DirectTcpListener.Callback
+
+    Callback for filtering incoming TCP connections.
+
+    For more information, see :cpp:func:`vnc_DirectTcpListener_Callback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`DirectTcpListener.Callback.FilterConnectionType`
+
+**Constructor summary**
+
+================= =============================================================================================
+Modifier and Type Method and Description                                                                       
+================= =============================================================================================
+\                 :meth:`DirectTcpListener.Callback`\ (:attr:`DirectTcpListener.Callback.FilterConnectionType`)
+                                                                                                               
+                  Initializes a new Callback class instance.                                                   
+================= =============================================================================================
+
+
+**Method summary**
+
+================= ===============================================================================================================================
+Modifier and Type Method and Description                                                                                                         
+================= ===============================================================================================================================
+:type:`bool`      :meth:`DirectTcpListener.Callback.OnFilterConnection`\ (:type:`DirectTcpListener`, :type:`System.String`, :type:`System.Int32`)
+                                                                                                                                                 
+                  Handles the FilterConnection event.                                                                                            
+                  By default, calls the FilterConnection delegate.                                                                               
+================= ===============================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: DirectTcpListener.Callback(DirectTcpListener.Callback.FilterConnectionType a)
+
+    Initializes a new Callback class instance.
+
+    For more information, see :cpp:func:`vnc_DirectTcpListener_Callback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: bool DirectTcpListener.Callback.OnFilterConnection(DirectTcpListener a, System.String b, System.Int32 c)
+
+    Handles the FilterConnection event.
+    By default, calls the FilterConnection delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  DirectTcpListener.Callback.FilterConnection
+
+    Notification to provide address-based filtering of incoming connections.
+
+    For more information, see :cpp:member:`vnc_DirectTcpListener_Callback::filterConnection`\  in the C API documentation.
+

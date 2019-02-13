@@ -1,0 +1,58 @@
+RsaKey
+======
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.RsaKey.Callback`
+
+
+Method Summary
+--------------
+================= ===================================================================================
+Modifier and Type Method and Description                                                             
+================= ===================================================================================
+\                 :py:func:`cancel_details <vncsdk.RsaKey.cancel_details>`\ (_callback)              
+                                                                                                     
+                  Cancels any outstanding notifications for the given callback.                      
+----------------- -----------------------------------------------------------------------------------
+\                 :py:func:`clear <vncsdk.RsaKey.clear>`\ ()                                         
+                                                                                                     
+                  Removes any stored RSA key from the data store.                                    
+----------------- -----------------------------------------------------------------------------------
+\                 :py:func:`get_details <vncsdk.RsaKey.get_details>`\ (callback, generate_if_missing)
+                                                                                                     
+                  Requests the details for the machine's identifying RSA public key.                 
+================= ===================================================================================
+
+
+Static methods
+--------------
+
+.. py:function:: vncsdk.RsaKey.cancel_details(_callback)
+
+    Cancels any outstanding notifications for the given callback.
+
+    For more information, see :cpp:func:`vnc_RsaKey_cancelDetails`.
+
+    :param _callback:
+    :type _callback: :py:class:`vncsdk.RsaKey.Callback`
+
+.. py:function:: vncsdk.RsaKey.clear()
+
+    Removes any stored RSA key from the data store.
+
+    For more information, see :cpp:func:`vnc_RsaKey_clear`.
+
+
+.. py:function:: vncsdk.RsaKey.get_details(callback, generate_if_missing)
+
+    Requests the details for the machine's identifying RSA public key.
+
+    For more information, see :cpp:func:`vnc_RsaKey_getDetails`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.RsaKey.Callback` or None
+    :param generate_if_missing:
+    :type generate_if_missing: bool
+

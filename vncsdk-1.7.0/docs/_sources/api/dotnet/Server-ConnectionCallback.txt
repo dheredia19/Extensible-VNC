@@ -1,0 +1,90 @@
+.. _Server.ConnectionCallback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.ConnectionCallback
+-------------------------
+
+.. class:: Server.ConnectionCallback
+
+    Callback receiving connection-related notifications for a Server.
+
+    For more information, see :cpp:func:`vnc_Server_ConnectionCallback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Server.ConnectionCallback.ConnectionStartedType`
+- :ref:`Server.ConnectionCallback.ConnectionEndedType`
+
+**Constructor summary**
+
+================= ===================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                             
+================= ===================================================================================================================================================
+\                 :meth:`Server.ConnectionCallback`\ (:attr:`Server.ConnectionCallback.ConnectionStartedType`, :attr:`Server.ConnectionCallback.ConnectionEndedType`)
+                                                                                                                                                                     
+                  Initializes a new ConnectionCallback class instance.                                                                                               
+================= ===================================================================================================================================================
+
+
+**Method summary**
+
+================= ===========================================================================================
+Modifier and Type Method and Description                                                                     
+================= ===========================================================================================
+:type:`void`      :meth:`Server.ConnectionCallback.OnConnectionStarted`\ (:type:`Server`, :type:`Connection`)
+                                                                                                             
+                  Handles the ConnectionStarted event.                                                       
+                  By default, calls the ConnectionStarted delegate.                                          
+----------------- -------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Server.ConnectionCallback.OnConnectionEnded`\ (:type:`Server`, :type:`Connection`)  
+                                                                                                             
+                  Handles the ConnectionEnded event.                                                         
+                  By default, calls the ConnectionEnded delegate.                                            
+================= ===========================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: Server.ConnectionCallback(Server.ConnectionCallback.ConnectionStartedType a, Server.ConnectionCallback.ConnectionEndedType b)
+
+    Initializes a new ConnectionCallback class instance.
+
+    For more information, see :cpp:func:`vnc_Server_ConnectionCallback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void Server.ConnectionCallback.OnConnectionStarted(Server a, Connection b)
+
+    Handles the ConnectionStarted event.
+    By default, calls the ConnectionStarted delegate.
+
+    
+
+.. method:: void Server.ConnectionCallback.OnConnectionEnded(Server a, Connection b)
+
+    Handles the ConnectionEnded event.
+    By default, calls the ConnectionEnded delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  Server.ConnectionCallback.ConnectionStarted
+
+    Notification that a connection has successfully started.
+
+    For more information, see :cpp:member:`vnc_Server_ConnectionCallback::connectionStarted`\  in the C API documentation.
+
+.. attribute::  Server.ConnectionCallback.ConnectionEnded
+
+    Notification that a connection has ended.
+
+    For more information, see :cpp:member:`vnc_Server_ConnectionCallback::connectionEnded`\  in the C API documentation.
+

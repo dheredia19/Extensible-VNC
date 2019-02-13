@@ -1,0 +1,38 @@
+.. _Server.DisconnectFlags:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.DisconnectFlags
+----------------------
+
+.. enum:: Server.DisconnectFlags
+
+    Enumeration of disconnection flags.
+
+    For more information, see :cpp:class:`vnc_Server_DisconnectFlags`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  Server.DisconnectFlags.Zero
+
+    No DisconnectFlags bits set.
+
+    
+
+.. attribute::  Server.DisconnectFlags.Alert
+
+    The disconnection message is deemed to be sufficiently important that the
+    Viewer should alert the Viewer user.
+
+    
+
+.. attribute::  Server.DisconnectFlags.Reconnect
+
+    Set the peer's :attr:`Viewer.DisconnectFlags.CanReconnect`\  flag, that is, the Server
+    informs the Viewer that the server may start again soon.
+
+    
+

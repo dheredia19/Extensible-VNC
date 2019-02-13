@@ -1,0 +1,51 @@
+MessagingManager
+================
+
+.. py:class:: vncsdk.MessagingManager
+
+    Enables a Viewer or Server to send custom messages.
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.MessagingManager.Callback`
+
+
+Method Summary
+--------------
+================= =============================================================================
+Modifier and Type Method and Description                                                       
+================= =============================================================================
+\                 :py:func:`send_message <MessagingManager.send_message>`\ (buffer, connection)
+                                                                                               
+                  Sends a message.                                                             
+----------------- -----------------------------------------------------------------------------
+\                 :py:func:`set_callback <MessagingManager.set_callback>`\ (callback)          
+                                                                                               
+                  Registers a callback notifying when messages are received.                   
+================= =============================================================================
+
+
+Methods
+-------
+
+.. py:method:: MessagingManager.send_message(buffer, connection)
+
+    Sends a message.
+
+    For more information, see :cpp:func:`vnc_MessagingManager_sendMessage`.
+
+    :param buffer:
+    :type buffer: bytes
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+
+.. py:method:: MessagingManager.set_callback(callback)
+
+    Registers a callback notifying when messages are received.
+
+    For more information, see :cpp:func:`vnc_MessagingManager_setCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.MessagingManager.Callback` or None
+

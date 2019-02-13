@@ -1,0 +1,15 @@
+.. _CloudListener.Callback.FilterConnectionType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudListener.Callback.FilterConnectionType
+-------------------------------------------
+
+.. attribute:: CloudListener.Callback.FilterConnectionType
+
+    The type of the :attr:`CloudListener.Callback.FilterConnection`\  callback.
+
+    
+
+

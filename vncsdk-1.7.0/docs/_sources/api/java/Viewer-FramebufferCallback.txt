@@ -1,0 +1,42 @@
+Viewer.FramebufferCallback
+==========================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface FramebufferCallback
+   :outertype: Viewer
+
+   Callback receiving framebuffer event notifications for a Viewer.
+
+Method Summary
+--------------
+================= ============================================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                                      
+================= ============================================================================================================================================================================================================
+:java:type:`void` :java:meth:`serverFbSizeChanged <FramebufferCallback.serverFbSizeChanged(Viewer, int, int)>`\ (:java:type:`Viewer` viewer, :java:type:`int` w, :java:type:`int` h)                                          
+                                                                                                                                                                                                                              
+                  Notification that the server's framebuffer size has changed.                                                                                                                                                
+----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`viewerFbUpdated <FramebufferCallback.viewerFbUpdated(Viewer, int, int, int, int)>`\ (:java:type:`Viewer` viewer, :java:type:`int` x, :java:type:`int` y, :java:type:`int` w, :java:type:`int` h)
+                                                                                                                                                                                                                              
+                  Notification that the given rectangle of the viewer's framebuffer has been updated with new pixel data.                                                                                                     
+================= ============================================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void serverFbSizeChanged(Viewer viewer, int w, int h)
+   :outertype: Viewer.FramebufferCallback
+
+   Notification that the server's framebuffer size has changed.
+
+   For more information, see :cpp:member:`vnc_Viewer_FramebufferCallback::serverFbSizeChanged`.
+
+.. java:method::  void viewerFbUpdated(Viewer viewer, int x, int y, int w, int h)
+   :outertype: Viewer.FramebufferCallback
+
+   Notification that the given rectangle of the viewer's framebuffer has been updated with new pixel data.
+
+   For more information, see :cpp:member:`vnc_Viewer_FramebufferCallback::viewerFbUpdated`.
+

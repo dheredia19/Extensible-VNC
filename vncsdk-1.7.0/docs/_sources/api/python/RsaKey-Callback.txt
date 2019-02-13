@@ -1,0 +1,35 @@
+RsaKey.Callback
+===============
+
+.. py:attribute:: vncsdk.RsaKey.Callback
+
+    Callback which receives RSA key details.
+
+Method Summary
+--------------
+================= ================================================================================================================
+Modifier and Type Method and Description                                                                                          
+================= ================================================================================================================
+\                 :py:func:`details_ready <RsaKey.Callback.details_ready>`\ (rsa_public, hex_fingerprint, catchphrase_fingerprint)
+                                                                                                                                  
+                  Notification that the SDK's RSA key has been retrieved.                                                         
+================= ================================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: RsaKey.Callback.details_ready(rsa_public, hex_fingerprint, catchphrase_fingerprint)
+
+    Notification that the SDK's RSA key has been retrieved.
+
+    For more information, see :cpp:member:`vnc_RsaKey_Callback::detailsReady`.
+
+    :param rsa_public:
+    :type rsa_public: :py:class:`vncsdk.DataBuffer`
+    :param hex_fingerprint:
+    :type hex_fingerprint: str or None
+    :param catchphrase_fingerprint:
+    :type catchphrase_fingerprint: str or None
+    :return: None
+

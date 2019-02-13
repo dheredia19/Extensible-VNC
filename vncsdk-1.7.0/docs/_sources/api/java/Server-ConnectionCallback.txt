@@ -1,0 +1,42 @@
+Server.ConnectionCallback
+=========================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface ConnectionCallback
+   :outertype: Server
+
+   Callback receiving connection-related notifications for a Server.
+
+Method Summary
+--------------
+================= ===========================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                     
+================= ===========================================================================================================================================================
+:java:type:`void` :java:meth:`connectionEnded <ConnectionCallback.connectionEnded(Server, Connection)>`\ (:java:type:`Server` server, :java:type:`Connection` connection)    
+                                                                                                                                                                             
+                  Notification that a connection has ended.                                                                                                                  
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`connectionStarted <ConnectionCallback.connectionStarted(Server, Connection)>`\ (:java:type:`Server` server, :java:type:`Connection` connection)
+                                                                                                                                                                             
+                  Notification that a connection has successfully started.                                                                                                   
+================= ===========================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void connectionEnded(Server server, Connection connection)
+   :outertype: Server.ConnectionCallback
+
+   Notification that a connection has ended.
+
+   For more information, see :cpp:member:`vnc_Server_ConnectionCallback::connectionEnded`.
+
+.. java:method::  void connectionStarted(Server server, Connection connection)
+   :outertype: Server.ConnectionCallback
+
+   Notification that a connection has successfully started.
+
+   For more information, see :cpp:member:`vnc_Server_ConnectionCallback::connectionStarted`.
+

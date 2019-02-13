@@ -1,0 +1,42 @@
+Viewer.AuthenticationCallback
+=============================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface AuthenticationCallback
+   :outertype: Viewer
+
+   Callback receiving requests for authentication for a Viewer.
+
+Method Summary
+--------------
+================= ===========================================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                                     
+================= ===========================================================================================================================================================================================================
+:java:type:`void` :java:meth:`cancelUserCredentialsRequest <AuthenticationCallback.cancelUserCredentialsRequest(Viewer)>`\ (:java:type:`Viewer` viewer)                                                                      
+                                                                                                                                                                                                                             
+                  Notification to cancel a username and/or password request.                                                                                                                                                 
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`requestUserCredentials <AuthenticationCallback.requestUserCredentials(Viewer, boolean, boolean)>`\ (:java:type:`Viewer` viewer, :java:type:`boolean` needUser, :java:type:`boolean` needPasswd)
+                                                                                                                                                                                                                             
+                  Request for a username and/or password.                                                                                                                                                                    
+================= ===========================================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void cancelUserCredentialsRequest(Viewer viewer)
+   :outertype: Viewer.AuthenticationCallback
+
+   Notification to cancel a username and/or password request.
+
+   For more information, see :cpp:member:`vnc_Viewer_AuthenticationCallback::cancelUserCredentialsRequest`.
+
+.. java:method::  void requestUserCredentials(Viewer viewer, boolean needUser, boolean needPasswd)
+   :outertype: Viewer.AuthenticationCallback
+
+   Request for a username and/or password.
+
+   For more information, see :cpp:member:`vnc_Viewer_AuthenticationCallback::requestUserCredentials`.
+

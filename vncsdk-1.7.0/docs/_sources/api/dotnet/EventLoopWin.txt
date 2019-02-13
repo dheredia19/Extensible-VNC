@@ -1,0 +1,60 @@
+.. _EventLoopWin:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+EventLoopWin
+------------
+
+.. class:: EventLoopWin
+
+    A container for static methods.
+
+    For more information, see :cpp:class:`vnc_EventLoopWin`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`EventLoopWin.Callback`
+
+**Method summary**
+
+==================== =========================================================================
+Modifier and Type    Method and Description                                                   
+==================== =========================================================================
+:type:`void`         :meth:`EventLoopWin.SetCallback`\ (:type:`EventLoopWin.Callback`)        
+                                                                                              
+                     Sets the event loop callback.                                            
+-------------------- -------------------------------------------------------------------------
+:type:`WaitHandle[]` :meth:`EventLoopWin.GetEvents`\ ()                                       
+                                                                                              
+                     Gets the array of events that the SDK currently wishes to be notified of.
+-------------------- -------------------------------------------------------------------------
+:type:`int`          :meth:`EventLoopWin.HandleEvent`\ (:type:`System.Threading.WaitHandle`)  
+                                                                                              
+                     Handles the given event (if any) and process expired timers.             
+==================== =========================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: void EventLoopWin.SetCallback(EventLoopWin.Callback a)
+
+    Sets the event loop callback.
+
+    For more information, see :cpp:func:`vnc_EventLoopWin_setCallback`\  in the C API documentation.
+
+.. method:: WaitHandle[] EventLoopWin.GetEvents()
+
+    Gets the array of events that the SDK currently wishes to be notified of.
+
+    For more information, see :cpp:func:`vnc_EventLoopWin_getEvents`\  in the C API documentation.
+
+.. method:: int EventLoopWin.HandleEvent(System.Threading.WaitHandle a)
+
+    Handles the given event (if any) and process expired timers.
+
+    For more information, see :cpp:func:`vnc_EventLoopWin_handleEvent`\  in the C API documentation.
+

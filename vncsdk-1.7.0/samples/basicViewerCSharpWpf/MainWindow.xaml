@@ -1,0 +1,92 @@
+<Window x:Class="BasicViewerCSharpWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:BasicViewerCSharpWpf.WinFormsControls"
+        mc:Ignorable="d"
+        Icon="Pictures/application.png"
+        WindowStartupLocation="CenterScreen"
+        Title="RealVNC SDK Viewer WPF" Height="600" Width="900">
+    <Grid x:Name="MainGrid">
+        <ToolBarTray Background="White" Focusable="False"  >
+            <ToolBar Band="1" BandIndex="1" >
+                <Button x:Name ="ButtonConnect" Click="ButtonConnect_Click" IsEnabled="False" Height="40">
+                    <TextBlock Text="Connect"/>
+                </Button>
+                <Button x:Name ="ButtonDisconnect" Click="ButtonDisconnect_Click" Height="40" Visibility="Collapsed">
+                    <TextBlock Text="Disconnect"/>
+                </Button>
+                <Separator/>
+                <CheckBox x:Name="KeyboardControl" IsChecked="true" Checked="KeyboardControl_Checked" Unchecked="KeyboardControl_Checked">
+                    <StackPanel>
+                        <Image Source="Pictures/Keyboard.png" />
+                        <TextBlock Text="Keyboard"></TextBlock>
+                    </StackPanel>
+                </CheckBox>
+                <CheckBox x:Name="MouseControl" IsChecked="true" Checked="MouseControl_Checked" Unchecked="MouseControl_Checked">
+                    <StackPanel>
+                        <Image Source="Pictures/Mouse.png" />
+                        <TextBlock Text="Mouse"></TextBlock>
+                    </StackPanel>
+                </CheckBox>
+                <Separator/>
+            </ToolBar>
+            <ToolBar Band="1" BandIndex="1">
+                <CheckBox x:Name="StartAnnotation" IsChecked="False" Checked="StartAnnotation_Checked" Unchecked="StartAnnotation_Checked">
+                    <StackPanel>
+                        <Image Source="Pictures/Annotate.png" />
+                        <TextBlock Text="Annotation"></TextBlock>
+                    </StackPanel>
+                </CheckBox>
+                <Button Click="AnnotationColour_Click" >
+                    <StackPanel>
+                        <Rectangle
+                            x:Name="AnnotationColour"
+                            Width="18"
+                            Height="18"
+                            Fill="Blue"
+                            Canvas.Left="10"
+                            Canvas.Top="25" />
+                        <TextBlock Text="Colour" />
+                    </StackPanel>
+                    
+                </Button>
+                <Button x:Name="AnnotationThickness" Click="AnnotationThickeness_Click">
+                    <StackPanel>
+                        <Line x:Name="AnnotationLine"
+                        X1="0" Y1="10"
+                        X2="30" Y2="10"
+                        Stroke="Black"
+                        StrokeThickness="4"
+                        Margin="10,0,0,0"
+                        Height="18"
+                        />
+                        <TextBlock Text="Thickness"></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Separator/>
+                
+                <Button x:Name="AnnotationDuration" Click="AnnotationDuration_Click">
+                    <StackPanel>
+                        <Image Source="Pictures/Duration.png" />
+                        <TextBlock x:Name="AnnotationDurationText" Text="Duration"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="ClearAnnotation" Click="ClearAnnotation_Click">
+                    <StackPanel>
+                        <Image Source="Pictures/Clear.png" />
+                        <TextBlock Text="Clear"></TextBlock>
+                    </StackPanel>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <WindowsFormsHost HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,50,10,10">
+            <controls:ViewerControl x:Name="VncViewerControl"></controls:ViewerControl>
+        </WindowsFormsHost>
+        <Border BorderBrush="{x:Null}" Height="36" VerticalAlignment="Top" Margin="0,0,12,0" HorizontalAlignment="Right" >
+            <Label x:Name="MyLabel" Content="Status" HorizontalAlignment="Right" VerticalAlignment="Center" />
+         </Border>
+    </Grid>
+</Window>

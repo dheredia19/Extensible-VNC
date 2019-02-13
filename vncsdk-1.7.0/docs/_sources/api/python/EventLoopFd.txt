@@ -1,0 +1,60 @@
+EventLoopFd
+===========
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.EventLoopFd.Callback`
+
+* :py:class:`vncsdk.EventLoopFd.Event`
+
+Method Summary
+--------------
+================= =====================================================================
+Modifier and Type Method and Description                                               
+================= =====================================================================
+int               :py:func:`handle_events <vncsdk.EventLoopFd.handle_events>`\ ()      
+                                                                                       
+                  Handles events on the file descriptors and process expired timers.   
+----------------- ---------------------------------------------------------------------
+\                 :py:func:`mark_events <vncsdk.EventLoopFd.mark_events>`\ (fd, events)
+                                                                                       
+                  Marks event(s) that occurred on the specified file descriptor.       
+----------------- ---------------------------------------------------------------------
+\                 :py:func:`set_callback <vncsdk.EventLoopFd.set_callback>`\ (callback)
+                                                                                       
+                  Sets the event loop callback.                                        
+================= =====================================================================
+
+
+Static methods
+--------------
+
+.. py:function:: vncsdk.EventLoopFd.handle_events()
+
+    Handles events on the file descriptors and process expired timers.
+
+    For more information, see :cpp:func:`vnc_EventLoopFd_handleEvents`.
+
+    :rtype: int
+
+.. py:function:: vncsdk.EventLoopFd.mark_events(fd, events)
+
+    Marks event(s) that occurred on the specified file descriptor.
+
+    For more information, see :cpp:func:`vnc_EventLoopFd_markEvents`.
+
+    :param fd:
+    :type fd: int
+    :param events:
+    :type events: {:py:class:`vncsdk.EventLoopFd.Event`}
+
+.. py:function:: vncsdk.EventLoopFd.set_callback(callback)
+
+    Sets the event loop callback.
+
+    For more information, see :cpp:func:`vnc_EventLoopFd_setCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.EventLoopFd.Callback` or None
+

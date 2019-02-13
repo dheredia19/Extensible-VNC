@@ -1,0 +1,15 @@
+.. _DataStore.Callback.PutType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DataStore.Callback.PutType
+--------------------------
+
+.. attribute:: DataStore.Callback.PutType
+
+    The type of the :attr:`DataStore.Callback.Put`\  callback.
+
+    
+
+

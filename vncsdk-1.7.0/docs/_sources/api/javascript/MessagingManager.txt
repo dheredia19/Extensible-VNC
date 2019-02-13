@@ -1,0 +1,52 @@
+MessagingManager
+================
+
+.. js:data:: vncsdk.MessagingManager
+
+    Enables a Viewer or Server to send custom messages.
+
+Nested Classes
+--------------
+
+* :js:attr:`vncsdk.MessagingManager.Callback`
+
+Method Summary
+--------------
+================= ===========================================================================
+Modifier and Type Method and Description                                                     
+================= ===========================================================================
+\                 :js:func:`sendMessage <MessagingManager.sendMessage>`\ (buffer, connection)
+                                                                                             
+                  Sends a message.                                                           
+----------------- ---------------------------------------------------------------------------
+\                 :js:func:`setCallback <MessagingManager.setCallback>`\ (callback)          
+                                                                                             
+                  Registers a callback notifying when messages are received.                 
+================= ===========================================================================
+
+
+Methods
+-------
+
+.. js:function:: MessagingManager.sendMessage(buffer, connection)
+
+    Sends a message.
+
+    For more information, see :cpp:func:`vnc_MessagingManager_sendMessage`.
+
+    :param buffer:
+    :type buffer: Uint8Array or Array<number>
+    :param connection:
+    :type connection: :js:data:`vncsdk.Connection`
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: MessagingManager.setCallback(callback)
+
+    Registers a callback notifying when messages are received.
+
+    For more information, see :cpp:func:`vnc_MessagingManager_setCallback`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.MessagingManager.Callback` or null
+    :throws: :js:data:`vncsdk.VncException` on error
+

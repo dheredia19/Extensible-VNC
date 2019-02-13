@@ -1,0 +1,34 @@
+Viewer.ConnectionStatus
+=======================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum ConnectionStatus
+   :outertype: Viewer
+
+   Enumeration of connection statuses.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final Viewer.ConnectionStatus CONNECTED
+   :outertype: Viewer.ConnectionStatus
+
+   The viewer is connected to a server.
+
+.. java:field:: public static final Viewer.ConnectionStatus CONNECTING
+   :outertype: Viewer.ConnectionStatus
+
+   The viewer is negotiating a connection to a server (includes authentication).
+
+.. java:field:: public static final Viewer.ConnectionStatus DISCONNECTED
+   :outertype: Viewer.ConnectionStatus
+
+   The viewer is not connected to a server.
+
+.. java:field:: public static final Viewer.ConnectionStatus DISCONNECTING
+   :outertype: Viewer.ConnectionStatus
+
+   \ :java:ref:`Viewer.disconnect() <Viewer.disconnect>`\  has been called but we've not yet disconnected from the server.
+

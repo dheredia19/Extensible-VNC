@@ -1,0 +1,128 @@
+.. _Server.SecurityCallback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.SecurityCallback
+-----------------------
+
+.. class:: Server.SecurityCallback
+
+    Callback receiving security-related notifications for a Server.
+
+    For more information, see :cpp:func:`vnc_Server_SecurityCallback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Server.SecurityCallback.VerifyPeerType`
+- :ref:`Server.SecurityCallback.IsUserNameRequiredType`
+- :ref:`Server.SecurityCallback.IsPasswordRequiredType`
+- :ref:`Server.SecurityCallback.AuthenticateUserType`
+
+**Constructor summary**
+
+================= =======================================================================================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                                                                                 
+================= =======================================================================================================================================================================================================================================================
+\                 :meth:`Server.SecurityCallback`\ (:attr:`Server.SecurityCallback.VerifyPeerType`, :attr:`Server.SecurityCallback.IsUserNameRequiredType`, :attr:`Server.SecurityCallback.IsPasswordRequiredType`, :attr:`Server.SecurityCallback.AuthenticateUserType`)
+                                                                                                                                                                                                                                                                         
+                  Initializes a new SecurityCallback class instance.                                                                                                                                                                                                     
+================= =======================================================================================================================================================================================================================================================
+
+
+**Method summary**
+
+========================== ======================================================================================================================================
+Modifier and Type          Method and Description                                                                                                                
+========================== ======================================================================================================================================
+:type:`bool`               :meth:`Server.SecurityCallback.OnVerifyPeer`\ (:type:`Server`, :type:`Connection`, :type:`System.String`, :type:`ImmutableDataBuffer`)
+                                                                                                                                                                 
+                           Handles the VerifyPeer event.                                                                                                         
+                           By default, calls the VerifyPeer delegate.                                                                                            
+-------------------------- --------------------------------------------------------------------------------------------------------------------------------------
+:type:`bool`               :meth:`Server.SecurityCallback.OnIsUserNameRequired`\ (:type:`Server`, :type:`Connection`)                                            
+                                                                                                                                                                 
+                           Handles the IsUserNameRequired event.                                                                                                 
+                           By default, calls the IsUserNameRequired delegate.                                                                                    
+-------------------------- --------------------------------------------------------------------------------------------------------------------------------------
+:type:`bool`               :meth:`Server.SecurityCallback.OnIsPasswordRequired`\ (:type:`Server`, :type:`Connection`)                                            
+                                                                                                                                                                 
+                           Handles the IsPasswordRequired event.                                                                                                 
+                           By default, calls the IsPasswordRequired delegate.                                                                                    
+-------------------------- --------------------------------------------------------------------------------------------------------------------------------------
+:type:`Server.Permissions` :meth:`Server.SecurityCallback.OnAuthenticateUser`\ (:type:`Server`, :type:`Connection`, :type:`System.String`, :type:`System.String`)
+                                                                                                                                                                 
+                           Handles the AuthenticateUser event.                                                                                                   
+                           By default, calls the AuthenticateUser delegate.                                                                                      
+========================== ======================================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: Server.SecurityCallback(Server.SecurityCallback.VerifyPeerType a, Server.SecurityCallback.IsUserNameRequiredType b, Server.SecurityCallback.IsPasswordRequiredType c, Server.SecurityCallback.AuthenticateUserType d)
+
+    Initializes a new SecurityCallback class instance.
+
+    For more information, see :cpp:func:`vnc_Server_SecurityCallback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: bool Server.SecurityCallback.OnVerifyPeer(Server a, Connection b, System.String c, ImmutableDataBuffer d)
+
+    Handles the VerifyPeer event.
+    By default, calls the VerifyPeer delegate.
+
+    
+
+.. method:: bool Server.SecurityCallback.OnIsUserNameRequired(Server a, Connection b)
+
+    Handles the IsUserNameRequired event.
+    By default, calls the IsUserNameRequired delegate.
+
+    
+
+.. method:: bool Server.SecurityCallback.OnIsPasswordRequired(Server a, Connection b)
+
+    Handles the IsPasswordRequired event.
+    By default, calls the IsPasswordRequired delegate.
+
+    
+
+.. method:: Server.Permissions Server.SecurityCallback.OnAuthenticateUser(Server a, Connection b, System.String c, System.String d)
+
+    Handles the AuthenticateUser event.
+    By default, calls the AuthenticateUser delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  Server.SecurityCallback.VerifyPeer
+
+    Verify a Viewer's cryptographic identity.
+
+    For more information, see :cpp:member:`vnc_Server_SecurityCallback::verifyPeer`\  in the C API documentation.
+
+.. attribute::  Server.SecurityCallback.IsUserNameRequired
+
+    Decide if a connecting Viewer is required to provide a user name.
+
+    For more information, see :cpp:member:`vnc_Server_SecurityCallback::isUserNameRequired`\  in the C API documentation.
+
+.. attribute::  Server.SecurityCallback.IsPasswordRequired
+
+    Decide if a connecting Viewer is required to provide a password.
+
+    For more information, see :cpp:member:`vnc_Server_SecurityCallback::isPasswordRequired`\  in the C API documentation.
+
+.. attribute::  Server.SecurityCallback.AuthenticateUser
+
+    Authenticate credentials presented by a Viewer.
+
+    For more information, see :cpp:member:`vnc_Server_SecurityCallback::authenticateUser`\  in the C API documentation.
+

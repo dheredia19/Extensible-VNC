@@ -1,0 +1,47 @@
+EventLoopWin.Callback
+=====================
+
+.. py:attribute:: vncsdk.EventLoopWin.Callback
+
+    Callback receiving notifications for a Windows HANDLE-based event loop.
+
+Method Summary
+--------------
+================= ============================================================================
+Modifier and Type Method and Description                                                      
+================= ============================================================================
+\                 :py:func:`event_updated <EventLoopWin.Callback.event_updated>`\ (event, add)
+                                                                                              
+                  Notification that a Windows event is being added or removed.                
+----------------- ----------------------------------------------------------------------------
+\                 :py:func:`timer_updated <EventLoopWin.Callback.timer_updated>`\ (expiry_ms) 
+                                                                                              
+                  Notification that the timer expiry period has been updated.                 
+================= ============================================================================
+
+
+Methods
+-------
+
+.. py:function:: EventLoopWin.Callback.event_updated(event, add)
+
+    Notification that a Windows event is being added or removed.
+
+    For more information, see :cpp:member:`vnc_EventLoopWin_Callback::eventUpdated`.
+
+    :param event:
+    :type event: int
+    :param add:
+    :type add: bool
+    :return: None
+
+.. py:function:: EventLoopWin.Callback.timer_updated(expiry_ms)
+
+    Notification that the timer expiry period has been updated.
+
+    For more information, see :cpp:member:`vnc_EventLoopWin_Callback::timerUpdated`.
+
+    :param expiry_ms:
+    :type expiry_ms: int
+    :return: None
+

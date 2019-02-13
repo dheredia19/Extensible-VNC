@@ -1,0 +1,65 @@
+Viewer.ConnectionCallback
+=========================
+
+.. py:attribute:: vncsdk.Viewer.ConnectionCallback
+
+    Callback receiving state-change notifications for a Viewer.
+
+Method Summary
+--------------
+================= =====================================================================================================
+Modifier and Type Method and Description                                                                               
+================= =====================================================================================================
+\                 :py:func:`connected <Viewer.ConnectionCallback.connected>`\ (viewer)                                 
+                                                                                                                       
+                  Notification that is called when the viewer successfully connects to a server (after authentication).
+----------------- -----------------------------------------------------------------------------------------------------
+\                 :py:func:`connecting <Viewer.ConnectionCallback.connecting>`\ (viewer)                               
+                                                                                                                       
+                  Notification that is called when the viewer begins a connection attempt to the server.               
+----------------- -----------------------------------------------------------------------------------------------------
+\                 :py:func:`disconnected <Viewer.ConnectionCallback.disconnected>`\ (viewer, reason, flags)            
+                                                                                                                       
+                  Notification that is called when the viewer disconnects from the server.                             
+================= =====================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: Viewer.ConnectionCallback.connected(viewer)
+
+    Notification that is called when the viewer successfully connects to a
+    server (after authentication).
+
+    For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::connected`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :return: None
+
+.. py:function:: Viewer.ConnectionCallback.connecting(viewer)
+
+    Notification that is called when the viewer begins a connection attempt to
+    the server.
+
+    For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::connecting`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :return: None
+
+.. py:function:: Viewer.ConnectionCallback.disconnected(viewer, reason, flags)
+
+    Notification that is called when the viewer disconnects from the server.
+
+    For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::disconnected`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :param reason:
+    :type reason: str or None
+    :param flags:
+    :type flags: {:py:class:`vncsdk.Viewer.DisconnectFlags`}
+    :return: None
+

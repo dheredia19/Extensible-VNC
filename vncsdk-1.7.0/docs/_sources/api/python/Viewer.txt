@@ -1,0 +1,487 @@
+Viewer
+======
+
+.. py:class:: vncsdk.Viewer
+
+    A VNC-compatible Viewer showing the screen of and controlling a remote computer.
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.Viewer.AuthenticationCallback`
+* :py:class:`vncsdk.Viewer.ConnectionCallback`
+* :py:class:`vncsdk.Viewer.FramebufferCallback`
+* :py:class:`vncsdk.Viewer.PeerVerificationCallback`
+* :py:class:`vncsdk.Viewer.ServerEventCallback`
+
+* :py:class:`vncsdk.Viewer.ConnectionStatus`
+* :py:class:`vncsdk.Viewer.DisconnectFlags`
+* :py:class:`vncsdk.Viewer.EncryptionLevel`
+* :py:class:`vncsdk.Viewer.MouseButton`
+* :py:class:`vncsdk.Viewer.MouseWheel`
+* :py:class:`vncsdk.Viewer.PictureQuality`
+
+Constructor Summary
+-------------------
+================= =================================
+Modifier and Type Method and Description           
+================= =================================
+\                 `__init__ <#constructor>`_\ ()   
+                                                   
+                  Creates and returns a new viewer.
+================= =================================
+
+
+Method Summary
+--------------
+========================================== ======================================================================================================================================================
+Modifier and Type                          Method and Description                                                                                                                                
+========================================== ======================================================================================================================================================
+bytes                                      :py:func:`get_viewer_fb_data <Viewer.get_viewer_fb_data>`\ (x, y, w, h)                                                                               
+                                                                                                                                                                                                 
+                                           Returns the viewer framebuffer data for the given rectangle.                                                                                          
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`set_viewer_fb <Viewer.set_viewer_fb>`\ (pixels, pf, width, height, stride)                                                                  
+                                                                                                                                                                                                 
+                                           Sets the viewer framebuffer.                                                                                                                          
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`destroy <Viewer.destroy>`\ ()                                                                                                               
+                                                                                                                                                                                                 
+                                           Destroys the viewer.                                                                                                                                  
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`disconnect <Viewer.disconnect>`\ ()                                                                                                         
+                                                                                                                                                                                                 
+                                           Disconnects this viewer from the server.                                                                                                              
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.AnnotationManager`       :py:func:`get_annotation_manager <Viewer.get_annotation_manager>`\ ()                                                                                 
+                                                                                                                                                                                                 
+                                           Obtains the Viewer's :py:class:`vncsdk.AnnotationManager` for handling annotation operations.                                                         
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.ConnectionHandler`       :py:func:`get_connection_handler <Viewer.get_connection_handler>`\ ()                                                                                 
+                                                                                                                                                                                                 
+                                           Returns the viewer's :py:class:`vncsdk.ConnectionHandler` for accepting connections.                                                                  
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.Viewer.ConnectionStatus` :py:func:`get_connection_status <Viewer.get_connection_status>`\ ()                                                                                   
+                                                                                                                                                                                                 
+                                           Returns the status of the viewer's connection.                                                                                                        
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+str or None                                :py:func:`get_disconnect_message <Viewer.get_disconnect_message>`\ ()                                                                                 
+                                                                                                                                                                                                 
+                                           Returns a human-readable message sent by the server for the last disconnection, or ``None`` if the last disconnection was not initiated by the server.
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+str or None                                :py:func:`get_disconnect_reason <Viewer.get_disconnect_reason>`\ ()                                                                                   
+                                                                                                                                                                                                 
+                                           Returns a string ID representing the reason for the last viewer disconnection.                                                                        
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.Viewer.EncryptionLevel`  :py:func:`get_encryption_level <Viewer.get_encryption_level>`\ ()                                                                                     
+                                                                                                                                                                                                 
+                                           Returns the Viewer's current encryption level.                                                                                                        
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.MessagingManager`        :py:func:`get_messaging_manager <Viewer.get_messaging_manager>`\ ()                                                                                   
+                                                                                                                                                                                                 
+                                           Obtains the Viewer's Messaging Manager for handling messaging For more information, see :cpp:func:`vnc_Viewer_getMessagingManager`.                   
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+str                                        :py:func:`get_peer_address <Viewer.get_peer_address>`\ ()                                                                                             
+                                                                                                                                                                                                 
+                                           Returns the address of the viewer's server.                                                                                                           
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.Viewer.PictureQuality`   :py:func:`get_picture_quality <Viewer.get_picture_quality>`\ ()                                                                                       
+                                                                                                                                                                                                 
+                                           Returns the viewer's current picture quality.                                                                                                         
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+int                                        :py:func:`get_viewer_fb_height <Viewer.get_viewer_fb_height>`\ ()                                                                                     
+                                                                                                                                                                                                 
+                                           Gets the height of the viewer framebuffer.                                                                                                            
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.PixelFormat`             :py:func:`get_viewer_fb_pixel_format <Viewer.get_viewer_fb_pixel_format>`\ ()                                                                         
+                                                                                                                                                                                                 
+                                           Gets the pixel format of the viewer framebuffer.                                                                                                      
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+int                                        :py:func:`get_viewer_fb_stride <Viewer.get_viewer_fb_stride>`\ ()                                                                                     
+                                                                                                                                                                                                 
+                                           Returns the stride of the viewer framebuffer data in pixels, that is, the number of pixels from the start of each row until the start of the next.    
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+int                                        :py:func:`get_viewer_fb_width <Viewer.get_viewer_fb_width>`\ ()                                                                                       
+                                                                                                                                                                                                 
+                                           Gets the width of the viewer framebuffer.                                                                                                             
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`release_all_keys <Viewer.release_all_keys>`\ ()                                                                                             
+                                                                                                                                                                                                 
+                                           Send key up events for all currently pressed keys.                                                                                                    
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`send_authentication_response <Viewer.send_authentication_response>`\ (ok, user, passwd)                                                     
+                                                                                                                                                                                                 
+                                           Provides the SDK with the result of a username/password request.                                                                                      
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`send_clipboard_text <Viewer.send_clipboard_text>`\ (text)                                                                                   
+                                                                                                                                                                                                 
+                                           Copies the given text to the server's clipboard.                                                                                                      
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`send_key_down <Viewer.send_key_down>`\ (keysym, key_code)                                                                                   
+                                                                                                                                                                                                 
+                                           Sends a key down (press) event to the server.                                                                                                         
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`send_key_up <Viewer.send_key_up>`\ (key_code)                                                                                               
+                                                                                                                                                                                                 
+                                           Sends a key up (release) event to the server.                                                                                                         
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`send_peer_verification_response <Viewer.send_peer_verification_response>`\ (ok)                                                             
+                                                                                                                                                                                                 
+                                           Provides the SDK with the response to the :py:attr:`Viewer.PeerVerificationCallbackverifyPeer()` request.                                             
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`send_pointer_event <Viewer.send_pointer_event>`\ (x, y, button_state, rel)                                                                  
+                                                                                                                                                                                                 
+                                           Sends a pointer event to the server.                                                                                                                  
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`send_scroll_event <Viewer.send_scroll_event>`\ (delta, axis)                                                                                
+                                                                                                                                                                                                 
+                                           Sends a scroll wheel event to the server.                                                                                                             
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`set_authentication_callback <Viewer.set_authentication_callback>`\ (callback)                                                               
+                                                                                                                                                                                                 
+                                           Sets the callback to be called when a username and/or password is required.                                                                           
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`set_connection_callback <Viewer.set_connection_callback>`\ (callback)                                                                       
+                                                                                                                                                                                                 
+                                           Sets the callbacks for the Viewer to call when various events occur during its lifetime.                                                              
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`set_encryption_level <Viewer.set_encryption_level>`\ (level)                                                                                
+                                                                                                                                                                                                 
+                                           Sets the desired encryption level of the session from the range of options enumerated by ``ENCRYPTION_LEVEL``.                                        
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`set_framebuffer_callback <Viewer.set_framebuffer_callback>`\ (callback)                                                                     
+                                                                                                                                                                                                 
+                                           Sets the framebuffer callback for this viewer.                                                                                                        
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`set_peer_verification_callback <Viewer.set_peer_verification_callback>`\ (callback)                                                         
+                                                                                                                                                                                                 
+                                           Sets the callbacks to be called to verify the identity of the peer (server).                                                                          
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`set_picture_quality <Viewer.set_picture_quality>`\ (quality)                                                                                
+                                                                                                                                                                                                 
+                                           Sets the desired picture quality of the session from the range of options enumerated by ``PICTURE_QUALITY``.                                          
+------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
+\                                          :py:func:`set_server_event_callback <Viewer.set_server_event_callback>`\ (callback)                                                                   
+                                                                                                                                                                                                 
+                                           Sets the server event callback for this viewer.                                                                                                       
+========================================== ======================================================================================================================================================
+
+
+Constructor
+-----------
+
+.. py:method:: vncsdk.Viewer.__init__()
+
+    Creates and returns a new viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_create`.
+
+
+Methods
+-------
+
+.. py:method:: Viewer.get_viewer_fb_data(x, y, w, h)
+
+    Returns the viewer framebuffer data for the given rectangle.
+
+    :param x:
+    :type x: int
+    :param y:
+    :type y: int
+    :param w:
+    :type w: int
+    :param h:
+    :type h: int
+    :rtype: bytes
+
+.. py:method:: Viewer.set_viewer_fb(pixels, pf, width, height, stride)
+
+    Sets the viewer framebuffer. Note: The viewer does not keep a strong
+    reference to any user-allocated framebuffer passed in via the pixels
+    parameter, therefore users must keep their own reference to the
+    framebuffer to prevent it from being garbage collected while it is
+    being used by the viewer.
+
+    :param pixels:
+    :type pixels: undefined
+    :param pf:
+    :type pf: vncsdk.PixelFormat
+    :param width:
+    :type width: int
+    :param height:
+    :type height: int
+
+.. py:method:: Viewer.destroy()
+
+    Destroys the viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_destroy`.
+
+
+.. py:method:: Viewer.disconnect()
+
+    Disconnects this viewer from the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_disconnect`.
+
+
+.. py:method:: Viewer.get_annotation_manager()
+
+    Obtains the Viewer's :py:class:`vncsdk.AnnotationManager` for handling annotation
+    operations.
+
+    For more information, see :cpp:func:`vnc_Viewer_getAnnotationManager`.
+
+    :rtype: :py:class:`vncsdk.AnnotationManager`
+
+.. py:method:: Viewer.get_connection_handler()
+
+    Returns the viewer's :py:class:`vncsdk.ConnectionHandler` for accepting connections.
+
+    For more information, see :cpp:func:`vnc_Viewer_getConnectionHandler`.
+
+    :rtype: :py:class:`vncsdk.ConnectionHandler`
+
+.. py:method:: Viewer.get_connection_status()
+
+    Returns the status of the viewer's connection.
+
+    For more information, see :cpp:func:`vnc_Viewer_getConnectionStatus`.
+
+    :rtype: :py:class:`vncsdk.Viewer.ConnectionStatus`
+
+.. py:method:: Viewer.get_disconnect_message()
+
+    Returns a human-readable message sent by the server for the last
+    disconnection, or ``None`` if the last disconnection was not initiated by the
+    server.
+
+    For more information, see :cpp:func:`vnc_Viewer_getDisconnectMessage`.
+
+    :rtype: str or None
+
+.. py:method:: Viewer.get_disconnect_reason()
+
+    Returns a string ID representing the reason for the last viewer
+    disconnection.
+
+    For more information, see :cpp:func:`vnc_Viewer_getDisconnectReason`.
+
+    :rtype: str or None
+
+.. py:method:: Viewer.get_encryption_level()
+
+    Returns the Viewer's current encryption level.
+
+    For more information, see :cpp:func:`vnc_Viewer_getEncryptionLevel`.
+
+    :rtype: :py:class:`vncsdk.Viewer.EncryptionLevel`
+
+.. py:method:: Viewer.get_messaging_manager()
+
+    Obtains the Viewer's Messaging Manager for handling messaging
+
+    For more information, see :cpp:func:`vnc_Viewer_getMessagingManager`.
+
+    :rtype: :py:class:`vncsdk.MessagingManager`
+
+.. py:method:: Viewer.get_peer_address()
+
+    Returns the address of the viewer's server.
+
+    For more information, see :cpp:func:`vnc_Viewer_getPeerAddress`.
+
+    :rtype: str
+
+.. py:method:: Viewer.get_picture_quality()
+
+    Returns the viewer's current picture quality.
+
+    For more information, see :cpp:func:`vnc_Viewer_getPictureQuality`.
+
+    :rtype: :py:class:`vncsdk.Viewer.PictureQuality`
+
+.. py:method:: Viewer.get_viewer_fb_height()
+
+    Gets the height of the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbHeight`.
+
+    :rtype: int
+
+.. py:method:: Viewer.get_viewer_fb_pixel_format()
+
+    Gets the pixel format of the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbPixelFormat`.
+
+    :rtype: :py:class:`vncsdk.PixelFormat`
+
+.. py:method:: Viewer.get_viewer_fb_stride()
+
+    Returns the stride of the viewer framebuffer data in pixels, that is, the
+    number of pixels from the start of each row until the start of the next.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbStride`.
+
+    :rtype: int
+
+.. py:method:: Viewer.get_viewer_fb_width()
+
+    Gets the width of the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbWidth`.
+
+    :rtype: int
+
+.. py:method:: Viewer.release_all_keys()
+
+    Send key up events for all currently pressed keys.
+
+    For more information, see :cpp:func:`vnc_Viewer_releaseAllKeys`.
+
+
+.. py:method:: Viewer.send_authentication_response(ok, user, passwd)
+
+    Provides the SDK with the result of a username/password request.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendAuthenticationResponse`.
+
+    :param ok:
+    :type ok: bool
+    :param user:
+    :type user: str or None
+    :param passwd:
+    :type passwd: str or None
+
+.. py:method:: Viewer.send_clipboard_text(text)
+
+    Copies the given text to the server's clipboard.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendClipboardText`.
+
+    :param text:
+    :type text: str
+
+.. py:method:: Viewer.send_key_down(keysym, key_code)
+
+    Sends a key down (press) event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendKeyDown`.
+
+    :param keysym:
+    :type keysym: int
+    :param key_code:
+    :type key_code: int
+
+.. py:method:: Viewer.send_key_up(key_code)
+
+    Sends a key up (release) event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendKeyUp`.
+
+    :param key_code:
+    :type key_code: int
+
+.. py:method:: Viewer.send_peer_verification_response(ok)
+
+    Provides the SDK with the response to the
+    :py:attr:`Viewer.PeerVerificationCallbackverifyPeer()` request.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendPeerVerificationResponse`.
+
+    :param ok:
+    :type ok: bool
+
+.. py:method:: Viewer.send_pointer_event(x, y, button_state, rel)
+
+    Sends a pointer event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendPointerEvent`.
+
+    :param x:
+    :type x: int
+    :param y:
+    :type y: int
+    :param button_state:
+    :type button_state: {:py:class:`vncsdk.Viewer.MouseButton`}
+    :param rel:
+    :type rel: bool
+
+.. py:method:: Viewer.send_scroll_event(delta, axis)
+
+    Sends a scroll wheel event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendScrollEvent`.
+
+    :param delta:
+    :type delta: int
+    :param axis:
+    :type axis: :py:class:`vncsdk.Viewer.MouseWheel`
+
+.. py:method:: Viewer.set_authentication_callback(callback)
+
+    Sets the callback to be called when a username and/or password is required.
+
+    For more information, see :cpp:func:`vnc_Viewer_setAuthenticationCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.Viewer.AuthenticationCallback` or None
+
+.. py:method:: Viewer.set_connection_callback(callback)
+
+    Sets the callbacks for the Viewer to call when various events occur during
+    its lifetime.
+
+    For more information, see :cpp:func:`vnc_Viewer_setConnectionCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.Viewer.ConnectionCallback` or None
+
+.. py:method:: Viewer.set_encryption_level(level)
+
+    Sets the desired encryption level of the session from the range of options
+    enumerated by ``ENCRYPTION_LEVEL``.
+
+    For more information, see :cpp:func:`vnc_Viewer_setEncryptionLevel`.
+
+    :param level:
+    :type level: :py:class:`vncsdk.Viewer.EncryptionLevel`
+
+.. py:method:: Viewer.set_framebuffer_callback(callback)
+
+    Sets the framebuffer callback for this viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_setFramebufferCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.Viewer.FramebufferCallback` or None
+
+.. py:method:: Viewer.set_peer_verification_callback(callback)
+
+    Sets the callbacks to be called to verify the identity of the peer (server).
+
+    For more information, see :cpp:func:`vnc_Viewer_setPeerVerificationCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.Viewer.PeerVerificationCallback` or None
+
+.. py:method:: Viewer.set_picture_quality(quality)
+
+    Sets the desired picture quality of the session from the range of options
+    enumerated by ``PICTURE_QUALITY``.
+
+    For more information, see :cpp:func:`vnc_Viewer_setPictureQuality`.
+
+    :param quality:
+    :type quality: :py:class:`vncsdk.Viewer.PictureQuality`
+
+.. py:method:: Viewer.set_server_event_callback(callback)
+
+    Sets the server event callback for this viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_setServerEventCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.Viewer.ServerEventCallback` or None
+

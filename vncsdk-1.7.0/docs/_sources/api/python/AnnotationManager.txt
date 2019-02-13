@@ -1,0 +1,194 @@
+AnnotationManager
+=================
+
+.. py:class:: vncsdk.AnnotationManager
+
+    Enables a Viewer or Server to annotate a Server device screen.
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.AnnotationManager.Callback`
+
+
+Method Summary
+--------------
+================= =======================================================================================
+Modifier and Type Method and Description                                                                 
+================= =======================================================================================
+\                 :py:func:`clear <AnnotationManager.clear>`\ (fade, connection)                         
+                                                                                                         
+                  Clears particular annotations.                                                         
+----------------- ---------------------------------------------------------------------------------------
+\                 :py:func:`clear_all <AnnotationManager.clear_all>`\ (fade)                             
+                                                                                                         
+                  Clears all annotations.                                                                
+----------------- ---------------------------------------------------------------------------------------
+int               :py:func:`get_fade_duration <AnnotationManager.get_fade_duration>`\ ()                 
+                                                                                                         
+                  Gets how long annotations take to fade.                                                
+----------------- ---------------------------------------------------------------------------------------
+int               :py:func:`get_pen_color <AnnotationManager.get_pen_color>`\ ()                         
+                                                                                                         
+                  Gets the current pen color.                                                            
+----------------- ---------------------------------------------------------------------------------------
+int               :py:func:`get_pen_size <AnnotationManager.get_pen_size>`\ ()                           
+                                                                                                         
+                  Gets the current pen size.                                                             
+----------------- ---------------------------------------------------------------------------------------
+int               :py:func:`get_persist_duration <AnnotationManager.get_persist_duration>`\ ()           
+                                                                                                         
+                  Gets how long annotations persist as a solid color for.                                
+----------------- ---------------------------------------------------------------------------------------
+bool              :py:func:`is_available <AnnotationManager.is_available>`\ ()                           
+                                                                                                         
+                  Queries whether it is possible to annotate.                                            
+----------------- ---------------------------------------------------------------------------------------
+\                 :py:func:`move_pen_to <AnnotationManager.move_pen_to>`\ (x, y, pen_down)               
+                                                                                                         
+                  Draws a line on the Server screen from the current position to a new position.         
+----------------- ---------------------------------------------------------------------------------------
+\                 :py:func:`set_callback <AnnotationManager.set_callback>`\ (callback)                   
+                                                                                                         
+                  Sets annotation-related callbacks.                                                     
+----------------- ---------------------------------------------------------------------------------------
+\                 :py:func:`set_fade_duration <AnnotationManager.set_fade_duration>`\ (duration_ms)      
+                                                                                                         
+                  Sets how long annotations take to fade.                                                
+----------------- ---------------------------------------------------------------------------------------
+\                 :py:func:`set_pen_color <AnnotationManager.set_pen_color>`\ (color)                    
+                                                                                                         
+                  Sets the pen color, determining the color of the annotation line.                      
+----------------- ---------------------------------------------------------------------------------------
+\                 :py:func:`set_pen_size <AnnotationManager.set_pen_size>`\ (size)                       
+                                                                                                         
+                  Sets the pen size, determining the width of the annotation line.                       
+----------------- ---------------------------------------------------------------------------------------
+\                 :py:func:`set_persist_duration <AnnotationManager.set_persist_duration>`\ (duration_ms)
+                                                                                                         
+                  Sets how long annotations persist as a solid color for.                                
+================= =======================================================================================
+
+
+Methods
+-------
+
+.. py:method:: AnnotationManager.clear(fade, connection)
+
+    Clears particular annotations.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_clear`.
+
+    :param fade:
+    :type fade: bool
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+
+.. py:method:: AnnotationManager.clear_all(fade)
+
+    Clears all annotations.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_clearAll`.
+
+    :param fade:
+    :type fade: bool
+
+.. py:method:: AnnotationManager.get_fade_duration()
+
+    Gets how long annotations take to fade.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getFadeDuration`.
+
+    :rtype: int
+
+.. py:method:: AnnotationManager.get_pen_color()
+
+    Gets the current pen color.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getPenColor`.
+
+    :rtype: int
+
+.. py:method:: AnnotationManager.get_pen_size()
+
+    Gets the current pen size.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getPenSize`.
+
+    :rtype: int
+
+.. py:method:: AnnotationManager.get_persist_duration()
+
+    Gets how long annotations persist as a solid color for.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getPersistDuration`.
+
+    :rtype: int
+
+.. py:method:: AnnotationManager.is_available()
+
+    Queries whether it is possible to annotate.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_isAvailable`.
+
+    :rtype: bool
+
+.. py:method:: AnnotationManager.move_pen_to(x, y, pen_down)
+
+    Draws a line on the Server screen from the current position to a
+    new position.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_movePenTo`.
+
+    :param x:
+    :type x: int
+    :param y:
+    :type y: int
+    :param pen_down:
+    :type pen_down: bool
+
+.. py:method:: AnnotationManager.set_callback(callback)
+
+    Sets annotation-related callbacks.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.AnnotationManager.Callback` or None
+
+.. py:method:: AnnotationManager.set_fade_duration(duration_ms)
+
+    Sets how long annotations take to fade.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setFadeDuration`.
+
+    :param duration_ms:
+    :type duration_ms: int
+
+.. py:method:: AnnotationManager.set_pen_color(color)
+
+    Sets the pen color, determining the color of the annotation line.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setPenColor`.
+
+    :param color:
+    :type color: int
+
+.. py:method:: AnnotationManager.set_pen_size(size)
+
+    Sets the pen size, determining the width of the annotation line.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setPenSize`.
+
+    :param size:
+    :type size: int
+
+.. py:method:: AnnotationManager.set_persist_duration(duration_ms)
+
+    Sets how long annotations persist as a solid color for.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setPersistDuration`.
+
+    :param duration_ms:
+    :type duration_ms: int
+

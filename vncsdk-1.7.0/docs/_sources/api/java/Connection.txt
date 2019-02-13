@@ -1,0 +1,29 @@
+Connection
+==========
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class Connection
+
+   Opaque type for a connection, identifying a Viewer connected to a Server.
+
+Method Summary
+--------------
+==================== ==========================================================================
+Modifier and Type    Method and Description                                                    
+==================== ==========================================================================
+:java:type:`boolean` :java:meth:`equals <Connection.equals(Object)>`\ (:java:type:`Object` obj)
+-------------------- --------------------------------------------------------------------------
+:java:type:`int`     :java:meth:`hashCode <Connection.hashCode()>`\ ()                         
+==================== ==========================================================================
+
+Methods
+-------
+
+.. java:method:: public boolean equals(Object obj)
+   :outertype: Connection
+
+.. java:method:: public int hashCode()
+   :outertype: Connection
+

@@ -1,0 +1,56 @@
+RsaKey
+======
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class RsaKey
+
+   A container for static methods.
+
+Nested Classes
+--------------
+* interface :java:type:`RsaKey.Callback`
+
+Method Summary
+--------------
+================= ==================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                            
+================= ==================================================================================================================================================================================
+:java:type:`void` :java:meth:`cancelDetails <RsaKey.cancelDetails(Callback)>`\ (:java:type:`Callback` callback)                                                                                     
+                                                                                                                                                                                                    
+                  Cancels any outstanding notifications for the given callback.                                                                                                                     
+----------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`clear <RsaKey.clear() throws Library.VncException>`\ ()                                                                                                               
+                                                                                                                                                                                                    
+                  Removes any stored RSA key from the data store.                                                                                                                                   
+----------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`getDetails <RsaKey.getDetails(RsaKey.Callback, boolean) throws Library.VncException>`\ (:java:type:`RsaKey.Callback` callback, :java:type:`boolean` generateIfMissing)
+                                                                                                                                                                                                    
+                  Requests the details for the machine's identifying RSA public key.                                                                                                                
+================= ==================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method:: public static void cancelDetails(Callback callback)
+   :outertype: RsaKey
+
+   Cancels any outstanding notifications for the given callback.
+
+   For more information, see :cpp:func:`vnc_RsaKey_cancelDetails`.
+
+.. java:method:: public static void clear() throws Library.VncException
+   :outertype: RsaKey
+
+   Removes any stored RSA key from the data store.
+
+   For more information, see :cpp:func:`vnc_RsaKey_clear`.
+
+.. java:method:: public static void getDetails(RsaKey.Callback callback, boolean generateIfMissing) throws Library.VncException
+   :outertype: RsaKey
+
+   Requests the details for the machine's identifying RSA public key.
+
+   For more information, see :cpp:func:`vnc_RsaKey_getDetails`.
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.realvnc.serviceServerMac.peruser</string>
+  <key>LimitLoadToSessionType</key>
+  <string>Aqua</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Library/serviceServerMac/vncagent</string>
+    <string>service</string>
+  </array>
+
+  <!-- This is a hack to work around a bug in launchd on MacOS 10.10.  We
+       really just want KeepAlive=true here, but it fails to start agents for
+       newly-created accounts.  For some reason, using QueueDirectories seems
+       to avoid this bug even though it's not really what we want at all. -->
+  <key>QueueDirectories</key>
+  <array>
+    <string>/Library/serviceServerMac</string>
+  </array>
+</dict>
+</plist>

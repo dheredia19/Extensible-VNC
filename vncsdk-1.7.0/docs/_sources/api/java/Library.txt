@@ -1,0 +1,141 @@
+Library
+=======
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class Library
+
+   A class containing SDK global properties and methods.
+
+Nested Classes
+--------------
+* class :java:type:`Library.DestroyedObjectException`
+* enum :java:type:`Library.EventLoopType`
+* class :java:type:`Library.VncException`
+
+Method Summary
+--------------
+================= =================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                           
+================= =================================================================================================================================================================================
+:java:type:`void` :java:meth:`enableAddOn <Library.enableAddOn(String) throws Library.VncException>`\ (:java:type:`String` addOnCode)                                                              
+                                                                                                                                                                                                   
+                  Enable an SDK add-on by passing in the content of the add-on code, obtained from RealVNC.                                                                                        
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`  :java:meth:`getBuildNumber <Library.getBuildNumber()>`\ ()                                                                                                                       
+                                                                                                                                                                                                   
+                  Returns the runtime build number of the SDK.                                                                                                                                     
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`  :java:meth:`getMajorVersion <Library.getMajorVersion()>`\ ()                                                                                                                     
+                                                                                                                                                                                                   
+                  Returns the runtime major version number of the SDK.                                                                                                                             
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`  :java:meth:`getMinorVersion <Library.getMinorVersion()>`\ ()                                                                                                                     
+                                                                                                                                                                                                   
+                  Returns the runtime minor version number of the SDK.                                                                                                                             
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`  :java:meth:`getPatchVersion <Library.getPatchVersion()>`\ ()                                                                                                                     
+                                                                                                                                                                                                   
+                  Returns the runtime patch version number of the SDK.                                                                                                                             
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`init <Library.init() throws Library.VncException>`\ ()                                                                                                               
+                                                                                                                                                                                                   
+                  Initializes the SDK with the default \ :java:ref:`Library.EventLoopType`\  for the platform.                                                                                     
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`init <Library.init(EventLoopType) throws Library.VncException>`\ (:java:type:`EventLoopType` eventLoopType)                                                          
+                                                                                                                                                                                                   
+                  Initializes the SDK, as for \ :java:ref:`init`\ .                                                                                                                                
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`setCloudProxySettings <Library.setCloudProxySettings(boolean, String) throws Library.VncException>`\ (:java:type:`boolean` systemProxy, :java:type:`String` proxyUrl)
+                                                                                                                                                                                                   
+                  Specifies proxy server settings for Cloud connections; note these settings are adopted for all subsequent outgoing Cloud connections.                                            
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`shutdown <Library.shutdown() throws Library.VncException>`\ ()                                                                                                       
+                                                                                                                                                                                                   
+                  Shuts down the SDK, ensuring that any resources are cleared up.                                                                                                                  
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`  :java:meth:`unicodeToKeysym <Library.unicodeToKeysym(int)>`\ (:java:type:`int` unicodeChar)                                                                                      
+                                                                                                                                                                                                   
+                  Converts a unicode character to a keysym, suitable for passing to \ :java:ref:`Viewer.sendKeyDown() <Viewer.sendKeyDown>`\ .                                                     
+================= =================================================================================================================================================================================
+
+Fields
+------
+
+.. java:field:: @Deprecated public static final int VNC_DIRECT_TCP_DEFAULT_PORT
+   :outertype: Library
+
+   The default port for VNC direct TCP connections.
+
+   Deprecated: use \ :java:ref:`DirectTcp.DEFAULT_PORT`\  instead.
+
+Methods
+-------
+
+.. java:method:: public static void enableAddOn(String addOnCode) throws Library.VncException
+   :outertype: Library
+
+   Enable an SDK add-on by passing in the content of the add-on code, obtained from RealVNC.
+
+   For more information, see :cpp:func:`vnc_enableAddOn`.
+
+.. java:method:: public static int getBuildNumber()
+   :outertype: Library
+
+   Returns the runtime build number of the SDK.
+
+   For more information, see :cpp:func:`vnc_getBuildNumber`.
+
+.. java:method:: public static int getMajorVersion()
+   :outertype: Library
+
+   Returns the runtime major version number of the SDK.
+
+   For more information, see :cpp:func:`vnc_getMajorVersion`.
+
+.. java:method:: public static int getMinorVersion()
+   :outertype: Library
+
+   Returns the runtime minor version number of the SDK.
+
+   For more information, see :cpp:func:`vnc_getMinorVersion`.
+
+.. java:method:: public static int getPatchVersion()
+   :outertype: Library
+
+   Returns the runtime patch version number of the SDK.
+
+   For more information, see :cpp:func:`vnc_getPatchVersion`.
+
+.. java:method:: public static void init() throws Library.VncException
+   :outertype: Library
+
+   Initializes the SDK with the default \ :java:ref:`Library.EventLoopType`\  for the platform. Only call functions in \ :java:ref:`DataStore`\  or \ :java:ref:`Logger`\  before you call this function.
+
+.. java:method:: public static void init(EventLoopType eventLoopType) throws Library.VncException
+   :outertype: Library
+
+   Initializes the SDK, as for \ :java:ref:`init`\ . This is used in the case where the default event loop type is not desired.
+
+.. java:method:: public static void setCloudProxySettings(boolean systemProxy, String proxyUrl) throws Library.VncException
+   :outertype: Library
+
+   Specifies proxy server settings for Cloud connections; note these settings are adopted for all subsequent outgoing Cloud connections.
+
+   For more information, see :cpp:func:`vnc_setCloudProxySettings`.
+
+.. java:method:: public static void shutdown() throws Library.VncException
+   :outertype: Library
+
+   Shuts down the SDK, ensuring that any resources are cleared up.
+
+   For more information, see :cpp:func:`vnc_shutdown`.
+
+.. java:method:: public static int unicodeToKeysym(int unicodeChar)
+   :outertype: Library
+
+   Converts a unicode character to a keysym, suitable for passing to \ :java:ref:`Viewer.sendKeyDown() <Viewer.sendKeyDown>`\ .
+
+   For more information, see :cpp:func:`vnc_unicodeToKeysym`.
+

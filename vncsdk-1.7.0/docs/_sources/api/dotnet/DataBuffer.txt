@@ -1,0 +1,55 @@
+.. _DataBuffer:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DataBuffer
+----------
+
+.. class:: DataBuffer
+
+    Buffer containing data managed by the SDK.
+
+    For more information, see :cpp:class:`vnc_DataBuffer`\  in the C API documentation.
+
+
+**Constructor summary**
+
+================== ==========================================================
+Modifier and Type  Method and Description                                    
+================== ==========================================================
+:type:`DataBuffer` :meth:`DataBuffer`\ (:type:`System.Byte` [])              
+                                                                             
+                   Creates a data buffer containing a copy of the given data.
+================== ==========================================================
+
+
+**Method summary**
+
+================= ==============================
+Modifier and Type Method and Description        
+================= ==============================
+:type:`void`      :meth:`DataBuffer.Dispose`\ ()
+                                                
+                  Destroys the data buffer.     
+================= ==============================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: DataBuffer(System.Byte[] a)
+
+    Creates a data buffer containing a copy of the given data.
+
+    For more information, see :cpp:func:`vnc_DataBuffer_create`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void DataBuffer.Dispose()
+
+    Destroys the data buffer.
+
+    For more information, see :cpp:func:`vnc_DataBuffer_destroy`\  in the C API documentation.
+

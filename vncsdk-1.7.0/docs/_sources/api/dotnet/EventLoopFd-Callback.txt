@@ -1,0 +1,90 @@
+.. _EventLoopFd.Callback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+EventLoopFd.Callback
+--------------------
+
+.. class:: EventLoopFd.Callback
+
+    Callback receiving notifications for a file-descriptor-based event loop.
+
+    For more information, see :cpp:func:`vnc_EventLoopFd_Callback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`EventLoopFd.Callback.EventUpdatedType`
+- :ref:`EventLoopFd.Callback.TimerUpdatedType`
+
+**Constructor summary**
+
+================= ============================================================================================================================
+Modifier and Type Method and Description                                                                                                      
+================= ============================================================================================================================
+\                 :meth:`EventLoopFd.Callback`\ (:attr:`EventLoopFd.Callback.EventUpdatedType`, :attr:`EventLoopFd.Callback.TimerUpdatedType`)
+                                                                                                                                              
+                  Initializes a new Callback class instance.                                                                                  
+================= ============================================================================================================================
+
+
+**Method summary**
+
+================= ==============================================================================================
+Modifier and Type Method and Description                                                                        
+================= ==============================================================================================
+:type:`void`      :meth:`EventLoopFd.Callback.OnEventUpdated`\ (:type:`System.Int32`, :type:`EventLoopFd.Event`)
+                                                                                                                
+                  Handles the EventUpdated event.                                                               
+                  By default, calls the EventUpdated delegate.                                                  
+----------------- ----------------------------------------------------------------------------------------------
+:type:`void`      :meth:`EventLoopFd.Callback.OnTimerUpdated`\ (:type:`System.Int32`)                           
+                                                                                                                
+                  Handles the TimerUpdated event.                                                               
+                  By default, calls the TimerUpdated delegate.                                                  
+================= ==============================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: EventLoopFd.Callback(EventLoopFd.Callback.EventUpdatedType a, EventLoopFd.Callback.TimerUpdatedType b)
+
+    Initializes a new Callback class instance.
+
+    For more information, see :cpp:func:`vnc_EventLoopFd_Callback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void EventLoopFd.Callback.OnEventUpdated(System.Int32 a, EventLoopFd.Event b)
+
+    Handles the EventUpdated event.
+    By default, calls the EventUpdated delegate.
+
+    
+
+.. method:: void EventLoopFd.Callback.OnTimerUpdated(System.Int32 a)
+
+    Handles the TimerUpdated event.
+    By default, calls the TimerUpdated delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  EventLoopFd.Callback.EventUpdated
+
+    Notification that a file descriptor's event mask has changed.
+
+    For more information, see :cpp:member:`vnc_EventLoopFd_Callback::eventUpdated`\  in the C API documentation.
+
+.. attribute::  EventLoopFd.Callback.TimerUpdated
+
+    Notification that the timer expiry period has been updated.
+
+    For more information, see :cpp:member:`vnc_EventLoopFd_Callback::timerUpdated`\  in the C API documentation.
+

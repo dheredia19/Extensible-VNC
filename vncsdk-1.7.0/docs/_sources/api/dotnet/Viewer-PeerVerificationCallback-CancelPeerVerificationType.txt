@@ -1,0 +1,15 @@
+.. _Viewer.PeerVerificationCallback.CancelPeerVerificationType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.PeerVerificationCallback.CancelPeerVerificationType
+----------------------------------------------------------
+
+.. attribute:: Viewer.PeerVerificationCallback.CancelPeerVerificationType
+
+    The type of the :attr:`Viewer.PeerVerificationCallback.CancelPeerVerification`\  callback.
+
+    
+
+

@@ -1,0 +1,68 @@
+CloudListener.Callback
+======================
+
+.. js:attribute:: vncsdk.CloudListener.Callback
+
+    Callback for a :js:class:`vncsdk.CloudListener`.
+
+Method Summary
+--------------
+================= ==========================================================================================================
+Modifier and Type Method and Description                                                                                    
+================= ==========================================================================================================
+\                 :js:func:`listeningFailed <CloudListener.Callback.listeningFailed>`\ (listener, cloudError, retryTimeSecs)
+                                                                                                                            
+                  Notification that the Cloud listener has stopped listening and is unable to accept any more connections.  
+----------------- ----------------------------------------------------------------------------------------------------------
+\                 :js:func:`listeningStatusChanged <CloudListener.Callback.listeningStatusChanged>`\ (listener, status)     
+                                                                                                                            
+                  Notification that the listener status has changed.                                                        
+----------------- ----------------------------------------------------------------------------------------------------------
+boolean           :js:func:`filterConnection <CloudListener.Callback.filterConnection>`\ (listener, peerCloudAddress)       
+                                                                                                                            
+                  Notification to provide address-based filtering of incoming connections.                                  
+================= ==========================================================================================================
+
+
+Methods
+-------
+
+.. js:function:: CloudListener.Callback.listeningFailed(listener, cloudError, retryTimeSecs)
+
+    Notification that the Cloud listener has stopped listening and is unable
+    to accept any more connections.
+
+    For more information, see :cpp:member:`vnc_CloudListener_Callback::listeningFailed`.
+
+    :param listener:
+    :type listener: :js:data:`vncsdk.CloudListener`
+    :param cloudError:
+    :type cloudError: string or null
+    :param retryTimeSecs:
+    :type retryTimeSecs: number
+    :return: Ignored
+
+.. js:function:: CloudListener.Callback.listeningStatusChanged(listener, status)
+
+    Notification that the listener status has changed.
+
+    For more information, see :cpp:member:`vnc_CloudListener_Callback::listeningStatusChanged`.
+
+    :param listener:
+    :type listener: :js:data:`vncsdk.CloudListener`
+    :param status:
+    :type status: :js:attr:`vncsdk.CloudListener.Status`
+    :return: Ignored
+
+.. js:function:: CloudListener.Callback.filterConnection(listener, peerCloudAddress)
+
+    Notification to provide address-based filtering of incoming connections.
+
+    For more information, see :cpp:member:`vnc_CloudListener_Callback::filterConnection`.
+
+    :param listener:
+    :type listener: :js:data:`vncsdk.CloudListener`
+    :param peerCloudAddress:
+    :type peerCloudAddress: string or null
+    :rtype: boolean
+

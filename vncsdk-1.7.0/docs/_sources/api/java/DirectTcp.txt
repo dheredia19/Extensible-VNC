@@ -1,0 +1,20 @@
+DirectTcp
+=========
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class DirectTcp
+
+   A class containing constants used in TCP connections.
+
+   For more information, see :doc:`DirectTcp.h </api/c/DirectTcp.h>`.
+
+Fields
+------
+
+.. java:field:: public static final int DEFAULT_PORT
+   :outertype: DirectTcp
+
+   The default port for VNC direct TCP connections.
+

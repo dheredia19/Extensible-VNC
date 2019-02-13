@@ -1,0 +1,51 @@
+CloudAddressMonitor.Callback
+============================
+
+.. py:attribute:: vncsdk.CloudAddressMonitor.Callback
+
+    Callback for a :py:class:`vncsdk.CloudAddressMonitor`.
+
+Method Summary
+--------------
+================= ===========================================================================================================================
+Modifier and Type Method and Description                                                                                                     
+================= ===========================================================================================================================
+\                 :py:func:`availability_changed <CloudAddressMonitor.Callback.availability_changed>`\ (monitor, cloud_address, availability)
+                                                                                                                                             
+                  Notification that the availability information for a Cloud address has changed.                                            
+----------------- ---------------------------------------------------------------------------------------------------------------------------
+\                 :py:func:`monitor_paused <CloudAddressMonitor.Callback.monitor_paused>`\ (monitor)                                         
+                                                                                                                                             
+                  Notification that monitoring has been paused by an outgoing connection starting.                                           
+================= ===========================================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: CloudAddressMonitor.Callback.availability_changed(monitor, cloud_address, availability)
+
+    Notification that the availability information for a Cloud address has
+    changed.
+
+    For more information, see :cpp:member:`vnc_CloudAddressMonitor_Callback::availabilityChanged`.
+
+    :param monitor:
+    :type monitor: :py:class:`vncsdk.CloudAddressMonitor`
+    :param cloud_address:
+    :type cloud_address: str or None
+    :param availability:
+    :type availability: :py:class:`vncsdk.CloudAddressMonitor.Availability`
+    :return: None
+
+.. py:function:: CloudAddressMonitor.Callback.monitor_paused(monitor)
+
+    Notification that monitoring has been paused by an outgoing connection
+    starting.
+
+    For more information, see :cpp:member:`vnc_CloudAddressMonitor_Callback::monitorPaused`.
+
+    :param monitor:
+    :type monitor: :py:class:`vncsdk.CloudAddressMonitor`
+    :return: None
+

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}VNC Cloud Address Tool{% endblock %}
+{% block banner %}VNC Cloud Address Tool{% endblock %}
+
+{% block head %}
+{{ super() }}
+<!-- Load app  -->
+<script src="{{ url_for('static', filename = 'js/app.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'js/app-comms.js') }}">
+</script>
+<script>
+    /**
+     * Set the URLs for retrieving and creating Cloud addresses using
+     * Flask's URL builder.
+     */
+    var save_key_app_url = "{{ url_for('_save_api_key') }}";
+
+    /**
+     * Set up page elements when this page is loaded.
+     */
+    $(document).ready(function () {
+        $("#apikey")   .attr("placeholder", "Enter your Cloud API key");
+        $("#apisecret").attr("placeholder", "Enter your Cloud API secret");
+
+        $("#login").click(function (event){
+            // Validate inputs
+            var key = $("#apikey").val().trim();
+            if (!key) { show_error("Please enter the API key."); return; }
+            var secret = $("#apisecret").val().trim();
+            if (!secret) { show_error("Please enter the API secret."); return; }
+            // Save Cloud API key and secret
+            save_api_credentials(key, secret);
+            return false;
+        });
+
+        $("#apikey").keypress(function (e) {
+            if(e.which == 13) { $("#apisecret").focus(); }
+        });
+
+        $("#apisecret").keypress(function (e) {
+            if(e.which == 13) { $("#login").click(); }
+        });
+
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+
+<!-- App login screen -->
+<h2 class="heading">Login</h2>
+
+<div class="login-screen">
+
+<!-- Error notification -->
+{% include "partial_notification.html" %}
+
+<!-- Dialog -->
+<table class="outer">
+<tr>
+    <td class="details">
+    <div id="app_login">
+    <p class="instructions">
+    Please enter your Cloud API <b>key</b> and <b>secret</b>:
+    </p>
+    <label for="apikey">Key:</label>
+    <input id="apikey" name="apikey" type="text" size="85" value=""
+           spellcheck="false"/>
+    <br/>
+    <label for="apisecret">Secret:</label>
+    <input id="apisecret" name="apisecret" type="text" size="85" value=""
+           spellcheck="false"/>
+    </div>
+    </td>
+</tr>
+<tr>
+    <td id="loading" colspan="2">
+    <div id="loading_anim">
+        <img src="{{ url_for('static', filename = 'images/ajax-loader.gif') }}"/>
+    </div>
+    </td>
+</tr>
+<tr class="action" id="apidata-action">
+    <td colspan="2">
+    <div style="text-align: right">
+        <input class="blue_flat_button" id="login" type="submit"
+               value="Continue"/>
+    </div>
+    </td>
+</tr>
+</table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,153 @@
+.. _ImmutablePixelFormat:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+ImmutablePixelFormat
+--------------------
+
+.. class:: ImmutablePixelFormat
+
+    An immutable PixelFormat, owned by the SDK.
+
+    For more information, see :cpp:class:`vnc_PixelFormat`\  in the C API documentation.
+
+
+**Method summary**
+
+============================ =========================================================================
+Modifier and Type            Method and Description                                                   
+============================ =========================================================================
+:type:`ImmutablePixelFormat` :meth:`ImmutablePixelFormat.Rgb888`\ ()                                  
+                                                                                                      
+                             32 bits per pixel stored as XXXXXXXXRRRRRRRRGGGGGGGGBBBBBBBB in most     
+                             significant to least significant bit order                               
+---------------------------- -------------------------------------------------------------------------
+:type:`ImmutablePixelFormat` :meth:`ImmutablePixelFormat.Bgr888`\ ()                                  
+                                                                                                      
+                             32 bits per pixel stored as XXXXXXXXBBBBBBBBGGGGGGGGRRRRRRRR in most     
+                             significant to least significant bit order                               
+---------------------------- -------------------------------------------------------------------------
+:type:`ImmutablePixelFormat` :meth:`ImmutablePixelFormat.Rgb565`\ ()                                  
+                                                                                                      
+                             16 bits per pixel stored as RRRRRGGGGGGBBBBB in most significant to least
+                             significant bit order                                                    
+---------------------------- -------------------------------------------------------------------------
+:type:`ImmutablePixelFormat` :meth:`ImmutablePixelFormat.Rgb555`\ ()                                  
+                                                                                                      
+                             16 bits per pixel stored as XRRRRRGGGGGBBBBB in most significant to least
+                             significant bit order                                                    
+---------------------------- -------------------------------------------------------------------------
+:type:`int`                  :meth:`ImmutablePixelFormat.Bpp`\ ()                                     
+                                                                                                      
+                             Gets the total number of bits per pixel.                                 
+---------------------------- -------------------------------------------------------------------------
+:type:`int`                  :meth:`ImmutablePixelFormat.Depth`\ ()                                   
+                                                                                                      
+                             Gets the number of significant bits that are used to store pixel data.   
+---------------------------- -------------------------------------------------------------------------
+:type:`int`                  :meth:`ImmutablePixelFormat.RedMax`\ ()                                  
+                                                                                                      
+                             Gets the maximum value for the red pixel value.                          
+---------------------------- -------------------------------------------------------------------------
+:type:`int`                  :meth:`ImmutablePixelFormat.GreenMax`\ ()                                
+                                                                                                      
+                             Gets the maximum value for the green pixel value.                        
+---------------------------- -------------------------------------------------------------------------
+:type:`int`                  :meth:`ImmutablePixelFormat.BlueMax`\ ()                                 
+                                                                                                      
+                             Gets the maximum value for the blue pixel value.                         
+---------------------------- -------------------------------------------------------------------------
+:type:`int`                  :meth:`ImmutablePixelFormat.RedShift`\ ()                                
+                                                                                                      
+                             Gets the number of bits the red pixel value is shifted.                  
+---------------------------- -------------------------------------------------------------------------
+:type:`int`                  :meth:`ImmutablePixelFormat.GreenShift`\ ()                              
+                                                                                                      
+                             Gets the number of bits the green pixel value is shifted.                
+---------------------------- -------------------------------------------------------------------------
+:type:`int`                  :meth:`ImmutablePixelFormat.BlueShift`\ ()                               
+                                                                                                      
+                             Gets the number of bits the blue pixel value is shifted.                 
+============================ =========================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: ImmutablePixelFormat ImmutablePixelFormat.Rgb888()
+
+    32 bits per pixel stored as XXXXXXXXRRRRRRRRGGGGGGGGBBBBBBBB in most
+    significant to least significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_rgb888`\  in the C API documentation.
+
+.. method:: ImmutablePixelFormat ImmutablePixelFormat.Bgr888()
+
+    32 bits per pixel stored as XXXXXXXXBBBBBBBBGGGGGGGGRRRRRRRR in most
+    significant to least significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_bgr888`\  in the C API documentation.
+
+.. method:: ImmutablePixelFormat ImmutablePixelFormat.Rgb565()
+
+    16 bits per pixel stored as RRRRRGGGGGGBBBBB in most significant to least
+    significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_rgb565`\  in the C API documentation.
+
+.. method:: ImmutablePixelFormat ImmutablePixelFormat.Rgb555()
+
+    16 bits per pixel stored as XRRRRRGGGGGBBBBB in most significant to least
+    significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_rgb555`\  in the C API documentation.
+
+.. method:: int ImmutablePixelFormat.Bpp()
+
+    Gets the total number of bits per pixel.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_bpp`\  in the C API documentation.
+
+.. method:: int ImmutablePixelFormat.Depth()
+
+    Gets the number of significant bits that are used to store pixel data.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_depth`\  in the C API documentation.
+
+.. method:: int ImmutablePixelFormat.RedMax()
+
+    Gets the maximum value for the red pixel value.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_redMax`\  in the C API documentation.
+
+.. method:: int ImmutablePixelFormat.GreenMax()
+
+    Gets the maximum value for the green pixel value.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_greenMax`\  in the C API documentation.
+
+.. method:: int ImmutablePixelFormat.BlueMax()
+
+    Gets the maximum value for the blue pixel value.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_blueMax`\  in the C API documentation.
+
+.. method:: int ImmutablePixelFormat.RedShift()
+
+    Gets the number of bits the red pixel value is shifted.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_redShift`\  in the C API documentation.
+
+.. method:: int ImmutablePixelFormat.GreenShift()
+
+    Gets the number of bits the green pixel value is shifted.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_greenShift`\  in the C API documentation.
+
+.. method:: int ImmutablePixelFormat.BlueShift()
+
+    Gets the number of bits the blue pixel value is shifted.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_blueShift`\  in the C API documentation.
+

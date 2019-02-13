@@ -1,0 +1,584 @@
+.. role:: red
+.. raw:: html
+
+    <style> .red {color:red} </style>
+
+
+Overview
+========
+
+.. figure:: Example.png
+    :scale: 50 %
+    :figwidth: 424px
+    :align: right
+
+    ..
+
+    `Secure remote control of an Ubuntu 14.04 Linux computer running the
+    Server sample app from a Windows 8.1 computer running the Viewer sample
+    app.`
+
+The VNC SDK enables you to create VNC-compatible Viewer and Server remote
+control apps for Windows, Linux, Mac, Raspberry Pi, iOS, Android and HTML 5 platforms. 
+:ref:`Full supported platforms list <supported-platforms>`.
+
+To connect devices, you can either let VNC Cloud seamlessly manage connectivity for you, 
+or establish direct TCP connections yourself if the network environment allows. Or 
+enable your apps to do both. :ref:`More information <connectivity>`.
+
+.. _evaluate:
+
+Evaluating the SDK
+------------------
+
+Sample apps for all platforms are located in the ``<vnc-sdk>/samples`` directory. You will need:
+
+- A Windows, Mac, or Linux computer you want to control (running the cross-platform ``<vnc-sdk>/samples/basicServer`` sample app). For 
+  Raspberry Pi, follow the instructions for Linux. To evaluate a view-only session on an Android device, use ``<vnc-sdk>/samples/basicServerAndroid``.
+- A Windows, Mac, or Linux computer, or iOS or Android device, you want to control from (running
+  an appropriate ``<vnc-sdk>/samples/basicViewer<plat>`` sample app). Alternatively, ``<vnc-sdk>/samples/basicViewerHTML5`` can run in any HTML 5-enabled
+  desktop web browser.
+
+We recommend using our sandbox VNC Cloud environment to evaluate connectivity. It's free, the sample apps are ready-to-use, and you 
+don't have to reconfigure firewalls or routers. To connect two supported devices for the first time:
+
+1. Unpack the SDK on a desktop computer.
+2. Use the ``<vnc-sdk>/tools/vnccloudaddresstool`` in conjunction with your sandbox VNC Cloud API key (sign in to your RealVNC account and navigate to the **API keys** page) to obtain one Viewer and one Server cloud address.
+3. Hard-code the Server cloud address and password in ``<vnc-sdk>/samples/basicServer``, and build, deploy and run it on a supported computer.
+4. Hard-code the Viewer cloud address, password, and Server cloud address (that is, peer to connect to) in your ``<vnc-sdk>/samples/basicViewer<plat>`` sample app, and build, deploy and run it on a supported device.
+
+See the sample app READMEs for precise instructions.
+
+To subsequently evaluate concurrent connections between multiple devices, it may be more convenient to remove hard-coded 
+cloud addresses from sample apps and instead instruct device users to supply this information at run-time. Again, see the READMEs 
+for how to do this on desktop platforms.
+
+.. _expiry:
+
+Expiry
+------
+
+Viewer and Server apps (sample and custom) built against this version of the SDK will cease to run after **30 August 2019**.
+
+.. _supported-platforms:
+
+Supported platforms
+-------------------
+
+You can deploy Viewer and Server apps (sample and custom) to the following platforms. You may be able to deploy to other platforms, but this 
+has not been tested. Note full remote control (screen capture *and* input injection) is available on most, but not all, Server platforms. 
+
++------------+--------------------------------------+--------------------------------------+-------------------------------+---------------------------------+----------------------------+-------------------------------+-------------------------------+
+|            | Windows                              | Linux                                | Raspi                         | macOS                           | iOS                        | Android                       | HTML 5                        |
++============+======================================+======================================+===============================+=================================+============================+===============================+===============================+
+| Viewer     | x86 and x64 unless otherwise stated: | x86 and x64 unless otherwise stated: | arm6hf only:                  | x64 only:                       | 32-bit and 64-bit devices: | x86, armeabi and armeabi-v7a: | Any desktop platform running: |
+|            |                                      |                                      |                               |                                 |                            |                               |                               |
+|            | - Windows 10                         | - Ubuntu 14.04+ (i386 and amd64)     | - Raspbian (Debian 8-9)       | - 10.13 High Sierra             | - iOS 11                   | - Android 8                   | - Chrome (latest)             |
+|            | - Windows 8.1/Server 2012 R2         | - Red Hat and CentOS 7 (x64 only)    |                               | - 10.12 Sierra                  | - iOS 10                   | - Android 7                   | - Firefox (latest)            |
+|            | - Windows 8.0/Server 2012            | - Red Hat and CentOS 6               |                               | - 10.11 El Capitan              | - iOS 9                    | - Android 6                   | - Internet Explorer (11)      |
+|            | - Windows 7/Server 2008 R2           |                                      |                               | - 10.10 Yosemite                |                            | - Android 5                   | - Microsoft Edge (latest)     |
+|            | - Windows Vista/Server 2008          |                                      |                               |                                 |                            | - Android 4.4                 | - Safari (latest)             |
+|            | - Windows XP (x86) and Server 2003   |                                      |                               |                                 |                            |                               |                               |
+|            |                                      |                                      |                               |                                 |                            |                               |                               |
++------------+--------------------------------------+--------------------------------------+-------------------------------+---------------------------------+----------------------------+-------------------------------+-------------------------------+
+| Server     | FULL CONTROL                         | FULL CONTROL                         | FULL CONTROL                  | FULL CONTROL                    | NOT AVAILABLE              | VIEW-ONLY                     | NOT AVAILABLE                 |
+|            |                                      |                                      |                               |                                 |                            |                               |                               |
+|            | - *Same as above*                    | - *Same as above*                    | - *Same as above*             | - *Same as above*               |                            | - Android 8                   |                               |
+|            |                                      |                                      |                               |                                 |                            | - Android 7                   |                               |
+|            |                                      |                                      |                               |                                 |                            | - Android 6                   |                               |
+|            |                                      |                                      |                               |                                 |                            | - Android 5                   |                               |
++------------+--------------------------------------+--------------------------------------+-------------------------------+---------------------------------+----------------------------+-------------------------------+-------------------------------+
+| Build env. | Visual Studio 2010\+                 | Ubuntu 14.04\+ and gcc 4.8.2\+       | Pi Zero/1/2/3 and gcc 4.6.3\+ | Xcode 7\+ and macOS 10.10+ SDK  | Xcode 7\+ and iOS 9+ SDK   | Android Studio and SDK        | A web server                  |
++------------+--------------------------------------+--------------------------------------+-------------------------------+---------------------------------+----------------------------+-------------------------------+-------------------------------+
+
+
+
+.. _use-cases:
+
+Use cases
+---------
+
+Typically, you use the SDK to create separate custom Viewer and Server apps. However, you can create a combined Viewer/Server 
+app if you wish. The SDK is optimized for the exchange of screen pixel data and input events between Viewer and Server apps, but you 
+can augment the core screen sharing capability by sending your own :ref:`messages, data or files <custom-data-channel>` between devices using 
+the same secure communication channel if you wish.
+
+Standard use cases for VNC are helpdesk (an expert Viewer helping a novice Server) and remote access (accessing your own Servers 
+from elsewhere), although the possibilities are endless! For any use case involving VNC Cloud, we recommend creating an intermediate web app to 
+interface with the VNC Cloud API on behalf of Viewer and Server apps. This is because your VNC Cloud 
+API key and secret used to obtain cloud addresses must be stored securely, and it's best not to bake them in to apps given out 
+to customers.
+
+.. _initialize-sdk:
+
+Creating a custom app
+---------------------
+
+The VNC SDK is a shared library with a C API. The library is located in the ``<vnc-sdk>/lib/<plat>`` directory; load it in the expected way for your platform.
+
+- On Windows, Linux, Mac and iOS platforms, you can call C API methods directly. See the :doc:`C API reference </api/c/index>`.
+- For Windows, you can alternatively use the ``RealVNC.VncSdk.dll`` .NET binding file provided in the ``<vnc-sdk>/lib/dotnet`` directory. See the :doc:`.NET API reference </api/dotnet/index>`.
+- For Android, use the ``vncsdk.jar`` Java binding file provided in the ``<vnc-sdk>/lib/android`` directory. See the :doc:`Java API reference </api/java/index>`.
+- For HTML 5, use the ``vncsdk.js`` JavaScript binding file provided in the ``<vnc-sdk>/lib/html5`` directory. See the :doc:`JavaScript API reference </api/javascript/index>`.
+- On any platform with a Python 2.6, 2.7 or 3.x runtime, you can use the ``vncsdk.py`` Python binding file provided in the ``<vnc-sdk>/lib/python`` directory. See the :doc:`Python API reference </api/python/index>`.
+
+To initialize the SDK, call :c:macro:`vnc_init`. Then, if your app is a Viewer app, simply call :cpp:func:`vnc_Viewer_create`. Note that a ``vnc_Viewer`` object 
+is designed to last for one connection only, so destroy and recreate it each time your Viewer app user connects, or attempts to connect. Note you may need to call 
+:cpp:func:`vnc_shutdown` to allow the SDK to clean up resources.
+
+If your app is a Server app for a desktop platform, then first choose whether to create a *persistent* or a *single-shot* app. Call:
+
+- :cpp:func:`vnc_Server_create` to create a single-shot ``vnc_Server`` object that remotes the desktop of the currently-logged in user only.
+- :cpp:func:`vnc_Server_createService` to create a persistent ``vnc_Server`` object that remotes the *console* of the computer, whether desktop or login screen, for as long as the Server app runs.
+
+See :ref:`this discussion <server-mode>` for more information. Whichever type of desktop Server app you choose, you must bundle the ``vncagent`` binary, 
+located in the ``<vnc-sdk>/lib/<plat>`` directory, to handle :ref:`screen capture <screen-capture>` and :ref:`input injection <input-injection>` for you.
+
+**Note:** If your app is a view-only Server app for Android, this distinction isn't necessary, and there's no need to bundle ``vncagent`` either; 
+see :ref:`this section <android-server>` instead.
+
+VNC header files are located in the ``<vnc-sdk>/include/vnc`` directory. Examine :doc:`Vnc.h </api/c/Vnc.h>` to see which headers are relevant 
+to Viewer apps, which to Server apps, and which must be included for both.
+
+.. _server-mode:
+
+Creating a single-shot or persistent desktop Server app
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On a *desktop* platform, you must choose whether to create a:
+
+- Single-shot Server app that remotes the desktop of the currently-logged in user only. To do this, call :cpp:func:`vnc_Server_create`. 
+
+  This is the simplest option, but note that screen capture 
+  stops as soon as an elevated screen is shown (for example, the login, lock, or Windows User Account Control screen), so it 
+  is not possible to remotely unlock the computer, switch or log out in order to access another user's desktop, nor start 
+  the Server app on boot. It's also not possible to inject secure key sequences such as Ctrl+Alt+Del on Windows Vista+ computers. 
+  On the other hand, the Server app doesn't need to be installed and can just be downloaded and run on demand, which might suit a helpdesk product; 
+  see the cross-platform ``<vnc-sdk>/samples/basicServer`` sample app for an example.
+  
+- Persistent Server app that remotes the console of the computer; that is, any screen the computer can show, whether elevated or not, including the 
+  login, lock, and Windows UAC screens. To do this, call :cpp:func:`vnc_Server_createService`. 
+  
+  Because screen capture persists for as long as the Server app runs, it *is* possible to 
+  remotely unlock the computer, switch or log out in order to access the desktops of other device users, 
+  and start the Server app on boot. This option is more complex because the Server app must be integrated as a system 
+  service, but it is more powerful, and arguably essential for a remote access product; see 
+  the ``<vnc-sdk>/samples/serviceServer<plat>`` sample app for your platform for an example.
+  
+Note the type of Server app you choose determines how :ref:`it must be deployed <deploy-server>` to target computers.
+
+.. _android-server:
+
+Creating a view-only Android Server app
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For Android, you can create a Server app that captures the screen but unfortunately, due to Android API restrictions, cannot inject input events, 
+so a connected Viewer app user can see the screen of an Android 5+ device but cannot control it.
+
+The SDK uses the `MediaProjection <http://developer.android.com/reference/android/media/projection/MediaProjection.html>`_ APIs available from 
+Android 5 to remote any screen the device can show, including the home screen. For best results, divide responsibility in your Server app 
+between an `Activity <http://developer.android.com/reference/android/app/Activity.html>`_ and a `Service <http://developer.android.com/reference/android/app/Service.html>`_. 
+In your ``Activity``, obtain a ``MediaProjectionManager`` object `in the standard way 
+<http://developer.android.com/reference/android/media/projection/MediaProjectionManager.html>`_ and then call 
+`MediaProjectionManager.createScreenCaptureIntent <http://developer.android.com/reference/android/media/projection/MediaProjectionManager.html#createScreenCaptureIntent()>`_ 
+to request permission from the device owner to capture the screen. In your ``Service``, call our Android-specific 
+:java:meth:`Server(Context,MediaProjection) <Server.Server(android.content.Context,android.media.projection.MediaProjection)>` constructor to create a 
+``vnc_Server`` object that can capture the screen while your app is in the background, and consider using a 
+`Notification <http://developer.android.com/reference/android/app/Notification.html>`_ to prevent the ``Service`` stopping prematurely and a 
+`WakeLock <http://developer.android.com/reference/android/os/PowerManager.WakeLock.html>`_
+to prevent the device screen turning off while a connection is in progress. Pass the result of a successful screen capture permission request from the ``Activity`` to the ``Service`` 
+using standard communication mechanisms and then call 
+`MediaProjectionManager.getMediaProjection <http://developer.android.com/reference/android/media/projection/MediaProjectionManager.html#getMediaProjection(int, android.content.Intent)>`_ 
+to actually start capturing the screen. See ``<vnc-sdk>/samples/basicServerAndroid`` for an example.
+
+Note there is no need to interact with or bundle ``vncagent``. Your APK can safely be submitted for approval to app stores for deployment; 
+no private Android APIs are utilized.
+
+
+.. _connectivity:
+
+Connectivity
+------------
+
+The simplest and most secure way to connect devices is using VNC Cloud. Our service discovers devices wherever they are, so you don't need to 
+worry about network addresses or reconfiguring firewalls and routers. In addition, device users are 
+:ref:`automatically protected <security>` against man-in-the-middle (MITM) attacks, 
+and you can isolate customers' devices from each other in private 'security zones'. But you can 
+establish :ref:`direct TCP connections <direct-tcp>` between devices yourself if you like. Or enable your apps to do both.
+
+Using VNC Cloud
+^^^^^^^^^^^^^^^
+
+Every VNC Cloud connection requires a pair of cloud addresses. A cloud address and its associated password authorize a device to join VNC Cloud and 
+either start listening for, or actually establish, connections. Typically, Servers listen and Viewers connect, though you can reverse 
+this methodology if you wish; examine :doc:`Cloud.h </api/c/Cloud.h>` for details. Note you should transmit and store 
+cloud addresses securely so devices cannot be impersonated.
+
+Use the ``<vnc-sdk>/tools/vnccloudaddresstool`` to obtain cloud addresses in conjunction with your sandbox VNC Cloud API key, or consult the 
+:doc:`VNC Cloud API documentation </api/cloud/index>` to learn how to make cloud API calls directly. You should obtain one Viewer cloud 
+address (typically with ``connect`` permissions) for each device you intend to deploy your Viewer app to, and one Server cloud 
+address (typically with ``listen`` permissions) for each device you intend to deploy your Server app to. Bundle all cloud addresses 
+whose devices can interconnect in the same *group*. For example, in a remote access product you might create one group for each 
+customer, containing the cloud addresses for all their Viewer and Server devices. Other customers will never be able to connect.
+
+Note the following:
+
+- Cloud addresses are static (that is, long-lease), and do not expire. You should :ref:`delete cloud addresses <deleting_a_cloud_address>`
+  when you no longer need them.
+- A cloud address is per-device, not per-connection. A cloud address is good for any number of concurrent or sequential connections 
+  to or from that device. The only restriction is that the same two devices cannot connect to each other twice at the same time 
+  (that is, concurrent connections are disallowed between the same pair of cloud addresses).
+- When you're ready to go live, sign in to your RealVNC account and follow the instructions on the **API keys** page to swap your sandbox for a live API key.
+
+.. _direct-tcp:
+
+Connecting devices directly
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can establish direct TCP connections between devices as an alternative to VNC Cloud, or in addition to it. Note that:
+
+- The HTML 5 platform is not supported; you must use VNC Cloud.
+- You (or your device users) must know the network addresses (IPv4, IPv6 or hostname) and listening ports of target devices.
+- If devices are connecting over the Internet, you (or your device users) must be able to add firewall exceptions, port-forward 
+  routers, and negotiate proxy servers where necessary.
+- By default, the SDK presents Viewer app users with a visual check of each Server app's cryptographic identity, to deter MITM attacks. There is provision to emulate 
+  VNC Cloud's automatic, reciprocal peer verification to prevent attacks completely, but you must :ref:`implement this yourself<security>`.
+- You must obtain an add-on code from RealVNC and apply it to both your Viewer and Server apps. To obtain a trial direct TCP code, 
+  sign in to your RealVNC account and follow the instructions on the **Add-on codes** page.
+  
+On the other hand:
+
+- You are in full control of the connectivity process. Connections are never brokered by, nor session data routed via, RealVNC data centers.
+- You can connect to or from shrinkwrapped `VNC Connect apps <http://www.realvnc.com/download/vnc/>`_ with an Enterprise subscription, which might speed up development.
+
+To apply an add-on code, call :cpp:func:`vnc_enableAddOn`. Typically, Servers listen for connections on a particular network address and port and Viewers provide this 
+information to connect, though you can reverse this methodology if you wish; examine :doc:`DirectTcp.h </api/c/DirectTcp.h>` for details.
+
+.. _security:
+
+Security
+--------
+
+The VNC SDK is secure by design. All connections between Viewer and Server apps created using the SDK are encrypted end-to-end using at least 128-bit AES, to prevent 
+eavesdropping. It is not possible to disable encryption.
+
+In addition, for connections using VNC Cloud:
+
+- Each peer automatically verifies the other's identity by exchanging 2048-bit RSA public keys, to prevent man-in-the-middle attacks; it is not
+  possible to disable peer verification. A connection can only succeed if each peer is cryptographically who it says it is.
+  
+  **Note**: If you are establishing :ref:`direct TCP connections <direct-tcp>`, Viewer app users are automatically notified of a Server app's unique, 
+  memorable catchphrase, though not *vice versa*. A more robust, reciprocal defence against MITM attacks can be implemented by requesting 
+  the :cpp:member:`vnc_Server_SecurityCallback::verifyPeer` and :cpp:member:`vnc_Viewer_PeerVerificationCallback::verifyPeer` callbacks, perhaps in conjunction with 
+  an exchange of RSA encryption keys out-of-band.
+
+- RSA encryption keys remain under your control at all times, so even though connections are brokered by
+  VNC Cloud - hosted by RealVNC in professionally-managed data centers - and may in addition be relayed by the same service,
+  it is not possible for RealVNC to decrypt traffic.
+- Secure HTTPS is used for all communications, and TLS certificates checked against the following well-known Certificate 
+  Authorities: Symantec, GlobalSign, DigiCert.
+
+However you connect devices, the SDK makes it simple for your Server app to mandate username/password authentication. If you do not want to write code to prompt 
+the Viewer app user with a username/password dialog box, the SDK will show one for you. It is trivial to make some (or all) 
+connections view-only, filter out connections from particular network addresses, prompt the Server app user to manually approve incoming 
+connections, or log every connection attempt for auditing purposes. Examine :doc:`Server.h </api/c/Server.h>` for more information.
+
+By default, a Viewer app user who consistently fails to authenticate is blacklisted to prevent brute-force, dictionary, and denial 
+of service attacks; you can configure frequency and timeouts in your Server app.
+
+.. _screen-capture:
+
+Screen capture and framebuffers
+-------------------------------
+
+The SDK captures the Server device screen and transmits real-time updates to all connected Viewer devices for you; there is no code to 
+write in your Server app. All you need do is bundle the ``vncagent`` binary, provided with the SDK, alongside your Server app. Note if the 
+Server device has more than one screen, you can choose which one to remote using :cpp:func:`vnc_DisplayManager_selectDisplay`.
+
+In your Viewer app, you must maintain a *framebuffer* into which the SDK can paint the Server device screen every time it changes. 
+Call :cpp:func:`vnc_Viewer_setViewerFb` to either supply your own platform-native 
+pixel buffer, or ask the SDK to allocate one for you (the former may be more performant, but you must ensure no other process updates 
+the framebuffer at the same time as the SDK). The SDK notifies you each time a screen update arrives, at which point you typically 
+render the framebuffer to your Viewer app canvas or window. Examine :doc:`Viewer.h </api/c/Viewer.h>` for more information.
+
+The SDK automatically scales the Server device screen to the size of the framebuffer; you can write code to match the framebuffer's 
+aspect ratio to the Server's, or alternatively disable scaling. Note that typically you should also write code to resize the 
+framebuffer if you expose a resizable window to your Viewer app users, and again if the SDK notifies you that the screen resolution 
+of the Server device has changed.
+
+Note that the SDK renders the Server's mouse cursor directly into the framebuffer for you. If Viewer devices have a pointer, you 
+should write code to hide the local system cursor while it is positioned over the Viewer app window; see 
+``<vnc-sdk>/samples/basicViewerWin`` for a demonstration.
+
+.. _input-injection:
+
+Input event handling and injection
+----------------------------------
+
+You should write code in your Viewer app to capture input events while the Viewer app window has focus, and notify the SDK for transmission to 
+the Server device. On desktop Server platforms permitting full remote control, the SDK automatically injects these input events for you; there 
+is no code to write in your Server app. All you need do is bundle the ``vncagent`` binary, provided with the SDK, alongside your Server app.
+
+In your Viewer app:
+
+- To send a key to the Server device, capture your platform's key down event and then call :cpp:func:`vnc_Viewer_sendKeyDown` once for each time 
+  you want to send that key. Note you must translate the key 
+  into a platform- and language-independent :doc:`X11 keysym </api/c/Keyboard.h>`; a lookup table in 
+  ``<vnc-sdk>/samples/basicViewerWin`` and ``<vnc-sdk>/samples/basicViewerMac`` 
+  demonstrates how to translate non-X11 key codes into keysyms, or call :cpp:func:`vnc_unicodeToKeysym`.
+
+  To release a key, capture your platform's key up event and call :cpp:func:`vnc_Viewer_sendKeyUp`, 
+  or call :cpp:func:`vnc_Viewer_releaseAllKeys` if the Viewer app window loses focus.
+- To send a mouse movement and optionally a button modifier to the Server device, capture your platform's pointer move or motion event and then call 
+  :cpp:func:`vnc_Viewer_sendPointerEvent`.
+- To send a scroll movement to the Server device, capture your platform's mouse wheel event and then call :cpp:func:`vnc_Viewer_sendScrollEvent`.
+- To send a tap to the Server device, capture a touchscreen platform's tap event and then call :cpp:func:`vnc_Viewer_sendPointerEvent` 
+  to click the left mouse button once where the tap occurred. Note it might also be intuitive to map multiple taps to other common 
+  computer operations, such as double tap to emulate double-click, or two separate finger taps to emulate right-click.
+
+Examine :doc:`Viewer.h </api/c/Viewer.h>` for more information. Note in addition it's easy to write code in your Viewer app to transfer 
+Clipboard text in either direction, so a Viewer app user can copy text to and from the Server device. Again, there is no code to write to in your 
+Server app.
+
+
+.. _annotation:
+
+Annotating a Server device screen
+---------------------------------
+
+You can enable Viewer and Server app users to annotate (that is, draw lines on top of) a Server device screen, without 
+affecting the underlying desktop. This might be useful to allow multiple connected Viewer users to share notes and ideas, or perhaps to enable 
+an expert Viewer user to show a novice Server user how to fix a problem or perform an operation (particularly on :ref:`view-only <android-server>` Android devices).
+For a demonstration, try ``<vnc-sdk>/samples/richViewerPython`` in conjunction with any Server sample app. 
+
+To enable a Viewer app to annotate, call :cpp:func:`vnc_Viewer_getAnnotationManager` to obtain a ``vnc_AnnotationManager`` object. To enable a Server app to 
+handle Viewer annotations, and to annotate itself if desired, call :cpp:func:`vnc_Server_getAnnotationManager`. For each connecting Viewer app, a Server app should 
+return :cpp:member:`vnc_Server_PermAnnotation` in the set of permissions granted by the :cpp:member:`vnc_Server_SecurityCallback::authenticateUser` callback. 
+Note this permission can be revoked at any time using :cpp:func:`vnc_Server_setPermissions`, so a Viewer app may want to call 
+:cpp:func:`vnc_AnnotationManager_setCallback` and monitor :cpp:member:`vnc_AnnotationManager_Callback::availabilityChanged`.
+
+A ``vnc_AnnotationManager`` controls a pen with an initial color determined by the SDK and a sensible default size (that is, line width), duration and 
+fade time; you can query and change these at any time. To draw a line, call :cpp:func:`vnc_AnnotationManager_movePenTo`; note that a 
+Viewer app may want to suspend calls to :cpp:func:`vnc_Viewer_sendPointerEvent` for the duration in order to prevent remote control while drawing operations are in progress.
+
+A Server app retains control and can clear all annotations, or just those of particular Viewer apps, at any time. 
+Note that a Viewer's annotations are automatically cleared when it disconnects, and that all 
+annotations are cleared if the Server screen resolution changes, for example when an Android device rotates.
+
+If you wish to support annotations you must deploy the ``vncannotator`` binary provided in ``<vnc-sdk>/lib/<plat>`` to the same location as ``vncagent`` on all target Server platforms 
+(except Android devices). Note there's also a small :ref:`deployment issue <deploy-server-linux>` under Linux and Raspberry Pi.
+
+
+.. _custom-data-channel:
+
+Sending your own messages, data or files
+----------------------------------------
+
+You can send your own data over the same secure communication channel that the SDK uses to exchange screen pixels and input events, safe in the
+knowledge that endpoints are mutually authenticated and the channel itself is encrypted end-to-end. You can send any quality or quantity of data you like,
+although note the responsiveness of screen sharing sessions may suffer if you send large, frequent messages.
+
+You must obtain a custom data channel add-on code from RealVNC and apply it to both Viewer and Server apps by calling :cpp:func:`vnc_enableAddOn`. To obtain a
+trial add-on code, sign in to your RealVNC account and follow the instructions on the **Add-on codes** page.
+For a demonstration, connect ``<vnc-sdk>/samples/richViewerPython`` (running on any platform) to ``<vnc-sdk>/samples/richServerPython`` (running on Windows only 
+in this release).
+
+To send messages from a Viewer app to a Server app, call :cpp:func:`vnc_Viewer_getMessagingManager` in your Viewer app to obtain
+a ``vnc_MessagingManager`` object. Once devices are connected, call :cpp:func:`vnc_MessagingManager_sendMessage` to send up to 1MB of data per message. To receive messages
+in your Server app, call :cpp:func:`vnc_Server_getMessagingManager` to obtain an equivalent ``vnc_MessagingManager`` object, and
+then :cpp:func:`vnc_MessagingManager_setCallback` to monitor :cpp:member:`vnc_MessagingManager_Callback::messageReceived` for message notifications.
+
+To send messages from a Server app to a Viewer app, reverse this methodology and call :cpp:func:`vnc_MessagingManager_setCallback()` in your Viewer app and
+:cpp:func:`vnc_MessagingManager_sendMessage` in your Server app. You can, of course, do both and send messages in either direction. Note you must specify 
+the ``connection`` parameter for a Server app to explicitly identify a Viewer app to send to, and iterate over connections to send a message to 
+every Viewer app.
+
+You must write code to process messages received. You should take a copy of the ``vnc_dataBuffer`` object provided by the 
+:cpp:member:`vnc_MessagingManager_Callback::messageReceived` callback; this will be destroyed when the callback completes.
+
+
+.. _data-stores:
+
+Data stores and memory management
+---------------------------------
+
+The SDK generates an RSA private/public key pair the first time it runs on every Viewer and Server device, in order to encrypt 
+connections and verify peer identity; examine :doc:`RsaKey.h </api/c/RsaKey.h>` for details. You must provide a data store in which the SDK can store 
+this key and retrieve it on demand. Note that the SDK also caches other data in this store, for example VNC Cloud discovery information.
+
+The simplest thing to do is ask the SDK to create and manage a suitable data store for you, for example a registry key under Windows, 
+or a file for most other platforms. If you want more control, you can create your own data store; the SDK notifies you when it needs 
+to store or retrieve data. Examine :doc:`DataStore.h </api/c/DataStore.h>` for more information; note you should take care to lock down your store so it 
+cannot be manipulated by device users.
+
+The SDK manages ownership of data using the ``vnc_DataBuffer`` type. Whenever 
+the SDK returns a pointer to memory owned by the SDK, it does so by returning a ``vnc_DataBuffer`` (for example, when 
+:cpp:func:`vnc_Viewer_getViewerFbData` retrieves the Viewer's framebuffer, or the :cpp:member:`vnc_RsaKey_Callback::detailsReady` 
+callback returns the public key). These objects 
+are destroyed by the SDK, so you must take a copy if you wish to interact with them. Conversely, when you return data to the 
+SDK (in your implementation of the :cpp:member:`vnc_DataStore_Callback::get` callback, 
+for example), you must do so by creating your own ``vnc_DataBuffer``; the 
+SDK subsequently takes ownership and destroys this object when it is no longer required.
+
+In short, the SDK never frees memory allocated by you, and you must never attempt to free memory allocated by the SDK (using your 
+platform's ``free`` or ``delete`` method).
+
+.. _eventloops-threading:
+
+Event loops and threading
+-------------------------
+
+For your Server app, you can either:
+
+- Integrate the SDK event loop into an existing event loop, to process SDK and platform events together. You might want to do this to 
+  create a responsive Server app that, for example, presents UI to the device user.
+- Run the SDK event loop standalone. This is the simplest option if your Server app can just silently listen for and handle 
+  connections in the background. Simply call :cpp:func:`vnc_EventLoop_run` to start 
+  performing blocking event handling; see ``<vnc-sdk>/samples/basicServer`` for a demonstration.
+
+For your Viewer app on Windows or Linux platforms only, it is seldom useful to run the SDK event loop standalone, since a Viewer app user won't be able 
+to interact with the Server device. Instead, integrate the SDK event loop with either:
+
+- A platform-native event loop. Under Windows, call :cpp:func:`vnc_EventLoopWin_getEvents` and :cpp:func:`vnc_EventLoopWin_handleEvent` 
+  to process SDK events notified by ``MsgWaitForMultipleObjects``. Under Linux, call :doc:`these equivalents </api/c/EventLoopFd.h>` 
+  to similarly handle file descriptor events.
+- A third party event loop provided by a UI framework such as Qt or wxWidgets. Under Windows, implement the 
+  :cpp:member:`vnc_EventLoopWin_Callback::eventUpdated` and :cpp:member:`vnc_EventLoopWin_Callback::timerUpdated` callbacks, or 
+  :doc:`these equivalents </api/c/EventLoopFd.h>` under Linux.
+
+Note that for your Viewer app on Mac, iOS or Android platforms, you need take no action; the SDK automatically integrates with a Core Foundation or 
+Android Looper event loop appropriately. For your HTML 5 Viewer app, the SDK handles events transparently using the JavaScript engine's events.
+
+Thread safety
+^^^^^^^^^^^^^
+Note all API methods must be called from the thread that calls :c:macro:`vnc_init`, 
+with the following exceptions: :cpp:func:`vnc_EventLoop_stop`, :cpp:func:`vnc_Server_serviceControlHandlerEx`.
+
+.. _callbacks:
+
+Callbacks
+---------
+
+The SDK has numerous callbacks to notify you of important activity or provide you with an opportunity to take action.
+
+It is mandatory to request some callbacks, for example :cpp:member:`vnc_CloudListener_Callback::listeningFailed`; 
+you *must* pass in a reference to a :cpp:type:`vnc_CloudListener_Callback` structure 
+defining at least this callback function when you call :cpp:func:`vnc_CloudListener_create` 
+to start listening for VNC Cloud connections. It is optional (or nominally so) to request other callbacks, for example 
+:cpp:member:`vnc_Viewer_FramebufferCallback::viewerFbUpdated`; to do this you must explicitly call the 
+:cpp:func:`vnc_Viewer_setFramebufferCallback` method with a reference to a 
+:cpp:type:`vnc_Viewer_FramebufferCallback` structure defining this callback function in order 
+to be notified when the Viewer framebuffer changes.
+
+For both patterns, the structure you pass in must define the callback functions you intend to implement. Some callbacks functions are 
+mandatory, some optional, and some notionally optional; consult the C API reference documentation for more information. As noted above, 
+you must define :cpp:member:`vnc_CloudListener_Callback::listeningFailed`, but it is notionally optional to define 
+:cpp:member:`vnc_Viewer_FramebufferCallback::viewerFbUpdated`, though if you don't you won't be able to update the Server device screen 
+for your Viewer app users.
+
+If you choose not to implement an optional callback function, you can either zero-initialize the structure using ``memset``, or set 
+the appropriate structure member to NULL (the sample apps demonstrate both patterns). Note that omitting some optional callback functions 
+such as :cpp:member:`vnc_Server_SecurityCallback::verifyPeer` has no effect; however, omitting others 
+causes a default action to occur (in particular, omitting :cpp:member:`vnc_Server_SecurityCallback::isUserNameRequired` 
+and :cpp:member:`vnc_Server_SecurityCallback::isPasswordRequired` mandates that a Viewer app user must provide a user name and password 
+in order to connect).
+
+It is not possible to cancel a callback requested using a ``vnc...Create`` method; you must destroy the original object by calling 
+an appropriate method, for example :cpp:func:`vnc_CloudListener_destroy`. To cancel an 
+explicitly-requested callback, call the appropriate ``set...Callback`` method with NULL as the callback parameter value.
+
+In the C API, callback requests take a ``void* userData`` parameter, enabling you to pass random data through to the callback function. 
+For example, you could pass your Viewer app canvas through to your implementation of 
+:cpp:member:`vnc_Viewer_FramebufferCallback::viewerFbUpdated` in order to conveniently render the latest Viewer 
+framebuffer to it. If random data is not required, just pass NULL as the parameter value. Note this parameter is absent from the language 
+bindings, since the callback is itself an object that can contain random data.
+
+.. _debug:
+
+Logging and error handling
+--------------------------
+
+You can ask the SDK to log varying qualities of information to a suitable destination, for example a file or Standard Error. If you 
+want more control, you can create your own logger; the SDK notifies you when it has a message to record. Examine 
+:doc:`Logger.h </api/c/Logger.h>` for more information.
+
+In the C API, methods that can fail return either a ``vnc_failure`` (if they 
+have a ``vnc_status_t`` return type) or NULL (if they have a pointer return type). 
+If a method fails, you can call :cpp:func:`vnc_getLastError` before the next method 
+call to obtain the error code. See the C API reference documentation for details of which methods can fail and which error codes they 
+produce.
+
+Note it is not necessary to monitor return types or call :cpp:func:`vnc_getLastError` 
+in the language bindings, since an error is thrown as a ``VncException`` containing the error code instead. See the appropriate API reference for more information.
+
+.. _deploy-server:
+
+Deploying a Server app
+----------------------
+
+The advice below is for desktop Server apps. For a view-only Android Server app, see :ref:`this section <android-server>`.
+
+If you created a:
+
+- :ref:`Single-shot <server-mode>` Server app using :cpp:func:`vnc_Server_create`, you don't *have* to install deliverables; you 
+  can package them for device users to download and run on demand instead. If you *do* install, ensure locations for executables, the SDK 
+  library, data store and any logger are owned by the current user (and only the current user), to prevent sensitive information leaking. Also, 
+  ensure your Server app binary and ``vncagent`` are in the same directory unless you specified a different ``agentpath``. Note there is no need to 
+  run any process with root or administrative privileges.
+- :ref:`Persistent <server-mode>` Server app using :cpp:func:`vnc_Server_createService`, you must run the app as a system service and install 
+  deliverables in a secure location owned by an administrative user, to prevent arbitrary code being run with elevated privileges. See 
+  also the platform-specific guidance below.
+  
+  **Windows**
+  
+  Your persistent Server app must be a Windows Service, running as SYSTEM. Note the SDK automatically starts ``vncagent`` with the correct permissions; if 
+  you wish to find out when ``vncagent`` is running, implement :cpp:type:`vnc_Server_AgentCallback`.
+  
+  You must install your Server app binary, ``vncagent`` and the SDK library in a `secure location <https://technet.microsoft.com/en-us/library/dd834830.aspx>`_ 
+  such as ``%ProgramFiles%`` or ``%ProgramFiles(x86)%`` to comply with 
+  `User Interface Privilege Isolation <https://en.wikipedia.org/wiki/User_Interface_Privilege_Isolation>`_ and to ensure ``vncagent`` can inject secure 
+  key sequences such as Ctrl+Alt+Del. In addition, your Server app binary must be digitally signed; note ``vncagent`` has already been signed by RealVNC.
+  
+  For an example, see ``<vnc-sdk>/samples/serviceServerWin``. Note under Windows XP, ``vncagent`` will stop capturing the screen if a connected Viewer app user 
+  fast user switches to a new account and then *logs off* from that account; there is no workaround other than to instruct Viewer app users to switch back to the login screen instead.
+  
+  **Mac**
+  
+  Your persistent Server app must be started using a ``LaunchDaemon``. Note the SDK itself cannot start ``vncagent``; instead, you are responsible for starting a ``vncagent`` instance 
+  in the login session and in each user's desktop session using a ``LaunchAgent``. On demand, the appropriate instance automatically and 
+  securely connects back to the SDK. To find out when ``vncagent`` is running, implement :cpp:type:`vnc_Server_AgentCallback`.
+  
+  See ``<vnc-sdk>/samples/serviceServerMac`` for an example. In particular, examine ``com.realvnc.serviceServerMac.prelogin.plist`` 
+  and ``com.realvnc.serviceServerMac.peruser.plist`` for sample ``LaunchAgent`` files for the login and each desktop session respectively. Note the first argument supplied 
+  to ``vncagent`` in these files must be the same ``agentPath`` provided to :cpp:func:`vnc_Server_createService`. The second argument must be the string ``service``.
+  
+  .. _deploy-server-linux:  
+
+  **Linux**
+  
+  Your persistent Server app must be a daemon, running as root. Note the SDK automatically starts ``vncagent`` with the correct permissions when an X server is detected; 
+  since this may not be when your app starts up, it is possible for Viewer app users to connect and there be no screen to show. You should therefore call 
+  :cpp:func:`vnc_Server_isAgentReady` in your Server app code, and reject connections until it is. Note you should also implement 
+  :cpp:type:`vnc_Server_AgentCallback` to be notified if the X server stops; during a logout, this stoppage is only temporary, so you can choose 
+  whether to keep Viewer apps connected, disconnect them, or disconnect but recommend Viewer apps reconnect after a short period. For an example, 
+  see ``<vnc-sdk>/samples/serviceServerLinux``. 
+
+  In other news:
+
+  * If SELinux is enforcing on target computers, suitable policy module(s) must be put in place. See the README for this sample app for example commands.
+  * To support :ref:`annotations <annotation>`, a compositing window manager capable of transparency must be running on target computers, for example 
+    `Xcompmgr <https://wiki.archlinux.org/index.php/xcompmgr>`_ (or `compton <https://github.com/chjj/compton>`_ on Raspberry Pi).
+  
+
+.. _deploy-viewer:
+
+Deploying a Viewer app
+----------------------
+
+**iOS**
+ 
+The VNC SDK shared library does not include bitcode, so make sure **Build Settings > All > Enable Bitcode** is set to **No** for your custom Viewer app.
+
+The SDK is compiled for both simulator and iOS devices, and is suitable for ad-hoc testing and enterprise deployment out-of-the-box. 
+In order to submit your custom app to the App Store, however, you must first remove unsupported architectures. To do this, use
+the ``lipo`` utility. Note this will also reduce the size of your custom app binary.

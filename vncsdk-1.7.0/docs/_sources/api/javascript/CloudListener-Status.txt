@@ -1,0 +1,19 @@
+CloudListener.Status
+====================
+
+.. js:data:: vncsdk.CloudListener.Status
+
+    Enumeration of listening statuses.
+
+Enum Constants
+--------------
+
+.. js:attribute:: vncsdk.CloudListener.Status.STATUS_SEARCHING
+
+    The listener is in the process of establishing an association with VNC
+    Cloud.  Incoming connections are not yet possible.
+
+.. js:attribute:: vncsdk.CloudListener.Status.STATUS_ONLINE
+
+    The listener is available for incoming connections.
+

@@ -1,0 +1,96 @@
+CloudConnector
+==============
+
+.. py:class:: vncsdk.CloudConnector
+
+    Connector used to join VNC Cloud and establish an outgoing connection.
+
+Constructor Summary
+-------------------
+================= =================================================================================
+Modifier and Type Method and Description                                                           
+================= =================================================================================
+\                 `__init__ <#constructor>`_\ (local_cloud_address, local_cloud_password)          
+                                                                                                   
+                  Creates a connector, which is used used to create connections to Cloud addresses.
+================= =================================================================================
+
+
+Method Summary
+--------------
+================= ========================================================================================================
+Modifier and Type Method and Description                                                                                  
+================= ========================================================================================================
+\                 :py:func:`connect <CloudConnector.connect>`\ (peer_cloud_address, connection_handler)                   
+                                                                                                                          
+                  Begins an outgoing connection to the given Cloud address.                                               
+----------------- --------------------------------------------------------------------------------------------------------
+\                 :py:func:`destroy <CloudConnector.destroy>`\ ()                                                         
+                                                                                                                          
+                  Destroys the Cloud connector.                                                                           
+----------------- --------------------------------------------------------------------------------------------------------
+\                 :py:func:`set_relay_bandwidth_limit <CloudConnector.set_relay_bandwidth_limit>`\ (relay_bandwidth_limit)
+                                                                                                                          
+                  Set the bandwidth limit applied to relayed Cloud connections.                                           
+----------------- --------------------------------------------------------------------------------------------------------
+\                 :py:func:`set_wait_for_peer <CloudConnector.set_wait_for_peer>`\ (wait_for_peer)                        
+                                                                                                                          
+                  Sets whether new connections created by the connector wait for the peer to start listening.             
+================= ========================================================================================================
+
+
+Constructor
+-----------
+
+.. py:method:: vncsdk.CloudConnector.__init__(local_cloud_address, local_cloud_password)
+
+    Creates a connector, which is used used to create connections to Cloud
+    addresses.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_create`.
+
+    :param local_cloud_address:
+    :type local_cloud_address: str
+    :param local_cloud_password:
+    :type local_cloud_password: str
+
+Methods
+-------
+
+.. py:method:: CloudConnector.connect(peer_cloud_address, connection_handler)
+
+    Begins an outgoing connection to the given Cloud address.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_connect`.
+
+    :param peer_cloud_address:
+    :type peer_cloud_address: str
+    :param connection_handler:
+    :type connection_handler: :py:class:`vncsdk.ConnectionHandler`
+
+.. py:method:: CloudConnector.destroy()
+
+    Destroys the Cloud connector.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_destroy`.
+
+
+.. py:method:: CloudConnector.set_relay_bandwidth_limit(relay_bandwidth_limit)
+
+    Set the bandwidth limit applied to relayed Cloud connections.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_setRelayBandwidthLimit`.
+
+    :param relay_bandwidth_limit:
+    :type relay_bandwidth_limit: int
+
+.. py:method:: CloudConnector.set_wait_for_peer(wait_for_peer)
+
+    Sets whether new connections created by the connector wait for the peer to
+    start listening.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_setWaitForPeer`.
+
+    :param wait_for_peer:
+    :type wait_for_peer: bool
+

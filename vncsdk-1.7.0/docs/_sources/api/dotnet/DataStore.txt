@@ -1,0 +1,70 @@
+.. _DataStore:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DataStore
+---------
+
+.. class:: DataStore
+
+    A container for static methods.
+
+    For more information, see :cpp:class:`vnc_DataStore`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`DataStore.Callback`
+
+**Method summary**
+
+================= =================================================================
+Modifier and Type Method and Description                                           
+================= =================================================================
+:type:`void`      :meth:`DataStore.CreateCustomStore`\ (:type:`DataStore.Callback`)
+                                                                                   
+                  Creates a custom data store.                                     
+----------------- -----------------------------------------------------------------
+:type:`void`      :meth:`DataStore.CreateFileStore`\ (:type:`System.String`)       
+                                                                                   
+                  Creates a file data store.                                       
+----------------- -----------------------------------------------------------------
+:type:`void`      :meth:`DataStore.CreateRegistryStore`\ (:type:`System.String`)   
+                                                                                   
+                  Creates a registry data store.                                   
+----------------- -----------------------------------------------------------------
+:type:`void`      :meth:`DataStore.DestroyStore`\ ()                               
+                                                                                   
+                  Destroys the current data store.                                 
+================= =================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: void DataStore.CreateCustomStore(DataStore.Callback a)
+
+    Creates a custom data store.
+
+    For more information, see :cpp:func:`vnc_DataStore_createCustomStore`\  in the C API documentation.
+
+.. method:: void DataStore.CreateFileStore(System.String a)
+
+    Creates a file data store.
+
+    For more information, see :cpp:func:`vnc_DataStore_createFileStore`\  in the C API documentation.
+
+.. method:: void DataStore.CreateRegistryStore(System.String a)
+
+    Creates a registry data store.
+
+    For more information, see :cpp:func:`vnc_DataStore_createRegistryStore`\  in the C API documentation.
+
+.. method:: void DataStore.DestroyStore()
+
+    Destroys the current data store.
+
+    For more information, see :cpp:func:`vnc_DataStore_destroyStore`\  in the C API documentation.
+

@@ -1,0 +1,398 @@
+.. _Viewer:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer
+------
+
+.. class:: Viewer
+
+    A VNC-compatible Viewer showing the screen of and controlling a remote computer.
+
+    For more information, see :cpp:class:`vnc_Viewer`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Viewer.PeerVerificationCallback`
+- :ref:`Viewer.FramebufferCallback`
+- :ref:`Viewer.ServerEventCallback`
+- :ref:`Viewer.AuthenticationCallback`
+- :ref:`Viewer.ConnectionCallback`
+- :ref:`Viewer.ConnectionStatus`
+- :ref:`Viewer.EncryptionLevel`
+- :ref:`Viewer.MouseButton`
+- :ref:`Viewer.PictureQuality`
+- :ref:`Viewer.DisconnectFlags`
+- :ref:`Viewer.MouseWheel`
+
+**Constructor summary**
+
+================= =================================
+Modifier and Type Method and Description           
+================= =================================
+:type:`Viewer`    :meth:`Viewer`\ ()               
+                                                   
+                  Creates and returns a new viewer.
+================= =================================
+
+
+**Method summary**
+
+============================ ====================================================================================================================================================
+Modifier and Type            Method and Description                                                                                                                              
+============================ ====================================================================================================================================================
+:type:`void`                 :meth:`Viewer.Dispose`\ ()                                                                                                                          
+                                                                                                                                                                                 
+                             Destroys the viewer.                                                                                                                                
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SetConnectionCallback`\ (:type:`Viewer.ConnectionCallback`)                                                                           
+                                                                                                                                                                                 
+                             Sets the callbacks for the Viewer to call when various events occur during                                                                          
+                             its lifetime.                                                                                                                                       
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`ConnectionHandler`    :meth:`Viewer.GetConnectionHandler`\ ()                                                                                                             
+                                                                                                                                                                                 
+                             Returns the viewer's :type:`ConnectionHandler`\  for accepting connections.                                                                         
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`ConnectionStatus`     :meth:`Viewer.GetConnectionStatus`\ ()                                                                                                              
+                                                                                                                                                                                 
+                             Returns the status of the viewer's connection.                                                                                                      
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`string`               :meth:`Viewer.GetPeerAddress`\ ()                                                                                                                   
+                                                                                                                                                                                 
+                             Returns the address of the viewer's server.                                                                                                         
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.Disconnect`\ ()                                                                                                                       
+                                                                                                                                                                                 
+                             Disconnects this viewer from the server.                                                                                                            
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`string`               :meth:`Viewer.GetDisconnectReason`\ ()                                                                                                              
+                                                                                                                                                                                 
+                             Returns a string ID representing the reason for the last viewer                                                                                     
+                             disconnection.                                                                                                                                      
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`string`               :meth:`Viewer.GetDisconnectMessage`\ ()                                                                                                             
+                                                                                                                                                                                 
+                             Returns a human-readable message sent by the server for the last                                                                                    
+                             disconnection, or NULL if the last disconnection was not initiated by the                                                                           
+                             server.                                                                                                                                             
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SetFramebufferCallback`\ (:type:`Viewer.FramebufferCallback`)                                                                         
+                                                                                                                                                                                 
+                             Sets the framebuffer callback for this viewer.                                                                                                      
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SetViewerFb`\ (:type:`System.Byte` [], :type:`ImmutablePixelFormat`, :type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`)
+                                                                                                                                                                                 
+                             Sets the viewer framebuffer.                                                                                                                        
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`int`                  :meth:`Viewer.GetViewerFbWidth`\ ()                                                                                                                 
+                                                                                                                                                                                 
+                             Gets the width of the viewer framebuffer.                                                                                                           
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`int`                  :meth:`Viewer.GetViewerFbHeight`\ ()                                                                                                                
+                                                                                                                                                                                 
+                             Gets the height of the viewer framebuffer.                                                                                                          
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`ImmutablePixelFormat` :meth:`Viewer.GetViewerFbPixelFormat`\ ()                                                                                                           
+                                                                                                                                                                                 
+                             Gets the pixel format of the viewer framebuffer.                                                                                                    
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`ImmutableDataBuffer`  :meth:`Viewer.GetViewerFbData`\ (:type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`)                            
+                                                                                                                                                                                 
+                             Returns the viewer framebuffer data for the given rectangle.                                                                                        
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`int`                  :meth:`Viewer.GetViewerFbStride`\ ()                                                                                                                
+                                                                                                                                                                                 
+                             Returns the stride of the viewer framebuffer data in pixels, that is, the                                                                           
+                             number of pixels from the start of each row until the start of the next.                                                                            
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SetServerEventCallback`\ (:type:`Viewer.ServerEventCallback`)                                                                         
+                                                                                                                                                                                 
+                             Sets the server event callback for this viewer.                                                                                                     
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SendClipboardText`\ (:type:`System.String`)                                                                                           
+                                                                                                                                                                                 
+                             Copies the given text to the server's clipboard.                                                                                                    
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SendPointerEvent`\ (:type:`System.Int32`, :type:`System.Int32`, :type:`Viewer.MouseButton`, :type:`System.Boolean`)                   
+                                                                                                                                                                                 
+                             Sends a pointer event to the server.                                                                                                                
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SendScrollEvent`\ (:type:`System.Int32`, :type:`Viewer.MouseWheel`)                                                                   
+                                                                                                                                                                                 
+                             Sends a scroll wheel event to the server.                                                                                                           
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SendKeyDown`\ (:type:`System.Int32`, :type:`System.Int32`)                                                                            
+                                                                                                                                                                                 
+                             Sends a key down (press) event to the server.                                                                                                       
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SendKeyUp`\ (:type:`System.Int32`)                                                                                                    
+                                                                                                                                                                                 
+                             Sends a key up (release) event to the server.                                                                                                       
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.ReleaseAllKeys`\ ()                                                                                                                   
+                                                                                                                                                                                 
+                             Send key up events for all currently pressed keys.                                                                                                  
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SetAuthenticationCallback`\ (:type:`Viewer.AuthenticationCallback`)                                                                   
+                                                                                                                                                                                 
+                             Sets the callback to be called when a username and/or password is required.                                                                         
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SendAuthenticationResponse`\ (:type:`System.Boolean`, :type:`System.String`, :type:`System.String`)                                   
+                                                                                                                                                                                 
+                             Provides the SDK with the result of a username/password request.                                                                                    
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SetPeerVerificationCallback`\ (:type:`Viewer.PeerVerificationCallback`)                                                               
+                                                                                                                                                                                 
+                             Sets the callbacks to be called to verify the identity of the peer (server).                                                                        
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SendPeerVerificationResponse`\ (:type:`System.Boolean`)                                                                               
+                                                                                                                                                                                 
+                             Provides the SDK with the response to the                                                                                                           
+                             Viewer.PeerVerificationCallback::verifyPeer request.                                                                                                
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`AnnotationManager`    :meth:`Viewer.GetAnnotationManager`\ ()                                                                                                             
+                                                                                                                                                                                 
+                             Obtains the Viewer's :type:`AnnotationManager`\  for handling annotation                                                                            
+                             operations.                                                                                                                                         
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`PictureQuality`       :meth:`Viewer.GetPictureQuality`\ ()                                                                                                                
+                                                                                                                                                                                 
+                             Returns the viewer's current picture quality.                                                                                                       
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SetPictureQuality`\ (:type:`Viewer.PictureQuality`)                                                                                   
+                                                                                                                                                                                 
+                             Sets the desired picture quality of the session from the range of options                                                                           
+                             enumerated by :enum:`Viewer.PictureQuality`\ .                                                                                                      
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`MessagingManager`     :meth:`Viewer.GetMessagingManager`\ ()                                                                                                              
+                                                                                                                                                                                 
+                             Obtains the Viewer's Messaging Manager for handling messaging                                                                                       
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`                 :meth:`Viewer.SetEncryptionLevel`\ (:type:`Viewer.EncryptionLevel`)                                                                                 
+                                                                                                                                                                                 
+                             Sets the desired encryption level of the session from the range of options                                                                          
+                             enumerated by :enum:`Viewer.EncryptionLevel`\ .                                                                                                     
+---------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`EncryptionLevel`      :meth:`Viewer.GetEncryptionLevel`\ ()                                                                                                               
+                                                                                                                                                                                 
+                             Returns the Viewer's current encryption level.                                                                                                      
+============================ ====================================================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: Viewer()
+
+    Creates and returns a new viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_create`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void Viewer.Dispose()
+
+    Destroys the viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_destroy`\  in the C API documentation.
+
+.. method:: void Viewer.SetConnectionCallback(Viewer.ConnectionCallback a)
+
+    Sets the callbacks for the Viewer to call when various events occur during
+    its lifetime.
+
+    For more information, see :cpp:func:`vnc_Viewer_setConnectionCallback`\  in the C API documentation.
+
+.. method:: ConnectionHandler Viewer.GetConnectionHandler()
+
+    Returns the viewer's :type:`ConnectionHandler`\  for accepting connections.
+
+    For more information, see :cpp:func:`vnc_Viewer_getConnectionHandler`\  in the C API documentation.
+
+.. method:: ConnectionStatus Viewer.GetConnectionStatus()
+
+    Returns the status of the viewer's connection.
+
+    For more information, see :cpp:func:`vnc_Viewer_getConnectionStatus`\  in the C API documentation.
+
+.. method:: string Viewer.GetPeerAddress()
+
+    Returns the address of the viewer's server.
+
+    For more information, see :cpp:func:`vnc_Viewer_getPeerAddress`\  in the C API documentation.
+
+.. method:: void Viewer.Disconnect()
+
+    Disconnects this viewer from the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_disconnect`\  in the C API documentation.
+
+.. method:: string Viewer.GetDisconnectReason()
+
+    Returns a string ID representing the reason for the last viewer
+    disconnection.
+
+    For more information, see :cpp:func:`vnc_Viewer_getDisconnectReason`\  in the C API documentation.
+
+.. method:: string Viewer.GetDisconnectMessage()
+
+    Returns a human-readable message sent by the server for the last
+    disconnection, or NULL if the last disconnection was not initiated by the
+    server.
+
+    For more information, see :cpp:func:`vnc_Viewer_getDisconnectMessage`\  in the C API documentation.
+
+.. method:: void Viewer.SetFramebufferCallback(Viewer.FramebufferCallback a)
+
+    Sets the framebuffer callback for this viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_setFramebufferCallback`\  in the C API documentation.
+
+.. method:: void Viewer.SetViewerFb(System.Byte[] a, ImmutablePixelFormat b, System.Int32 c, System.Int32 d, System.Int32 e)
+
+    Sets the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_setViewerFb`\  in the C API documentation.
+
+.. method:: int Viewer.GetViewerFbWidth()
+
+    Gets the width of the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbWidth`\  in the C API documentation.
+
+.. method:: int Viewer.GetViewerFbHeight()
+
+    Gets the height of the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbHeight`\  in the C API documentation.
+
+.. method:: ImmutablePixelFormat Viewer.GetViewerFbPixelFormat()
+
+    Gets the pixel format of the viewer framebuffer.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbPixelFormat`\  in the C API documentation.
+
+.. method:: ImmutableDataBuffer Viewer.GetViewerFbData(System.Int32 a, System.Int32 b, System.Int32 c, System.Int32 d)
+
+    Returns the viewer framebuffer data for the given rectangle.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbData`\  in the C API documentation.
+
+.. method:: int Viewer.GetViewerFbStride()
+
+    Returns the stride of the viewer framebuffer data in pixels, that is, the
+    number of pixels from the start of each row until the start of the next.
+
+    For more information, see :cpp:func:`vnc_Viewer_getViewerFbStride`\  in the C API documentation.
+
+.. method:: void Viewer.SetServerEventCallback(Viewer.ServerEventCallback a)
+
+    Sets the server event callback for this viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_setServerEventCallback`\  in the C API documentation.
+
+.. method:: void Viewer.SendClipboardText(System.String a)
+
+    Copies the given text to the server's clipboard.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendClipboardText`\  in the C API documentation.
+
+.. method:: void Viewer.SendPointerEvent(System.Int32 a, System.Int32 b, Viewer.MouseButton c, System.Boolean d)
+
+    Sends a pointer event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendPointerEvent`\  in the C API documentation.
+
+.. method:: void Viewer.SendScrollEvent(System.Int32 a, Viewer.MouseWheel b)
+
+    Sends a scroll wheel event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendScrollEvent`\  in the C API documentation.
+
+.. method:: void Viewer.SendKeyDown(System.Int32 a, System.Int32 b)
+
+    Sends a key down (press) event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendKeyDown`\  in the C API documentation.
+
+.. method:: void Viewer.SendKeyUp(System.Int32 a)
+
+    Sends a key up (release) event to the server.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendKeyUp`\  in the C API documentation.
+
+.. method:: void Viewer.ReleaseAllKeys()
+
+    Send key up events for all currently pressed keys.
+
+    For more information, see :cpp:func:`vnc_Viewer_releaseAllKeys`\  in the C API documentation.
+
+.. method:: void Viewer.SetAuthenticationCallback(Viewer.AuthenticationCallback a)
+
+    Sets the callback to be called when a username and/or password is required.
+
+    For more information, see :cpp:func:`vnc_Viewer_setAuthenticationCallback`\  in the C API documentation.
+
+.. method:: void Viewer.SendAuthenticationResponse(System.Boolean a, System.String b, System.String c)
+
+    Provides the SDK with the result of a username/password request.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendAuthenticationResponse`\  in the C API documentation.
+
+.. method:: void Viewer.SetPeerVerificationCallback(Viewer.PeerVerificationCallback a)
+
+    Sets the callbacks to be called to verify the identity of the peer (server).
+
+    For more information, see :cpp:func:`vnc_Viewer_setPeerVerificationCallback`\  in the C API documentation.
+
+.. method:: void Viewer.SendPeerVerificationResponse(System.Boolean a)
+
+    Provides the SDK with the response to the
+    Viewer.PeerVerificationCallback::verifyPeer request.
+
+    For more information, see :cpp:func:`vnc_Viewer_sendPeerVerificationResponse`\  in the C API documentation.
+
+.. method:: AnnotationManager Viewer.GetAnnotationManager()
+
+    Obtains the Viewer's :type:`AnnotationManager`\  for handling annotation
+    operations.
+
+    For more information, see :cpp:func:`vnc_Viewer_getAnnotationManager`\  in the C API documentation.
+
+.. method:: PictureQuality Viewer.GetPictureQuality()
+
+    Returns the viewer's current picture quality.
+
+    For more information, see :cpp:func:`vnc_Viewer_getPictureQuality`\  in the C API documentation.
+
+.. method:: void Viewer.SetPictureQuality(Viewer.PictureQuality a)
+
+    Sets the desired picture quality of the session from the range of options
+    enumerated by :enum:`Viewer.PictureQuality`\ .
+
+    For more information, see :cpp:func:`vnc_Viewer_setPictureQuality`\  in the C API documentation.
+
+.. method:: MessagingManager Viewer.GetMessagingManager()
+
+    Obtains the Viewer's Messaging Manager for handling messaging
+
+    For more information, see :cpp:func:`vnc_Viewer_getMessagingManager`\  in the C API documentation.
+
+.. method:: void Viewer.SetEncryptionLevel(Viewer.EncryptionLevel a)
+
+    Sets the desired encryption level of the session from the range of options
+    enumerated by :enum:`Viewer.EncryptionLevel`\ .
+
+    For more information, see :cpp:func:`vnc_Viewer_setEncryptionLevel`\  in the C API documentation.
+
+.. method:: EncryptionLevel Viewer.GetEncryptionLevel()
+
+    Returns the Viewer's current encryption level.
+
+    For more information, see :cpp:func:`vnc_Viewer_getEncryptionLevel`\  in the C API documentation.
+

@@ -1,0 +1,15 @@
+.. _Viewer.ConnectionCallback.DisconnectedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.ConnectionCallback.DisconnectedType
+------------------------------------------
+
+.. attribute:: Viewer.ConnectionCallback.DisconnectedType
+
+    The type of the :attr:`Viewer.ConnectionCallback.Disconnected`\  callback.
+
+    
+
+

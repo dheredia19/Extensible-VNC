@@ -1,0 +1,18 @@
+Viewer.EncryptionLevel
+======================
+
+.. py:class:: vncsdk.Viewer.EncryptionLevel
+
+    Enumeration of encryption levels.
+
+Enumeration Attributes
+----------------------
+
+.. py:attribute:: vncsdk.Viewer.EncryptionLevel.DEFAULT
+
+    Use strong encryption.  This is the default.
+
+.. py:attribute:: vncsdk.Viewer.EncryptionLevel.MAXIMUM
+
+    Use the strongest available encryption, possibly at the cost of speed.
+

@@ -1,0 +1,95 @@
+.. _CloudAddressMonitor:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudAddressMonitor
+-------------------
+
+.. class:: CloudAddressMonitor
+
+    Monitor used to query the availability of VNC Cloud addresses.
+
+    For more information, see :cpp:class:`vnc_CloudAddressMonitor`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`CloudAddressMonitor.Callback`
+- :ref:`CloudAddressMonitor.Availability`
+
+**Constructor summary**
+
+=========================== =====================================================================================================================
+Modifier and Type           Method and Description                                                                                               
+=========================== =====================================================================================================================
+:type:`CloudAddressMonitor` :meth:`CloudAddressMonitor`\ (:type:`CloudConnector`, :type:`System.String` [], :type:`CloudAddressMonitor.Callback`)
+                                                                                                                                                 
+                            Creates a monitor, which queries whether a list of cloud addresses is                                                
+                            available.                                                                                                           
+=========================== =====================================================================================================================
+
+
+**Method summary**
+
+================= ============================================================================
+Modifier and Type Method and Description                                                      
+================= ============================================================================
+:type:`void`      :meth:`CloudAddressMonitor.Dispose`\ ()                                     
+                                                                                              
+                  Destroys the Cloud monitor.                                                 
+----------------- ----------------------------------------------------------------------------
+:type:`void`      :meth:`CloudAddressMonitor.Pause`\ ()                                       
+                                                                                              
+                  Pauses the Cloud monitor.                                                   
+----------------- ----------------------------------------------------------------------------
+:type:`void`      :meth:`CloudAddressMonitor.Resume`\ ()                                      
+                                                                                              
+                  Resumes the Cloud monitor.                                                  
+----------------- ----------------------------------------------------------------------------
+:type:`void`      :meth:`CloudAddressMonitor.SetPauseOnConnect`\ (:type:`System.Boolean`)     
+                                                                                              
+                  Sets whether or not the Cloud monitor pauses automatically when a connection
+                  is established.                                                             
+================= ============================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: CloudAddressMonitor(CloudConnector a, System.String[] b, CloudAddressMonitor.Callback c)
+
+    Creates a monitor, which queries whether a list of cloud addresses is
+    available.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_create`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void CloudAddressMonitor.Dispose()
+
+    Destroys the Cloud monitor.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_destroy`\  in the C API documentation.
+
+.. method:: void CloudAddressMonitor.Pause()
+
+    Pauses the Cloud monitor.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_pause`\  in the C API documentation.
+
+.. method:: void CloudAddressMonitor.Resume()
+
+    Resumes the Cloud monitor.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_resume`\  in the C API documentation.
+
+.. method:: void CloudAddressMonitor.SetPauseOnConnect(System.Boolean a)
+
+    Sets whether or not the Cloud monitor pauses automatically when a connection
+    is established.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_setPauseOnConnect`\  in the C API documentation.
+

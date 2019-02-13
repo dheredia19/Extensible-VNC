@@ -1,0 +1,21 @@
+Viewer.PictureQuality
+=====================
+
+.. js:data:: vncsdk.Viewer.PictureQuality
+
+    Enumeration of picture quality levels.
+
+Enum Constants
+--------------
+
+.. js:attribute:: vncsdk.Viewer.PictureQuality.AUTO
+
+    Auto quality means that the viewer selects an appropriate encoding and
+    colour level based on its own line speed estimate.
+
+.. js:attribute:: vncsdk.Viewer.PictureQuality.HIGH
+
+.. js:attribute:: vncsdk.Viewer.PictureQuality.MEDIUM
+
+.. js:attribute:: vncsdk.Viewer.PictureQuality.LOW
+

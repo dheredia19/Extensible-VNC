@@ -1,0 +1,15 @@
+.. _Viewer.ServerEventCallback.ServerFriendlyNameChangedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.ServerEventCallback.ServerFriendlyNameChangedType
+--------------------------------------------------------
+
+.. attribute:: Viewer.ServerEventCallback.ServerFriendlyNameChangedType
+
+    The type of the :attr:`Viewer.ServerEventCallback.ServerFriendlyNameChanged`\  callback.
+
+    
+
+

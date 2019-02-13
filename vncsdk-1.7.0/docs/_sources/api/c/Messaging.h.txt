@@ -1,0 +1,46 @@
+
+.. _api_messaging_8h:
+
+Messaging.h
+===========
+
+.. raw :: html
+
+    <div id="method-tables">
+
+Enables a Viewer and Server to send and receive messages over the same secure data channel as the current screen sharing session.  `(more...) <#description>`_
+
+**Data structures**
+
+================= ==================================================================================
+Modifier and Type Name and Description                                                              
+================= ==================================================================================
+struct            :ref:`vnc_MessagingManager_Callback <apistructvnc___messaging_manager___callback>`
+                                                                                                    
+                  Callback notifying when messages are received.                                    
+================= ==================================================================================
+
+
+**Functions**
+
+================================================================================= ====================================================================================================================================================================================================================================================================================================================================
+Modifier and Type                                                                 Name and Description                                                                                                                                                                                                                                                                                                                
+================================================================================= ====================================================================================================================================================================================================================================================================================================================================
+function :ref:`vnc_status_t <api_common_8h_1a1f1cf3f7c00704dab3ab0197e3b19e56>`\  :ref:`vnc_MessagingManager_setCallback <api_messaging_8h_1ac74927c158bddde75385358a64373681>`\ (:ref:`vnc_MessagingManager <api_common_8h_1a33e3238ee6548adbc273f30e371358c2>`\  \*messagingManager, const :ref:`vnc_MessagingManager_Callback <apistructvnc___messaging_manager___callback>`\  \*callback, void \*userData)        
+                                                                                                                                                                                                                                                                                                                                                                                                                      
+                                                                                  Registers a callback notifying when messages are received.                                                                                                                                                                                                                                                                          
+--------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function :ref:`vnc_status_t <api_common_8h_1a1f1cf3f7c00704dab3ab0197e3b19e56>`\  :ref:`vnc_MessagingManager_sendMessage <api_messaging_8h_1a6e8cbdbd6ca9ac793dc1eec254695d4a>`\ (:ref:`vnc_MessagingManager <api_common_8h_1a33e3238ee6548adbc273f30e371358c2>`\  \*messagingManager, const void \*buffer, int bufferLength, :ref:`vnc_Connection <api_common_8h_1aabddac114c33e8e97fa2fed59edea3f9>`\  \*connection)
+                                                                                                                                                                                                                                                                                                                                                                                                                      
+                                                                                  Sends a message.                                                                                                                                                                                                                                                                                                                    
+================================================================================= ====================================================================================================================================================================================================================================================================================================================================
+
+
+.. raw :: html
+
+    </div><a id="description"></a>
+
+**Detailed description**
+
+.. doxygenfile:: Messaging.h
+   :project: api

@@ -1,0 +1,28 @@
+Viewer.ConnectionStatus
+=======================
+
+.. py:class:: vncsdk.Viewer.ConnectionStatus
+
+    Enumeration of connection statuses.
+
+Enumeration Attributes
+----------------------
+
+.. py:attribute:: vncsdk.Viewer.ConnectionStatus.DISCONNECTED
+
+    The viewer is not connected to a server.
+
+.. py:attribute:: vncsdk.Viewer.ConnectionStatus.CONNECTING
+
+    The viewer is negotiating a connection to a server (includes
+    authentication).
+
+.. py:attribute:: vncsdk.Viewer.ConnectionStatus.CONNECTED
+
+    The viewer is connected to a server.
+
+.. py:attribute:: vncsdk.Viewer.ConnectionStatus.DISCONNECTING
+
+    :py:meth:`Viewer.disconnect()` has been called but we've not yet disconnected
+    from the server.
+

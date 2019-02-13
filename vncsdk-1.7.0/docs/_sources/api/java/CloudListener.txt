@@ -1,0 +1,51 @@
+CloudListener
+=============
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class CloudListener
+
+   Listener used to join VNC Cloud and listen for a connection.
+
+Nested Classes
+--------------
+* interface :java:type:`CloudListener.Callback`
+* enum :java:type:`CloudListener.Status`
+
+Constructor Summary
+-------------------
+* :java:construct:`CloudListener <CloudListener(String, String, ConnectionHandler, CloudListener.Callback) throws Library.VncException>`\ (:java:type:`String` localCloudAddress, :java:type:`String` localCloudPassword, :java:type:`ConnectionHandler` connectionHandler, :java:type:`CloudListener.Callback` callback)
+
+  Begins listening for incoming connections on the given Cloud address.
+
+Method Summary
+--------------
+================= ==================================================
+Modifier and Type Method and Description                            
+================= ==================================================
+:java:type:`void` :java:meth:`destroy <CloudListener.destroy()>`\ ()
+                                                                    
+                  Destroys the Cloud listener.                      
+================= ==================================================
+
+Constructors
+------------
+
+.. java:constructor:: public CloudListener(String localCloudAddress, String localCloudPassword, ConnectionHandler connectionHandler, CloudListener.Callback callback) throws Library.VncException
+   :outertype: CloudListener
+
+   Begins listening for incoming connections on the given Cloud address.
+
+   For more information, see :cpp:func:`vnc_CloudListener_create`.
+
+Methods
+-------
+
+.. java:method:: public void destroy()
+   :outertype: CloudListener
+
+   Destroys the Cloud listener.
+
+   For more information, see :cpp:func:`vnc_CloudListener_destroy`.
+

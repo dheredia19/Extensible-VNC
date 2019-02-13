@@ -1,0 +1,111 @@
+.. _Viewer.ConnectionCallback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.ConnectionCallback
+-------------------------
+
+.. class:: Viewer.ConnectionCallback
+
+    Callback receiving state-change notifications for a Viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_ConnectionCallback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Viewer.ConnectionCallback.ConnectingType`
+- :ref:`Viewer.ConnectionCallback.ConnectedType`
+- :ref:`Viewer.ConnectionCallback.DisconnectedType`
+
+**Constructor summary**
+
+================= ==========================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                    
+================= ==========================================================================================================================================================================================
+\                 :meth:`Viewer.ConnectionCallback`\ (:attr:`Viewer.ConnectionCallback.ConnectingType`, :attr:`Viewer.ConnectionCallback.ConnectedType`, :attr:`Viewer.ConnectionCallback.DisconnectedType`)
+                                                                                                                                                                                                            
+                  Initializes a new ConnectionCallback class instance.                                                                                                                                      
+================= ==========================================================================================================================================================================================
+
+
+**Method summary**
+
+================= =========================================================================================================================
+Modifier and Type Method and Description                                                                                                   
+================= =========================================================================================================================
+:type:`void`      :meth:`Viewer.ConnectionCallback.OnConnecting`\ (:type:`Viewer`)                                                         
+                                                                                                                                           
+                  Handles the Connecting event.                                                                                            
+                  By default, calls the Connecting delegate.                                                                               
+----------------- -------------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Viewer.ConnectionCallback.OnConnected`\ (:type:`Viewer`)                                                          
+                                                                                                                                           
+                  Handles the Connected event.                                                                                             
+                  By default, calls the Connected delegate.                                                                                
+----------------- -------------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Viewer.ConnectionCallback.OnDisconnected`\ (:type:`Viewer`, :type:`System.String`, :type:`Viewer.DisconnectFlags`)
+                                                                                                                                           
+                  Handles the Disconnected event.                                                                                          
+                  By default, calls the Disconnected delegate.                                                                             
+================= =========================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: Viewer.ConnectionCallback(Viewer.ConnectionCallback.ConnectingType a, Viewer.ConnectionCallback.ConnectedType b, Viewer.ConnectionCallback.DisconnectedType c)
+
+    Initializes a new ConnectionCallback class instance.
+
+    For more information, see :cpp:func:`vnc_Viewer_ConnectionCallback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void Viewer.ConnectionCallback.OnConnecting(Viewer a)
+
+    Handles the Connecting event.
+    By default, calls the Connecting delegate.
+
+    
+
+.. method:: void Viewer.ConnectionCallback.OnConnected(Viewer a)
+
+    Handles the Connected event.
+    By default, calls the Connected delegate.
+
+    
+
+.. method:: void Viewer.ConnectionCallback.OnDisconnected(Viewer a, System.String b, Viewer.DisconnectFlags c)
+
+    Handles the Disconnected event.
+    By default, calls the Disconnected delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  Viewer.ConnectionCallback.Connecting
+
+    Notification that is called when the viewer begins a connection attempt to
+    the server.
+
+    For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::connecting`\  in the C API documentation.
+
+.. attribute::  Viewer.ConnectionCallback.Connected
+
+    Notification that is called when the viewer successfully connects to a
+    server (after authentication).
+
+    For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::connected`\  in the C API documentation.
+
+.. attribute::  Viewer.ConnectionCallback.Disconnected
+
+    Notification that is called when the viewer disconnects from the server.
+
+    For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::disconnected`\  in the C API documentation.
+

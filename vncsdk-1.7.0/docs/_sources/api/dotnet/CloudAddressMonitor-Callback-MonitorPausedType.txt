@@ -1,0 +1,15 @@
+.. _CloudAddressMonitor.Callback.MonitorPausedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudAddressMonitor.Callback.MonitorPausedType
+----------------------------------------------
+
+.. attribute:: CloudAddressMonitor.Callback.MonitorPausedType
+
+    The type of the :attr:`CloudAddressMonitor.Callback.MonitorPaused`\  callback.
+
+    
+
+

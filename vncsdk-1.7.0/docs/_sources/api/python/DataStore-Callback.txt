@@ -1,0 +1,47 @@
+DataStore.Callback
+==================
+
+.. py:attribute:: vncsdk.DataStore.Callback
+
+    Callback providing custom storage of data used by the SDK.
+
+Method Summary
+--------------
+===================================== =====================================================
+Modifier and Type                     Method and Description                               
+===================================== =====================================================
+:py:class:`vncsdk.DataBuffer` or None :py:func:`get <DataStore.Callback.get>`\ (key)       
+                                                                                           
+                                      Requests data stored in your custom data store.      
+------------------------------------- -----------------------------------------------------
+\                                     :py:func:`put <DataStore.Callback.put>`\ (key, value)
+                                                                                           
+                                      Requests storing data in your custom data store.     
+===================================== =====================================================
+
+
+Methods
+-------
+
+.. py:function:: DataStore.Callback.get(key)
+
+    Requests data stored in your custom data store.
+
+    For more information, see :cpp:member:`vnc_DataStore_Callback::get`.
+
+    :param key:
+    :type key: str or None
+    :rtype: :py:class:`vncsdk.DataBuffer` or None
+
+.. py:function:: DataStore.Callback.put(key, value)
+
+    Requests storing data in your custom data store.
+
+    For more information, see :cpp:member:`vnc_DataStore_Callback::put`.
+
+    :param key:
+    :type key: str or None
+    :param value:
+    :type value: :py:class:`vncsdk.DataBuffer`
+    :return: None
+

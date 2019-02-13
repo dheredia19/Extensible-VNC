@@ -1,0 +1,37 @@
+.. _CloudAddressMonitor.Availability:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudAddressMonitor.Availability
+--------------------------------
+
+.. enum:: CloudAddressMonitor.Availability
+
+    Enumeration of availabilities for a Cloud address.
+
+    For more information, see :cpp:class:`vnc_CloudAddressMonitor_Availability`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  CloudAddressMonitor.Availability.Available
+
+    A peer is currently listening on the Cloud address.
+
+    
+
+.. attribute::  CloudAddressMonitor.Availability.Unavailable
+
+    No peer is currently listening on the Cloud address.
+
+    
+
+.. attribute::  CloudAddressMonitor.Availability.UnknownAvailability
+
+    The Cloud address monitor is waiting for the Cloud services to return the
+    availability for the peer address, or an error occurred.
+
+    
+

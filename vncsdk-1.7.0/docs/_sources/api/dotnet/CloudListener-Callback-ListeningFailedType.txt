@@ -1,0 +1,15 @@
+.. _CloudListener.Callback.ListeningFailedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudListener.Callback.ListeningFailedType
+------------------------------------------
+
+.. attribute:: CloudListener.Callback.ListeningFailedType
+
+    The type of the :attr:`CloudListener.Callback.ListeningFailed`\  callback.
+
+    
+
+

@@ -1,0 +1,73 @@
+.. _AnnotationManager.Callback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+AnnotationManager.Callback
+--------------------------
+
+.. class:: AnnotationManager.Callback
+
+    Callback receiving annotation-related notifications
+
+    :meth:`AnnotationManager.SetCallback`\
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_Callback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`AnnotationManager.Callback.AvailabilityChangedType`
+
+**Constructor summary**
+
+================= ================================================================================================
+Modifier and Type Method and Description                                                                          
+================= ================================================================================================
+\                 :meth:`AnnotationManager.Callback`\ (:attr:`AnnotationManager.Callback.AvailabilityChangedType`)
+                                                                                                                  
+                  Initializes a new Callback class instance.                                                      
+================= ================================================================================================
+
+
+**Method summary**
+
+================= =============================================================================================================
+Modifier and Type Method and Description                                                                                       
+================= =============================================================================================================
+:type:`void`      :meth:`AnnotationManager.Callback.OnAvailabilityChanged`\ (:type:`AnnotationManager`, :type:`System.Boolean`)
+                                                                                                                               
+                  Handles the AvailabilityChanged event.                                                                       
+                  By default, calls the AvailabilityChanged delegate.                                                          
+================= =============================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: AnnotationManager.Callback(AnnotationManager.Callback.AvailabilityChangedType a)
+
+    Initializes a new Callback class instance.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_Callback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void AnnotationManager.Callback.OnAvailabilityChanged(AnnotationManager a, System.Boolean b)
+
+    Handles the AvailabilityChanged event.
+    By default, calls the AvailabilityChanged delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  AnnotationManager.Callback.AvailabilityChanged
+
+    Notification that annotation availability has changed.
+
+    For more information, see :cpp:member:`vnc_AnnotationManager_Callback::availabilityChanged`\  in the C API documentation.
+

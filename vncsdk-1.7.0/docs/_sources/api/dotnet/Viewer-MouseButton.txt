@@ -1,0 +1,42 @@
+.. _Viewer.MouseButton:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.MouseButton
+------------------
+
+.. enum:: Viewer.MouseButton
+
+    Enumeration of mouse buttons.
+
+    For more information, see :cpp:class:`vnc_Viewer_MouseButton`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  Viewer.MouseButton.Zero
+
+    No MouseButton bits set.
+
+    
+
+.. attribute::  Viewer.MouseButton.Left
+
+    The logical left mouse button.
+
+    
+
+.. attribute::  Viewer.MouseButton.Middle
+
+    The logical middle mouse button.
+
+    
+
+.. attribute::  Viewer.MouseButton.Right
+
+    The logical right mouse button.
+
+    
+

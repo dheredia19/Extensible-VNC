@@ -1,0 +1,133 @@
+DisplayManager
+==============
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public abstract class DisplayManager
+
+   Manages the list of displays made available by a Server.
+
+Nested Classes
+--------------
+* interface :java:type:`DisplayManager.Callback`
+
+Method Summary
+--------------
+==================== ===========================================================================================================================================================
+Modifier and Type    Method and Description                                                                                                                                     
+==================== ===========================================================================================================================================================
+:java:type:`int`     :java:meth:`getDisplayCount <DisplayManager.getDisplayCount()>`\ ()                                                                                        
+                                                                                                                                                                                
+                     Returns the number of displays.                                                                                                                            
+-------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`String`  :java:meth:`getId <DisplayManager.getId(int) throws Library.VncException>`\ (:java:type:`int` index)                                                       
+                                                                                                                                                                                
+                     Gets the ID of the display (typically a short string).                                                                                                     
+-------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`String`  :java:meth:`getName <DisplayManager.getName(int) throws Library.VncException>`\ (:java:type:`int` index)                                                   
+                                                                                                                                                                                
+                     Gets the name of the display (typically a human-readable string).                                                                                          
+-------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`     :java:meth:`getOriginX <DisplayManager.getOriginX(int)>`\ (:java:type:`int` index)                                                                         
+                                                                                                                                                                                
+                     Gets the horizontal origin of the display in pixels.                                                                                                       
+-------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`     :java:meth:`getOriginY <DisplayManager.getOriginY(int)>`\ (:java:type:`int` index)                                                                         
+                                                                                                                                                                                
+                     Gets the vertical origin of the display in pixels.                                                                                                         
+-------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`     :java:meth:`getResolutionX <DisplayManager.getResolutionX(int)>`\ (:java:type:`int` index)                                                                 
+                                                                                                                                                                                
+                     Gets the horizontal resolution of the display in pixels.                                                                                                   
+-------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`     :java:meth:`getResolutionY <DisplayManager.getResolutionY(int)>`\ (:java:type:`int` index)                                                                 
+                                                                                                                                                                                
+                     Gets the vertical resolution of the display in pixels.                                                                                                     
+-------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`boolean` :java:meth:`isPrimary <DisplayManager.isPrimary(int)>`\ (:java:type:`int` index)                                                                           
+                                                                                                                                                                                
+                     Returns whether this is the primary (or main) display.                                                                                                     
+-------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`selectDisplay <DisplayManager.selectDisplay(int) throws Library.VncException>`\ (:java:type:`int` index)                                       
+                                                                                                                                                                                
+                     Chooses a particular display to remote to connected Viewer app users.                                                                                      
+-------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`setCallback <DisplayManager.setCallback(DisplayManager.Callback) throws Library.VncException>`\ (:java:type:`DisplayManager.Callback` callback)
+                                                                                                                                                                                
+                     Registers a callback notifying when displays are added or removed, or the resolution of an existing display changes.                                       
+==================== ===========================================================================================================================================================
+
+Methods
+-------
+
+.. java:method:: public int getDisplayCount()
+   :outertype: DisplayManager
+
+   Returns the number of displays.
+
+   For more information, see :cpp:func:`vnc_DisplayManager_getDisplayCount`.
+
+.. java:method:: public String getId(int index) throws Library.VncException
+   :outertype: DisplayManager
+
+   Gets the ID of the display (typically a short string).
+
+   For more information, see :cpp:func:`vnc_DisplayManager_getId`.
+
+.. java:method:: public String getName(int index) throws Library.VncException
+   :outertype: DisplayManager
+
+   Gets the name of the display (typically a human-readable string).
+
+   For more information, see :cpp:func:`vnc_DisplayManager_getName`.
+
+.. java:method:: public int getOriginX(int index)
+   :outertype: DisplayManager
+
+   Gets the horizontal origin of the display in pixels.
+
+   For more information, see :cpp:func:`vnc_DisplayManager_getOriginX`.
+
+.. java:method:: public int getOriginY(int index)
+   :outertype: DisplayManager
+
+   Gets the vertical origin of the display in pixels.
+
+   For more information, see :cpp:func:`vnc_DisplayManager_getOriginY`.
+
+.. java:method:: public int getResolutionX(int index)
+   :outertype: DisplayManager
+
+   Gets the horizontal resolution of the display in pixels.
+
+   For more information, see :cpp:func:`vnc_DisplayManager_getResolutionX`.
+
+.. java:method:: public int getResolutionY(int index)
+   :outertype: DisplayManager
+
+   Gets the vertical resolution of the display in pixels.
+
+   For more information, see :cpp:func:`vnc_DisplayManager_getResolutionY`.
+
+.. java:method:: public boolean isPrimary(int index)
+   :outertype: DisplayManager
+
+   Returns whether this is the primary (or main) display.
+
+   For more information, see :cpp:func:`vnc_DisplayManager_isPrimary`.
+
+.. java:method:: public void selectDisplay(int index) throws Library.VncException
+   :outertype: DisplayManager
+
+   Chooses a particular display to remote to connected Viewer app users.
+
+   For more information, see :cpp:func:`vnc_DisplayManager_selectDisplay`.
+
+.. java:method:: public void setCallback(DisplayManager.Callback callback) throws Library.VncException
+   :outertype: DisplayManager
+
+   Registers a callback notifying when displays are added or removed, or the resolution of an existing display changes.
+
+   For more information, see :cpp:func:`vnc_DisplayManager_setCallback`.
+

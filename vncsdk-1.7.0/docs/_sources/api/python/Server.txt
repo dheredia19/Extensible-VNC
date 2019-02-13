@@ -1,0 +1,353 @@
+Server
+======
+
+.. py:class:: vncsdk.Server
+
+    A VNC-compatible Server enabling a computer to be remotely controlled.
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.Server.AgentCallback`
+* :py:class:`vncsdk.Server.ConnectionCallback`
+* :py:class:`vncsdk.Server.SecurityCallback`
+
+* :py:class:`vncsdk.Server.CaptureMethod`
+* :py:class:`vncsdk.Server.DisconnectFlags`
+* :py:class:`vncsdk.Server.EncryptionLevel`
+* :py:class:`vncsdk.Server.Permissions`
+
+Constructor Summary
+-------------------
+================= ===============================================================================
+Modifier and Type Method and Description                                                         
+================= ===============================================================================
+\                 `__init__ <#constructor>`_\ (agent_path, is_service=False)                     
+                                                                                                 
+                  Creates a Server, running as a service if ``is_service`` is passed as ``True``.
+================= ===============================================================================
+
+
+Method Summary
+--------------
+========================================= ============================================================================================================================================
+Modifier and Type                         Method and Description                                                                                                                      
+========================================= ============================================================================================================================================
+\                                         :py:func:`destroy <Server.destroy>`\ ()                                                                                                     
+                                                                                                                                                                                      
+                                          Destroys the Server.                                                                                                                        
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`disconnect <Server.disconnect>`\ (connection, message, flags)                                                                     
+                                                                                                                                                                                      
+                                          Disconnects a particular Viewer, optionally specifying a message.                                                                           
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`disconnect_all <Server.disconnect_all>`\ (message, flags)                                                                         
+                                                                                                                                                                                      
+                                          Disconnects all Viewers, optionally specifying a message.                                                                                   
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.AnnotationManager`      :py:func:`get_annotation_manager <Server.get_annotation_manager>`\ ()                                                                       
+                                                                                                                                                                                      
+                                          Obtains the Server's :py:class:`vncsdk.AnnotationManager` for handling annotation operations.                                               
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+int                                       :py:func:`get_connection_count <Server.get_connection_count>`\ ()                                                                           
+                                                                                                                                                                                      
+                                          Returns the total number of Viewers currently connected to the Server.                                                                      
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.ConnectionHandler`      :py:func:`get_connection_handler <Server.get_connection_handler>`\ ()                                                                       
+                                                                                                                                                                                      
+                                          Obtains the Server's :py:class:`vncsdk.ConnectionHandler` for performing connection operations.                                             
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.DisplayManager`         :py:func:`get_display_manager <Server.get_display_manager>`\ ()                                                                             
+                                                                                                                                                                                      
+                                          Obtains the Server's :py:class:`vncsdk.DisplayManager`, for managing the list of displays made available by the Server.                     
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.Server.EncryptionLevel` :py:func:`get_encryption_level <Server.get_encryption_level>`\ (connection)                                                                 
+                                                                                                                                                                                      
+                                          Returns the encryption level being used with an incoming connection, or the Server's current encryption level if the connection is ``None``.
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+int                                       :py:func:`get_idle_timeout <Server.get_idle_timeout>`\ ()                                                                                   
+                                                                                                                                                                                      
+                                          Gets the current number of seconds to wait before disconnecting idle Viewers.                                                               
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+:py:class:`vncsdk.MessagingManager`       :py:func:`get_messaging_manager <Server.get_messaging_manager>`\ ()                                                                         
+                                                                                                                                                                                      
+                                          Obtains the Server's :py:class:`vncsdk.MessagingManager` for handling messaging.                                                            
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+str                                       :py:func:`get_peer_address <Server.get_peer_address>`\ (connection)                                                                         
+                                                                                                                                                                                      
+                                          Returns the address of a particular connected Viewer.                                                                                       
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+{:py:class:`vncsdk.Server.Permissions`}   :py:func:`get_permissions <Server.get_permissions>`\ (connection)                                                                           
+                                                                                                                                                                                      
+                                          Gets the set of current permissions for a Viewer.                                                                                           
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+bool                                      :py:func:`is_agent_ready <Server.is_agent_ready>`\ ()                                                                                       
+                                                                                                                                                                                      
+                                          Determines if the ``vncagent`` process is ready and available to capture the display and inject input events.                               
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`set_agent_callback <Server.set_agent_callback>`\ (callback)                                                                       
+                                                                                                                                                                                      
+                                          Sets agent-related callbacks for the Server.                                                                                                
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`set_blacklist <Server.set_blacklist>`\ (threshold, timeout)                                                                       
+                                                                                                                                                                                      
+                                          Specifies a blacklist threshold and timeout for the Server.                                                                                 
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`set_capture_method <Server.set_capture_method>`\ (capture_method)                                                                 
+                                                                                                                                                                                      
+                                          Specifies the screen capture method used by the Server.                                                                                     
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`set_connection_callback <Server.set_connection_callback>`\ (callback)                                                             
+                                                                                                                                                                                      
+                                          Sets connection-related callbacks for the Server.                                                                                           
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`set_encryption_level <Server.set_encryption_level>`\ (level)                                                                      
+                                                                                                                                                                                      
+                                          Sets the desired encryption level of the session from the range of options enumerated by ``ENCRYPTION_LEVEL``.                              
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`set_friendly_name <Server.set_friendly_name>`\ (name)                                                                             
+                                                                                                                                                                                      
+                                          Specifies a friendly name for the Server, to send to connected Viewers.                                                                     
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`set_idle_timeout <Server.set_idle_timeout>`\ (idle_timeout)                                                                       
+                                                                                                                                                                                      
+                                          Sets the number of seconds to wait before disconnecting idle Viewers.                                                                       
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`set_permissions <Server.set_permissions>`\ (connection, perms)                                                                    
+                                                                                                                                                                                      
+                                          Changes permissions for a Viewer mid-session.                                                                                               
+----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+\                                         :py:func:`set_security_callback <Server.set_security_callback>`\ (callback)                                                                 
+                                                                                                                                                                                      
+                                          Sets security-related callbacks for the Server.                                                                                             
+========================================= ============================================================================================================================================
+
+
+Constructor
+-----------
+
+.. py:method:: vncsdk.Server.__init__(agent_path, is_service=False)
+
+    Creates a Server, running as a service if ``is_service`` is passed as
+    ``True``.
+
+    If ``agent_path`` is passed in as ``None``, the agent binary is searched
+    for in the main module's directory.
+
+    :param agent_path:
+    :type agent_path: str or None
+    :param is_service:
+    :type is_service: bool
+
+Methods
+-------
+
+.. py:method:: Server.destroy()
+
+    Destroys the Server.
+
+    For more information, see :cpp:func:`vnc_Server_destroy`.
+
+
+.. py:method:: Server.disconnect(connection, message, flags)
+
+    Disconnects a particular Viewer, optionally specifying a message.
+
+    For more information, see :cpp:func:`vnc_Server_disconnect`.
+
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :param message:
+    :type message: str
+    :param flags:
+    :type flags: {:py:class:`vncsdk.Server.DisconnectFlags`}
+
+.. py:method:: Server.disconnect_all(message, flags)
+
+    Disconnects all Viewers, optionally specifying a message.
+
+    For more information, see :cpp:func:`vnc_Server_disconnectAll`.
+
+    :param message:
+    :type message: str
+    :param flags:
+    :type flags: {:py:class:`vncsdk.Server.DisconnectFlags`}
+
+.. py:method:: Server.get_annotation_manager()
+
+    Obtains the Server's :py:class:`vncsdk.AnnotationManager` for handling annotation
+    operations.
+
+    For more information, see :cpp:func:`vnc_Server_getAnnotationManager`.
+
+    :rtype: :py:class:`vncsdk.AnnotationManager`
+
+.. py:method:: Server.get_connection_count()
+
+    Returns the total number of Viewers currently connected to the Server.
+
+    For more information, see :cpp:func:`vnc_Server_getConnectionCount`.
+
+    :rtype: int
+
+.. py:method:: Server.get_connection_handler()
+
+    Obtains the Server's :py:class:`vncsdk.ConnectionHandler` for performing connection
+    operations.
+
+    For more information, see :cpp:func:`vnc_Server_getConnectionHandler`.
+
+    :rtype: :py:class:`vncsdk.ConnectionHandler`
+
+.. py:method:: Server.get_display_manager()
+
+    Obtains the Server's :py:class:`vncsdk.DisplayManager`, for managing the list of
+    displays made available by the Server.
+
+    For more information, see :cpp:func:`vnc_Server_getDisplayManager`.
+
+    :rtype: :py:class:`vncsdk.DisplayManager`
+
+.. py:method:: Server.get_encryption_level(connection)
+
+    Returns the encryption level being used with an incoming connection,
+    or the Server's current encryption level if the connection is ``None``.
+
+    For more information, see :cpp:func:`vnc_Server_getEncryptionLevel`.
+
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :rtype: :py:class:`vncsdk.Server.EncryptionLevel`
+
+.. py:method:: Server.get_idle_timeout()
+
+    Gets the current number of seconds to wait before disconnecting idle
+    Viewers.
+
+    For more information, see :cpp:func:`vnc_Server_getIdleTimeout`.
+
+    :rtype: int
+
+.. py:method:: Server.get_messaging_manager()
+
+    Obtains the Server's :py:class:`vncsdk.MessagingManager` for handling messaging.
+
+    For more information, see :cpp:func:`vnc_Server_getMessagingManager`.
+
+    :rtype: :py:class:`vncsdk.MessagingManager`
+
+.. py:method:: Server.get_peer_address(connection)
+
+    Returns the address of a particular connected Viewer.
+
+    For more information, see :cpp:func:`vnc_Server_getPeerAddress`.
+
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :rtype: str
+
+.. py:method:: Server.get_permissions(connection)
+
+    Gets the set of current permissions for a Viewer.
+
+    For more information, see :cpp:func:`vnc_Server_getPermissions`.
+
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :rtype: {:py:class:`vncsdk.Server.Permissions`}
+
+.. py:method:: Server.is_agent_ready()
+
+    Determines if the ``vncagent`` process is ready and available to capture the
+    display and inject input events.
+
+    For more information, see :cpp:func:`vnc_Server_isAgentReady`.
+
+    :rtype: bool
+
+.. py:method:: Server.set_agent_callback(callback)
+
+    Sets agent-related callbacks for the Server.
+
+    For more information, see :cpp:func:`vnc_Server_setAgentCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.Server.AgentCallback` or None
+
+.. py:method:: Server.set_blacklist(threshold, timeout)
+
+    Specifies a blacklist threshold and timeout for the Server.
+
+    For more information, see :cpp:func:`vnc_Server_setBlacklist`.
+
+    :param threshold:
+    :type threshold: int
+    :param timeout:
+    :type timeout: int
+
+.. py:method:: Server.set_capture_method(capture_method)
+
+    Specifies the screen capture method used by the Server.
+
+    For more information, see :cpp:func:`vnc_Server_setCaptureMethod`.
+
+    :param capture_method:
+    :type capture_method: :py:class:`vncsdk.Server.CaptureMethod`
+
+.. py:method:: Server.set_connection_callback(callback)
+
+    Sets connection-related callbacks for the Server.
+
+    For more information, see :cpp:func:`vnc_Server_setConnectionCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.Server.ConnectionCallback` or None
+
+.. py:method:: Server.set_encryption_level(level)
+
+    Sets the desired encryption level of the session from the range of options
+    enumerated by ``ENCRYPTION_LEVEL``.
+
+    For more information, see :cpp:func:`vnc_Server_setEncryptionLevel`.
+
+    :param level:
+    :type level: :py:class:`vncsdk.Server.EncryptionLevel`
+
+.. py:method:: Server.set_friendly_name(name)
+
+    Specifies a friendly name for the Server, to send to connected Viewers.
+
+    For more information, see :cpp:func:`vnc_Server_setFriendlyName`.
+
+    :param name:
+    :type name: str
+
+.. py:method:: Server.set_idle_timeout(idle_timeout)
+
+    Sets the number of seconds to wait before disconnecting idle Viewers.
+
+    For more information, see :cpp:func:`vnc_Server_setIdleTimeout`.
+
+    :param idle_timeout:
+    :type idle_timeout: int
+
+.. py:method:: Server.set_permissions(connection, perms)
+
+    Changes permissions for a Viewer mid-session.
+
+    For more information, see :cpp:func:`vnc_Server_setPermissions`.
+
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :param perms:
+    :type perms: {:py:class:`vncsdk.Server.Permissions`}
+
+.. py:method:: Server.set_security_callback(callback)
+
+    Sets security-related callbacks for the Server.
+
+    For more information, see :cpp:func:`vnc_Server_setSecurityCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.Server.SecurityCallback` or None
+

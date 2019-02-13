@@ -1,0 +1,66 @@
+EventLoop
+=========
+
+Method Summary
+--------------
+================= =============================================================================================================================================
+Modifier and Type Method and Description                                                                                                                       
+================= =============================================================================================================================================
+\                 :py:func:`run_on_loop <vncsdk.EventLoop.run_on_loop>`\ (runnable, args=(), kwargs={})                                                        
+                                                                                                                                                               
+                  Schedules a task for immediate execution on the SDK's thread.                                                                                
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------
+\                 :py:func:`run <vncsdk.EventLoop.run>`\ ()                                                                                                    
+                                                                                                                                                               
+                  Runs the event loop until :py:meth:`vncsdk.EventLoop.stop()` is called.                                                                      
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------
+bool              :py:func:`should_stop <vncsdk.EventLoop.should_stop>`\ ()                                                                                    
+                                                                                                                                                               
+                  Returns a boolean flag indicating whether the event loop should stop, and immediately clears it.                                             
+----------------- ---------------------------------------------------------------------------------------------------------------------------------------------
+\                 :py:func:`stop <vncsdk.EventLoop.stop>`\ ()                                                                                                  
+                                                                                                                                                               
+                  Stops the event loop previously started with :py:meth:`vncsdk.EventLoop.run()`, causing :py:meth:`vncsdk.EventLoop.run()` to return promptly.
+================= =============================================================================================================================================
+
+
+Static methods
+--------------
+
+.. py:staticmethod:: vncsdk.EventLoop.run_on_loop(runnable, args=(), kwargs={})
+
+    Schedules a task for immediate execution on the SDK's thread.  The task will
+    then be run during the current or next invocation of
+    :py:meth:`vncsdk.EventLoop.run()`.
+
+    :param runnable: A function or callable object to invoke on the SDK's loop
+    :type runnable: callable
+    :param args: An optional argument tuple to pass to the callable
+    :type args: tuple
+    :param kwargs: An optional dictionary of named keyword arguments to pass to the callable
+    :type kwargs: dict
+
+.. py:function:: vncsdk.EventLoop.run()
+
+    Runs the event loop until :py:meth:`vncsdk.EventLoop.stop()` is called.
+
+    For more information, see :cpp:func:`vnc_EventLoop_run`.
+
+
+.. py:function:: vncsdk.EventLoop.should_stop()
+
+    Returns a boolean flag indicating whether the event loop should stop,
+    and immediately clears it.
+
+    For more information, see :cpp:func:`vnc_EventLoop_shouldStop`.
+
+    :rtype: bool
+
+.. py:function:: vncsdk.EventLoop.stop()
+
+    Stops the event loop previously started with :py:meth:`vncsdk.EventLoop.run()`, causing
+    :py:meth:`vncsdk.EventLoop.run()` to return promptly.
+
+    For more information, see :cpp:func:`vnc_EventLoop_stop`.
+
+

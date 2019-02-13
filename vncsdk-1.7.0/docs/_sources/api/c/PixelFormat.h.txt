@@ -1,0 +1,97 @@
+
+.. _api_pixel_format_8h:
+
+PixelFormat.h
+=============
+
+.. raw :: html
+
+    <div id="method-tables">
+
+Configure a format for the framebuffer's pixels.  `(more...) <#description>`_
+
+**Standard pixel formats**
+
+============================================================================================= ================================================================================================================
+Modifier and Type                                                                             Name and Description                                                                                            
+============================================================================================= ================================================================================================================
+function const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \* :ref:`vnc_PixelFormat_rgb888 <api_pixel_format_8h_1a7099e993f5b37cae4ccdc2e166e105d9>`\ ()                      
+                                                                                                                                                                                                              
+                                                                                              32 bits per pixel stored as XXXXXXXXRRRRRRRRGGGGGGGGBBBBBBBB in most significant to least significant bit order 
+--------------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------
+function const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \* :ref:`vnc_PixelFormat_bgr888 <api_pixel_format_8h_1a8c307b99aec47640c8f8b8c4d2994f4f>`\ ()                      
+                                                                                                                                                                                                              
+                                                                                              32 bits per pixel stored as XXXXXXXXBBBBBBBBGGGGGGGGRRRRRRRR in most significant to least significant bit order 
+--------------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------
+function const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \* :ref:`vnc_PixelFormat_rgb565 <api_pixel_format_8h_1ae02710acdc74c0d5328ade8260aaa76e>`\ ()                      
+                                                                                                                                                                                                              
+                                                                                              16 bits per pixel stored as RRRRRGGGGGGBBBBB in most significant to least significant bit order                 
+--------------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------
+function const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \* :ref:`vnc_PixelFormat_rgb555 <api_pixel_format_8h_1acf3139a09decf3f836ff1ef5c1de06a4>`\ ()                      
+                                                                                                                                                                                                              
+                                                                                              16 bits per pixel stored as XRRRRRGGGGGBBBBB in most significant to least significant bit order                 
+============================================================================================= ================================================================================================================
+
+
+**Accessor functions for pixel format parameters**
+
+================= ====================================================================================================================================================================================
+Modifier and Type Name and Description                                                                                                                                                                
+================= ====================================================================================================================================================================================
+function int      :ref:`vnc_PixelFormat_bpp <api_pixel_format_8h_1a1a4bb6d0d7dcf4281b85a3f8990f7bb8>`\ (const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \*pf)       
+                                                                                                                                                                                                      
+                  Gets the total number of bits per pixel.                                                                                                                                            
+----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function int      :ref:`vnc_PixelFormat_depth <api_pixel_format_8h_1a69e96c269fc99524f572d627c79501d6>`\ (const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \*pf)     
+                                                                                                                                                                                                      
+                  Gets the number of significant bits that are used to store pixel data.                                                                                                              
+----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function int      :ref:`vnc_PixelFormat_redMax <api_pixel_format_8h_1af43c2876e8d8fe9bfae7326f29a7aacd>`\ (const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \*pf)    
+                                                                                                                                                                                                      
+                  Gets the maximum value for the red pixel value.                                                                                                                                     
+----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function int      :ref:`vnc_PixelFormat_greenMax <api_pixel_format_8h_1a7646a034fb2776d6b34fa076ac60c589>`\ (const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \*pf)  
+                                                                                                                                                                                                      
+                  Gets the maximum value for the green pixel value.                                                                                                                                   
+----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function int      :ref:`vnc_PixelFormat_blueMax <api_pixel_format_8h_1aa69c466686a87931edeb264ab89a9bfa>`\ (const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \*pf)   
+                                                                                                                                                                                                      
+                  Gets the maximum value for the blue pixel value.                                                                                                                                    
+----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function int      :ref:`vnc_PixelFormat_redShift <api_pixel_format_8h_1ad51583709d510670e1ad40b4f8807bb5>`\ (const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \*pf)  
+                                                                                                                                                                                                      
+                  Gets the number of bits the red pixel value is shifted.                                                                                                                             
+----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function int      :ref:`vnc_PixelFormat_greenShift <api_pixel_format_8h_1a41d00aff35715fa77e03caabc4477d31>`\ (const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \*pf)
+                                                                                                                                                                                                      
+                  Gets the number of bits the green pixel value is shifted.                                                                                                                           
+----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function int      :ref:`vnc_PixelFormat_blueShift <api_pixel_format_8h_1a322953cda5b58fd31b8698906e5b883e>`\ (const :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \*pf) 
+                                                                                                                                                                                                      
+                  Gets the number of bits the blue pixel value is shifted.                                                                                                                            
+================= ====================================================================================================================================================================================
+
+
+**Custom pixel formats**
+
+======================================================================================= ==============================================================================================================================================================================================
+Modifier and Type                                                                       Name and Description                                                                                                                                                                          
+======================================================================================= ==============================================================================================================================================================================================
+function :ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \* :ref:`vnc_PixelFormat_create <api_pixel_format_8h_1aab280c3de1ca2f127d31817db6c5850c>`\ (int bitsPerPixel, int redMax, int greenMax, int blueMax, int redShift, int greenShift, int blueShift)
+                                                                                                                                                                                                                                                                                      
+                                                                                        Creates a custom pixel format based on the given parameters.                                                                                                                                  
+--------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function void                                                                           :ref:`vnc_PixelFormat_destroy <api_pixel_format_8h_1a75ccbdbed1df346c1e13f044afcb5613>`\ (:ref:`vnc_PixelFormat <api_common_8h_1a452948e7e431ba8d2edb0d8af553219e>`\  \*pf)                   
+                                                                                                                                                                                                                                                                                      
+                                                                                        Destroy a custom pixel format.                                                                                                                                                                
+======================================================================================= ==============================================================================================================================================================================================
+
+
+.. raw :: html
+
+    </div><a id="description"></a>
+
+**Detailed description**
+
+.. doxygenfile:: PixelFormat.h
+   :project: api

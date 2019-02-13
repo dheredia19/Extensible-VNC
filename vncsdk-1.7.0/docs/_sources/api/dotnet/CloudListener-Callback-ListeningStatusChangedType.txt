@@ -1,0 +1,15 @@
+.. _CloudListener.Callback.ListeningStatusChangedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudListener.Callback.ListeningStatusChangedType
+-------------------------------------------------
+
+.. attribute:: CloudListener.Callback.ListeningStatusChangedType
+
+    The type of the :attr:`CloudListener.Callback.ListeningStatusChanged`\  callback.
+
+    
+
+

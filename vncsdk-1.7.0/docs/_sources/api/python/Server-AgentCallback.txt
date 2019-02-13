@@ -1,0 +1,45 @@
+Server.AgentCallback
+====================
+
+.. py:attribute:: vncsdk.Server.AgentCallback
+
+    Callback receiving agent-related notifications for a Server.
+
+Method Summary
+--------------
+================= =======================================================================
+Modifier and Type Method and Description                                                 
+================= =======================================================================
+\                 :py:func:`agent_started <Server.AgentCallback.agent_started>`\ (server)
+                                                                                         
+                  Notification that the agent has started.                               
+----------------- -----------------------------------------------------------------------
+\                 :py:func:`agent_stopped <Server.AgentCallback.agent_stopped>`\ (server)
+                                                                                         
+                  Notification that the agent has stopped.                               
+================= =======================================================================
+
+
+Methods
+-------
+
+.. py:function:: Server.AgentCallback.agent_started(server)
+
+    Notification that the agent has started.
+
+    For more information, see :cpp:member:`vnc_Server_AgentCallback::agentStarted`.
+
+    :param server:
+    :type server: :py:class:`vncsdk.Server`
+    :return: None
+
+.. py:function:: Server.AgentCallback.agent_stopped(server)
+
+    Notification that the agent has stopped.
+
+    For more information, see :cpp:member:`vnc_Server_AgentCallback::agentStopped`.
+
+    :param server:
+    :type server: :py:class:`vncsdk.Server`
+    :return: None
+

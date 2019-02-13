@@ -1,0 +1,15 @@
+DirectTcp
+=========
+
+.. py:class:: vncsdk.DirectTcp
+
+    A class containing constants used in TCP connections.
+    
+    For more information, see :doc:`DirectTcp.h </api/c/DirectTcp.h>`.
+
+Members
+-------
+
+.. py:attribute:: vncsdk.DirectTcp.DEFAULT_PORT
+
+    The default port for VNC direct TCP connections.

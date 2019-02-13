@@ -1,0 +1,90 @@
+.. _Viewer.AuthenticationCallback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.AuthenticationCallback
+-----------------------------
+
+.. class:: Viewer.AuthenticationCallback
+
+    Callback receiving requests for authentication for a Viewer.
+
+    For more information, see :cpp:func:`vnc_Viewer_AuthenticationCallback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Viewer.AuthenticationCallback.RequestUserCredentialsType`
+- :ref:`Viewer.AuthenticationCallback.CancelUserCredentialsRequestType`
+
+**Constructor summary**
+
+================= =================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                           
+================= =================================================================================================================================================================================
+\                 :meth:`Viewer.AuthenticationCallback`\ (:attr:`Viewer.AuthenticationCallback.RequestUserCredentialsType`, :attr:`Viewer.AuthenticationCallback.CancelUserCredentialsRequestType`)
+                                                                                                                                                                                                   
+                  Initializes a new AuthenticationCallback class instance.                                                                                                                         
+================= =================================================================================================================================================================================
+
+
+**Method summary**
+
+================= ================================================================================================================================
+Modifier and Type Method and Description                                                                                                          
+================= ================================================================================================================================
+:type:`void`      :meth:`Viewer.AuthenticationCallback.OnRequestUserCredentials`\ (:type:`Viewer`, :type:`System.Boolean`, :type:`System.Boolean`)
+                                                                                                                                                  
+                  Handles the RequestUserCredentials event.                                                                                       
+                  By default, calls the RequestUserCredentials delegate.                                                                          
+----------------- --------------------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Viewer.AuthenticationCallback.OnCancelUserCredentialsRequest`\ (:type:`Viewer`)                                          
+                                                                                                                                                  
+                  Handles the CancelUserCredentialsRequest event.                                                                                 
+                  By default, calls the CancelUserCredentialsRequest delegate.                                                                    
+================= ================================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: Viewer.AuthenticationCallback(Viewer.AuthenticationCallback.RequestUserCredentialsType a, Viewer.AuthenticationCallback.CancelUserCredentialsRequestType b)
+
+    Initializes a new AuthenticationCallback class instance.
+
+    For more information, see :cpp:func:`vnc_Viewer_AuthenticationCallback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void Viewer.AuthenticationCallback.OnRequestUserCredentials(Viewer a, System.Boolean b, System.Boolean c)
+
+    Handles the RequestUserCredentials event.
+    By default, calls the RequestUserCredentials delegate.
+
+    
+
+.. method:: void Viewer.AuthenticationCallback.OnCancelUserCredentialsRequest(Viewer a)
+
+    Handles the CancelUserCredentialsRequest event.
+    By default, calls the CancelUserCredentialsRequest delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  Viewer.AuthenticationCallback.RequestUserCredentials
+
+    Request for a username and/or password.
+
+    For more information, see :cpp:member:`vnc_Viewer_AuthenticationCallback::requestUserCredentials`\  in the C API documentation.
+
+.. attribute::  Viewer.AuthenticationCallback.CancelUserCredentialsRequest
+
+    Notification to cancel a username and/or password request.
+
+    For more information, see :cpp:member:`vnc_Viewer_AuthenticationCallback::cancelUserCredentialsRequest`\  in the C API documentation.
+

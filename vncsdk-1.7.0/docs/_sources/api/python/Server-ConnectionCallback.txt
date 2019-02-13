@@ -1,0 +1,49 @@
+Server.ConnectionCallback
+=========================
+
+.. py:attribute:: vncsdk.Server.ConnectionCallback
+
+    Callback receiving connection-related notifications for a Server.
+
+Method Summary
+--------------
+================= ==================================================================================================
+Modifier and Type Method and Description                                                                            
+================= ==================================================================================================
+\                 :py:func:`connection_ended <Server.ConnectionCallback.connection_ended>`\ (server, connection)    
+                                                                                                                    
+                  Notification that a connection has ended.                                                         
+----------------- --------------------------------------------------------------------------------------------------
+\                 :py:func:`connection_started <Server.ConnectionCallback.connection_started>`\ (server, connection)
+                                                                                                                    
+                  Notification that a connection has successfully started.                                          
+================= ==================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: Server.ConnectionCallback.connection_ended(server, connection)
+
+    Notification that a connection has ended.
+
+    For more information, see :cpp:member:`vnc_Server_ConnectionCallback::connectionEnded`.
+
+    :param server:
+    :type server: :py:class:`vncsdk.Server`
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :return: None
+
+.. py:function:: Server.ConnectionCallback.connection_started(server, connection)
+
+    Notification that a connection has successfully started.
+
+    For more information, see :cpp:member:`vnc_Server_ConnectionCallback::connectionStarted`.
+
+    :param server:
+    :type server: :py:class:`vncsdk.Server`
+    :param connection:
+    :type connection: :py:class:`vncsdk.Connection`
+    :return: None
+

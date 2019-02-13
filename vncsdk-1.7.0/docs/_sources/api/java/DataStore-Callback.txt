@@ -1,0 +1,42 @@
+DataStore.Callback
+==================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface Callback
+   :outertype: DataStore
+
+   Callback providing custom storage of data used by the SDK.
+
+Method Summary
+--------------
+======================= ===============================================================================================================================
+Modifier and Type       Method and Description                                                                                                         
+======================= ===============================================================================================================================
+:java:type:`DataBuffer` :java:meth:`get <Callback.get(String)>`\ (:java:type:`String` key)                                                             
+                                                                                                                                                       
+                        Requests data stored in your custom data store.                                                                                
+----------------------- -------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`       :java:meth:`put <Callback.put(String, ImmutableDataBuffer)>`\ (:java:type:`String` key, :java:type:`ImmutableDataBuffer` value)
+                                                                                                                                                       
+                        Requests storing data in your custom data store.                                                                               
+======================= ===============================================================================================================================
+
+Methods
+-------
+
+.. java:method::  DataBuffer get(String key)
+   :outertype: DataStore.Callback
+
+   Requests data stored in your custom data store.
+
+   For more information, see :cpp:member:`vnc_DataStore_Callback::get`.
+
+.. java:method::  void put(String key, ImmutableDataBuffer value)
+   :outertype: DataStore.Callback
+
+   Requests storing data in your custom data store.
+
+   For more information, see :cpp:member:`vnc_DataStore_Callback::put`.
+

@@ -1,0 +1,31 @@
+DisplayManager.Callback
+=======================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface Callback
+   :outertype: DisplayManager
+
+   Callback receiving display changes.
+
+Method Summary
+--------------
+================= =====================================================================================================================
+Modifier and Type Method and Description                                                                                               
+================= =====================================================================================================================
+:java:type:`void` :java:meth:`displaysChanged <Callback.displaysChanged(DisplayManager)>`\ (:java:type:`DisplayManager` displayManager)
+                                                                                                                                       
+                  Notification that a display has been added or removed, or the resolution of an existing display has changed.         
+================= =====================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void displaysChanged(DisplayManager displayManager)
+   :outertype: DisplayManager.Callback
+
+   Notification that a display has been added or removed, or the resolution of an existing display has changed.
+
+   For more information, see :cpp:member:`vnc_DisplayManager_Callback::displaysChanged`.
+

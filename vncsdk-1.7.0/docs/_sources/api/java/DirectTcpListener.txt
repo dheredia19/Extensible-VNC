@@ -1,0 +1,50 @@
+DirectTcpListener
+=================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class DirectTcpListener
+
+   Listener used to receive incoming TCP connections
+
+Nested Classes
+--------------
+* interface :java:type:`DirectTcpListener.Callback`
+
+Constructor Summary
+-------------------
+* :java:construct:`DirectTcpListener <DirectTcpListener(int, String, ConnectionHandler, DirectTcpListener.Callback) throws Library.VncException>`\ (:java:type:`int` port, :java:type:`String` addressList, :java:type:`ConnectionHandler` connectionHandler, :java:type:`DirectTcpListener.Callback` callback)
+
+  Begin listening for incoming TCP connections on the given port (IPv4 and IPv6).
+
+Method Summary
+--------------
+================= ======================================================
+Modifier and Type Method and Description                                
+================= ======================================================
+:java:type:`void` :java:meth:`destroy <DirectTcpListener.destroy()>`\ ()
+                                                                        
+                  Destroys the TCP listener.                            
+================= ======================================================
+
+Constructors
+------------
+
+.. java:constructor:: public DirectTcpListener(int port, String addressList, ConnectionHandler connectionHandler, DirectTcpListener.Callback callback) throws Library.VncException
+   :outertype: DirectTcpListener
+
+   Begin listening for incoming TCP connections on the given port (IPv4 and IPv6).
+
+   For more information, see :cpp:func:`vnc_DirectTcpListener_create`.
+
+Methods
+-------
+
+.. java:method:: public void destroy()
+   :outertype: DirectTcpListener
+
+   Destroys the TCP listener.
+
+   For more information, see :cpp:func:`vnc_DirectTcpListener_destroy`.
+

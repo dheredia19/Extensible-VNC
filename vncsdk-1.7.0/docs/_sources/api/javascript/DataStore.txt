@@ -1,0 +1,56 @@
+DataStore
+=========
+
+Nested Classes
+--------------
+
+* :js:attr:`vncsdk.DataStore.Callback`
+
+Method Summary
+--------------
+================= =============================================================================
+Modifier and Type Method and Description                                                       
+================= =============================================================================
+\                 :js:func:`createBrowserStore <vncsdk.DataStore.createBrowserStore>`\ (prefix)
+                                                                                               
+                  Creates a web browser data store, in DOM ``localStorage``.                   
+----------------- -----------------------------------------------------------------------------
+\                 :js:func:`createCustomStore <vncsdk.DataStore.createCustomStore>`\ (callback)
+                                                                                               
+                  Creates a custom data store.                                                 
+----------------- -----------------------------------------------------------------------------
+\                 :js:func:`destroyStore <vncsdk.DataStore.destroyStore>`\ ()                  
+                                                                                               
+                  Destroys the current data store.                                             
+================= =============================================================================
+
+
+Static methods
+--------------
+
+.. js:function:: vncsdk.DataStore.createBrowserStore(prefix)
+
+    Creates a web browser data store, in DOM ``localStorage``.
+
+    For more information, see :cpp:func:`vnc_DataStore_createBrowserStore`.
+
+    :param prefix:
+    :type prefix: string
+
+.. js:function:: vncsdk.DataStore.createCustomStore(callback)
+
+    Creates a custom data store.
+
+    For more information, see :cpp:func:`vnc_DataStore_createCustomStore`.
+
+    :param callback:
+    :type callback: :js:attr:`vncsdk.DataStore.Callback`
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: vncsdk.DataStore.destroyStore()
+
+    Destroys the current data store.
+
+    For more information, see :cpp:func:`vnc_DataStore_destroyStore`.
+
+

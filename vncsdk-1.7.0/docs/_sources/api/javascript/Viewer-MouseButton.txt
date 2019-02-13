@@ -1,0 +1,22 @@
+Viewer.MouseButton
+==================
+
+.. js:data:: vncsdk.Viewer.MouseButton
+
+    Enumeration of mouse buttons.
+
+Enum Constants
+--------------
+
+.. js:attribute:: vncsdk.Viewer.MouseButton.MOUSE_BUTTON_LEFT
+
+    The logical left mouse button.
+
+.. js:attribute:: vncsdk.Viewer.MouseButton.MOUSE_BUTTON_MIDDLE
+
+    The logical middle mouse button.
+
+.. js:attribute:: vncsdk.Viewer.MouseButton.MOUSE_BUTTON_RIGHT
+
+    The logical right mouse button.
+

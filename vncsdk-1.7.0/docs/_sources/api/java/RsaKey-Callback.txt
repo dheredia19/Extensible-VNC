@@ -1,0 +1,31 @@
+RsaKey.Callback
+===============
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface Callback
+   :outertype: RsaKey
+
+   Callback which receives RSA key details.
+
+Method Summary
+--------------
+================= ====================================================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                                              
+================= ====================================================================================================================================================================================================================
+:java:type:`void` :java:meth:`detailsReady <Callback.detailsReady(ImmutableDataBuffer, String, String)>`\ (:java:type:`ImmutableDataBuffer` rsaPublic, :java:type:`String` hexFingerprint, :java:type:`String` catchphraseFingerprint)
+                                                                                                                                                                                                                                      
+                  Notification that the SDK's RSA key has been retrieved.                                                                                                                                                             
+================= ====================================================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void detailsReady(ImmutableDataBuffer rsaPublic, String hexFingerprint, String catchphraseFingerprint)
+   :outertype: RsaKey.Callback
+
+   Notification that the SDK's RSA key has been retrieved.
+
+   For more information, see :cpp:member:`vnc_RsaKey_Callback::detailsReady`.
+

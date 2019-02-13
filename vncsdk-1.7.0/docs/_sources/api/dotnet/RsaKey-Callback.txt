@@ -1,0 +1,71 @@
+.. _RsaKey.Callback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+RsaKey.Callback
+---------------
+
+.. class:: RsaKey.Callback
+
+    Callback which receives RSA key details.
+
+    For more information, see :cpp:func:`vnc_RsaKey_Callback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`RsaKey.Callback.DetailsReadyType`
+
+**Constructor summary**
+
+================= ===================================================================
+Modifier and Type Method and Description                                             
+================= ===================================================================
+\                 :meth:`RsaKey.Callback`\ (:attr:`RsaKey.Callback.DetailsReadyType`)
+                                                                                     
+                  Initializes a new Callback class instance.                         
+================= ===================================================================
+
+
+**Method summary**
+
+================= ===================================================================================================================
+Modifier and Type Method and Description                                                                                             
+================= ===================================================================================================================
+:type:`void`      :meth:`RsaKey.Callback.OnDetailsReady`\ (:type:`ImmutableDataBuffer`, :type:`System.String`, :type:`System.String`)
+                                                                                                                                     
+                  Handles the DetailsReady event.                                                                                    
+                  By default, calls the DetailsReady delegate.                                                                       
+================= ===================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: RsaKey.Callback(RsaKey.Callback.DetailsReadyType a)
+
+    Initializes a new Callback class instance.
+
+    For more information, see :cpp:func:`vnc_RsaKey_Callback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void RsaKey.Callback.OnDetailsReady(ImmutableDataBuffer a, System.String b, System.String c)
+
+    Handles the DetailsReady event.
+    By default, calls the DetailsReady delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  RsaKey.Callback.DetailsReady
+
+    Notification that the SDK's RSA key has been retrieved.
+
+    For more information, see :cpp:member:`vnc_RsaKey_Callback::detailsReady`\  in the C API documentation.
+

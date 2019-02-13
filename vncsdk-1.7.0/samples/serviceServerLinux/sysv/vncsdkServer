@@ -1,0 +1,51 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:		vncsdkServer
+# Required-Start:	$remote_fs $syslog
+# Required-Stop:	$remote_fs $syslog
+# Default-Start:	2 3 4 5
+# Default-Stop: 	0 1 6
+# Short-Description:	VNC SDK Linux service server sample
+### END INIT INFO
+
+set -e
+umask 022
+PATH=/usr/bin:/usr/sbin:/bin:/sbin
+
+# The name of the service:
+NAME=vncsdkServer
+
+# The service executable:
+EXE="/usr/local/bin/serviceServerLinux"
+
+# Add <cloud-address> <cloud-password> <server-password> here:
+OPTS=""
+
+case "$1" in
+  start)
+	start-stop-daemon --start --quiet --oknodo --exec $EXE -- -d $OPTS
+	;;
+  stop)
+	start-stop-daemon --stop --quiet --oknodo --exec $EXE
+	;;
+  restart|reload|force-reload)
+        /etc/init.d/$NAME stop
+	sleep 1
+        /etc/init.d/$NAME start
+	;;
+  status)
+	if pidof $EXE > /dev/null; then
+	    echo "$NAME is running"
+	    exit 0
+	else
+	    echo "$NAME is not running"
+	    exit 1
+	fi
+	;;
+  *)
+	echo "Unknown option: $1" || true
+	exit 1
+esac
+
+exit 0

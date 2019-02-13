@@ -1,0 +1,28 @@
+.. include:: ../c-index.txt
+
+.. toctree::
+    :maxdepth: 2
+    :hidden:
+
+    AddOn.h
+    Annotation.h
+    Cloud.h
+    Common.h
+    DataBuffer.h
+    DataStore.h
+    DirectTcp.h
+    Displays.h
+    Errors.h
+    EventLoop.h
+    EventLoopFd.h
+    EventLoopWin.h
+    Init.h
+    Keyboard.h
+    Logger.h
+    Messaging.h
+    PixelFormat.h
+    RsaKey.h
+    Server.h
+    Version.h
+    Viewer.h
+    Vnc.h

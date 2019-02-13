@@ -1,0 +1,25 @@
+Library.DestroyedObjectException
+================================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: @SuppressWarnings public static class DestroyedObjectException extends IllegalStateException
+   :outertype: Library
+
+   Thrown to indicate that another method has been invoked on an SDK object after the \ ``destroy``\  method has been used.
+
+Constructor Summary
+-------------------
+* :java:construct:`DestroyedObjectException <DestroyedObjectException()>`\ ()
+
+  Constructs a \ ``DestroyedObjectException``\  with the default detail message.
+
+Constructors
+------------
+
+.. java:constructor:: public DestroyedObjectException()
+   :outertype: Library.DestroyedObjectException
+
+   Constructs a \ ``DestroyedObjectException``\  with the default detail message.
+

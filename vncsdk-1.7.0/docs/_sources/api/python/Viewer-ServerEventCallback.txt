@@ -1,0 +1,49 @@
+Viewer.ServerEventCallback
+==========================
+
+.. py:attribute:: vncsdk.Viewer.ServerEventCallback
+
+    Callback receiving server event notifications for a Viewer.
+
+Method Summary
+--------------
+================= ===================================================================================================================
+Modifier and Type Method and Description                                                                                             
+================= ===================================================================================================================
+\                 :py:func:`server_clipboard_text_changed <Viewer.ServerEventCallback.server_clipboard_text_changed>`\ (viewer, text)
+                                                                                                                                     
+                  Notification that the server's clipboard contains new text.                                                        
+----------------- -------------------------------------------------------------------------------------------------------------------
+\                 :py:func:`server_friendly_name_changed <Viewer.ServerEventCallback.server_friendly_name_changed>`\ (viewer, name)  
+                                                                                                                                     
+                  Notification that the server's friendly name has changed.                                                          
+================= ===================================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: Viewer.ServerEventCallback.server_clipboard_text_changed(viewer, text)
+
+    Notification that the server's clipboard contains new text.
+
+    For more information, see :cpp:member:`vnc_Viewer_ServerEventCallback::serverClipboardTextChanged`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :param text:
+    :type text: str or None
+    :return: None
+
+.. py:function:: Viewer.ServerEventCallback.server_friendly_name_changed(viewer, name)
+
+    Notification that the server's friendly name has changed.
+
+    For more information, see :cpp:member:`vnc_Viewer_ServerEventCallback::serverFriendlyNameChanged`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :param name:
+    :type name: str or None
+    :return: None
+

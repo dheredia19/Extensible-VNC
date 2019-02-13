@@ -1,0 +1,61 @@
+.. _CloudListener:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudListener
+-------------
+
+.. class:: CloudListener
+
+    Listener used to join VNC Cloud and listen for a connection.
+
+    For more information, see :cpp:class:`vnc_CloudListener`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`CloudListener.Callback`
+- :ref:`CloudListener.Status`
+
+**Constructor summary**
+
+===================== ================================================================================================================================
+Modifier and Type     Method and Description                                                                                                          
+===================== ================================================================================================================================
+:type:`CloudListener` :meth:`CloudListener`\ (:type:`System.String`, :type:`System.String`, :type:`ConnectionHandler`, :type:`CloudListener.Callback`)
+                                                                                                                                                      
+                      Begins listening for incoming connections on the given Cloud address.                                                           
+===================== ================================================================================================================================
+
+
+**Method summary**
+
+================= =================================
+Modifier and Type Method and Description           
+================= =================================
+:type:`void`      :meth:`CloudListener.Dispose`\ ()
+                                                   
+                  Destroys the Cloud listener.     
+================= =================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: CloudListener(System.String a, System.String b, ConnectionHandler c, CloudListener.Callback d)
+
+    Begins listening for incoming connections on the given Cloud address.
+
+    For more information, see :cpp:func:`vnc_CloudListener_create`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void CloudListener.Dispose()
+
+    Destroys the Cloud listener.
+
+    For more information, see :cpp:func:`vnc_CloudListener_destroy`\  in the C API documentation.
+

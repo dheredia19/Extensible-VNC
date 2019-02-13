@@ -1,0 +1,15 @@
+.. _Keyboard:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Keyboard
+--------
+
+.. class:: Keyboard
+
+    A container for static methods.
+
+    For more information, see :cpp:class:`vnc_Keyboard`\  in the C API documentation.
+
+

@@ -1,0 +1,81 @@
+Logger
+======
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.Logger.Callback`
+
+* :py:class:`vncsdk.Logger.Level`
+
+Method Summary
+--------------
+================= ================================================================================================
+Modifier and Type Method and Description                                                                          
+================= ================================================================================================
+\                 :py:func:`create_stderr_logger <vncsdk.Logger.create_stderr_logger>`\ ()                        
+                                                                                                                  
+                  Creates a logger implementation that writes data to ``sys.stderr``.                             
+----------------- ------------------------------------------------------------------------------------------------
+\                 :py:func:`create_custom_logger <vncsdk.Logger.create_custom_logger>`\ (callback)                
+                                                                                                                  
+                  Creates a logger implementation that calls the given callback whenever a log message is written.
+----------------- ------------------------------------------------------------------------------------------------
+\                 :py:func:`create_file_logger <vncsdk.Logger.create_file_logger>`\ (path)                        
+                                                                                                                  
+                  Creates a logger that writes data to the specified log file.                                    
+----------------- ------------------------------------------------------------------------------------------------
+\                 :py:func:`destroy_logger <vncsdk.Logger.destroy_logger>`\ ()                                    
+                                                                                                                  
+                  Destroys any previously created logger.                                                         
+----------------- ------------------------------------------------------------------------------------------------
+\                 :py:func:`set_level <vncsdk.Logger.set_level>`\ (level)                                         
+                                                                                                                  
+                  Sets the current log level.                                                                     
+================= ================================================================================================
+
+
+Static methods
+--------------
+
+.. py:staticmethod:: vncsdk.Logger.create_stderr_logger()
+
+    Creates a logger implementation that writes data to ``sys.stderr``.
+
+    This destroys any previously-created logger.
+
+.. py:function:: vncsdk.Logger.create_custom_logger(callback)
+
+    Creates a logger implementation that calls the given callback whenever a log
+    message is written.
+
+    For more information, see :cpp:func:`vnc_Logger_createCustomLogger`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.Logger.Callback`
+
+.. py:function:: vncsdk.Logger.create_file_logger(path)
+
+    Creates a logger that writes data to the specified log file.
+
+    For more information, see :cpp:func:`vnc_Logger_createFileLogger`.
+
+    :param path:
+    :type path: str
+
+.. py:function:: vncsdk.Logger.destroy_logger()
+
+    Destroys any previously created logger.
+
+    For more information, see :cpp:func:`vnc_Logger_destroyLogger`.
+
+
+.. py:function:: vncsdk.Logger.set_level(level)
+
+    Sets the current log level.
+
+    For more information, see :cpp:func:`vnc_Logger_setLevel`.
+
+    :param level:
+    :type level: :py:class:`vncsdk.Logger.Level`
+

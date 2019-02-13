@@ -1,0 +1,15 @@
+.. _Viewer.PeerVerificationCallback.VerifyPeerType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.PeerVerificationCallback.VerifyPeerType
+----------------------------------------------
+
+.. attribute:: Viewer.PeerVerificationCallback.VerifyPeerType
+
+    The type of the :attr:`Viewer.PeerVerificationCallback.VerifyPeer`\  callback.
+
+    
+
+

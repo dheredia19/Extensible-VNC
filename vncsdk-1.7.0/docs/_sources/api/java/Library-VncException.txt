@@ -1,0 +1,33 @@
+Library.VncException
+====================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: @SuppressWarnings public static class VncException extends Exception
+   :outertype: Library
+
+   Thrown to indicate that the SDK has encountered an exceptional condition. This could include passing invalid arguments to a method, a networking error occurring, an error creating a file, or a logic error in the SDK user's calling code.
+
+Constructor Summary
+-------------------
+* :java:construct:`VncException <VncException(String, String)>`\ (:java:type:`String` code, :java:type:`String` callingFunction)
+
+  Constructs a \ ``VncException``\  with the specified detail message.
+
+Fields
+------
+
+.. java:field:: public final String errorCode
+   :outertype: Library.VncException
+
+   Contains the string code; values are listed for each function in the C API reference.
+
+Constructors
+------------
+
+.. java:constructor:: public VncException(String code, String callingFunction)
+   :outertype: Library.VncException
+
+   Constructs a \ ``VncException``\  with the specified detail message.
+

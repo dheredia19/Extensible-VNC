@@ -1,0 +1,15 @@
+.. _Viewer.ServerEventCallback.ServerClipboardTextChangedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.ServerEventCallback.ServerClipboardTextChangedType
+---------------------------------------------------------
+
+.. attribute:: Viewer.ServerEventCallback.ServerClipboardTextChangedType
+
+    The type of the :attr:`Viewer.ServerEventCallback.ServerClipboardTextChanged`\  callback.
+
+    
+
+

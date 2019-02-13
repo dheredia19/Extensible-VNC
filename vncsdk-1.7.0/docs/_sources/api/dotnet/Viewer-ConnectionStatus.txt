@@ -1,0 +1,44 @@
+.. _Viewer.ConnectionStatus:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.ConnectionStatus
+-----------------------
+
+.. enum:: Viewer.ConnectionStatus
+
+    Enumeration of connection statuses.
+
+    For more information, see :cpp:class:`vnc_Viewer_ConnectionStatus`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  Viewer.ConnectionStatus.Disconnected
+
+    The viewer is not connected to a server.
+
+    
+
+.. attribute::  Viewer.ConnectionStatus.Connecting
+
+    The viewer is negotiating a connection to a server (includes
+    authentication).
+
+    
+
+.. attribute::  Viewer.ConnectionStatus.Connected
+
+    The viewer is connected to a server.
+
+    
+
+.. attribute::  Viewer.ConnectionStatus.Disconnecting
+
+    Viewer.disconnect() has been called but we've not yet disconnected
+    from the server.
+
+    
+

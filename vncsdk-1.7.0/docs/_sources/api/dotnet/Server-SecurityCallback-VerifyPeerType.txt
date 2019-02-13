@@ -1,0 +1,15 @@
+.. _Server.SecurityCallback.VerifyPeerType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.SecurityCallback.VerifyPeerType
+--------------------------------------
+
+.. attribute:: Server.SecurityCallback.VerifyPeerType
+
+    The type of the :attr:`Server.SecurityCallback.VerifyPeer`\  callback.
+
+    
+
+

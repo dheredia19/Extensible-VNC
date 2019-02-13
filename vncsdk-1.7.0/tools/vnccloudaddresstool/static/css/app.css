@@ -1,0 +1,320 @@
+/*
+Copyright (C) 2016-2017 RealVNC Limited. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors
+may be used to endorse or promote products derived from this software without
+specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  background: white;
+  color: black;
+  padding: 0; margin: 0;
+}
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/*--- Override styles for imported jQuery widgets ---*/
+
+p.ui-state-highlight { padding: 8px; }
+
+div.ui-helper-hidden {
+  padding: 10px;
+  margin-top: 20px; margin-bottom: 20px;
+}
+
+div.ui-state-highlight {
+  border: 1px solid #ddd;
+  padding: 15px;
+  background: #ffffe9;
+  color: #000023;
+}
+
+div.ui-state-error {
+  padding: 8px;
+  margin-top: 20px; margin-bottom: 20px;
+}
+
+.ui-menu-item { font-size: 9pt; }
+
+table.tablesorter-ice { margin-top: 0; }
+
+.tablesorter-ice td.overflow, .tablesorter-ice td.fit
+{
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 4px 8px 4px;
+}
+
+.tablesorter-ice td.overflow { width: 20%; text-overflow: ellipsis; }
+.tablesorter-ice td.fit { width: 1%; }
+
+/*--- Text boxes  ---*/
+
+label { float: left; width: 120px; margin: 5px 0; }
+input[type=text],
+input[type=password]
+{
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11pt;
+  font-weight: bold;
+  width: 340px;
+  border: 2px solid #ccc;
+  padding: 4px;
+  background: white;
+  margin: 0 0 10px 0;
+}
+
+#app_login label { float: left; width: 60px; margin: 5px 0; }
+#app_login input
+{
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11pt;
+  font-weight: bold;
+  width: 700px;
+  border: 2px solid #ccc;
+  padding: 4px;
+  background: white;
+  margin: 0 0 10px 0;
+}
+
+.spinner { padding: 5px 5px 5px 0;}
+#viewer_spinner, #server_spinner { width:60px; }
+
+/*--- Buttons ---*/
+
+input[type=button].blue_flat_button,
+input[type=submit].blue_flat_button
+{
+  font-size: 15px;
+  padding: 7px 10px 7px 10px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #3498db;
+  border: 0;
+  border-bottom: 2px solid #2a8bcc;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #2a8bcc;
+  box-shadow: inset 0 -2px #2a8bcc;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+input[type=button].blue_flat_button:active,
+input[type=submit].blue_flat_button:active
+{
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type=button].blue_flat_button:disabled,
+input[type=submit].blue_flat_button:disabled
+{
+  cursor: default;
+  outline: none;
+  color: #ddd;
+  background: #999;
+  border-bottom: 2px solid #666;
+  -webkit-box-shadow: inset 0 -2px #666;
+  box-shadow: inset 0 -2px #666;
+}
+
+/*--- Loading indicator ---*/
+
+td#loading{ text-align: center; height: 80px; }
+
+/*--- Error box --*/
+
+.error { width: 90%; }
+
+/*--- Banner and navigation bar ---*/
+
+.banner
+{
+  padding: 20px 20px 20px 20px;
+  margin: 0 auto;
+  width: 90%;
+  background: #666;
+  border: 1px solid #666;
+  color: white;
+  font-size: 11pt;
+}
+
+.banner_text
+{
+  padding: 0;
+  padding-bottom: 10px;
+  font-size: 14pt;
+  color: white;
+}
+
+.ui-icon-white {
+  background-image: url("../libs/images/ui-icons_ffffff_256x240.png");
+}
+
+.navigation
+{
+  padding: 8px 20px 8px 20px;
+  margin: 0 auto;
+  width: 90%;
+  border: 1px solid #555;
+  color: #dfdfdf;
+  font-size: 11pt;
+  background: #333;
+}
+
+.navigation a, .navigation b { color: white; padding-left: 0px; }
+.navigation a:hover { color: yellow; text-decoration: none; }
+
+div.navigation table
+{
+  width: 100%;
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+}
+
+div.navigation td#account { width:50%; }
+div.navigation #logout { text-align:right; }
+div.navigation div#apikey
+{
+  font-family: "Courier New", Courier, monospace;
+  font-weight: normal;
+  font-size: 10pt;
+  margin-top: 2px;
+}
+div.navigation span#apikey { color: white; }
+
+/*--- Code snippets ---*/
+
+td .hljs { background: white; }
+
+div.code_sample
+{
+  border: 1px solid #ddd;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: white;
+}
+
+div.code_sample code#snippet { background: white; }
+
+.code-title { font-style: italic; padding-top: 10px; }
+
+/*--- Tables and container <div> ---*/
+
+.main
+{
+  top: 10px;
+  width: 90%;
+  height: 100%;
+  padding: 10px 20px 20px 20px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  border: 1px solid #ddd;
+  background: white;
+}
+
+.main table.outer {
+  padding: 14px;
+  width: 100%;
+  margin-top: 14px;
+  margin-bottom: 40px;
+}
+
+p.instructions { font-size: 11pt; line-height: 18px; }
+
+.heading { padding-top: 10px; }
+
+
+td.details { padding: 10px 0 10px 0; }
+td.details p { margin-top: 0; margin-bottom: 20px; }
+tr.action td { padding: 0 0 10px 0; }
+
+div.table_header_text {
+  font-weight: bold;
+  font-size: 13pt;
+  padding-bottom: 10px;
+  float: left;
+}
+div.table_header_timestamp { float: right; }
+div.share_action { margin-top: 10px; margin-bottom: 10px; text-align: right;}
+#cloud_address, #cloud_password
+{
+  font-family: "Courier New", Courier, monospace;
+}
+
+div#create_cloud_addresses, div.group
+{
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  background: white;
+  padding: 14px;
+}
+
+div#create_cloud_addresses {  border: 1px solid #ddd; }
+
+div.group
+{
+  margin-top: 10px;
+  margin-bottom: 40px;
+  background: white;
+  border: 1px solid #aaa;
+}
+
+div.table_container { overflow-y: auto; width: 100%; }
+
+div#create_cloud_addresses table { width: 100%; }
+
+div#my_cloud_addresses { margin-top: 20px; margin-bottom: 90px; }
+
+table.outer
+{
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  background: white;
+}
+
+/*--- Footer ---*/
+
+#footer {
+  display: block;
+  bottom: 0;
+  right: 0;
+  color: #999;
+  font-size: 9pt;
+  margin: 10px auto;
+}
+

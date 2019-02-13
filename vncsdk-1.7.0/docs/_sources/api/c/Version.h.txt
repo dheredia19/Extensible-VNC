@@ -1,0 +1,66 @@
+
+.. _api_version_8h:
+
+Version.h
+=========
+
+.. raw :: html
+
+    <div id="method-tables">
+
+Obtain SDK version information.  `(more...) <#description>`_
+
+**Defines**
+
+================= ==================================================================================
+Modifier and Type Name and Description                                                              
+================= ==================================================================================
+#define           :ref:`VNC_SDK_MAJOR_VERSION <api_version_8h_1aa2295cca9800f71d9dbb81f3529dac0e>`\ 
+                                                                                                    
+                  The compile-time major version number of the SDK.                                 
+----------------- ----------------------------------------------------------------------------------
+#define           :ref:`VNC_SDK_MINOR_VERSION <api_version_8h_1afb835db811e100041686b231a17e2ab0>`\ 
+                                                                                                    
+                  The compile-time minor version number of the SDK.                                 
+----------------- ----------------------------------------------------------------------------------
+#define           :ref:`VNC_SDK_PATCH_VERSION <api_version_8h_1a355ec47ab5b7cc97cda96149f3490340>`\ 
+                                                                                                    
+                  The compile-time patch version number of the SDK.                                 
+----------------- ----------------------------------------------------------------------------------
+#define           :ref:`VNC_SDK_BUILD_NUMBER <api_version_8h_1af5dce0f6c3cdbda52e309a6699c55a42>`\  
+                                                                                                    
+                  The compile-time build number of the SDK.                                         
+================= ==================================================================================
+
+
+**Functions**
+
+================= ==================================================================================
+Modifier and Type Name and Description                                                              
+================= ==================================================================================
+function int      :ref:`vnc_getMajorVersion <api_version_8h_1ac3332e583a74770dc160a3e0259a91c8>`\ ()
+                                                                                                    
+                  Returns the runtime major version number of the SDK.                              
+----------------- ----------------------------------------------------------------------------------
+function int      :ref:`vnc_getMinorVersion <api_version_8h_1a2a7de8e66a7905b47f862d3db233eb64>`\ ()
+                                                                                                    
+                  Returns the runtime minor version number of the SDK.                              
+----------------- ----------------------------------------------------------------------------------
+function int      :ref:`vnc_getPatchVersion <api_version_8h_1ac16c48ab59faf5efac79bc3f40546342>`\ ()
+                                                                                                    
+                  Returns the runtime patch version number of the SDK.                              
+----------------- ----------------------------------------------------------------------------------
+function int      :ref:`vnc_getBuildNumber <api_version_8h_1ae377bf71bf0040907021e233339526b9>`\ () 
+                                                                                                    
+                  Returns the runtime build number of the SDK.                                      
+================= ==================================================================================
+
+
+.. raw :: html
+
+    </div><a id="description"></a>
+
+**Detailed description**
+
+.. doxygenfile:: Version.h
+   :project: api

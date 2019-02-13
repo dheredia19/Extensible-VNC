@@ -1,0 +1,25 @@
+.. _Viewer.PictureQuality:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.PictureQuality
+---------------------
+
+.. enum:: Viewer.PictureQuality
+
+    Enumeration of picture quality levels.
+
+    For more information, see :cpp:class:`vnc_Viewer_PictureQuality`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  Viewer.PictureQuality.Auto
+
+    Auto quality means that the viewer selects an appropriate encoding and
+    colour level based on its own line speed estimate.
+
+    
+

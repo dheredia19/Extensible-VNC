@@ -1,0 +1,10 @@
+ConnectionHandler
+=================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public abstract class ConnectionHandler
+
+   Opaque type for a connection handler, enabling a Viewer or Server to perform a connection operation.
+

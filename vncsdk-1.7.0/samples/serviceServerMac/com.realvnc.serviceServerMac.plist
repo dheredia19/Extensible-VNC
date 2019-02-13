@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.realvnc.serviceServerMac</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Library/serviceServerMac/serviceServerMac</string>
+
+    <!-- Remove this XML comment tag and include the appropriate values here:
+         If you want to specify cloud connectivity, you must include
+         the "-cloud" string before the cloud address & password strings.
+         If you want to specify Direct TCP connectivity, you must include
+         the "-tcp" string before the port string.
+         <string>PUT_YOUR_SERVER_PASSWORD_HERE</string>
+         <string>-cloud</string>
+         <string>PUT_YOUR_CLOUD_ADDRESS_HERE</string>
+         <string>PUT_YOUR_CLOUD_PASSWORD_HERE</string>
+         <string>-tcp</string>
+         <string>PUT_YOUR_DIRECT_TCP_PORT_HERE</string>
+         Remove this end of XML comment tag -->
+  </array>
+  <key>KeepAlive</key>
+  <true/>
+</dict>
+</plist>

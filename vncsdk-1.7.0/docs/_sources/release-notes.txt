@@ -1,0 +1,350 @@
+:tocdepth: 2
+
+.. |br| raw:: html
+
+   <br />
+
+Release notes
+=============
+
+VNC SDK 1.7.0
+-------------
+
++---------------+
+| Released      |
++===============+
+| August 2018   |
++---------------+
+
+New and changed features
+````````````````````````
+
+- **NEW:** Bindings for the .NET Framework |br|
+  Create a Viewer and/or a Server app in a .NET language such as C#, and deploy to platforms supporting .NET Framework 4+.
+- **NEW:** A ``<vnc-sdk>/samples/basicViewerCSharpWpf`` sample Viewer app demonstrates how to create a Viewer app using C# and WPF, and exercises the .NET bindings. In addition, it showcases annotations.
+- **NEW:** Support for Ubuntu 18.04. :ref:`Supported platforms <supported-platforms>`.
+- **NEW:** Call :cpp:func:`vnc_EventLoop_shouldStop` to detect whether ``vnc_EventLoop_stop`` has been called. Note you should only need 
+  to do this if you are implementing your own event loop using the functions in ``EventLoopFd.h`` and ``EventLoopWin.h``.
+
+----------------------
+
+VNC SDK 1.6.0
+-------------
+
++---------------+
+| Released      |
++===============+
+| April 2018    |
++---------------+
+
+New and changed features
+````````````````````````
+
+- **NEW:** Support for macOS 10.13 High Sierra, Debian Stretch on Raspberry Pi, iOS 11 and Android 8. :ref:`Supported platforms <supported-platforms>`.
+- **NEW:** Encrypt sessions end-to-end using 256-bit AES (up from 128-bit), using either :cpp:func:`vnc_Viewer_setEncryptionLevel` or :cpp:func:`vnc_Server_setEncryptionLevel`.
+- **NEW:** Terminate idle sessions after a particular period using :cpp:func:`vnc_Server_setIdleTimeout`. An idle session is one in which no control events are received from a connected Viewer app.
+- Cleanly shut down a Viewer or Server app on any platform by calling :cpp:func:`vnc_shutdown` from the same thread that called :c:macro:`vnc_init`.
+- The value names of the :cpp:member:`vnc_Viewer_PictureQuality` enum have changed.
+- FIXED: Calling :cpp:func:`vnc_DataStore_createRegistryStore` on a Windows computer to create a data store for sensitive information such as the private key now sets restricted 
+  permissions on just the leaf key in the specified ``registryPath``, and not parent keys.
+
+----------------------
+
+VNC SDK 1.5.1
+-------------
+
++---------------+
+| Released      |
++===============+
+| 1 August 2017 |
++---------------+
+
+New and changed features
+````````````````````````
+
+- Messages, data or files over 10KB in size can now be sent over the custom data channel.
+
+----------------------
+
+
+VNC SDK 1.5.0
+-------------
+
++---------------+
+| Released      |
++===============+
+| 11 July 2017  |
++---------------+
+
+New and changed features
+````````````````````````
+
+- **NEW:** Custom data channel |br| 
+  Send your own messages, data or files over the same secure communication channel as the current screen sharing session. Augment screen sharing 
+  with text chat, send alerts, display system data, provide a file transfer facility, transmit patches or software updates, and :ref:`more <custom-data-channel>`.
+- **NEW:** Support for iOS 10, Android 7 and macOS 10.12 Sierra. :ref:`Supported platforms <supported-platforms>`.
+- **NEW:** Fine-tune the picture quality mid-session using :cpp:func:`vnc_Viewer_setPictureQuality`.
+- **NEW:** Monitor management capability |br| 
+  Choose a particular monitor attached to the Server computer to remote to connected Viewer app users, and use the functions in :doc:`Displays.h </api/c/Displays.h>` 
+  to detect monitor changes while sessions are in progress.
+- **NEW:** A ``vnc-sdk/samples/richServerPython`` sample app that, when running on Windows only in this release, demonstrates both the 
+  custom data channel (top) *and* monitor management capability (above) by sending the current list of monitors to connected Viewer apps and enabling users to choose.
+- The ``vnc-sdk/samples/richViewerPython`` sample app now enables a Viewer user to choose which monitor to remote in conjunction with the new 
+  ``richServerPython`` sample app, above.
+
+----------------------
+
+
+VNC SDK 1.4.1
+-------------
+
++---------------+
+| Released      |
++===============+
+| 31 May 2017   |
++---------------+
+
+- This is a maintenance release.
+
+----------------------
+
+
+VNC SDK 1.4.0
+-------------
+
++---------------+
+| Released      |
++===============+
+| 01 June 2016  |
++---------------+
+
+New and changed features
+````````````````````````
+
+- **NEW:** Both Viewer and Server app users can annotate (that is, draw lines on top of) a Server device screen,
+  perhaps in order to share information, give feedback or instruct novice users. These annotations can be color-coded for different users and persist or fade as desired. :ref:`More information <annotation>`.
+- **NEW:** A ``<vnc-sdk>/samples/richPythonViewer`` sample app showcases annotations on any desktop platform in conjunction with a Server sample app.
+- **NEW:** Raspberry Pi 3 is a supported device, and Ubuntu 16.04 LTS a :ref:`supported platform <supported-platforms>`.
+- **NEW:** A Server app can change permissions for a connected Viewer app mid-session using :cpp:func:`vnc_Server_setPermissions`.
+- **NEW:** A Viewer or Server app can override the default system proxy server settings in order to establish a VNC Cloud connection using
+  :cpp:func:`vnc_setCloudProxySettings`. A different proxy server can be specified, or no proxy server at all.
+- **NEW:** Introducing ``vnc_uint31_t``, an ``int``-compatible type for non-negative numbers. Note that :cpp:func:`vnc_unicodeToKeysym` and :cpp:func:`vnc_Viewer_sendKeyDown` 
+  now take this type as an argument, and the macros for common X11 keysyms in :doc:`Keyboard.h </api/c/Keyboard.h>` are now of this type instead of ``long``. 
+- Bitcode is now disabled by default in ``<vnc-sdk>/samples/basicVieweriOS``. Note your custom iOS Viewer app :ref:`must not include <deploy-viewer>` bitcode.
+- Failure to implement a mandatory callback in the HTML 5 SDK now causes a ``set...Callback`` method to throw a ``VncException`` with an ``InvalidArgument`` error.
+- Binaries are now signed with SHA-2 as well as SHA-1 certificates for compatibility with all supported Microsoft platforms.
+- ``<vnc-sdk>/tools/vnccloudaddresstool`` is now simpler to set up and run.
+
+----------------------
+
+VNC SDK 1.3.1
+-------------
+
++---------------+
+| Released      |
++===============+
+| 16 March 2016 |
++---------------+
+
+New and changed features
+````````````````````````
+
+- **NEW:** A :ref:`script <deploy-viewer>` that simplifies the process of submitting a custom iOS Viewer app to the Apple App Store by removing simulator slices.
+
+Known issues
+````````````
+
+**Sample apps**
+
+- ``serviceServerWin`` |br|
+  If you attempt to stop the sample app while a Viewer app user is authenticating, the service does not stop. Further requests to stop elicit a 'Service cannot accept control messages at this time' message.
+
+----------------------
+
+VNC SDK 1.3.0
+-------------
+
++------------------+
+| Released         |
++==================+
+| 22 February 2016 |
++------------------+
+
+New and changed features
+````````````````````````
+
+- **NEW:** Support for a view-only Server app on Android |br|
+  Use the ``vncsdk.jar`` Java binding file to create a Server app for Android 5+ devices that allows a connected Viewer app user to see the device screen but not control it. :ref:`More information <android-server>`.
+- **NEW:** Use :py:const:`vncsdk.DirectTcp.DEFAULT_PORT` from the ``vncsdk.py`` Python binding file to quickly access the default listening port for VNC, 5900.
+- **NEW:** The VNC Cloud Address Tool now supports Python 2.7.11.
+- **NEW:** Generating RSA encryption keys for a HTML 5 Viewer app running in Safari 9 is now quicker.
+- **NEW:** VNC Cloud connections between devices located in regions other than the US West Coast are now just as responsive.
+- **NEW:** The SDK now logs expiry on start up; that is, the date after which apps will cease to run unless built against a newer version of the SDK.
+- **NEW:** The ``basicServerPython`` and ``basicViewerPython`` sample apps now demonstrate listening for and establishing :ref:`direct TCP connections <direct-tcp>` respectively.
+- :cpp:func:`vnc_Server_create` now correctly returns either **FileError** or **AgentError** if the ``vncagent`` path is invalid under Windows.
+- :java:meth:`Library.VNC_DIRECT_TCP_DEFAULT_PORT` in the ``vncsdk.jar`` Java binding file is now deprecated. Use :java:meth:`DirectTcp.DEFAULT_PORT` instead.
+
+Known issues
+````````````
+
+**SDK libraries**
+
+- ``vncsdk.js`` HTML 5 binding file running in Chrome on Mac OS X |br|
+  If many screen updates are received in quick succession (for example, a Viewer app users scrolls a window on a connected computer rapidly),
+  a connection may close with an 'OutStream full' error in the log.
+
+**Sample apps**
+
+- ``serviceServerWin`` |br|
+  If you attempt to stop the sample app while a Viewer app user is authenticating, the service does not stop. Further requests to stop elicit a 'Service cannot accept control messages at this time' message.
+
+
+----------------------
+
+VNC SDK 1.2.0
+-------------
+
++------------------+
+| Released         |
++==================+
+| 15 December 2015 |
++------------------+
+
+New and changed features
+````````````````````````
+
+- **NEW:** Establish :ref:`direct TCP connections <direct-tcp>` between devices as an alternative to VNC Cloud, or in addition to it.
+- **NEW:** Support for the new :ref:`Pi Zero <supported-platforms>`.
+
+Known issues
+````````````
+
+**Custom apps**
+
+- Persistent Server app and Windows XP |br|
+  If a connected Viewer user fast switches to a new user account and then logs off that user, ``vncagent`` stops capturing the screen.
+  The connected user *can* fast switch back to the login screen, just not log off. See ``<vnc-sdk>/samples/serviceServerWin`` for a demonstration.
+
+
+**Sample apps**
+
+- ``<vnc-sdk>/samples/basicViewerHTML5`` and IE 11/MS Edge |br|
+  You may not be able to open the sample app directly from the file system. Either host the sample app on a web server, or right-click
+  each of ``vncsdk.js``, ``viewer.html``, ``viewer.css``, and ``viewer.js`` and select **Properties > General > Unblock**.
+- ``<vnc-sdk>/samples/basicViewerHTML5`` and IE 11 |br|
+  A web browser user may see an 'Access is denied' error when navigating to the sample app hosted by a
+  web server in the local domain. Ask the user to configure their browser settings as follows:
+
+  - Enable **Tools > Internet options > Security > Local intranet > Custom level > Miscellaneous > Access data sources across domains**
+  - Add vnc.com and the local web server address using **Tools > Internet options > Security > Local intranet > Sites > Advanced > Add**
+
+- ``<vnc-sdk>/samples/basicViewerPython`` and Mac |br|
+  If you encounter problems installing Qt and PySide on Mac OS X, email developer-support@realvnc.com.
+
+
+----------------------
+
+VNC SDK 1.1.1
+-------------
+
++-----------------+
+| Released        |
++=================+
+| 16 October 2015 |
++-----------------+
+
+New and changed features
+````````````````````````
+
+- **NEW:** Support for Mac OS X 10.11 El Capitan, iOS 9 and Android 6. :ref:`Full supported platforms list <supported-platforms>`.
+- **NEW:** Support for Raspberry Pi. Use the new SDK library in ``<vnc-sdk>/lib/linux-armhf-raspi`` to create either a Server app to control, or a Viewer app to control from, a Raspberry Pi 1 or 2.
+  Note the Linux/X11 sample apps can be compiled and run on a Pi without further configuration. :ref:`More information <supported-platforms>`.
+- **NEW:** Support for Python. Use the new Python binding file in ``<vnc-sdk>/lib/python`` in conjunction with the SDK library for the target platform to create either
+  a :ref:`single-shot <server-mode>` Server app (remoting the desktop of the current user only) or a Viewer app for a Python 2.6, 2.7 or 3.x environment.
+  See the :doc:`Python API reference </api/python/index>` and the ``<vnc-sdk>/samples/basicServerPython`` and ``<vnc-sdk>/samples/basicViewerPython`` sample apps for more information.
+- **NEW:** Bundle the new ``<vnc-sdk>/lib/win-<arch>/saslib.dll`` helper library with your :ref:`persistent <server-mode>` Server app to inject the Ctrl-Alt-Delete key combination on Windows Vista
+  computers.
+
+Known issues
+````````````
+
+**Sample apps**
+
+- ``<vnc-sdk>/samples/serviceServerWin`` sample app and XP |br|
+  This will also affect your custom app. If a connected Viewer user fast user switches to a new user account and then logs off that user, ``vncagent`` stops capturing the screen.
+  The connected user *can* fast user switch back to the login screen, just not log off.
+- ``<vnc-sdk>/samples/basicViewerHTML5`` sample app and IE 11/MS Edge |br|
+  This affects the sample app only. You may not be able to open the sample app directly from the file system. Either host the sample app on a web server, or right-click
+  each of ``vncsdk.js``, ``viewer.html``, ``viewer.css``, and ``viewer.js`` and select **Properties > General > Unblock**.
+- ``<vnc-sdk>/samples/basicViewerHTML5`` sample app and IE 11 |br|
+  This will also affect your custom app during testing (though not a live deployment). A web browser user may see an 'Access is denied' error when navigating to the sample app hosted by a
+  web server in the local domain. Ask the user to configure their browser settings as follows:
+
+  - Enable **Tools > Internet options > Security > Local intranet > Custom level > Miscellaneous > Access data sources across domains**
+  - Add vnc.com and the local web server address using **Tools > Internet options > Security > Local intranet > Sites > Advanced > Add**
+
+- ``<vnc-sdk>/samples/basicViewerPython`` sample app and Mac |br|
+  This affects the sample app only. If you encounter problems installing Qt and PySide on Mac OS X, email developer-support@realvnc.com.
+
+
+----------------------
+
+VNC SDK 1.1.0
+-------------
+
++---------------+
+| Released      |
++===============+
+| 30 July 2015  |
++---------------+
+
+New and changed features
+````````````````````````
+
+* **NEW:** Support for Windows 10, the Microsoft Edge web browser, and Visual Studio 2015 (with an appropriate version of CMake; see the ``<vnc-sdk>/samples/basicViewerWin`` README).
+* **NEW:** Create a Server app that remotes the console of the computer and not just the desktop of the currently-logged in user. Such a Server app must be integrated as a system service and run as the root or SYSTEM user, but enables you to remote the (elevated) login, lock and Windows UAC screens, start the Server app on boot, and persist through switch and log outs in order to potentially remote the desktop of any user on the system. Start with :ref:`this discussion <server-mode>`.
+* **NEW:** Discover exactly when ``vncagent`` is ready to capture the screen and inject input events by calling :cpp:func:`vnc_Server_isAgentReady`, or subscribing to the :cpp:member:`vnc_Server_AgentCallback::agentStarted` and :cpp:member:`vnc_Server_AgentCallback::agentStopped` callbacks. ``vncagent`` is normally started automatically as soon as your Server app runs, but it may stop during a log out or, under Linux, if the X server shuts down. In these circumstances, ``vncagent`` is able to restart automatically, so you can choose to wait before disconnecting Viewer apps.
+* **NEW:** In your Server app, conveniently discover the total number of currently-connected Viewer apps by calling :cpp:func:`vnc_Server_getConnectionCount`.
+* **NEW:** Restrict the bandwidth available for connections that are relayed end-to-end by VNC Cloud because a peer-to-peer connection cannot be established. To do this, call :cpp:func:`vnc_CloudConnector_setRelayBandwidthLimit`; note this may impact upon the user experience.
+* **NEW:** Access the ``<vnc-sdk>/samples/basicViewerHTML5`` sample app from the same desktop computer by simply double-clicking ``viewer.html``. (You need only set up and run a web server if you want to access the sample app from other computers.)
+* **NEW:** Send Ctrl+Alt+Del to a computer from the ``<vnc-sdk>/samples/basicVieweriOS``, ``<vnc-sdk>/samples/basicViewerAndroid``, or ``<vnc-sdk>/samples/basicViewerHTML5`` sample app using a new toolbar button (and learn how to do this by examining the sample app code).
+* :cpp:func:`vnc_Server_disconnect` and :cpp:func:`vnc_Server_disconnectAll` now take an ``int`` as a final argument instead of a ``vnc_bool_t``, so you can send a reconnection recommendation as well as a disconnection message to Viewer apps.
+* :cpp:func:`vnc_Server_setConnectionCallback` and :cpp:func:`vnc_Server_setSecurityCallback` both now return a ``vnc_status_t`` instead of ``void``, so you can call :cpp:func:`vnc_getLastError` if required.
+* In the Java and JavaScript bindings, :java:meth:`Viewer.sendPointerEvent <Viewer.sendPointerEvent>` and :java:meth:`Viewer.ConnectionCallback.disconnected <Viewer.ConnectionCallback.disconnected>` now take a set of flags as one of their arguments, rather than an ORing of flags.
+
+
+----------------------
+
+VNC Cloud 1.1
+-------------
+
++---------------+
+| Released      |
++===============+
+| 30 July 2015  |
++---------------+
+
+New and changed features
+````````````````````````
+
+* **NEW:** List all the VNC Cloud addresses you currently have available for use. :ref:`See how to do this <list_all_cloud_addresses>`.
+
+
+----------------------
+
+VNC SDK 1.0.1
+-------------
+
++---------------+
+| Released      |
++===============+
+| 22 June 2015  |
++---------------+
+
+New and changed features
+````````````````````````
+
+* **NEW:** HTML5 is no longer ALPHA, but rather fully-fledged 1.0.1.
+* **NEW:** Android is no longer BETA, but rather fully-fledged 1.0.1.
+* **NEW:** The basic Viewer sample for iOS is now designed for iPad as well as iPhone.
+

@@ -1,0 +1,71 @@
+.. _EventLoop:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+EventLoop
+---------
+
+.. class:: EventLoop
+
+    A container for static methods.
+
+    For more information, see :cpp:class:`vnc_EventLoop`\  in the C API documentation.
+
+
+**Method summary**
+
+================= =====================================================================
+Modifier and Type Method and Description                                               
+================= =====================================================================
+:type:`void`      :meth:`EventLoop.Run`\ ()                                            
+                                                                                       
+                  Runs the event loop until EventLoop.stop() is called.                
+----------------- ---------------------------------------------------------------------
+:type:`void`      :meth:`EventLoop.Stop`\ ()                                           
+                                                                                       
+                  Stops the event loop previously started with EventLoop.run(), causing
+                  EventLoop.run() to return promptly.                                  
+----------------- ---------------------------------------------------------------------
+:type:`bool`      :meth:`EventLoop.ShouldStop`\ ()                                     
+                                                                                       
+                  Returns a boolean flag indicating whether the event loop should stop,
+                  and immediately clears it.                                           
+----------------- ---------------------------------------------------------------------
+:type:`void`      :meth:`EventLoop.RunOnLoop`\ (:type:`System.Action`)                 
+                                                                                       
+                  Performs an action on the SDK thread, pausing the event loop         
+                  for the duration of the action.                                      
+================= =====================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: void EventLoop.Run()
+
+    Runs the event loop until EventLoop.stop() is called.
+
+    For more information, see :cpp:func:`vnc_EventLoop_run`\  in the C API documentation.
+
+.. method:: void EventLoop.Stop()
+
+    Stops the event loop previously started with EventLoop.run(), causing
+    EventLoop.run() to return promptly.
+
+    For more information, see :cpp:func:`vnc_EventLoop_stop`\  in the C API documentation.
+
+.. method:: bool EventLoop.ShouldStop()
+
+    Returns a boolean flag indicating whether the event loop should stop,
+    and immediately clears it.
+
+    For more information, see :cpp:func:`vnc_EventLoop_shouldStop`\  in the C API documentation.
+
+.. method:: void EventLoop.RunOnLoop(System.Action a)
+
+    Performs an action on the SDK thread, pausing the event loop
+    for the duration of the action.
+
+    
+

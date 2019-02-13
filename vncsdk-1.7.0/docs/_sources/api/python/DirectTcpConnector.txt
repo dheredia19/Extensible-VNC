@@ -1,0 +1,82 @@
+DirectTcpConnector
+==================
+
+.. py:class:: vncsdk.DirectTcpConnector
+
+    Connector used to make outgoing TCP connections
+
+Constructor Summary
+-------------------
+================= ========================================================================================
+Modifier and Type Method and Description                                                                  
+================= ========================================================================================
+\                 `__init__ <#constructor>`_\ ()                                                          
+                                                                                                          
+                  Creates a new TCP Connector which is used to make outgoing connections to TCP listeners.
+================= ========================================================================================
+
+
+Method Summary
+--------------
+================= ================================================================================================
+Modifier and Type Method and Description                                                                          
+================= ================================================================================================
+\                 :py:func:`connect <DirectTcpConnector.connect>`\ (host_or_ip_address, port, connection_handler) 
+                                                                                                                  
+                  Begins an outgoing TCP connection to the given hostname or IP address.                          
+----------------- ------------------------------------------------------------------------------------------------
+\                 :py:func:`destroy <DirectTcpConnector.destroy>`\ ()                                             
+                                                                                                                  
+                  Destroys the TCP Connector.                                                                     
+----------------- ------------------------------------------------------------------------------------------------
+\                 :py:func:`set_proxy_settings <DirectTcpConnector.set_proxy_settings>`\ (system_proxy, proxy_url)
+                                                                                                                  
+                  Set proxy server settings for this TCP Connector.                                               
+================= ================================================================================================
+
+
+Constructor
+-----------
+
+.. py:method:: vncsdk.DirectTcpConnector.__init__()
+
+    Creates a new TCP Connector which is used to make outgoing connections
+    to TCP listeners.
+
+    For more information, see :cpp:func:`vnc_DirectTcpConnector_create`.
+
+
+Methods
+-------
+
+.. py:method:: DirectTcpConnector.connect(host_or_ip_address, port, connection_handler)
+
+    Begins an outgoing TCP connection to the given hostname or IP address.
+
+    For more information, see :cpp:func:`vnc_DirectTcpConnector_connect`.
+
+    :param host_or_ip_address:
+    :type host_or_ip_address: str
+    :param port:
+    :type port: int
+    :param connection_handler:
+    :type connection_handler: :py:class:`vncsdk.ConnectionHandler`
+
+.. py:method:: DirectTcpConnector.destroy()
+
+    Destroys the TCP Connector.
+
+    For more information, see :cpp:func:`vnc_DirectTcpConnector_destroy`.
+
+
+.. py:method:: DirectTcpConnector.set_proxy_settings(system_proxy, proxy_url)
+
+    Set proxy server settings for this TCP Connector.
+
+    For more information, see :cpp:func:`vnc_DirectTcpConnector_setProxySettings`.
+
+    :param system_proxy:
+    :type system_proxy: bool
+    :param proxy_url:
+    :type proxy_url: str or None
+

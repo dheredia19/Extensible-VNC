@@ -1,0 +1,31 @@
+MessagingManager.Callback
+=========================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface Callback
+   :outertype: MessagingManager
+
+   Callback notifying when messages are received.
+
+Method Summary
+--------------
+================= =====================================================================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                                                               
+================= =====================================================================================================================================================================================================================================
+:java:type:`void` :java:meth:`messageReceived <Callback.messageReceived(MessagingManager, Connection, ImmutableDataBuffer)>`\ (:java:type:`MessagingManager` messagingManager, :java:type:`Connection` sender, :java:type:`ImmutableDataBuffer` buffer)
+                                                                                                                                                                                                                                                       
+                  Notification that a message has been received.                                                                                                                                                                                       
+================= =====================================================================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void messageReceived(MessagingManager messagingManager, Connection sender, ImmutableDataBuffer buffer)
+   :outertype: MessagingManager.Callback
+
+   Notification that a message has been received.
+
+   For more information, see :cpp:member:`vnc_MessagingManager_Callback::messageReceived`.
+

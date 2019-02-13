@@ -1,0 +1,49 @@
+Viewer.AuthenticationCallback
+=============================
+
+.. js:attribute:: vncsdk.Viewer.AuthenticationCallback
+
+    Callback receiving requests for authentication for a Viewer.
+
+Method Summary
+--------------
+================= ========================================================================================================================
+Modifier and Type Method and Description                                                                                                  
+================= ========================================================================================================================
+\                 :js:func:`cancelUserCredentialsRequest <Viewer.AuthenticationCallback.cancelUserCredentialsRequest>`\ (viewer)          
+                                                                                                                                          
+                  Notification to cancel a username and/or password request.                                                              
+----------------- ------------------------------------------------------------------------------------------------------------------------
+\                 :js:func:`requestUserCredentials <Viewer.AuthenticationCallback.requestUserCredentials>`\ (viewer, needUser, needPasswd)
+                                                                                                                                          
+                  Request for a username and/or password.                                                                                 
+================= ========================================================================================================================
+
+
+Methods
+-------
+
+.. js:function:: Viewer.AuthenticationCallback.cancelUserCredentialsRequest(viewer)
+
+    Notification to cancel a username and/or password request.
+
+    For more information, see :cpp:member:`vnc_Viewer_AuthenticationCallback::cancelUserCredentialsRequest`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :return: Ignored
+
+.. js:function:: Viewer.AuthenticationCallback.requestUserCredentials(viewer, needUser, needPasswd)
+
+    Request for a username and/or password.
+
+    For more information, see :cpp:member:`vnc_Viewer_AuthenticationCallback::requestUserCredentials`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :param needUser:
+    :type needUser: boolean
+    :param needPasswd:
+    :type needPasswd: boolean
+    :return: Ignored
+

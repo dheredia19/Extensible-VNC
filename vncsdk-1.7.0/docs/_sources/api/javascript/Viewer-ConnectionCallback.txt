@@ -1,0 +1,65 @@
+Viewer.ConnectionCallback
+=========================
+
+.. js:attribute:: vncsdk.Viewer.ConnectionCallback
+
+    Callback receiving state-change notifications for a Viewer.
+
+Method Summary
+--------------
+================= =====================================================================================================
+Modifier and Type Method and Description                                                                               
+================= =====================================================================================================
+\                 :js:func:`connecting <Viewer.ConnectionCallback.connecting>`\ (viewer)                               
+                                                                                                                       
+                  Notification that is called when the viewer begins a connection attempt to the server.               
+----------------- -----------------------------------------------------------------------------------------------------
+\                 :js:func:`disconnected <Viewer.ConnectionCallback.disconnected>`\ (viewer, reason, flags)            
+                                                                                                                       
+                  Notification that is called when the viewer disconnects from the server.                             
+----------------- -----------------------------------------------------------------------------------------------------
+\                 :js:func:`connected <Viewer.ConnectionCallback.connected>`\ (viewer)                                 
+                                                                                                                       
+                  Notification that is called when the viewer successfully connects to a server (after authentication).
+================= =====================================================================================================
+
+
+Methods
+-------
+
+.. js:function:: Viewer.ConnectionCallback.connecting(viewer)
+
+    Notification that is called when the viewer begins a connection attempt to
+    the server.
+
+    For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::connecting`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :return: Ignored
+
+.. js:function:: Viewer.ConnectionCallback.disconnected(viewer, reason, flags)
+
+    Notification that is called when the viewer disconnects from the server.
+
+    For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::disconnected`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :param reason:
+    :type reason: string or null
+    :param flags:
+    :type flags: Set<:js:attr:`vncsdk.Viewer.DisconnectFlags`>
+    :return: Ignored
+
+.. js:function:: Viewer.ConnectionCallback.connected(viewer)
+
+    Notification that is called when the viewer successfully connects to a
+    server (after authentication).
+
+    For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::connected`.
+
+    :param viewer:
+    :type viewer: :js:data:`vncsdk.Viewer`
+    :return: Ignored
+

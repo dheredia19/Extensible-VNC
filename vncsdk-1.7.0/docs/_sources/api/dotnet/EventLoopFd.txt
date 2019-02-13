@@ -1,0 +1,61 @@
+.. _EventLoopFd:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+EventLoopFd
+-----------
+
+.. class:: EventLoopFd
+
+    A container for static methods.
+
+    For more information, see :cpp:class:`vnc_EventLoopFd`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`EventLoopFd.Callback`
+- :ref:`EventLoopFd.Event`
+
+**Method summary**
+
+================= =================================================================================
+Modifier and Type Method and Description                                                           
+================= =================================================================================
+:type:`void`      :meth:`EventLoopFd.SetCallback`\ (:type:`EventLoopFd.Callback`)                  
+                                                                                                   
+                  Sets the event loop callback.                                                    
+----------------- ---------------------------------------------------------------------------------
+:type:`void`      :meth:`EventLoopFd.MarkEvents`\ (:type:`System.Int32`, :type:`EventLoopFd.Event`)
+                                                                                                   
+                  Marks event(s) that occurred on the specified file descriptor.                   
+----------------- ---------------------------------------------------------------------------------
+:type:`int`       :meth:`EventLoopFd.HandleEvents`\ ()                                             
+                                                                                                   
+                  Handles events on the file descriptors and process expired timers.               
+================= =================================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: void EventLoopFd.SetCallback(EventLoopFd.Callback a)
+
+    Sets the event loop callback.
+
+    For more information, see :cpp:func:`vnc_EventLoopFd_setCallback`\  in the C API documentation.
+
+.. method:: void EventLoopFd.MarkEvents(System.Int32 a, EventLoopFd.Event b)
+
+    Marks event(s) that occurred on the specified file descriptor.
+
+    For more information, see :cpp:func:`vnc_EventLoopFd_markEvents`\  in the C API documentation.
+
+.. method:: int EventLoopFd.HandleEvents()
+
+    Handles events on the file descriptors and process expired timers.
+
+    For more information, see :cpp:func:`vnc_EventLoopFd_handleEvents`\  in the C API documentation.
+

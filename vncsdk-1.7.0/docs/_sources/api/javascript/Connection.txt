@@ -1,0 +1,6 @@
+Connection
+==========
+
+.. js:data:: vncsdk.Connection
+
+    Opaque type for a connection, identifying a Viewer connected to a Server.

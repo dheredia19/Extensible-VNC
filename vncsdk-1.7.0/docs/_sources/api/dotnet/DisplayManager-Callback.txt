@@ -1,0 +1,72 @@
+.. _DisplayManager.Callback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DisplayManager.Callback
+-----------------------
+
+.. class:: DisplayManager.Callback
+
+    Callback receiving display changes.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_Callback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`DisplayManager.Callback.DisplaysChangedType`
+
+**Constructor summary**
+
+================= ======================================================================================
+Modifier and Type Method and Description                                                                
+================= ======================================================================================
+\                 :meth:`DisplayManager.Callback`\ (:attr:`DisplayManager.Callback.DisplaysChangedType`)
+                                                                                                        
+                  Initializes a new Callback class instance.                                            
+================= ======================================================================================
+
+
+**Method summary**
+
+================= ===========================================================================
+Modifier and Type Method and Description                                                     
+================= ===========================================================================
+:type:`void`      :meth:`DisplayManager.Callback.OnDisplaysChanged`\ (:type:`DisplayManager`)
+                                                                                             
+                  Handles the DisplaysChanged event.                                         
+                  By default, calls the DisplaysChanged delegate.                            
+================= ===========================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: DisplayManager.Callback(DisplayManager.Callback.DisplaysChangedType a)
+
+    Initializes a new Callback class instance.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_Callback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void DisplayManager.Callback.OnDisplaysChanged(DisplayManager a)
+
+    Handles the DisplaysChanged event.
+    By default, calls the DisplaysChanged delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  DisplayManager.Callback.DisplaysChanged
+
+    Notification that a display has been added or removed, or the resolution 
+    of an existing display has changed.
+
+    For more information, see :cpp:member:`vnc_DisplayManager_Callback::displaysChanged`\  in the C API documentation.
+

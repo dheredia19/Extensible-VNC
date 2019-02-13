@@ -1,0 +1,44 @@
+Server.Permissions
+==================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum Permissions
+   :outertype: Server
+
+   Enumeration of session permissions that can be granted to a connecting Viewer.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final Server.Permissions PERM_ALL
+   :outertype: Server.Permissions
+
+   Grants a Viewer a full set of permissions (that is, all of the above).
+
+.. java:field:: public static final Server.Permissions PERM_ANNOTATION
+   :outertype: Server.Permissions
+
+   Grants a Viewer permission to draw on the Server screen.
+
+.. java:field:: public static final Server.Permissions PERM_CLIPBOARD
+   :outertype: Server.Permissions
+
+   Grants a Viewer permission to copy and paste text to and from the Server.
+
+.. java:field:: public static final Server.Permissions PERM_KEYBOARD
+   :outertype: Server.Permissions
+
+   Grants a Viewer permission to inject keyboard events.
+
+.. java:field:: public static final Server.Permissions PERM_POINTER
+   :outertype: Server.Permissions
+
+   Grants a Viewer permission to inject mouse and touch events.
+
+.. java:field:: public static final Server.Permissions PERM_VIEW
+   :outertype: Server.Permissions
+
+   Grants a Viewer permission to see the screen. Rarely omitted.
+

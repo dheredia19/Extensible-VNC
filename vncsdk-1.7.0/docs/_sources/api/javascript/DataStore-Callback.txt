@@ -1,0 +1,47 @@
+DataStore.Callback
+==================
+
+.. js:attribute:: vncsdk.DataStore.Callback
+
+    Callback providing custom storage of data used by the SDK.
+
+Method Summary
+--------------
+==================================== =====================================================
+Modifier and Type                    Method and Description                               
+==================================== =====================================================
+:js:data:`vncsdk.DataBuffer` or null :js:func:`get <DataStore.Callback.get>`\ (key)       
+                                                                                          
+                                     Requests data stored in your custom data store.      
+------------------------------------ -----------------------------------------------------
+\                                    :js:func:`put <DataStore.Callback.put>`\ (key, value)
+                                                                                          
+                                     Requests storing data in your custom data store.     
+==================================== =====================================================
+
+
+Methods
+-------
+
+.. js:function:: DataStore.Callback.get(key)
+
+    Requests data stored in your custom data store.
+
+    For more information, see :cpp:member:`vnc_DataStore_Callback::get`.
+
+    :param key:
+    :type key: string or null
+    :rtype: :js:data:`vncsdk.DataBuffer` or null
+
+.. js:function:: DataStore.Callback.put(key, value)
+
+    Requests storing data in your custom data store.
+
+    For more information, see :cpp:member:`vnc_DataStore_Callback::put`.
+
+    :param key:
+    :type key: string or null
+    :param value:
+    :type value: :js:data:`vncsdk.DataBuffer`
+    :return: Ignored
+

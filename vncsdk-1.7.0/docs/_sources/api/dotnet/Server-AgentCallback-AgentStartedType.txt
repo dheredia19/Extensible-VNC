@@ -1,0 +1,15 @@
+.. _Server.AgentCallback.AgentStartedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.AgentCallback.AgentStartedType
+-------------------------------------
+
+.. attribute:: Server.AgentCallback.AgentStartedType
+
+    The type of the :attr:`Server.AgentCallback.AgentStarted`\  callback.
+
+    
+
+

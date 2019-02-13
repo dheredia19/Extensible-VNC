@@ -1,0 +1,148 @@
+.. _Library:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Library
+-------
+
+.. class:: Library
+
+    A class containing SDK global properties and methods.
+
+    
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`Library.EventLoopType`
+
+**Method summary**
+
+================= =====================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                               
+================= =====================================================================================================================================================
+:type:`void`      :meth:`Library.Init`\ (:type:`Library.EventLoopType`)                                                                                                
+                                                                                                                                                                       
+                  Initializes the VNC SDK and sets the event loop type.                                                                                                
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Library.EnableAddOn`\ (:type:`System.String`)                                                                                                 
+                                                                                                                                                                       
+                  Enable an SDK add-on by passing in the content of the add-on code,                                                                                   
+                  obtained from RealVNC.                                                                                                                               
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Library.SetCloudProxySettings`\ (:type:`System.Boolean`, :type:`System.String`)                                                               
+                                                                                                                                                                       
+                  Specifies proxy server settings for Cloud connections; note these settings                                                                           
+                  are adopted for all subsequent outgoing Cloud connections.                                                                                           
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`string`    :meth:`Library.GetLastError`\ ()                                                                                                                     
+                                                                                                                                                                       
+                  Gets the error produced by the last API call.                                                                                                        
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`int`       :meth:`Library.GetMajorVersion`\ ()                                                                                                                  
+                                                                                                                                                                       
+                  Returns the runtime major version number of the SDK.                                                                                                 
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`int`       :meth:`Library.GetMinorVersion`\ ()                                                                                                                  
+                                                                                                                                                                       
+                  Returns the runtime minor version number of the SDK.                                                                                                 
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`int`       :meth:`Library.GetPatchVersion`\ ()                                                                                                                  
+                                                                                                                                                                       
+                  Returns the runtime patch version number of the SDK.                                                                                                 
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`int`       :meth:`Library.GetBuildNumber`\ ()                                                                                                                   
+                                                                                                                                                                       
+                  Returns the runtime build number of the SDK.                                                                                                         
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Library.Shutdown`\ ()                                                                                                                         
+                                                                                                                                                                       
+                  Shuts down the SDK, ensuring that any resources are cleared up.                                                                                      
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`Library.InitInternal`\ (:type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`, :type:`Library.EventLoopType`)
+                                                                                                                                                                       
+                  This should not be called directly, instead the init() macro should be                                                                               
+                  used.                                                                                                                                                
+----------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+:type:`int`       :meth:`Library.UnicodeToKeysym`\ (:type:`System.Int32`)                                                                                              
+                                                                                                                                                                       
+                  Converts a unicode character to a keysym, suitable for passing to                                                                                    
+                  Viewer.sendKeyDown().                                                                                                                                
+================= =====================================================================================================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: void Library.Init(Library.EventLoopType a)
+
+    Initializes the VNC SDK and sets the event loop type.
+
+    
+
+.. method:: void Library.EnableAddOn(System.String a)
+
+    Enable an SDK add-on by passing in the content of the add-on code,
+    obtained from RealVNC.
+
+    For more information, see :cpp:func:`vnc_enableAddOn`\  in the C API documentation.
+
+.. method:: void Library.SetCloudProxySettings(System.Boolean a, System.String b)
+
+    Specifies proxy server settings for Cloud connections; note these settings
+    are adopted for all subsequent outgoing Cloud connections.
+
+    For more information, see :cpp:func:`vnc_setCloudProxySettings`\  in the C API documentation.
+
+.. method:: string Library.GetLastError()
+
+    Gets the error produced by the last API call.
+
+    For more information, see :cpp:func:`vnc_getLastError`\  in the C API documentation.
+
+.. method:: int Library.GetMajorVersion()
+
+    Returns the runtime major version number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getMajorVersion`\  in the C API documentation.
+
+.. method:: int Library.GetMinorVersion()
+
+    Returns the runtime minor version number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getMinorVersion`\  in the C API documentation.
+
+.. method:: int Library.GetPatchVersion()
+
+    Returns the runtime patch version number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getPatchVersion`\  in the C API documentation.
+
+.. method:: int Library.GetBuildNumber()
+
+    Returns the runtime build number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getBuildNumber`\  in the C API documentation.
+
+.. method:: void Library.Shutdown()
+
+    Shuts down the SDK, ensuring that any resources are cleared up.
+
+    For more information, see :cpp:func:`vnc_shutdown`\  in the C API documentation.
+
+.. method:: void Library.InitInternal(System.Int32 a, System.Int32 b, System.Int32 c, System.Int32 d, Library.EventLoopType e)
+
+    This should not be called directly, instead the init() macro should be
+    used.
+
+    For more information, see :cpp:func:`vnc_initInternal`\  in the C API documentation.
+
+.. method:: int Library.UnicodeToKeysym(System.Int32 a)
+
+    Converts a unicode character to a keysym, suitable for passing to
+    Viewer.sendKeyDown().
+
+    For more information, see :cpp:func:`vnc_unicodeToKeysym`\  in the C API documentation.
+

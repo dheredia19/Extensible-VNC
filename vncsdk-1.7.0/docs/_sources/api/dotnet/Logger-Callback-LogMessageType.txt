@@ -1,0 +1,15 @@
+.. _Logger.Callback.LogMessageType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Logger.Callback.LogMessageType
+------------------------------
+
+.. attribute:: Logger.Callback.LogMessageType
+
+    The type of the :attr:`Logger.Callback.LogMessage`\  callback.
+
+    
+
+

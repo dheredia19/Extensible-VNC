@@ -1,0 +1,123 @@
+The vncsdk module
+=================
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.EventLoopType`
+
+Method Summary
+--------------
+================= =====================================================================================================================================
+Modifier and Type Method and Description                                                                                                               
+================= =====================================================================================================================================
+\                 :py:func:`enable_add_on <vncsdk.enable_add_on>`\ (add_on_code)                                                                       
+                                                                                                                                                       
+                  Enable an SDK add-on by passing in the content of the add-on code, obtained from RealVNC.                                            
+----------------- -------------------------------------------------------------------------------------------------------------------------------------
+int               :py:func:`get_build_number <vncsdk.get_build_number>`\ ()                                                                            
+                                                                                                                                                       
+                  Returns the runtime build number of the SDK.                                                                                         
+----------------- -------------------------------------------------------------------------------------------------------------------------------------
+int               :py:func:`get_major_version <vncsdk.get_major_version>`\ ()                                                                          
+                                                                                                                                                       
+                  Returns the runtime major version number of the SDK.                                                                                 
+----------------- -------------------------------------------------------------------------------------------------------------------------------------
+int               :py:func:`get_minor_version <vncsdk.get_minor_version>`\ ()                                                                          
+                                                                                                                                                       
+                  Returns the runtime minor version number of the SDK.                                                                                 
+----------------- -------------------------------------------------------------------------------------------------------------------------------------
+int               :py:func:`get_patch_version <vncsdk.get_patch_version>`\ ()                                                                          
+                                                                                                                                                       
+                  Returns the runtime patch version number of the SDK.                                                                                 
+----------------- -------------------------------------------------------------------------------------------------------------------------------------
+\                 :py:func:`set_cloud_proxy_settings <vncsdk.set_cloud_proxy_settings>`\ (system_proxy, proxy_url)                                     
+                                                                                                                                                       
+                  Specifies proxy server settings for Cloud connections; note these settings are adopted for all subsequent outgoing Cloud connections.
+----------------- -------------------------------------------------------------------------------------------------------------------------------------
+\                 :py:func:`shutdown <vncsdk.shutdown>`\ ()                                                                                            
+                                                                                                                                                       
+                  Shuts down the SDK, ensuring that any resources are cleared up.                                                                      
+----------------- -------------------------------------------------------------------------------------------------------------------------------------
+int               :py:func:`unicode_to_keysym <vncsdk.unicode_to_keysym>`\ (unicode_char)                                                              
+                                                                                                                                                       
+                  Converts a unicode character to a keysym, suitable for passing to :py:meth:`Viewer.send_key_down()`.                                 
+================= =====================================================================================================================================
+
+
+Static methods
+--------------
+
+
+.. py:function:: vncsdk.enable_add_on(add_on_code)
+
+    Enable an SDK add-on by passing in the content of the add-on code,
+    obtained from RealVNC.
+
+    For more information, see :cpp:func:`vnc_enableAddOn`.
+
+    :param add_on_code:
+    :type add_on_code: str
+
+.. py:function:: vncsdk.get_build_number()
+
+    Returns the runtime build number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getBuildNumber`.
+
+    :rtype: int
+
+.. py:function:: vncsdk.get_major_version()
+
+    Returns the runtime major version number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getMajorVersion`.
+
+    :rtype: int
+
+.. py:function:: vncsdk.get_minor_version()
+
+    Returns the runtime minor version number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getMinorVersion`.
+
+    :rtype: int
+
+.. py:function:: vncsdk.get_patch_version()
+
+    Returns the runtime patch version number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getPatchVersion`.
+
+    :rtype: int
+
+.. py:function:: vncsdk.set_cloud_proxy_settings(system_proxy, proxy_url)
+
+    Specifies proxy server settings for Cloud connections; note these settings
+    are adopted for all subsequent outgoing Cloud connections.
+
+    For more information, see :cpp:func:`vnc_setCloudProxySettings`.
+
+    :param system_proxy:
+    :type system_proxy: bool
+    :param proxy_url:
+    :type proxy_url: str or None
+
+.. py:function:: vncsdk.shutdown()
+
+    Shuts down the SDK, ensuring that any resources are cleared up.
+
+    For more information, see :cpp:func:`vnc_shutdown`.
+
+
+.. py:function:: vncsdk.unicode_to_keysym(unicode_char)
+
+    Converts a unicode character to a keysym, suitable for passing to
+    :py:meth:`Viewer.send_key_down()`.
+
+    For more information, see :cpp:func:`vnc_unicodeToKeysym`.
+
+    :param unicode_char:
+    :type unicode_char: int
+    :rtype: int
+

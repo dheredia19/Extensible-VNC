@@ -1,0 +1,33 @@
+AnnotationManager.Callback
+==========================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface Callback
+   :outertype: AnnotationManager
+
+   Callback receiving annotation-related notifications
+
+   **See also:** :java:ref:`AnnotationManager.setCallback`
+
+Method Summary
+--------------
+================= =================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                           
+================= =================================================================================================================================================================================
+:java:type:`void` :java:meth:`availabilityChanged <Callback.availabilityChanged(AnnotationManager, boolean)>`\ (:java:type:`AnnotationManager` annotationManager, :java:type:`boolean` isAvailable)
+                                                                                                                                                                                                   
+                  Notification that annotation availability has changed.                                                                                                                           
+================= =================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void availabilityChanged(AnnotationManager annotationManager, boolean isAvailable)
+   :outertype: AnnotationManager.Callback
+
+   Notification that annotation availability has changed.
+
+   For more information, see :cpp:member:`vnc_AnnotationManager_Callback::availabilityChanged`.
+

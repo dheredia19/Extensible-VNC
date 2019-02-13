@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="_static/img/favicon.ico">
+  <title>VNC Developer | Docs
+    
+        
+     | Overview (v1.7.0)</title>
+  
+    <link rel="stylesheet" href="_static/css/normalize.css">
+    <link rel="stylesheet" href="_static/css/foundation.css">
+    <link rel="stylesheet" href="_static/css/app.css">
+    <style>.inner-wrap span.logo { background-image: url("_static/img/logos/developer.svg"); }</style>
+  
+  
+    <link rel="top" title="VNC® SDK 1.7.0 documentation" href="index.html">
+    <link rel="next" title="Release notes" href="release-notes.html">
+    <link rel="prev" title="VNC SDK documentation" href="index.html">
+  <link rel="stylesheet" href="_static/css/font-awesome.min.css">
+  <link rel="stylesheet" href="_static/css/pygments.css">
+
+</head>
+<body class="template-sphinx">
+
+  
+
+  <div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+      <nav id="top-bar" class="top-bar show-for-large-up hide-for-print" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name"><h1><a href="index.html"><span class="logo">VNC Developer</span></a></h1></li>
+        </ul>
+      </nav>
+      <nav class="tab-bar hide-for-large-up hide-for-print">
+        <section class="left tab-bar-section">
+          <h1 class="title"><a href="index.html"><span class="logo">VNC Developer</span></a></h1>
+        </section>
+      </nav>
+      <div class="main-section">
+        
+  <div id="hero" class="with-background">
+    <div class="row">
+      <div class="large-offset-2 large-8 medium-offset-1 medium-10 small-12 columns">
+        <h1>Documentation</h1>
+        <div class="rich-text"><p>Learn how to evaluate and integrate the VNC SDK</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-3 medium-4 small-12 columns">
+      <nav id="sidebar" class="hide-for-print">
+        <div id="mobile-breadcrumb" class="show-for-small"></div>
+        <div id="mobile-title" class="show-for-small">Overview</div>
+        <div class="show-for-medium-up">
+          <div role="search">
+            <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              <input type="hidden" name="check_keywords" value="yes">
+              <input type="hidden" name="area" value="default">
+            </form>
+          </div>
+          <div id="toctree">
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#evaluating-the-sdk">Evaluating the SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#expiry">Expiry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-platforms">Supported platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-custom-app">Creating a custom app</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-single-shot-or-persistent-desktop-server-app">Creating a single-shot or persistent desktop Server app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-view-only-android-server-app">Creating a view-only Android Server app</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#connectivity">Connectivity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-vnc-cloud">Using VNC Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-devices-directly">Connecting devices directly</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#screen-capture-and-framebuffers">Screen capture and framebuffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-event-handling-and-injection">Input event handling and injection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annotating-a-server-device-screen">Annotating a Server device screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sending-your-own-messages-data-or-files">Sending your own messages, data or files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-stores-and-memory-management">Data stores and memory management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#event-loops-and-threading">Event loops and threading</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thread-safety">Thread safety</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#callbacks">Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logging-and-error-handling">Logging and error handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploying-a-server-app">Deploying a Server app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploying-a-viewer-app">Deploying a Viewer app</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes.html">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-7-0">VNC SDK 1.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-6-0">VNC SDK 1.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-5-1">VNC SDK 1.5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-5-0">VNC SDK 1.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-4-1">VNC SDK 1.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-4-0">VNC SDK 1.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-3-1">VNC SDK 1.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-3-0">VNC SDK 1.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-2-0">VNC SDK 1.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-1-1">VNC SDK 1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-1-0">VNC SDK 1.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-cloud-1-1">VNC Cloud 1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html#vnc-sdk-1-0-1">VNC SDK 1.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/c/index.html">C API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/c/AddOn.h.html">AddOn.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Annotation.h.html">Annotation.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Cloud.h.html">Cloud.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Common.h.html">Common.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/DataBuffer.h.html">DataBuffer.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/DataStore.h.html">DataStore.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/DirectTcp.h.html">DirectTcp.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Displays.h.html">Displays.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Errors.h.html">Errors.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/EventLoop.h.html">EventLoop.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/EventLoopFd.h.html">EventLoopFd.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/EventLoopWin.h.html">EventLoopWin.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Init.h.html">Init.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Keyboard.h.html">Keyboard.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Logger.h.html">Logger.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Messaging.h.html">Messaging.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/PixelFormat.h.html">PixelFormat.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/RsaKey.h.html">RsaKey.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Server.h.html">Server.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Version.h.html">Version.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Viewer.h.html">Viewer.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/c/Vnc.h.html">Vnc.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/java/index.html">Java API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/java/AnnotationManager.html">AnnotationManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/AnnotationManager.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/AnnotationManager.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/AnnotationManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/AnnotationManager-Callback.html">AnnotationManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/AnnotationManager-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/AnnotationManager-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/CloudAddressMonitor.html">CloudAddressMonitor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudAddressMonitor.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudAddressMonitor.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudAddressMonitor.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudAddressMonitor.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudAddressMonitor.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/CloudAddressMonitor-Availability.html">CloudAddressMonitor.Availability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudAddressMonitor-Availability.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/CloudAddressMonitor-Callback.html">CloudAddressMonitor.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudAddressMonitor-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudAddressMonitor-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/CloudConnector.html">CloudConnector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudConnector.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudConnector.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudConnector.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudConnector.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/CloudListener.html">CloudListener</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudListener.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudListener.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudListener.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudListener.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudListener.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/CloudListener-Callback.html">CloudListener.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudListener-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudListener-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/CloudListener-Status.html">CloudListener.Status</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/CloudListener-Status.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Connection.html">Connection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Connection.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Connection.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/ConnectionHandler.html">ConnectionHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/DataBuffer.html">DataBuffer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DataBuffer.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DataBuffer.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DataBuffer.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DataBuffer.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/DataStore.html">DataStore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DataStore.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DataStore.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DataStore.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/DataStore-Callback.html">DataStore.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DataStore-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DataStore-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/DirectTcp.html">DirectTcp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcp.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/DirectTcpConnector.html">DirectTcpConnector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpConnector.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpConnector.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpConnector.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpConnector.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/DirectTcpListener.html">DirectTcpListener</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpListener.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpListener.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpListener.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpListener.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpListener.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/DirectTcpListener-Callback.html">DirectTcpListener.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpListener-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DirectTcpListener-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/DisplayManager.html">DisplayManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DisplayManager.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DisplayManager.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DisplayManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/DisplayManager-Callback.html">DisplayManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DisplayManager-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/DisplayManager-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/EventLoop.html">EventLoop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/EventLoop.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/EventLoop.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/ImmutableDataBuffer.html">ImmutableDataBuffer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/ImmutableDataBuffer.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/ImmutableDataBuffer.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/ImmutablePixelFormat.html">ImmutablePixelFormat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/ImmutablePixelFormat.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/ImmutablePixelFormat.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Keyboard.html">Keyboard</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Keyboard.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Library.html">Library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Library.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Library.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Library.html#fields">Fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Library.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Library-DestroyedObjectException.html">Library.DestroyedObjectException</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Library-DestroyedObjectException.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Library-DestroyedObjectException.html#constructors">Constructors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Library-EventLoopType.html">Library.EventLoopType</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Library-EventLoopType.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Library-VncException.html">Library.VncException</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Library-VncException.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Library-VncException.html#fields">Fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Library-VncException.html#constructors">Constructors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Logger.html">Logger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Logger.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Logger.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Logger.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Logger-Callback.html">Logger.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Logger-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Logger-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Logger-Level.html">Logger.Level</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Logger-Level.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/MessagingManager.html">MessagingManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/MessagingManager.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/MessagingManager.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/MessagingManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/MessagingManager-Callback.html">MessagingManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/MessagingManager-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/MessagingManager-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/PixelFormat.html">PixelFormat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/PixelFormat.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/PixelFormat.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/PixelFormat.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/PixelFormat.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/RsaKey.html">RsaKey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/RsaKey.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/RsaKey.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/RsaKey.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/RsaKey-Callback.html">RsaKey.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/RsaKey-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/RsaKey-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Server.html">Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Server-AgentCallback.html">Server.AgentCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server-AgentCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server-AgentCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Server-CaptureMethod.html">Server.CaptureMethod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server-CaptureMethod.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Server-ConnectionCallback.html">Server.ConnectionCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server-ConnectionCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server-ConnectionCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Server-DisconnectFlags.html">Server.DisconnectFlags</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server-DisconnectFlags.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Server-EncryptionLevel.html">Server.EncryptionLevel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server-EncryptionLevel.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Server-Permissions.html">Server.Permissions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server-Permissions.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Server-SecurityCallback.html">Server.SecurityCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server-SecurityCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Server-SecurityCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/ServerImageCallback.html">ServerImageCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/ServerImageCallback.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/ServerImageCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/ServerImageCallback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/ServerImageCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer.html">Viewer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-AuthenticationCallback.html">Viewer.AuthenticationCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-AuthenticationCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-AuthenticationCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-ConnectionCallback.html">Viewer.ConnectionCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-ConnectionCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-ConnectionCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-ConnectionStatus.html">Viewer.ConnectionStatus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-ConnectionStatus.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-DisconnectFlags.html">Viewer.DisconnectFlags</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-DisconnectFlags.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-EncryptionLevel.html">Viewer.EncryptionLevel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-EncryptionLevel.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-FramebufferCallback.html">Viewer.FramebufferCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-FramebufferCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-FramebufferCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-MouseButton.html">Viewer.MouseButton</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-MouseButton.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-MouseWheel.html">Viewer.MouseWheel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-MouseWheel.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-PeerVerificationCallback.html">Viewer.PeerVerificationCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-PeerVerificationCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-PeerVerificationCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-PictureQuality.html">Viewer.PictureQuality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-PictureQuality.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/java/Viewer-ServerEventCallback.html">Viewer.ServerEventCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-ServerEventCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/java/Viewer-ServerEventCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/javascript/index.html">JavaScript API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/vncsdk.html">The vncsdk module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/vncsdk.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/vncsdk.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/AnnotationManager.html">AnnotationManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/AnnotationManager.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/AnnotationManager.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/AnnotationManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/AnnotationManager-Callback.html">AnnotationManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/AnnotationManager-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/AnnotationManager-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/CloudAddressMonitor.html">CloudAddressMonitor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudAddressMonitor.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudAddressMonitor.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudAddressMonitor.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudAddressMonitor.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudAddressMonitor.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/CloudAddressMonitor-Availability.html">CloudAddressMonitor.Availability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudAddressMonitor-Availability.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/CloudAddressMonitor-Callback.html">CloudAddressMonitor.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudAddressMonitor-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudAddressMonitor-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/CloudConnector.html">CloudConnector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudConnector.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudConnector.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudConnector.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudConnector.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/CloudListener.html">CloudListener</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudListener.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudListener.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudListener.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudListener.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudListener.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/CloudListener-Callback.html">CloudListener.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudListener-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudListener-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/CloudListener-Status.html">CloudListener.Status</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/CloudListener-Status.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Connection.html">Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/ConnectionHandler.html">ConnectionHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/DataBuffer.html">DataBuffer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DataBuffer.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DataBuffer.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DataBuffer.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DataBuffer.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/DataStore.html">DataStore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DataStore.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DataStore.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DataStore.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/DataStore-Callback.html">DataStore.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DataStore-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DataStore-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/DestroyedObjectError.html">DestroyedObjectError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DestroyedObjectError.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DestroyedObjectError.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DestroyedObjectError.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/DestroyedObjectError.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Keyboard.html">Keyboard</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Keyboard.html#members">Members</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Logger.html">Logger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Logger.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Logger.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Logger.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Logger-Callback.html">Logger.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Logger-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Logger-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Logger-Level.html">Logger.Level</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Logger-Level.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/MessagingManager.html">MessagingManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/MessagingManager.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/MessagingManager.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/MessagingManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/MessagingManager-Callback.html">MessagingManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/MessagingManager-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/MessagingManager-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/PixelFormat.html">PixelFormat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/PixelFormat.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/PixelFormat.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/PixelFormat.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/PixelFormat.html#static-methods">Static methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/PixelFormat.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/RsaKey.html">RsaKey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/RsaKey.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/RsaKey.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/RsaKey.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/RsaKey-Callback.html">RsaKey.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/RsaKey-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/RsaKey-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Set.html">Set</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Set.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Set.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Set.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Set.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer.html">Viewer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-AuthenticationCallback.html">Viewer.AuthenticationCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-AuthenticationCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-AuthenticationCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-ConnectionCallback.html">Viewer.ConnectionCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-ConnectionCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-ConnectionCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-ConnectionStatus.html">Viewer.ConnectionStatus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-ConnectionStatus.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-DisconnectFlags.html">Viewer.DisconnectFlags</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-DisconnectFlags.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-EncryptionLevel.html">Viewer.EncryptionLevel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-EncryptionLevel.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-FramebufferCallback.html">Viewer.FramebufferCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-FramebufferCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-FramebufferCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-MouseButton.html">Viewer.MouseButton</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-MouseButton.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-MouseWheel.html">Viewer.MouseWheel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-MouseWheel.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-PeerVerificationCallback.html">Viewer.PeerVerificationCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-PeerVerificationCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-PeerVerificationCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-PictureQuality.html">Viewer.PictureQuality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-PictureQuality.html#enum-constants">Enum Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-ServerEventCallback.html">Viewer.ServerEventCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-ServerEventCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/Viewer-ServerEventCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/Viewer-ViewerCanvasContext.html">Viewer.ViewerCanvasContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/javascript/VncException.html">VncException</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/VncException.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/VncException.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/VncException.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/VncException.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/javascript/VncException.html#attributes">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/python/index.html">Python API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/python/vncsdk.html">The vncsdk module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/vncsdk.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/vncsdk.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/vncsdk.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/AnnotationManager.html">AnnotationManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/AnnotationManager.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/AnnotationManager.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/AnnotationManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/AnnotationManager-Callback.html">AnnotationManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/AnnotationManager-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/AnnotationManager-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/CloudAddressMonitor.html">CloudAddressMonitor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudAddressMonitor.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudAddressMonitor.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudAddressMonitor.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudAddressMonitor.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudAddressMonitor.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/CloudAddressMonitor-Availability.html">CloudAddressMonitor.Availability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudAddressMonitor-Availability.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/CloudAddressMonitor-Callback.html">CloudAddressMonitor.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudAddressMonitor-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudAddressMonitor-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/CloudConnector.html">CloudConnector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudConnector.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudConnector.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudConnector.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudConnector.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/CloudListener.html">CloudListener</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudListener.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudListener.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudListener.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudListener.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudListener.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/CloudListener-Callback.html">CloudListener.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudListener-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudListener-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/CloudListener-Status.html">CloudListener.Status</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/CloudListener-Status.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Connection.html">Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/ConnectionHandler.html">ConnectionHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/DataBuffer.html">DataBuffer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DataBuffer.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DataBuffer.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DataBuffer.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DataBuffer.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/DataStore.html">DataStore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DataStore.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DataStore.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DataStore.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/DataStore-Callback.html">DataStore.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DataStore-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DataStore-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/DirectTcp.html">DirectTcp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcp.html#members">Members</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/DirectTcpConnector.html">DirectTcpConnector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpConnector.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpConnector.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpConnector.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpConnector.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/DirectTcpListener.html">DirectTcpListener</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpListener.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpListener.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpListener.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpListener.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpListener.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/DirectTcpListener-Callback.html">DirectTcpListener.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpListener-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DirectTcpListener-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/DisplayManager.html">DisplayManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DisplayManager.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DisplayManager.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DisplayManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/DisplayManager-Callback.html">DisplayManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DisplayManager-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/DisplayManager-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/EventLoop.html">EventLoop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoop.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoop.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/EventLoopFd.html">EventLoopFd</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopFd.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopFd.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopFd.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/EventLoopFd-Callback.html">EventLoopFd.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopFd-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopFd-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/EventLoopFd-Event.html">EventLoopFd.Event</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopFd-Event.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/EventLoopType.html">EventLoopType</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopType.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/EventLoopWin.html">EventLoopWin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopWin.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopWin.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopWin.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/EventLoopWin-Callback.html">EventLoopWin.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopWin-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/EventLoopWin-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Keyboard.html">Keyboard</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Keyboard.html#members">Members</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Logger.html">Logger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Logger.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Logger.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Logger.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Logger-Callback.html">Logger.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Logger-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Logger-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Logger-Level.html">Logger.Level</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Logger-Level.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/MessagingManager.html">MessagingManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/MessagingManager.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/MessagingManager.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/MessagingManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/MessagingManager-Callback.html">MessagingManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/MessagingManager-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/MessagingManager-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/PixelFormat.html">PixelFormat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/PixelFormat.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/PixelFormat.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/PixelFormat.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/PixelFormat.html#static-methods">Static methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/PixelFormat.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/RsaKey.html">RsaKey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/RsaKey.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/RsaKey.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/RsaKey.html#static-methods">Static methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/RsaKey-Callback.html">RsaKey.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/RsaKey-Callback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/RsaKey-Callback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Server.html">Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Server-AgentCallback.html">Server.AgentCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server-AgentCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server-AgentCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Server-CaptureMethod.html">Server.CaptureMethod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server-CaptureMethod.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Server-ConnectionCallback.html">Server.ConnectionCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server-ConnectionCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server-ConnectionCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Server-DisconnectFlags.html">Server.DisconnectFlags</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server-DisconnectFlags.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Server-EncryptionLevel.html">Server.EncryptionLevel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server-EncryptionLevel.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Server-Permissions.html">Server.Permissions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server-Permissions.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Server-SecurityCallback.html">Server.SecurityCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server-SecurityCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Server-SecurityCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer.html">Viewer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer.html#nested-classes">Nested Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer.html#constructor-summary">Constructor Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-AuthenticationCallback.html">Viewer.AuthenticationCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-AuthenticationCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-AuthenticationCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-ConnectionCallback.html">Viewer.ConnectionCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-ConnectionCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-ConnectionCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-ConnectionStatus.html">Viewer.ConnectionStatus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-ConnectionStatus.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-DisconnectFlags.html">Viewer.DisconnectFlags</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-DisconnectFlags.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-EncryptionLevel.html">Viewer.EncryptionLevel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-EncryptionLevel.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-FramebufferCallback.html">Viewer.FramebufferCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-FramebufferCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-FramebufferCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-MouseButton.html">Viewer.MouseButton</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-MouseButton.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-MouseWheel.html">Viewer.MouseWheel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-MouseWheel.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-PeerVerificationCallback.html">Viewer.PeerVerificationCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-PeerVerificationCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-PeerVerificationCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-PictureQuality.html">Viewer.PictureQuality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-PictureQuality.html#enumeration-attributes">Enumeration Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/python/Viewer-ServerEventCallback.html">Viewer.ServerEventCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-ServerEventCallback.html#method-summary">Method Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/python/Viewer-ServerEventCallback.html#methods">Methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/dotnet/index.html">.NET API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/AnnotationManager.html">AnnotationManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/AnnotationManager.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/AnnotationManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/AnnotationManager-Callback.html">AnnotationManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/AnnotationManager-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/AnnotationManager-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/AnnotationManager-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/AnnotationManager-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/AnnotationManager-Callback-AvailabilityChangedType.html">AnnotationManager.Callback.AvailabilityChangedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudAddressMonitor.html">CloudAddressMonitor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudAddressMonitor.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudAddressMonitor.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudAddressMonitor.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudAddressMonitor-Availability.html">CloudAddressMonitor.Availability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudAddressMonitor-Availability.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudAddressMonitor-Callback.html">CloudAddressMonitor.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudAddressMonitor-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudAddressMonitor-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudAddressMonitor-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudAddressMonitor-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudAddressMonitor-Callback-AvailabilityChangedType.html">CloudAddressMonitor.Callback.AvailabilityChangedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudAddressMonitor-Callback-MonitorPausedType.html">CloudAddressMonitor.Callback.MonitorPausedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudConnector.html">CloudConnector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudConnector.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudConnector.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudListener.html">CloudListener</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudListener.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudListener.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudListener.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudListener-Callback.html">CloudListener.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudListener-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudListener-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudListener-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudListener-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudListener-Callback-FilterConnectionType.html">CloudListener.Callback.FilterConnectionType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudListener-Callback-ListeningFailedType.html">CloudListener.Callback.ListeningFailedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudListener-Callback-ListeningStatusChangedType.html">CloudListener.Callback.ListeningStatusChangedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/CloudListener-Status.html">CloudListener.Status</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/CloudListener-Status.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Connection.html">Connection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Connection.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/ConnectionHandler.html">ConnectionHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DataBuffer.html">DataBuffer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DataBuffer.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DataBuffer.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DataStore.html">DataStore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DataStore.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DataStore.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DataStore-Callback.html">DataStore.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DataStore-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DataStore-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DataStore-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DataStore-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DataStore-Callback-GetType.html">DataStore.Callback.GetType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DataStore-Callback-PutType.html">DataStore.Callback.PutType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DirectTcp.html">DirectTcp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DirectTcp.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DirectTcpConnector.html">DirectTcpConnector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DirectTcpConnector.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DirectTcpConnector.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DirectTcpListener.html">DirectTcpListener</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DirectTcpListener.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DirectTcpListener.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DirectTcpListener.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DirectTcpListener-Callback.html">DirectTcpListener.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DirectTcpListener-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DirectTcpListener-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DirectTcpListener-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DirectTcpListener-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DirectTcpListener-Callback-FilterConnectionType.html">DirectTcpListener.Callback.FilterConnectionType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DisplayManager.html">DisplayManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DisplayManager.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DisplayManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DisplayManager-Callback.html">DisplayManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DisplayManager-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DisplayManager-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DisplayManager-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DisplayManager-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DisplayManager-Callback-DisplaysChangedType.html">DisplayManager.Callback.DisplaysChangedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DynamicLoader.html">DynamicLoader</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DynamicLoader.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/DynamicLoader.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/DynamicLoader-Exception.html">DynamicLoader.Exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/EventLoop.html">EventLoop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoop.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/EventLoopFd.html">EventLoopFd</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopFd.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopFd.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/EventLoopFd-Callback.html">EventLoopFd.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopFd-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopFd-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopFd-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopFd-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/EventLoopFd-Callback-EventUpdatedType.html">EventLoopFd.Callback.EventUpdatedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/EventLoopFd-Callback-TimerUpdatedType.html">EventLoopFd.Callback.TimerUpdatedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/EventLoopFd-Event.html">EventLoopFd.Event</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopFd-Event.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/EventLoopWin.html">EventLoopWin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopWin.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopWin.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/EventLoopWin-Callback.html">EventLoopWin.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopWin-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopWin-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopWin-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/EventLoopWin-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/EventLoopWin-Callback-EventUpdatedType.html">EventLoopWin.Callback.EventUpdatedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/EventLoopWin-Callback-TimerUpdatedType.html">EventLoopWin.Callback.TimerUpdatedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/ImmutableDataBuffer.html">ImmutableDataBuffer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/ImmutableDataBuffer.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/ImmutablePixelFormat.html">ImmutablePixelFormat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/ImmutablePixelFormat.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Keyboard.html">Keyboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Library.html">Library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Library.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Library.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Library-EventLoopType.html">Library.EventLoopType</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Library-EventLoopType.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Logger.html">Logger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Logger.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Logger.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Logger-Callback.html">Logger.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Logger-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Logger-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Logger-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Logger-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Logger-Callback-LogMessageType.html">Logger.Callback.LogMessageType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Logger-Level.html">Logger.Level</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Logger-Level.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/MessagingManager.html">MessagingManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/MessagingManager.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/MessagingManager.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/MessagingManager-Callback.html">MessagingManager.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/MessagingManager-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/MessagingManager-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/MessagingManager-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/MessagingManager-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/MessagingManager-Callback-MessageReceivedType.html">MessagingManager.Callback.MessageReceivedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/PixelFormat.html">PixelFormat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/PixelFormat.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/PixelFormat.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/RsaKey.html">RsaKey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/RsaKey.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/RsaKey.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/RsaKey-Callback.html">RsaKey.Callback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/RsaKey-Callback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/RsaKey-Callback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/RsaKey-Callback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/RsaKey-Callback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/RsaKey-Callback-DetailsReadyType.html">RsaKey.Callback.DetailsReadyType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server.html">Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-AgentCallback.html">Server.AgentCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-AgentCallback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-AgentCallback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-AgentCallback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-AgentCallback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-AgentCallback-AgentStartedType.html">Server.AgentCallback.AgentStartedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-AgentCallback-AgentStoppedType.html">Server.AgentCallback.AgentStoppedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-CaptureMethod.html">Server.CaptureMethod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-CaptureMethod.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-ConnectionCallback.html">Server.ConnectionCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-ConnectionCallback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-ConnectionCallback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-ConnectionCallback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-ConnectionCallback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-ConnectionCallback-ConnectionEndedType.html">Server.ConnectionCallback.ConnectionEndedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-ConnectionCallback-ConnectionStartedType.html">Server.ConnectionCallback.ConnectionStartedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-DisconnectFlags.html">Server.DisconnectFlags</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-DisconnectFlags.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-EncryptionLevel.html">Server.EncryptionLevel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-EncryptionLevel.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-Permissions.html">Server.Permissions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-Permissions.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-SecurityCallback.html">Server.SecurityCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-SecurityCallback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-SecurityCallback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-SecurityCallback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Server-SecurityCallback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-SecurityCallback-AuthenticateUserType.html">Server.SecurityCallback.AuthenticateUserType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-SecurityCallback-IsPasswordRequiredType.html">Server.SecurityCallback.IsPasswordRequiredType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-SecurityCallback-IsUserNameRequiredType.html">Server.SecurityCallback.IsUserNameRequiredType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Server-SecurityCallback-VerifyPeerType.html">Server.SecurityCallback.VerifyPeerType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer.html">Viewer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer.html#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-AuthenticationCallback.html">Viewer.AuthenticationCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-AuthenticationCallback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-AuthenticationCallback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-AuthenticationCallback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-AuthenticationCallback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-AuthenticationCallback-CancelUserCredentialsRequestType.html">Viewer.AuthenticationCallback.CancelUserCredentialsRequestType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-AuthenticationCallback-RequestUserCredentialsType.html">Viewer.AuthenticationCallback.RequestUserCredentialsType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-ConnectionCallback.html">Viewer.ConnectionCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-ConnectionCallback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-ConnectionCallback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-ConnectionCallback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-ConnectionCallback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-ConnectionCallback-ConnectedType.html">Viewer.ConnectionCallback.ConnectedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-ConnectionCallback-ConnectingType.html">Viewer.ConnectionCallback.ConnectingType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-ConnectionCallback-DisconnectedType.html">Viewer.ConnectionCallback.DisconnectedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-ConnectionStatus.html">Viewer.ConnectionStatus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-ConnectionStatus.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-DisconnectFlags.html">Viewer.DisconnectFlags</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-DisconnectFlags.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-EncryptionLevel.html">Viewer.EncryptionLevel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-EncryptionLevel.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-FramebufferCallback.html">Viewer.FramebufferCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-FramebufferCallback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-FramebufferCallback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-FramebufferCallback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-FramebufferCallback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-FramebufferCallback-ServerFbSizeChangedType.html">Viewer.FramebufferCallback.ServerFbSizeChangedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-FramebufferCallback-ViewerFbUpdatedType.html">Viewer.FramebufferCallback.ViewerFbUpdatedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-MouseButton.html">Viewer.MouseButton</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-MouseButton.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-MouseWheel.html">Viewer.MouseWheel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-MouseWheel.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-PeerVerificationCallback.html">Viewer.PeerVerificationCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-PeerVerificationCallback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-PeerVerificationCallback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-PeerVerificationCallback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-PeerVerificationCallback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-PeerVerificationCallback-CancelPeerVerificationType.html">Viewer.PeerVerificationCallback.CancelPeerVerificationType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-PeerVerificationCallback-VerifyPeerType.html">Viewer.PeerVerificationCallback.VerifyPeerType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-PictureQuality.html">Viewer.PictureQuality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-PictureQuality.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-ServerEventCallback.html">Viewer.ServerEventCallback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-ServerEventCallback.html#nested-classes">Nested classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-ServerEventCallback.html#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-ServerEventCallback.html#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/Viewer-ServerEventCallback.html#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-ServerEventCallback-ServerClipboardTextChangedType.html">Viewer.ServerEventCallback.ServerClipboardTextChangedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/Viewer-ServerEventCallback-ServerFriendlyNameChangedType.html">Viewer.ServerEventCallback.ServerFriendlyNameChangedType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/dotnet/VncException.html">VncException</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/dotnet/VncException.html#properties">Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/cloud/index.html">VNC Cloud API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/cloud/index.html#api-summary">API summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/cloud/index.html#obtaining-a-new-cloud-address">Obtaining a new cloud address</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#http-request">HTTP request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#http-response">HTTP response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#http-status-codes">HTTP status codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/cloud/index.html#listing-your-current-cloud-addresses">Listing your current cloud addresses</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id2">HTTP request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id3">HTTP response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id4">HTTP status codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/cloud/index.html#checking-whether-a-cloud-address-is-ready-to-use">Checking whether a cloud address is ready to use</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id6">HTTP request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id7">HTTP response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id8">HTTP status codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/cloud/index.html#retrieving-the-details-of-a-cloud-address">Retrieving the details of a cloud address</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id10">HTTP request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id11">HTTP response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id12">HTTP status codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/cloud/index.html#changing-the-characteristics-of-a-cloud-address">Changing the characteristics of a Cloud address</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id14">HTTP request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id15">HTTP response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id16">HTTP status codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/cloud/index.html#resetting-a-cloud-address-password">Resetting a cloud address password</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id18">HTTP request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id19">HTTP response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id20">HTTP status codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/cloud/index.html#deleting-a-cloud-address">Deleting a cloud address</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id22">HTTP request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id23">HTTP response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/cloud/index.html#id24">HTTP status codes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="legal/index.html">Legal and support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="legal/foss.html">Free and open source software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legal/acknowledgements.html">Acknowledgements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#x-window-system">X Window System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#mbed-tls">mbed TLS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#aes">AES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#zlib">Zlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#xml-parser">XML parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#libpng">libpng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#jpeg">JPEG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#cjson">cJSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#mnemonicode">mnemonicode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#zstandard">ZStandard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#libopus">libopus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#speexdsp">speexdsp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#jquery">jQuery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#jquery-ui">jQuery UI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#tablesorter">tablesorter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legal/acknowledgements.html#highlight-js">highlight.js</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </nav>
+      <div id="sidebar-placeholder"></div>
+      <div id="sidebar-overlay"></div>
+    </div>
+    <div class="large-9 medium-8 small-12 columns rst-body
+      ">
+      
+  <style> .red {color:red} </style><div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right" style="width: 424px">
+<a class="reference internal image-reference" href="_images/Example.png"><img alt="_images/Example.png" src="_images/Example.png" style="width: 424.0px; height: 381.0px;" /></a>
+<div class="legend">
+<cite>Secure remote control of an Ubuntu 14.04 Linux computer running the
+Server sample app from a Windows 8.1 computer running the Viewer sample
+app.</cite></div>
+</div>
+<p>The VNC SDK enables you to create VNC-compatible Viewer and Server remote
+control apps for Windows, Linux, Mac, Raspberry Pi, iOS, Android and HTML 5 platforms.
+<a class="reference internal" href="#supported-platforms"><span>Full supported platforms list</span></a>.</p>
+<p>To connect devices, you can either let VNC Cloud seamlessly manage connectivity for you,
+or establish direct TCP connections yourself if the network environment allows. Or
+enable your apps to do both. <a class="reference internal" href="#connectivity"><span>More information</span></a>.</p>
+<div class="section" id="evaluating-the-sdk">
+<span id="evaluate"></span><h2>Evaluating the SDK<a class="headerlink" href="#evaluating-the-sdk" title="Permalink to this headline">¶</a></h2>
+<p>Sample apps for all platforms are located in the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples</span></code> directory. You will need:</p>
+<ul class="simple">
+<li>A Windows, Mac, or Linux computer you want to control (running the cross-platform <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicServer</span></code> sample app). For
+Raspberry Pi, follow the instructions for Linux. To evaluate a view-only session on an Android device, use <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicServerAndroid</span></code>.</li>
+<li>A Windows, Mac, or Linux computer, or iOS or Android device, you want to control from (running
+an appropriate <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicViewer&lt;plat&gt;</span></code> sample app). Alternatively, <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicViewerHTML5</span></code> can run in any HTML 5-enabled
+desktop web browser.</li>
+</ul>
+<p>We recommend using our sandbox VNC Cloud environment to evaluate connectivity. It&#8217;s free, the sample apps are ready-to-use, and you
+don&#8217;t have to reconfigure firewalls or routers. To connect two supported devices for the first time:</p>
+<ol class="arabic simple">
+<li>Unpack the SDK on a desktop computer.</li>
+<li>Use the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/tools/vnccloudaddresstool</span></code> in conjunction with your sandbox VNC Cloud API key (sign in to your RealVNC account and navigate to the <strong>API keys</strong> page) to obtain one Viewer and one Server cloud address.</li>
+<li>Hard-code the Server cloud address and password in <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicServer</span></code>, and build, deploy and run it on a supported computer.</li>
+<li>Hard-code the Viewer cloud address, password, and Server cloud address (that is, peer to connect to) in your <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicViewer&lt;plat&gt;</span></code> sample app, and build, deploy and run it on a supported device.</li>
+</ol>
+<p>See the sample app READMEs for precise instructions.</p>
+<p>To subsequently evaluate concurrent connections between multiple devices, it may be more convenient to remove hard-coded
+cloud addresses from sample apps and instead instruct device users to supply this information at run-time. Again, see the READMEs
+for how to do this on desktop platforms.</p>
+</div>
+<div class="section" id="expiry">
+<span id="id1"></span><h2>Expiry<a class="headerlink" href="#expiry" title="Permalink to this headline">¶</a></h2>
+<p>Viewer and Server apps (sample and custom) built against this version of the SDK will cease to run after <strong>30 August 2019</strong>.</p>
+</div>
+<div class="section" id="supported-platforms">
+<span id="id2"></span><h2>Supported platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this headline">¶</a></h2>
+<p>You can deploy Viewer and Server apps (sample and custom) to the following platforms. You may be able to deploy to other platforms, but this
+has not been tested. Note full remote control (screen capture <em>and</em> input injection) is available on most, but not all, Server platforms.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="16%" />
+<col width="16%" />
+<col width="13%" />
+<col width="14%" />
+<col width="12%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Windows</th>
+<th class="head">Linux</th>
+<th class="head">Raspi</th>
+<th class="head">macOS</th>
+<th class="head">iOS</th>
+<th class="head">Android</th>
+<th class="head">HTML 5</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Viewer</td>
+<td><p class="first">x86 and x64 unless otherwise stated:</p>
+<ul class="last simple">
+<li>Windows 10</li>
+<li>Windows 8.1/Server 2012 R2</li>
+<li>Windows 8.0/Server 2012</li>
+<li>Windows 7/Server 2008 R2</li>
+<li>Windows Vista/Server 2008</li>
+<li>Windows XP (x86) and Server 2003</li>
+</ul>
+</td>
+<td><p class="first">x86 and x64 unless otherwise stated:</p>
+<ul class="last simple">
+<li>Ubuntu 14.04+ (i386 and amd64)</li>
+<li>Red Hat and CentOS 7 (x64 only)</li>
+<li>Red Hat and CentOS 6</li>
+</ul>
+</td>
+<td><p class="first">arm6hf only:</p>
+<ul class="last simple">
+<li>Raspbian (Debian 8-9)</li>
+</ul>
+</td>
+<td><p class="first">x64 only:</p>
+<ul class="last simple">
+<li>10.13 High Sierra</li>
+<li>10.12 Sierra</li>
+<li>10.11 El Capitan</li>
+<li>10.10 Yosemite</li>
+</ul>
+</td>
+<td><p class="first">32-bit and 64-bit devices:</p>
+<ul class="last simple">
+<li>iOS 11</li>
+<li>iOS 10</li>
+<li>iOS 9</li>
+</ul>
+</td>
+<td><p class="first">x86, armeabi and armeabi-v7a:</p>
+<ul class="last simple">
+<li>Android 8</li>
+<li>Android 7</li>
+<li>Android 6</li>
+<li>Android 5</li>
+<li>Android 4.4</li>
+</ul>
+</td>
+<td><p class="first">Any desktop platform running:</p>
+<ul class="last simple">
+<li>Chrome (latest)</li>
+<li>Firefox (latest)</li>
+<li>Internet Explorer (11)</li>
+<li>Microsoft Edge (latest)</li>
+<li>Safari (latest)</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Server</td>
+<td><p class="first">FULL CONTROL</p>
+<ul class="last simple">
+<li><em>Same as above</em></li>
+</ul>
+</td>
+<td><p class="first">FULL CONTROL</p>
+<ul class="last simple">
+<li><em>Same as above</em></li>
+</ul>
+</td>
+<td><p class="first">FULL CONTROL</p>
+<ul class="last simple">
+<li><em>Same as above</em></li>
+</ul>
+</td>
+<td><p class="first">FULL CONTROL</p>
+<ul class="last simple">
+<li><em>Same as above</em></li>
+</ul>
+</td>
+<td>NOT AVAILABLE</td>
+<td><p class="first">VIEW-ONLY</p>
+<ul class="last simple">
+<li>Android 8</li>
+<li>Android 7</li>
+<li>Android 6</li>
+<li>Android 5</li>
+</ul>
+</td>
+<td>NOT AVAILABLE</td>
+</tr>
+<tr class="row-even"><td>Build env.</td>
+<td>Visual Studio 2010+</td>
+<td>Ubuntu 14.04+ and gcc 4.8.2+</td>
+<td>Pi Zero/1/2/3 and gcc 4.6.3+</td>
+<td>Xcode 7+ and macOS 10.10+ SDK</td>
+<td>Xcode 7+ and iOS 9+ SDK</td>
+<td>Android Studio and SDK</td>
+<td>A web server</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="use-cases">
+<span id="id3"></span><h2>Use cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
+<p>Typically, you use the SDK to create separate custom Viewer and Server apps. However, you can create a combined Viewer/Server
+app if you wish. The SDK is optimized for the exchange of screen pixel data and input events between Viewer and Server apps, but you
+can augment the core screen sharing capability by sending your own <a class="reference internal" href="#custom-data-channel"><span>messages, data or files</span></a> between devices using
+the same secure communication channel if you wish.</p>
+<p>Standard use cases for VNC are helpdesk (an expert Viewer helping a novice Server) and remote access (accessing your own Servers
+from elsewhere), although the possibilities are endless! For any use case involving VNC Cloud, we recommend creating an intermediate web app to
+interface with the VNC Cloud API on behalf of Viewer and Server apps. This is because your VNC Cloud
+API key and secret used to obtain cloud addresses must be stored securely, and it&#8217;s best not to bake them in to apps given out
+to customers.</p>
+</div>
+<div class="section" id="creating-a-custom-app">
+<span id="initialize-sdk"></span><h2>Creating a custom app<a class="headerlink" href="#creating-a-custom-app" title="Permalink to this headline">¶</a></h2>
+<p>The VNC SDK is a shared library with a C API. The library is located in the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/lib/&lt;plat&gt;</span></code> directory; load it in the expected way for your platform.</p>
+<ul class="simple">
+<li>On Windows, Linux, Mac and iOS platforms, you can call C API methods directly. See the <a class="reference internal" href="api/c/index.html"><em>C API reference</em></a>.</li>
+<li>For Windows, you can alternatively use the <code class="docutils literal"><span class="pre">RealVNC.VncSdk.dll</span></code> .NET binding file provided in the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/lib/dotnet</span></code> directory. See the <a class="reference internal" href="api/dotnet/index.html"><em>.NET API reference</em></a>.</li>
+<li>For Android, use the <code class="docutils literal"><span class="pre">vncsdk.jar</span></code> Java binding file provided in the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/lib/android</span></code> directory. See the <a class="reference internal" href="api/java/index.html"><em>Java API reference</em></a>.</li>
+<li>For HTML 5, use the <code class="docutils literal"><span class="pre">vncsdk.js</span></code> JavaScript binding file provided in the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/lib/html5</span></code> directory. See the <a class="reference internal" href="api/javascript/index.html"><em>JavaScript API reference</em></a>.</li>
+<li>On any platform with a Python 2.6, 2.7 or 3.x runtime, you can use the <code class="docutils literal"><span class="pre">vncsdk.py</span></code> Python binding file provided in the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/lib/python</span></code> directory. See the <a class="reference internal" href="api/python/index.html"><em>Python API reference</em></a>.</li>
+</ul>
+<p>To initialize the SDK, call <a class="reference internal" href="api/c/Init.h.html#c.vnc_init" title="vnc_init"><code class="xref c c-macro docutils literal"><span class="pre">vnc_init</span></code></a>. Then, if your app is a Viewer app, simply call <a class="reference internal" href="api/c/Viewer.h.html#_CPPv217vnc_Viewer_createv" title="vnc_Viewer_create"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_create()</span></code></a>. Note that a <code class="docutils literal"><span class="pre">vnc_Viewer</span></code> object
+is designed to last for one connection only, so destroy and recreate it each time your Viewer app user connects, or attempts to connect. Note you may need to call
+<a class="reference internal" href="api/c/Init.h.html#_CPPv212vnc_shutdownv" title="vnc_shutdown"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_shutdown()</span></code></a> to allow the SDK to clean up resources.</p>
+<p>If your app is a Server app for a desktop platform, then first choose whether to create a <em>persistent</em> or a <em>single-shot</em> app. Call:</p>
+<ul class="simple">
+<li><a class="reference internal" href="api/c/Server.h.html#_CPPv217vnc_Server_createPKc" title="vnc_Server_create"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_create()</span></code></a> to create a single-shot <code class="docutils literal"><span class="pre">vnc_Server</span></code> object that remotes the desktop of the currently-logged in user only.</li>
+<li><a class="reference internal" href="api/c/Server.h.html#_CPPv224vnc_Server_createServicePKc" title="vnc_Server_createService"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_createService()</span></code></a> to create a persistent <code class="docutils literal"><span class="pre">vnc_Server</span></code> object that remotes the <em>console</em> of the computer, whether desktop or login screen, for as long as the Server app runs.</li>
+</ul>
+<p>See <a class="reference internal" href="#server-mode"><span>this discussion</span></a> for more information. Whichever type of desktop Server app you choose, you must bundle the <code class="docutils literal"><span class="pre">vncagent</span></code> binary,
+located in the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/lib/&lt;plat&gt;</span></code> directory, to handle <a class="reference internal" href="#screen-capture"><span>screen capture</span></a> and <a class="reference internal" href="#input-injection"><span>input injection</span></a> for you.</p>
+<p><strong>Note:</strong> If your app is a view-only Server app for Android, this distinction isn&#8217;t necessary, and there&#8217;s no need to bundle <code class="docutils literal"><span class="pre">vncagent</span></code> either;
+see <a class="reference internal" href="#android-server"><span>this section</span></a> instead.</p>
+<p>VNC header files are located in the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/include/vnc</span></code> directory. Examine <a class="reference internal" href="api/c/Vnc.h.html"><em>Vnc.h</em></a> to see which headers are relevant
+to Viewer apps, which to Server apps, and which must be included for both.</p>
+<div class="section" id="creating-a-single-shot-or-persistent-desktop-server-app">
+<span id="server-mode"></span><h3>Creating a single-shot or persistent desktop Server app<a class="headerlink" href="#creating-a-single-shot-or-persistent-desktop-server-app" title="Permalink to this headline">¶</a></h3>
+<p>On a <em>desktop</em> platform, you must choose whether to create a:</p>
+<ul>
+<li><p class="first">Single-shot Server app that remotes the desktop of the currently-logged in user only. To do this, call <a class="reference internal" href="api/c/Server.h.html#_CPPv217vnc_Server_createPKc" title="vnc_Server_create"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_create()</span></code></a>.</p>
+<p>This is the simplest option, but note that screen capture
+stops as soon as an elevated screen is shown (for example, the login, lock, or Windows User Account Control screen), so it
+is not possible to remotely unlock the computer, switch or log out in order to access another user&#8217;s desktop, nor start
+the Server app on boot. It&#8217;s also not possible to inject secure key sequences such as Ctrl+Alt+Del on Windows Vista+ computers.
+On the other hand, the Server app doesn&#8217;t need to be installed and can just be downloaded and run on demand, which might suit a helpdesk product;
+see the cross-platform <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicServer</span></code> sample app for an example.</p>
+</li>
+<li><p class="first">Persistent Server app that remotes the console of the computer; that is, any screen the computer can show, whether elevated or not, including the
+login, lock, and Windows UAC screens. To do this, call <a class="reference internal" href="api/c/Server.h.html#_CPPv224vnc_Server_createServicePKc" title="vnc_Server_createService"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_createService()</span></code></a>.</p>
+<p>Because screen capture persists for as long as the Server app runs, it <em>is</em> possible to
+remotely unlock the computer, switch or log out in order to access the desktops of other device users,
+and start the Server app on boot. This option is more complex because the Server app must be integrated as a system
+service, but it is more powerful, and arguably essential for a remote access product; see
+the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/serviceServer&lt;plat&gt;</span></code> sample app for your platform for an example.</p>
+</li>
+</ul>
+<p>Note the type of Server app you choose determines how <a class="reference internal" href="#deploy-server"><span>it must be deployed</span></a> to target computers.</p>
+</div>
+<div class="section" id="creating-a-view-only-android-server-app">
+<span id="android-server"></span><h3>Creating a view-only Android Server app<a class="headerlink" href="#creating-a-view-only-android-server-app" title="Permalink to this headline">¶</a></h3>
+<p>For Android, you can create a Server app that captures the screen but unfortunately, due to Android API restrictions, cannot inject input events,
+so a connected Viewer app user can see the screen of an Android 5+ device but cannot control it.</p>
+<p>The SDK uses the <a class="reference external" href="http://developer.android.com/reference/android/media/projection/MediaProjection.html">MediaProjection</a> APIs available from
+Android 5 to remote any screen the device can show, including the home screen. For best results, divide responsibility in your Server app
+between an <a class="reference external" href="http://developer.android.com/reference/android/app/Activity.html">Activity</a> and a <a class="reference external" href="http://developer.android.com/reference/android/app/Service.html">Service</a>.
+In your <code class="docutils literal"><span class="pre">Activity</span></code>, obtain a <code class="docutils literal"><span class="pre">MediaProjectionManager</span></code> object <a class="reference external" href="http://developer.android.com/reference/android/media/projection/MediaProjectionManager.html">in the standard way</a> and then call
+<a class="reference external" href="http://developer.android.com/reference/android/media/projection/MediaProjectionManager.html#createScreenCaptureIntent()">MediaProjectionManager.createScreenCaptureIntent</a>
+to request permission from the device owner to capture the screen. In your <code class="docutils literal"><span class="pre">Service</span></code>, call our Android-specific
+<a class="reference internal" href="api/java/Server.html#com.realvnc.vncsdk.Server.Server(String) throws Library.VncException" title="com.realvnc.vncsdk.Server.Server(String) throws Library.VncException"><code class="xref java java-meth docutils literal"><span class="pre">Server(Context,MediaProjection)</span></code></a> constructor to create a
+<code class="docutils literal"><span class="pre">vnc_Server</span></code> object that can capture the screen while your app is in the background, and consider using a
+<a class="reference external" href="http://developer.android.com/reference/android/app/Notification.html">Notification</a> to prevent the <code class="docutils literal"><span class="pre">Service</span></code> stopping prematurely and a
+<a class="reference external" href="http://developer.android.com/reference/android/os/PowerManager.WakeLock.html">WakeLock</a>
+to prevent the device screen turning off while a connection is in progress. Pass the result of a successful screen capture permission request from the <code class="docutils literal"><span class="pre">Activity</span></code> to the <code class="docutils literal"><span class="pre">Service</span></code>
+using standard communication mechanisms and then call
+<a class="reference external" href="http://developer.android.com/reference/android/media/projection/MediaProjectionManager.html#getMediaProjection(int,android.content.Intent)">MediaProjectionManager.getMediaProjection</a>
+to actually start capturing the screen. See <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicServerAndroid</span></code> for an example.</p>
+<p>Note there is no need to interact with or bundle <code class="docutils literal"><span class="pre">vncagent</span></code>. Your APK can safely be submitted for approval to app stores for deployment;
+no private Android APIs are utilized.</p>
+</div>
+</div>
+<div class="section" id="connectivity">
+<span id="id4"></span><h2>Connectivity<a class="headerlink" href="#connectivity" title="Permalink to this headline">¶</a></h2>
+<p>The simplest and most secure way to connect devices is using VNC Cloud. Our service discovers devices wherever they are, so you don&#8217;t need to
+worry about network addresses or reconfiguring firewalls and routers. In addition, device users are
+<a class="reference internal" href="#security"><span>automatically protected</span></a> against man-in-the-middle (MITM) attacks,
+and you can isolate customers&#8217; devices from each other in private &#8216;security zones&#8217;. But you can
+establish <a class="reference internal" href="#direct-tcp"><span>direct TCP connections</span></a> between devices yourself if you like. Or enable your apps to do both.</p>
+<div class="section" id="using-vnc-cloud">
+<h3>Using VNC Cloud<a class="headerlink" href="#using-vnc-cloud" title="Permalink to this headline">¶</a></h3>
+<p>Every VNC Cloud connection requires a pair of cloud addresses. A cloud address and its associated password authorize a device to join VNC Cloud and
+either start listening for, or actually establish, connections. Typically, Servers listen and Viewers connect, though you can reverse
+this methodology if you wish; examine <a class="reference internal" href="api/c/Cloud.h.html"><em>Cloud.h</em></a> for details. Note you should transmit and store
+cloud addresses securely so devices cannot be impersonated.</p>
+<p>Use the <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/tools/vnccloudaddresstool</span></code> to obtain cloud addresses in conjunction with your sandbox VNC Cloud API key, or consult the
+<a class="reference internal" href="api/cloud/index.html"><em>VNC Cloud API documentation</em></a> to learn how to make cloud API calls directly. You should obtain one Viewer cloud
+address (typically with <code class="docutils literal"><span class="pre">connect</span></code> permissions) for each device you intend to deploy your Viewer app to, and one Server cloud
+address (typically with <code class="docutils literal"><span class="pre">listen</span></code> permissions) for each device you intend to deploy your Server app to. Bundle all cloud addresses
+whose devices can interconnect in the same <em>group</em>. For example, in a remote access product you might create one group for each
+customer, containing the cloud addresses for all their Viewer and Server devices. Other customers will never be able to connect.</p>
+<p>Note the following:</p>
+<ul class="simple">
+<li>Cloud addresses are static (that is, long-lease), and do not expire. You should <a class="reference internal" href="api/cloud/index.html#deleting-a-cloud-address"><span>delete cloud addresses</span></a>
+when you no longer need them.</li>
+<li>A cloud address is per-device, not per-connection. A cloud address is good for any number of concurrent or sequential connections
+to or from that device. The only restriction is that the same two devices cannot connect to each other twice at the same time
+(that is, concurrent connections are disallowed between the same pair of cloud addresses).</li>
+<li>When you&#8217;re ready to go live, sign in to your RealVNC account and follow the instructions on the <strong>API keys</strong> page to swap your sandbox for a live API key.</li>
+</ul>
+</div>
+<div class="section" id="connecting-devices-directly">
+<span id="direct-tcp"></span><h3>Connecting devices directly<a class="headerlink" href="#connecting-devices-directly" title="Permalink to this headline">¶</a></h3>
+<p>You can establish direct TCP connections between devices as an alternative to VNC Cloud, or in addition to it. Note that:</p>
+<ul class="simple">
+<li>The HTML 5 platform is not supported; you must use VNC Cloud.</li>
+<li>You (or your device users) must know the network addresses (IPv4, IPv6 or hostname) and listening ports of target devices.</li>
+<li>If devices are connecting over the Internet, you (or your device users) must be able to add firewall exceptions, port-forward
+routers, and negotiate proxy servers where necessary.</li>
+<li>By default, the SDK presents Viewer app users with a visual check of each Server app&#8217;s cryptographic identity, to deter MITM attacks. There is provision to emulate
+VNC Cloud&#8217;s automatic, reciprocal peer verification to prevent attacks completely, but you must <a class="reference internal" href="#security"><span>implement this yourself</span></a>.</li>
+<li>You must obtain an add-on code from RealVNC and apply it to both your Viewer and Server apps. To obtain a trial direct TCP code,
+sign in to your RealVNC account and follow the instructions on the <strong>Add-on codes</strong> page.</li>
+</ul>
+<p>On the other hand:</p>
+<ul class="simple">
+<li>You are in full control of the connectivity process. Connections are never brokered by, nor session data routed via, RealVNC data centers.</li>
+<li>You can connect to or from shrinkwrapped <a class="reference external" href="http://www.realvnc.com/download/vnc/">VNC Connect apps</a> with an Enterprise subscription, which might speed up development.</li>
+</ul>
+<p>To apply an add-on code, call <a class="reference internal" href="api/c/AddOn.h.html#_CPPv215vnc_enableAddOnPKc" title="vnc_enableAddOn"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_enableAddOn()</span></code></a>. Typically, Servers listen for connections on a particular network address and port and Viewers provide this
+information to connect, though you can reverse this methodology if you wish; examine <a class="reference internal" href="api/c/DirectTcp.h.html"><em>DirectTcp.h</em></a> for details.</p>
+</div>
+</div>
+<div class="section" id="security">
+<span id="id5"></span><h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<p>The VNC SDK is secure by design. All connections between Viewer and Server apps created using the SDK are encrypted end-to-end using at least 128-bit AES, to prevent
+eavesdropping. It is not possible to disable encryption.</p>
+<p>In addition, for connections using VNC Cloud:</p>
+<ul>
+<li><p class="first">Each peer automatically verifies the other&#8217;s identity by exchanging 2048-bit RSA public keys, to prevent man-in-the-middle attacks; it is not
+possible to disable peer verification. A connection can only succeed if each peer is cryptographically who it says it is.</p>
+<p><strong>Note</strong>: If you are establishing <a class="reference internal" href="#direct-tcp"><span>direct TCP connections</span></a>, Viewer app users are automatically notified of a Server app&#8217;s unique,
+memorable catchphrase, though not <em>vice versa</em>. A more robust, reciprocal defence against MITM attacks can be implemented by requesting
+the <a class="reference internal" href="api/c/Server.h.html#_CPPv2N27vnc_Server_SecurityCallback10verifyPeerE" title="vnc_Server_SecurityCallback::verifyPeer"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_Server_SecurityCallback::verifyPeer</span></code></a> and <a class="reference internal" href="api/c/Viewer.h.html#_CPPv2N35vnc_Viewer_PeerVerificationCallback10verifyPeerE" title="vnc_Viewer_PeerVerificationCallback::verifyPeer"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_Viewer_PeerVerificationCallback::verifyPeer</span></code></a> callbacks, perhaps in conjunction with
+an exchange of RSA encryption keys out-of-band.</p>
+</li>
+<li><p class="first">RSA encryption keys remain under your control at all times, so even though connections are brokered by
+VNC Cloud - hosted by RealVNC in professionally-managed data centers - and may in addition be relayed by the same service,
+it is not possible for RealVNC to decrypt traffic.</p>
+</li>
+<li><p class="first">Secure HTTPS is used for all communications, and TLS certificates checked against the following well-known Certificate
+Authorities: Symantec, GlobalSign, DigiCert.</p>
+</li>
+</ul>
+<p>However you connect devices, the SDK makes it simple for your Server app to mandate username/password authentication. If you do not want to write code to prompt
+the Viewer app user with a username/password dialog box, the SDK will show one for you. It is trivial to make some (or all)
+connections view-only, filter out connections from particular network addresses, prompt the Server app user to manually approve incoming
+connections, or log every connection attempt for auditing purposes. Examine <a class="reference internal" href="api/c/Server.h.html"><em>Server.h</em></a> for more information.</p>
+<p>By default, a Viewer app user who consistently fails to authenticate is blacklisted to prevent brute-force, dictionary, and denial
+of service attacks; you can configure frequency and timeouts in your Server app.</p>
+</div>
+<div class="section" id="screen-capture-and-framebuffers">
+<span id="screen-capture"></span><h2>Screen capture and framebuffers<a class="headerlink" href="#screen-capture-and-framebuffers" title="Permalink to this headline">¶</a></h2>
+<p>The SDK captures the Server device screen and transmits real-time updates to all connected Viewer devices for you; there is no code to
+write in your Server app. All you need do is bundle the <code class="docutils literal"><span class="pre">vncagent</span></code> binary, provided with the SDK, alongside your Server app. Note if the
+Server device has more than one screen, you can choose which one to remote using <a class="reference internal" href="api/c/Displays.h.html#_CPPv232vnc_DisplayManager_selectDisplayP18vnc_DisplayManageri" title="vnc_DisplayManager_selectDisplay"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_DisplayManager_selectDisplay()</span></code></a>.</p>
+<p>In your Viewer app, you must maintain a <em>framebuffer</em> into which the SDK can paint the Server device screen every time it changes.
+Call <a class="reference internal" href="api/c/Viewer.h.html#_CPPv222vnc_Viewer_setViewerFbP10vnc_ViewerPviPK15vnc_PixelFormatiii" title="vnc_Viewer_setViewerFb"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_setViewerFb()</span></code></a> to either supply your own platform-native
+pixel buffer, or ask the SDK to allocate one for you (the former may be more performant, but you must ensure no other process updates
+the framebuffer at the same time as the SDK). The SDK notifies you each time a screen update arrives, at which point you typically
+render the framebuffer to your Viewer app canvas or window. Examine <a class="reference internal" href="api/c/Viewer.h.html"><em>Viewer.h</em></a> for more information.</p>
+<p>The SDK automatically scales the Server device screen to the size of the framebuffer; you can write code to match the framebuffer&#8217;s
+aspect ratio to the Server&#8217;s, or alternatively disable scaling. Note that typically you should also write code to resize the
+framebuffer if you expose a resizable window to your Viewer app users, and again if the SDK notifies you that the screen resolution
+of the Server device has changed.</p>
+<p>Note that the SDK renders the Server&#8217;s mouse cursor directly into the framebuffer for you. If Viewer devices have a pointer, you
+should write code to hide the local system cursor while it is positioned over the Viewer app window; see
+<code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicViewerWin</span></code> for a demonstration.</p>
+</div>
+<div class="section" id="input-event-handling-and-injection">
+<span id="input-injection"></span><h2>Input event handling and injection<a class="headerlink" href="#input-event-handling-and-injection" title="Permalink to this headline">¶</a></h2>
+<p>You should write code in your Viewer app to capture input events while the Viewer app window has focus, and notify the SDK for transmission to
+the Server device. On desktop Server platforms permitting full remote control, the SDK automatically injects these input events for you; there
+is no code to write in your Server app. All you need do is bundle the <code class="docutils literal"><span class="pre">vncagent</span></code> binary, provided with the SDK, alongside your Server app.</p>
+<p>In your Viewer app:</p>
+<ul>
+<li><p class="first">To send a key to the Server device, capture your platform&#8217;s key down event and then call <a class="reference internal" href="api/c/Viewer.h.html#_CPPv222vnc_Viewer_sendKeyDownP10vnc_Viewer12vnc_uint31_ti" title="vnc_Viewer_sendKeyDown"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_sendKeyDown()</span></code></a> once for each time
+you want to send that key. Note you must translate the key
+into a platform- and language-independent <a class="reference internal" href="api/c/Keyboard.h.html"><em>X11 keysym</em></a>; a lookup table in
+<code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicViewerWin</span></code> and <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicViewerMac</span></code>
+demonstrates how to translate non-X11 key codes into keysyms, or call <a class="reference internal" href="api/c/Keyboard.h.html#_CPPv219vnc_unicodeToKeysym12vnc_uint31_t" title="vnc_unicodeToKeysym"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_unicodeToKeysym()</span></code></a>.</p>
+<p>To release a key, capture your platform&#8217;s key up event and call <a class="reference internal" href="api/c/Viewer.h.html#_CPPv220vnc_Viewer_sendKeyUpP10vnc_Vieweri" title="vnc_Viewer_sendKeyUp"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_sendKeyUp()</span></code></a>,
+or call <a class="reference internal" href="api/c/Viewer.h.html#_CPPv225vnc_Viewer_releaseAllKeysP10vnc_Viewer" title="vnc_Viewer_releaseAllKeys"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_releaseAllKeys()</span></code></a> if the Viewer app window loses focus.</p>
+</li>
+<li><p class="first">To send a mouse movement and optionally a button modifier to the Server device, capture your platform&#8217;s pointer move or motion event and then call
+<a class="reference internal" href="api/c/Viewer.h.html#_CPPv227vnc_Viewer_sendPointerEventP10vnc_Vieweriii10vnc_bool_t" title="vnc_Viewer_sendPointerEvent"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_sendPointerEvent()</span></code></a>.</p>
+</li>
+<li><p class="first">To send a scroll movement to the Server device, capture your platform&#8217;s mouse wheel event and then call <a class="reference internal" href="api/c/Viewer.h.html#_CPPv226vnc_Viewer_sendScrollEventP10vnc_Vieweri21vnc_Viewer_MouseWheel" title="vnc_Viewer_sendScrollEvent"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_sendScrollEvent()</span></code></a>.</p>
+</li>
+<li><p class="first">To send a tap to the Server device, capture a touchscreen platform&#8217;s tap event and then call <a class="reference internal" href="api/c/Viewer.h.html#_CPPv227vnc_Viewer_sendPointerEventP10vnc_Vieweriii10vnc_bool_t" title="vnc_Viewer_sendPointerEvent"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_sendPointerEvent()</span></code></a>
+to click the left mouse button once where the tap occurred. Note it might also be intuitive to map multiple taps to other common
+computer operations, such as double tap to emulate double-click, or two separate finger taps to emulate right-click.</p>
+</li>
+</ul>
+<p>Examine <a class="reference internal" href="api/c/Viewer.h.html"><em>Viewer.h</em></a> for more information. Note in addition it&#8217;s easy to write code in your Viewer app to transfer
+Clipboard text in either direction, so a Viewer app user can copy text to and from the Server device. Again, there is no code to write to in your
+Server app.</p>
+</div>
+<div class="section" id="annotating-a-server-device-screen">
+<span id="annotation"></span><h2>Annotating a Server device screen<a class="headerlink" href="#annotating-a-server-device-screen" title="Permalink to this headline">¶</a></h2>
+<p>You can enable Viewer and Server app users to annotate (that is, draw lines on top of) a Server device screen, without
+affecting the underlying desktop. This might be useful to allow multiple connected Viewer users to share notes and ideas, or perhaps to enable
+an expert Viewer user to show a novice Server user how to fix a problem or perform an operation (particularly on <a class="reference internal" href="#android-server"><span>view-only</span></a> Android devices).
+For a demonstration, try <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/richViewerPython</span></code> in conjunction with any Server sample app.</p>
+<p>To enable a Viewer app to annotate, call <a class="reference internal" href="api/c/Viewer.h.html#_CPPv231vnc_Viewer_getAnnotationManagerP10vnc_Viewer" title="vnc_Viewer_getAnnotationManager"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_getAnnotationManager()</span></code></a> to obtain a <code class="docutils literal"><span class="pre">vnc_AnnotationManager</span></code> object. To enable a Server app to
+handle Viewer annotations, and to annotate itself if desired, call <a class="reference internal" href="api/c/Server.h.html#_CPPv231vnc_Server_getAnnotationManagerP10vnc_Server" title="vnc_Server_getAnnotationManager"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_getAnnotationManager()</span></code></a>. For each connecting Viewer app, a Server app should
+return <a class="reference internal" href="api/c/Server.h.html#_CPPv225vnc_Server_PermAnnotation" title="vnc_Server_PermAnnotation"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_Server_PermAnnotation</span></code></a> in the set of permissions granted by the <a class="reference internal" href="api/c/Server.h.html#_CPPv2N27vnc_Server_SecurityCallback16authenticateUserE" title="vnc_Server_SecurityCallback::authenticateUser"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_Server_SecurityCallback::authenticateUser</span></code></a> callback.
+Note this permission can be revoked at any time using <a class="reference internal" href="api/c/Server.h.html#_CPPv225vnc_Server_setPermissionsP10vnc_ServerP14vnc_Connectioni" title="vnc_Server_setPermissions"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_setPermissions()</span></code></a>, so a Viewer app may want to call
+<a class="reference internal" href="api/c/Annotation.h.html#_CPPv233vnc_AnnotationManager_setCallbackP21vnc_AnnotationManagerPK30vnc_AnnotationManager_CallbackPv" title="vnc_AnnotationManager_setCallback"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_AnnotationManager_setCallback()</span></code></a> and monitor <a class="reference internal" href="api/c/Annotation.h.html#_CPPv2N30vnc_AnnotationManager_Callback19availabilityChangedE" title="vnc_AnnotationManager_Callback::availabilityChanged"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_AnnotationManager_Callback::availabilityChanged</span></code></a>.</p>
+<p>A <code class="docutils literal"><span class="pre">vnc_AnnotationManager</span></code> controls a pen with an initial color determined by the SDK and a sensible default size (that is, line width), duration and
+fade time; you can query and change these at any time. To draw a line, call <a class="reference internal" href="api/c/Annotation.h.html#_CPPv231vnc_AnnotationManager_movePenToP21vnc_AnnotationManagerii10vnc_bool_t" title="vnc_AnnotationManager_movePenTo"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_AnnotationManager_movePenTo()</span></code></a>; note that a
+Viewer app may want to suspend calls to <a class="reference internal" href="api/c/Viewer.h.html#_CPPv227vnc_Viewer_sendPointerEventP10vnc_Vieweriii10vnc_bool_t" title="vnc_Viewer_sendPointerEvent"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_sendPointerEvent()</span></code></a> for the duration in order to prevent remote control while drawing operations are in progress.</p>
+<p>A Server app retains control and can clear all annotations, or just those of particular Viewer apps, at any time.
+Note that a Viewer&#8217;s annotations are automatically cleared when it disconnects, and that all
+annotations are cleared if the Server screen resolution changes, for example when an Android device rotates.</p>
+<p>If you wish to support annotations you must deploy the <code class="docutils literal"><span class="pre">vncannotator</span></code> binary provided in <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/lib/&lt;plat&gt;</span></code> to the same location as <code class="docutils literal"><span class="pre">vncagent</span></code> on all target Server platforms
+(except Android devices). Note there&#8217;s also a small <a class="reference internal" href="#deploy-server-linux"><span>deployment issue</span></a> under Linux and Raspberry Pi.</p>
+</div>
+<div class="section" id="sending-your-own-messages-data-or-files">
+<span id="custom-data-channel"></span><h2>Sending your own messages, data or files<a class="headerlink" href="#sending-your-own-messages-data-or-files" title="Permalink to this headline">¶</a></h2>
+<p>You can send your own data over the same secure communication channel that the SDK uses to exchange screen pixels and input events, safe in the
+knowledge that endpoints are mutually authenticated and the channel itself is encrypted end-to-end. You can send any quality or quantity of data you like,
+although note the responsiveness of screen sharing sessions may suffer if you send large, frequent messages.</p>
+<p>You must obtain a custom data channel add-on code from RealVNC and apply it to both Viewer and Server apps by calling <a class="reference internal" href="api/c/AddOn.h.html#_CPPv215vnc_enableAddOnPKc" title="vnc_enableAddOn"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_enableAddOn()</span></code></a>. To obtain a
+trial add-on code, sign in to your RealVNC account and follow the instructions on the <strong>Add-on codes</strong> page.
+For a demonstration, connect <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/richViewerPython</span></code> (running on any platform) to <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/richServerPython</span></code> (running on Windows only
+in this release).</p>
+<p>To send messages from a Viewer app to a Server app, call <a class="reference internal" href="api/c/Viewer.h.html#_CPPv230vnc_Viewer_getMessagingManagerP10vnc_Viewer" title="vnc_Viewer_getMessagingManager"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_getMessagingManager()</span></code></a> in your Viewer app to obtain
+a <code class="docutils literal"><span class="pre">vnc_MessagingManager</span></code> object. Once devices are connected, call <a class="reference internal" href="api/c/Messaging.h.html#_CPPv232vnc_MessagingManager_sendMessageP20vnc_MessagingManagerPKviP14vnc_Connection" title="vnc_MessagingManager_sendMessage"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_MessagingManager_sendMessage()</span></code></a> to send up to 1MB of data per message. To receive messages
+in your Server app, call <a class="reference internal" href="api/c/Server.h.html#_CPPv230vnc_Server_getMessagingManagerP10vnc_Server" title="vnc_Server_getMessagingManager"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_getMessagingManager()</span></code></a> to obtain an equivalent <code class="docutils literal"><span class="pre">vnc_MessagingManager</span></code> object, and
+then <a class="reference internal" href="api/c/Messaging.h.html#_CPPv232vnc_MessagingManager_setCallbackP20vnc_MessagingManagerPK29vnc_MessagingManager_CallbackPv" title="vnc_MessagingManager_setCallback"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_MessagingManager_setCallback()</span></code></a> to monitor <a class="reference internal" href="api/c/Messaging.h.html#_CPPv2N29vnc_MessagingManager_Callback15messageReceivedE" title="vnc_MessagingManager_Callback::messageReceived"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_MessagingManager_Callback::messageReceived</span></code></a> for message notifications.</p>
+<p>To send messages from a Server app to a Viewer app, reverse this methodology and call <a class="reference internal" href="api/c/Messaging.h.html#_CPPv232vnc_MessagingManager_setCallbackP20vnc_MessagingManagerPK29vnc_MessagingManager_CallbackPv" title="vnc_MessagingManager_setCallback"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_MessagingManager_setCallback()</span></code></a> in your Viewer app and
+<a class="reference internal" href="api/c/Messaging.h.html#_CPPv232vnc_MessagingManager_sendMessageP20vnc_MessagingManagerPKviP14vnc_Connection" title="vnc_MessagingManager_sendMessage"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_MessagingManager_sendMessage()</span></code></a> in your Server app. You can, of course, do both and send messages in either direction. Note you must specify
+the <code class="docutils literal"><span class="pre">connection</span></code> parameter for a Server app to explicitly identify a Viewer app to send to, and iterate over connections to send a message to
+every Viewer app.</p>
+<p>You must write code to process messages received. You should take a copy of the <code class="docutils literal"><span class="pre">vnc_dataBuffer</span></code> object provided by the
+<a class="reference internal" href="api/c/Messaging.h.html#_CPPv2N29vnc_MessagingManager_Callback15messageReceivedE" title="vnc_MessagingManager_Callback::messageReceived"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_MessagingManager_Callback::messageReceived</span></code></a> callback; this will be destroyed when the callback completes.</p>
+</div>
+<div class="section" id="data-stores-and-memory-management">
+<span id="data-stores"></span><h2>Data stores and memory management<a class="headerlink" href="#data-stores-and-memory-management" title="Permalink to this headline">¶</a></h2>
+<p>The SDK generates an RSA private/public key pair the first time it runs on every Viewer and Server device, in order to encrypt
+connections and verify peer identity; examine <a class="reference internal" href="api/c/RsaKey.h.html"><em>RsaKey.h</em></a> for details. You must provide a data store in which the SDK can store
+this key and retrieve it on demand. Note that the SDK also caches other data in this store, for example VNC Cloud discovery information.</p>
+<p>The simplest thing to do is ask the SDK to create and manage a suitable data store for you, for example a registry key under Windows,
+or a file for most other platforms. If you want more control, you can create your own data store; the SDK notifies you when it needs
+to store or retrieve data. Examine <a class="reference internal" href="api/c/DataStore.h.html"><em>DataStore.h</em></a> for more information; note you should take care to lock down your store so it
+cannot be manipulated by device users.</p>
+<p>The SDK manages ownership of data using the <code class="docutils literal"><span class="pre">vnc_DataBuffer</span></code> type. Whenever
+the SDK returns a pointer to memory owned by the SDK, it does so by returning a <code class="docutils literal"><span class="pre">vnc_DataBuffer</span></code> (for example, when
+<a class="reference internal" href="api/c/Viewer.h.html#_CPPv226vnc_Viewer_getViewerFbDataP10vnc_Vieweriiii" title="vnc_Viewer_getViewerFbData"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_getViewerFbData()</span></code></a> retrieves the Viewer&#8217;s framebuffer, or the <a class="reference internal" href="api/c/RsaKey.h.html#_CPPv2N19vnc_RsaKey_Callback12detailsReadyE" title="vnc_RsaKey_Callback::detailsReady"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_RsaKey_Callback::detailsReady</span></code></a>
+callback returns the public key). These objects
+are destroyed by the SDK, so you must take a copy if you wish to interact with them. Conversely, when you return data to the
+SDK (in your implementation of the <a class="reference internal" href="api/c/DataStore.h.html#_CPPv2N22vnc_DataStore_Callback3getE" title="vnc_DataStore_Callback::get"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_DataStore_Callback::get</span></code></a> callback,
+for example), you must do so by creating your own <code class="docutils literal"><span class="pre">vnc_DataBuffer</span></code>; the
+SDK subsequently takes ownership and destroys this object when it is no longer required.</p>
+<p>In short, the SDK never frees memory allocated by you, and you must never attempt to free memory allocated by the SDK (using your
+platform&#8217;s <code class="docutils literal"><span class="pre">free</span></code> or <code class="docutils literal"><span class="pre">delete</span></code> method).</p>
+</div>
+<div class="section" id="event-loops-and-threading">
+<span id="eventloops-threading"></span><h2>Event loops and threading<a class="headerlink" href="#event-loops-and-threading" title="Permalink to this headline">¶</a></h2>
+<p>For your Server app, you can either:</p>
+<ul class="simple">
+<li>Integrate the SDK event loop into an existing event loop, to process SDK and platform events together. You might want to do this to
+create a responsive Server app that, for example, presents UI to the device user.</li>
+<li>Run the SDK event loop standalone. This is the simplest option if your Server app can just silently listen for and handle
+connections in the background. Simply call <a class="reference internal" href="api/c/EventLoop.h.html#_CPPv217vnc_EventLoop_runv" title="vnc_EventLoop_run"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_EventLoop_run()</span></code></a> to start
+performing blocking event handling; see <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/basicServer</span></code> for a demonstration.</li>
+</ul>
+<p>For your Viewer app on Windows or Linux platforms only, it is seldom useful to run the SDK event loop standalone, since a Viewer app user won&#8217;t be able
+to interact with the Server device. Instead, integrate the SDK event loop with either:</p>
+<ul class="simple">
+<li>A platform-native event loop. Under Windows, call <a class="reference internal" href="api/c/EventLoopWin.h.html#_CPPv226vnc_EventLoopWin_getEventsP6HANDLE" title="vnc_EventLoopWin_getEvents"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_EventLoopWin_getEvents()</span></code></a> and <a class="reference internal" href="api/c/EventLoopWin.h.html#_CPPv228vnc_EventLoopWin_handleEvent6HANDLE" title="vnc_EventLoopWin_handleEvent"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_EventLoopWin_handleEvent()</span></code></a>
+to process SDK events notified by <code class="docutils literal"><span class="pre">MsgWaitForMultipleObjects</span></code>. Under Linux, call <a class="reference internal" href="api/c/EventLoopFd.h.html"><em>these equivalents</em></a>
+to similarly handle file descriptor events.</li>
+<li>A third party event loop provided by a UI framework such as Qt or wxWidgets. Under Windows, implement the
+<a class="reference internal" href="api/c/EventLoopWin.h.html#_CPPv2N25vnc_EventLoopWin_Callback12eventUpdatedE" title="vnc_EventLoopWin_Callback::eventUpdated"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_EventLoopWin_Callback::eventUpdated</span></code></a> and <a class="reference internal" href="api/c/EventLoopWin.h.html#_CPPv2N25vnc_EventLoopWin_Callback12timerUpdatedE" title="vnc_EventLoopWin_Callback::timerUpdated"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_EventLoopWin_Callback::timerUpdated</span></code></a> callbacks, or
+<a class="reference internal" href="api/c/EventLoopFd.h.html"><em>these equivalents</em></a> under Linux.</li>
+</ul>
+<p>Note that for your Viewer app on Mac, iOS or Android platforms, you need take no action; the SDK automatically integrates with a Core Foundation or
+Android Looper event loop appropriately. For your HTML 5 Viewer app, the SDK handles events transparently using the JavaScript engine&#8217;s events.</p>
+<div class="section" id="thread-safety">
+<h3>Thread safety<a class="headerlink" href="#thread-safety" title="Permalink to this headline">¶</a></h3>
+<p>Note all API methods must be called from the thread that calls <a class="reference internal" href="api/c/Init.h.html#c.vnc_init" title="vnc_init"><code class="xref c c-macro docutils literal"><span class="pre">vnc_init</span></code></a>,
+with the following exceptions: <a class="reference internal" href="api/c/EventLoop.h.html#_CPPv218vnc_EventLoop_stopv" title="vnc_EventLoop_stop"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_EventLoop_stop()</span></code></a>, <a class="reference internal" href="api/c/Server.h.html#_CPPv234vnc_Server_serviceControlHandlerExP10vnc_ServeriiPv" title="vnc_Server_serviceControlHandlerEx"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_serviceControlHandlerEx()</span></code></a>.</p>
+</div>
+</div>
+<div class="section" id="callbacks">
+<span id="id6"></span><h2>Callbacks<a class="headerlink" href="#callbacks" title="Permalink to this headline">¶</a></h2>
+<p>The SDK has numerous callbacks to notify you of important activity or provide you with an opportunity to take action.</p>
+<p>It is mandatory to request some callbacks, for example <a class="reference internal" href="api/c/Cloud.h.html#_CPPv2N26vnc_CloudListener_Callback15listeningFailedE" title="vnc_CloudListener_Callback::listeningFailed"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_CloudListener_Callback::listeningFailed</span></code></a>;
+you <em>must</em> pass in a reference to a <a class="reference internal" href="api/c/Cloud.h.html#_CPPv226vnc_CloudListener_Callback" title="vnc_CloudListener_Callback"><code class="xref cpp cpp-type docutils literal"><span class="pre">vnc_CloudListener_Callback</span></code></a> structure
+defining at least this callback function when you call <a class="reference internal" href="api/c/Cloud.h.html#_CPPv224vnc_CloudListener_createPKcPKcP21vnc_ConnectionHandlerPK26vnc_CloudListener_CallbackPv" title="vnc_CloudListener_create"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_CloudListener_create()</span></code></a>
+to start listening for VNC Cloud connections. It is optional (or nominally so) to request other callbacks, for example
+<a class="reference internal" href="api/c/Viewer.h.html#_CPPv2N30vnc_Viewer_FramebufferCallback15viewerFbUpdatedE" title="vnc_Viewer_FramebufferCallback::viewerFbUpdated"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_Viewer_FramebufferCallback::viewerFbUpdated</span></code></a>; to do this you must explicitly call the
+<a class="reference internal" href="api/c/Viewer.h.html#_CPPv233vnc_Viewer_setFramebufferCallbackP10vnc_ViewerPK30vnc_Viewer_FramebufferCallbackPv" title="vnc_Viewer_setFramebufferCallback"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Viewer_setFramebufferCallback()</span></code></a> method with a reference to a
+<a class="reference internal" href="api/c/Viewer.h.html#_CPPv230vnc_Viewer_FramebufferCallback" title="vnc_Viewer_FramebufferCallback"><code class="xref cpp cpp-type docutils literal"><span class="pre">vnc_Viewer_FramebufferCallback</span></code></a> structure defining this callback function in order
+to be notified when the Viewer framebuffer changes.</p>
+<p>For both patterns, the structure you pass in must define the callback functions you intend to implement. Some callbacks functions are
+mandatory, some optional, and some notionally optional; consult the C API reference documentation for more information. As noted above,
+you must define <a class="reference internal" href="api/c/Cloud.h.html#_CPPv2N26vnc_CloudListener_Callback15listeningFailedE" title="vnc_CloudListener_Callback::listeningFailed"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_CloudListener_Callback::listeningFailed</span></code></a>, but it is notionally optional to define
+<a class="reference internal" href="api/c/Viewer.h.html#_CPPv2N30vnc_Viewer_FramebufferCallback15viewerFbUpdatedE" title="vnc_Viewer_FramebufferCallback::viewerFbUpdated"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_Viewer_FramebufferCallback::viewerFbUpdated</span></code></a>, though if you don&#8217;t you won&#8217;t be able to update the Server device screen
+for your Viewer app users.</p>
+<p>If you choose not to implement an optional callback function, you can either zero-initialize the structure using <code class="docutils literal"><span class="pre">memset</span></code>, or set
+the appropriate structure member to NULL (the sample apps demonstrate both patterns). Note that omitting some optional callback functions
+such as <a class="reference internal" href="api/c/Server.h.html#_CPPv2N27vnc_Server_SecurityCallback10verifyPeerE" title="vnc_Server_SecurityCallback::verifyPeer"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_Server_SecurityCallback::verifyPeer</span></code></a> has no effect; however, omitting others
+causes a default action to occur (in particular, omitting <a class="reference internal" href="api/c/Server.h.html#_CPPv2N27vnc_Server_SecurityCallback18isUserNameRequiredE" title="vnc_Server_SecurityCallback::isUserNameRequired"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_Server_SecurityCallback::isUserNameRequired</span></code></a>
+and <a class="reference internal" href="api/c/Server.h.html#_CPPv2N27vnc_Server_SecurityCallback18isPasswordRequiredE" title="vnc_Server_SecurityCallback::isPasswordRequired"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_Server_SecurityCallback::isPasswordRequired</span></code></a> mandates that a Viewer app user must provide a user name and password
+in order to connect).</p>
+<p>It is not possible to cancel a callback requested using a <code class="docutils literal"><span class="pre">vnc...Create</span></code> method; you must destroy the original object by calling
+an appropriate method, for example <a class="reference internal" href="api/c/Cloud.h.html#_CPPv225vnc_CloudListener_destroyP17vnc_CloudListener" title="vnc_CloudListener_destroy"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_CloudListener_destroy()</span></code></a>. To cancel an
+explicitly-requested callback, call the appropriate <code class="docutils literal"><span class="pre">set...Callback</span></code> method with NULL as the callback parameter value.</p>
+<p>In the C API, callback requests take a <code class="docutils literal"><span class="pre">void*</span> <span class="pre">userData</span></code> parameter, enabling you to pass random data through to the callback function.
+For example, you could pass your Viewer app canvas through to your implementation of
+<a class="reference internal" href="api/c/Viewer.h.html#_CPPv2N30vnc_Viewer_FramebufferCallback15viewerFbUpdatedE" title="vnc_Viewer_FramebufferCallback::viewerFbUpdated"><code class="xref cpp cpp-member docutils literal"><span class="pre">vnc_Viewer_FramebufferCallback::viewerFbUpdated</span></code></a> in order to conveniently render the latest Viewer
+framebuffer to it. If random data is not required, just pass NULL as the parameter value. Note this parameter is absent from the language
+bindings, since the callback is itself an object that can contain random data.</p>
+</div>
+<div class="section" id="logging-and-error-handling">
+<span id="debug"></span><h2>Logging and error handling<a class="headerlink" href="#logging-and-error-handling" title="Permalink to this headline">¶</a></h2>
+<p>You can ask the SDK to log varying qualities of information to a suitable destination, for example a file or Standard Error. If you
+want more control, you can create your own logger; the SDK notifies you when it has a message to record. Examine
+<a class="reference internal" href="api/c/Logger.h.html"><em>Logger.h</em></a> for more information.</p>
+<p>In the C API, methods that can fail return either a <code class="docutils literal"><span class="pre">vnc_failure</span></code> (if they
+have a <code class="docutils literal"><span class="pre">vnc_status_t</span></code> return type) or NULL (if they have a pointer return type).
+If a method fails, you can call <a class="reference internal" href="api/c/Errors.h.html#_CPPv216vnc_getLastErrorv" title="vnc_getLastError"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_getLastError()</span></code></a> before the next method
+call to obtain the error code. See the C API reference documentation for details of which methods can fail and which error codes they
+produce.</p>
+<p>Note it is not necessary to monitor return types or call <a class="reference internal" href="api/c/Errors.h.html#_CPPv216vnc_getLastErrorv" title="vnc_getLastError"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_getLastError()</span></code></a>
+in the language bindings, since an error is thrown as a <code class="docutils literal"><span class="pre">VncException</span></code> containing the error code instead. See the appropriate API reference for more information.</p>
+</div>
+<div class="section" id="deploying-a-server-app">
+<span id="deploy-server"></span><h2>Deploying a Server app<a class="headerlink" href="#deploying-a-server-app" title="Permalink to this headline">¶</a></h2>
+<p>The advice below is for desktop Server apps. For a view-only Android Server app, see <a class="reference internal" href="#android-server"><span>this section</span></a>.</p>
+<p>If you created a:</p>
+<ul>
+<li><p class="first"><a class="reference internal" href="#server-mode"><span>Single-shot</span></a> Server app using <a class="reference internal" href="api/c/Server.h.html#_CPPv217vnc_Server_createPKc" title="vnc_Server_create"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_create()</span></code></a>, you don&#8217;t <em>have</em> to install deliverables; you
+can package them for device users to download and run on demand instead. If you <em>do</em> install, ensure locations for executables, the SDK
+library, data store and any logger are owned by the current user (and only the current user), to prevent sensitive information leaking. Also,
+ensure your Server app binary and <code class="docutils literal"><span class="pre">vncagent</span></code> are in the same directory unless you specified a different <code class="docutils literal"><span class="pre">agentpath</span></code>. Note there is no need to
+run any process with root or administrative privileges.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="#server-mode"><span>Persistent</span></a> Server app using <a class="reference internal" href="api/c/Server.h.html#_CPPv224vnc_Server_createServicePKc" title="vnc_Server_createService"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_createService()</span></code></a>, you must run the app as a system service and install
+deliverables in a secure location owned by an administrative user, to prevent arbitrary code being run with elevated privileges. See
+also the platform-specific guidance below.</p>
+<p><strong>Windows</strong></p>
+<p>Your persistent Server app must be a Windows Service, running as SYSTEM. Note the SDK automatically starts <code class="docutils literal"><span class="pre">vncagent</span></code> with the correct permissions; if
+you wish to find out when <code class="docutils literal"><span class="pre">vncagent</span></code> is running, implement <a class="reference internal" href="api/c/Server.h.html#_CPPv224vnc_Server_AgentCallback" title="vnc_Server_AgentCallback"><code class="xref cpp cpp-type docutils literal"><span class="pre">vnc_Server_AgentCallback</span></code></a>.</p>
+<p>You must install your Server app binary, <code class="docutils literal"><span class="pre">vncagent</span></code> and the SDK library in a <a class="reference external" href="https://technet.microsoft.com/en-us/library/dd834830.aspx">secure location</a>
+such as <code class="docutils literal"><span class="pre">%ProgramFiles%</span></code> or <code class="docutils literal"><span class="pre">%ProgramFiles(x86)%</span></code> to comply with
+<a class="reference external" href="https://en.wikipedia.org/wiki/User_Interface_Privilege_Isolation">User Interface Privilege Isolation</a> and to ensure <code class="docutils literal"><span class="pre">vncagent</span></code> can inject secure
+key sequences such as Ctrl+Alt+Del. In addition, your Server app binary must be digitally signed; note <code class="docutils literal"><span class="pre">vncagent</span></code> has already been signed by RealVNC.</p>
+<p>For an example, see <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/serviceServerWin</span></code>. Note under Windows XP, <code class="docutils literal"><span class="pre">vncagent</span></code> will stop capturing the screen if a connected Viewer app user
+fast user switches to a new account and then <em>logs off</em> from that account; there is no workaround other than to instruct Viewer app users to switch back to the login screen instead.</p>
+<p><strong>Mac</strong></p>
+<p>Your persistent Server app must be started using a <code class="docutils literal"><span class="pre">LaunchDaemon</span></code>. Note the SDK itself cannot start <code class="docutils literal"><span class="pre">vncagent</span></code>; instead, you are responsible for starting a <code class="docutils literal"><span class="pre">vncagent</span></code> instance
+in the login session and in each user&#8217;s desktop session using a <code class="docutils literal"><span class="pre">LaunchAgent</span></code>. On demand, the appropriate instance automatically and
+securely connects back to the SDK. To find out when <code class="docutils literal"><span class="pre">vncagent</span></code> is running, implement <a class="reference internal" href="api/c/Server.h.html#_CPPv224vnc_Server_AgentCallback" title="vnc_Server_AgentCallback"><code class="xref cpp cpp-type docutils literal"><span class="pre">vnc_Server_AgentCallback</span></code></a>.</p>
+<p>See <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/serviceServerMac</span></code> for an example. In particular, examine <code class="docutils literal"><span class="pre">com.realvnc.serviceServerMac.prelogin.plist</span></code>
+and <code class="docutils literal"><span class="pre">com.realvnc.serviceServerMac.peruser.plist</span></code> for sample <code class="docutils literal"><span class="pre">LaunchAgent</span></code> files for the login and each desktop session respectively. Note the first argument supplied
+to <code class="docutils literal"><span class="pre">vncagent</span></code> in these files must be the same <code class="docutils literal"><span class="pre">agentPath</span></code> provided to <a class="reference internal" href="api/c/Server.h.html#_CPPv224vnc_Server_createServicePKc" title="vnc_Server_createService"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_createService()</span></code></a>. The second argument must be the string <code class="docutils literal"><span class="pre">service</span></code>.</p>
+<p id="deploy-server-linux"><strong>Linux</strong></p>
+<p>Your persistent Server app must be a daemon, running as root. Note the SDK automatically starts <code class="docutils literal"><span class="pre">vncagent</span></code> with the correct permissions when an X server is detected;
+since this may not be when your app starts up, it is possible for Viewer app users to connect and there be no screen to show. You should therefore call
+<a class="reference internal" href="api/c/Server.h.html#_CPPv223vnc_Server_isAgentReadyP10vnc_Server" title="vnc_Server_isAgentReady"><code class="xref cpp cpp-func docutils literal"><span class="pre">vnc_Server_isAgentReady()</span></code></a> in your Server app code, and reject connections until it is. Note you should also implement
+<a class="reference internal" href="api/c/Server.h.html#_CPPv224vnc_Server_AgentCallback" title="vnc_Server_AgentCallback"><code class="xref cpp cpp-type docutils literal"><span class="pre">vnc_Server_AgentCallback</span></code></a> to be notified if the X server stops; during a logout, this stoppage is only temporary, so you can choose
+whether to keep Viewer apps connected, disconnect them, or disconnect but recommend Viewer apps reconnect after a short period. For an example,
+see <code class="docutils literal"><span class="pre">&lt;vnc-sdk&gt;/samples/serviceServerLinux</span></code>.</p>
+<p>In other news:</p>
+<ul class="simple">
+<li>If SELinux is enforcing on target computers, suitable policy module(s) must be put in place. See the README for this sample app for example commands.</li>
+<li>To support <a class="reference internal" href="#annotation"><span>annotations</span></a>, a compositing window manager capable of transparency must be running on target computers, for example
+<a class="reference external" href="https://wiki.archlinux.org/index.php/xcompmgr">Xcompmgr</a> (or <a class="reference external" href="https://github.com/chjj/compton">compton</a> on Raspberry Pi).</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="deploying-a-viewer-app">
+<span id="deploy-viewer"></span><h2>Deploying a Viewer app<a class="headerlink" href="#deploying-a-viewer-app" title="Permalink to this headline">¶</a></h2>
+<p><strong>iOS</strong></p>
+<p>The VNC SDK shared library does not include bitcode, so make sure <strong>Build Settings &gt; All &gt; Enable Bitcode</strong> is set to <strong>No</strong> for your custom Viewer app.</p>
+<p>The SDK is compiled for both simulator and iOS devices, and is suitable for ad-hoc testing and enterprise deployment out-of-the-box.
+In order to submit your custom app to the App Store, however, you must first remove unsupported architectures. To do this, use
+the <code class="docutils literal"><span class="pre">lipo</span></code> utility. Note this will also reduce the size of your custom app binary.</p>
+</div>
+</div>
+
+
+    </div>
+  </div>
+
+        <footer id="main-footer" class="hide-for-print">
+          <div class="row">
+            <div id="subscribe-form" class="medium-push-3 medium-6 columns">
+              <p id="copyright">Copyright &copy; 2015 RealVNC Limited. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  
+    <script src="_static/js/vendor/modernizr.js"></script>
+    <script src="_static/js/vendor/jquery.js"></script>
+    <script src="_static/js/foundation.min.js"></script>
+    <script>$(document).foundation();</script>
+    <script src="_static/js/developer.js"></script>
+  
+  
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT:'',
+      VERSION:'1.7.0',
+      COLLAPSE_INDEX:false,
+      FILE_SUFFIX:'.html',
+      HAS_SOURCE:  true
+    };
+  </script>
+  <script type="text/javascript" src="_static/underscore.js"></script>
+  <script type="text/javascript" src="_static/doctools.js"></script>
+  <script src="_static/js/sphinx.js"></script>
+  
+
+
+</body>
+</html>

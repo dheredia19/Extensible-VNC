@@ -1,0 +1,3 @@
+C:/Users/Danie/Dropbox (Choate)/Home Sync/Downloads/vncsdk-1.7.0/samples/basicServer/CMakeFiles/basicServer.dir
+C:/Users/Danie/Dropbox (Choate)/Home Sync/Downloads/vncsdk-1.7.0/samples/basicServer/CMakeFiles/ALL_BUILD.dir
+C:/Users/Danie/Dropbox (Choate)/Home Sync/Downloads/vncsdk-1.7.0/samples/basicServer/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,35 @@
+AnnotationManager.Callback
+==========================
+
+.. py:attribute:: vncsdk.AnnotationManager.Callback
+
+    Callback receiving annotation-related notifications
+    
+    **See also:** :py:attr:`AnnotationManager.set_callback`
+
+Method Summary
+--------------
+================= =====================================================================================================================
+Modifier and Type Method and Description                                                                                               
+================= =====================================================================================================================
+\                 :py:func:`availability_changed <AnnotationManager.Callback.availability_changed>`\ (annotation_manager, is_available)
+                                                                                                                                       
+                  Notification that annotation availability has changed.                                                               
+================= =====================================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: AnnotationManager.Callback.availability_changed(annotation_manager, is_available)
+
+    Notification that annotation availability has changed.
+
+    For more information, see :cpp:member:`vnc_AnnotationManager_Callback::availabilityChanged`.
+
+    :param annotation_manager:
+    :type annotation_manager: :py:class:`vncsdk.AnnotationManager`
+    :param is_available:
+    :type is_available: bool
+    :return: None
+

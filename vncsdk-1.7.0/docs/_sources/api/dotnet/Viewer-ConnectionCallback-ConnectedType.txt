@@ -1,0 +1,15 @@
+.. _Viewer.ConnectionCallback.ConnectedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Viewer.ConnectionCallback.ConnectedType
+---------------------------------------
+
+.. attribute:: Viewer.ConnectionCallback.ConnectedType
+
+    The type of the :attr:`Viewer.ConnectionCallback.Connected`\  callback.
+
+    
+
+

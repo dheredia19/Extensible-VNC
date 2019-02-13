@@ -1,0 +1,49 @@
+Viewer.AuthenticationCallback
+=============================
+
+.. py:attribute:: vncsdk.Viewer.AuthenticationCallback
+
+    Callback receiving requests for authentication for a Viewer.
+
+Method Summary
+--------------
+================= ==============================================================================================================================
+Modifier and Type Method and Description                                                                                                        
+================= ==============================================================================================================================
+\                 :py:func:`cancel_user_credentials_request <Viewer.AuthenticationCallback.cancel_user_credentials_request>`\ (viewer)          
+                                                                                                                                                
+                  Notification to cancel a username and/or password request.                                                                    
+----------------- ------------------------------------------------------------------------------------------------------------------------------
+\                 :py:func:`request_user_credentials <Viewer.AuthenticationCallback.request_user_credentials>`\ (viewer, need_user, need_passwd)
+                                                                                                                                                
+                  Request for a username and/or password.                                                                                       
+================= ==============================================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: Viewer.AuthenticationCallback.cancel_user_credentials_request(viewer)
+
+    Notification to cancel a username and/or password request.
+
+    For more information, see :cpp:member:`vnc_Viewer_AuthenticationCallback::cancelUserCredentialsRequest`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :return: None
+
+.. py:function:: Viewer.AuthenticationCallback.request_user_credentials(viewer, need_user, need_passwd)
+
+    Request for a username and/or password.
+
+    For more information, see :cpp:member:`vnc_Viewer_AuthenticationCallback::requestUserCredentials`.
+
+    :param viewer:
+    :type viewer: :py:class:`vncsdk.Viewer`
+    :param need_user:
+    :type need_user: bool
+    :param need_passwd:
+    :type need_passwd: bool
+    :return: None
+

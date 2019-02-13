@@ -1,0 +1,63 @@
+DataBuffer
+==========
+
+.. py:class:: vncsdk.DataBuffer
+
+    Buffer containing data managed by the SDK.
+
+Constructor Summary
+-------------------
+================= ==========================================================
+Modifier and Type Method and Description                                    
+================= ==========================================================
+\                 `__init__ <#constructor>`_\ (data)                        
+                                                                            
+                  Creates a data buffer containing a copy of the given data.
+================= ==========================================================
+
+
+Method Summary
+--------------
+================= =============================================
+Modifier and Type Method and Description                       
+================= =============================================
+\                 :py:func:`destroy <DataBuffer.destroy>`\ ()  
+                                                               
+                  Destroys the data buffer.                    
+----------------- ---------------------------------------------
+bytes or None     :py:func:`get_data <DataBuffer.get_data>`\ ()
+                                                               
+                  Gets the data contained in the buffer.       
+================= =============================================
+
+
+Constructor
+-----------
+
+.. py:method:: vncsdk.DataBuffer.__init__(data)
+
+    Creates a data buffer containing a copy of the given data.
+
+    For more information, see :cpp:func:`vnc_DataBuffer_create`.
+
+    :param data:
+    :type data: bytes
+
+Methods
+-------
+
+.. py:method:: DataBuffer.destroy()
+
+    Destroys the data buffer.
+
+    For more information, see :cpp:func:`vnc_DataBuffer_destroy`.
+
+
+.. py:method:: DataBuffer.get_data()
+
+    Gets the data contained in the buffer.
+
+    For more information, see :cpp:func:`vnc_DataBuffer_getData`.
+
+    :rtype: bytes or None
+

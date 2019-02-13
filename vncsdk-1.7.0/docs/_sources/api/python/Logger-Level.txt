@@ -1,0 +1,29 @@
+Logger.Level
+============
+
+.. py:class:: vncsdk.Logger.Level
+
+    Enumeration of log levels.
+
+Enumeration Attributes
+----------------------
+
+.. py:attribute:: vncsdk.Logger.Level.ERROR
+
+    Information that the program is likely to stop functioning correctly.
+
+.. py:attribute:: vncsdk.Logger.Level.BASIC
+
+    Useful information on the functioning of the system.  This is the
+    default log level.
+
+.. py:attribute:: vncsdk.Logger.Level.FULL
+
+    Comprehensive logging of all SDK operations (may degrade performance,
+    and the log file will also contain secure information such as keystrokes)
+
+.. py:attribute:: vncsdk.Logger.Level.DEBUG
+
+    Logging of SDK operations, and for debug purposes, logging of internal
+    information specific to RealVNC's implementation.
+

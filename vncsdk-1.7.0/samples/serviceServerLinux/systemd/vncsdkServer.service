@@ -1,0 +1,11 @@
+[Unit]
+Description=VNC SDK Linux service server sample
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/serviceServerLinux
+Restart=on-failure
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

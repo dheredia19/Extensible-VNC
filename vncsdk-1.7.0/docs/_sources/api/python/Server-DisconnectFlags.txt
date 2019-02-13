@@ -1,0 +1,20 @@
+Server.DisconnectFlags
+======================
+
+.. py:class:: vncsdk.Server.DisconnectFlags
+
+    Enumeration of disconnection flags.
+
+Enumeration Attributes
+----------------------
+
+.. py:attribute:: vncsdk.Server.DisconnectFlags.DISCONNECT_ALERT
+
+    The disconnection message is deemed to be sufficiently important that the
+    Viewer should alert the Viewer user.
+
+.. py:attribute:: vncsdk.Server.DisconnectFlags.DISCONNECT_RECONNECT
+
+    Set the peer's ``CAN_RECONNECT`` flag, that is, the Server
+    informs the Viewer that the server may start again soon.
+

@@ -1,0 +1,60 @@
+.. _RsaKey:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+RsaKey
+------
+
+.. class:: RsaKey
+
+    A container for static methods.
+
+    For more information, see :cpp:class:`vnc_RsaKey`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`RsaKey.Callback`
+
+**Method summary**
+
+================= ============================================================================
+Modifier and Type Method and Description                                                      
+================= ============================================================================
+:type:`void`      :meth:`RsaKey.GetDetails`\ (:type:`RsaKey.Callback`, :type:`System.Boolean`)
+                                                                                              
+                  Requests the details for the machine's identifying RSA public key.          
+----------------- ----------------------------------------------------------------------------
+:type:`void`      :meth:`RsaKey.CancelDetails`\ (:type:`RsaKey.Callback`)                     
+                                                                                              
+                  Cancels any outstanding notifications for the given callback.               
+----------------- ----------------------------------------------------------------------------
+:type:`void`      :meth:`RsaKey.Clear`\ ()                                                    
+                                                                                              
+                  Removes any stored RSA key from the data store.                             
+================= ============================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: void RsaKey.GetDetails(RsaKey.Callback a, System.Boolean b)
+
+    Requests the details for the machine's identifying RSA public key.
+
+    For more information, see :cpp:func:`vnc_RsaKey_getDetails`\  in the C API documentation.
+
+.. method:: void RsaKey.CancelDetails(RsaKey.Callback a)
+
+    Cancels any outstanding notifications for the given callback.
+
+    For more information, see :cpp:func:`vnc_RsaKey_cancelDetails`\  in the C API documentation.
+
+.. method:: void RsaKey.Clear()
+
+    Removes any stored RSA key from the data store.
+
+    For more information, see :cpp:func:`vnc_RsaKey_clear`\  in the C API documentation.
+

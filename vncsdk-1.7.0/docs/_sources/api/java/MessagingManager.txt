@@ -1,0 +1,45 @@
+MessagingManager
+================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public abstract class MessagingManager
+
+   Enables a Viewer or Server to send custom messages.
+
+Nested Classes
+--------------
+* interface :java:type:`MessagingManager.Callback`
+
+Method Summary
+--------------
+================= ===================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                             
+================= ===================================================================================================================================================================
+:java:type:`void` :java:meth:`sendMessage <MessagingManager.sendMessage(byte[] buffer, Connection) throws Library.VncException>`\ (byte[] buffer, :java:type:`Connection` connection)
+                                                                                                                                                                                     
+                  Sends a message.                                                                                                                                                   
+----------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`setCallback <MessagingManager.setCallback(MessagingManager.Callback) throws Library.VncException>`\ (:java:type:`MessagingManager.Callback` callback)  
+                                                                                                                                                                                     
+                  Registers a callback notifying when messages are received.                                                                                                         
+================= ===================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method:: public void sendMessage(byte[] buffer, Connection connection) throws Library.VncException
+   :outertype: MessagingManager
+
+   Sends a message.
+
+   For more information, see :cpp:func:`vnc_MessagingManager_sendMessage`.
+
+.. java:method:: public void setCallback(MessagingManager.Callback callback) throws Library.VncException
+   :outertype: MessagingManager
+
+   Registers a callback notifying when messages are received.
+
+   For more information, see :cpp:func:`vnc_MessagingManager_setCallback`.
+

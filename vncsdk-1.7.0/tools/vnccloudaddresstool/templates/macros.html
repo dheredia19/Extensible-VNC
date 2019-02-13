@@ -1,0 +1,63 @@
+<!--
+Copyright (C) 2016-2017 RealVNC Limited. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors
+may be used to endorse or promote products derived from this software without
+specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!--
+The following HTML partial templates are set to JavaScript variables using
+Jinja engine and the templates are completed dynamically in JavaScript.
+-->
+
+{% macro addr_table_tmpl() -%}
+<div class="group">\
+<div class="table_header_text">{0}</div>\
+<div class="table_header_timestamp"><i>Obtained on {1}</i></div>\
+<div class="table_container">\
+<table id="cloud_addresses_{2}"\
+class="tablesorter-ice" style="margin-bottom:2px"><thead>\
+<tr>\
+<th>Group+Label</th>\
+<th>Cloud address</th>\
+<th>Cloud password</th>\
+</tr>\
+</thead>\
+<tbody id="cloud_addresses_tbody_{2}"></tbody>\
+</table>\
+</div>\
+<div class="share_action">\
+<input class="blue_flat_button" id="share_{2}" type="button" value="Share"/>\
+</div>\
+</div>
+{%- endmacro %}
+
+{% macro addr_row_tmpl() -%}
+<tr class="{0}">\
+<td class="overflow">{1}</td>\
+<td class="overflow" id="cloud_address">{2}</td>\
+<td class="overflow" id="cloud_password">{3}</td>\
+</tr>
+{%- endmacro %}

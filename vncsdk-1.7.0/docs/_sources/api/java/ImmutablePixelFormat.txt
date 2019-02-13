@@ -1,0 +1,151 @@
+ImmutablePixelFormat
+====================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public class ImmutablePixelFormat
+
+   An immutable \ :java:ref:`PixelFormat`\ , owned by the SDK.
+
+Method Summary
+--------------
+================================= ===============================================================================================================
+Modifier and Type                 Method and Description                                                                                         
+================================= ===============================================================================================================
+:java:type:`ImmutablePixelFormat` :java:meth:`bgr888 <ImmutablePixelFormat.bgr888()>`\ ()                                                        
+                                                                                                                                                 
+                                  32 bits per pixel stored as XXXXXXXXBBBBBBBBGGGGGGGGRRRRRRRR in most significant to least significant bit order
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`int`                  :java:meth:`blueMax <ImmutablePixelFormat.blueMax()>`\ ()                                                      
+                                                                                                                                                 
+                                  Gets the maximum value for the blue pixel value.                                                               
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`int`                  :java:meth:`blueShift <ImmutablePixelFormat.blueShift()>`\ ()                                                  
+                                                                                                                                                 
+                                  Gets the number of bits the blue pixel value is shifted.                                                       
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`int`                  :java:meth:`bpp <ImmutablePixelFormat.bpp()>`\ ()                                                              
+                                                                                                                                                 
+                                  Gets the total number of bits per pixel.                                                                       
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`int`                  :java:meth:`depth <ImmutablePixelFormat.depth()>`\ ()                                                          
+                                                                                                                                                 
+                                  Gets the number of significant bits that are used to store pixel data.                                         
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`int`                  :java:meth:`greenMax <ImmutablePixelFormat.greenMax()>`\ ()                                                    
+                                                                                                                                                 
+                                  Gets the maximum value for the green pixel value.                                                              
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`int`                  :java:meth:`greenShift <ImmutablePixelFormat.greenShift()>`\ ()                                                
+                                                                                                                                                 
+                                  Gets the number of bits the green pixel value is shifted.                                                      
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`int`                  :java:meth:`redMax <ImmutablePixelFormat.redMax()>`\ ()                                                        
+                                                                                                                                                 
+                                  Gets the maximum value for the red pixel value.                                                                
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`int`                  :java:meth:`redShift <ImmutablePixelFormat.redShift()>`\ ()                                                    
+                                                                                                                                                 
+                                  Gets the number of bits the red pixel value is shifted.                                                        
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`ImmutablePixelFormat` :java:meth:`rgb555 <ImmutablePixelFormat.rgb555()>`\ ()                                                        
+                                                                                                                                                 
+                                  16 bits per pixel stored as XRRRRRGGGGGBBBBB in most significant to least significant bit order                
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`ImmutablePixelFormat` :java:meth:`rgb565 <ImmutablePixelFormat.rgb565()>`\ ()                                                        
+                                                                                                                                                 
+                                  16 bits per pixel stored as RRRRRGGGGGGBBBBB in most significant to least significant bit order                
+--------------------------------- ---------------------------------------------------------------------------------------------------------------
+:java:type:`ImmutablePixelFormat` :java:meth:`rgb888 <ImmutablePixelFormat.rgb888()>`\ ()                                                        
+                                                                                                                                                 
+                                  32 bits per pixel stored as XXXXXXXXRRRRRRRRGGGGGGGGBBBBBBBB in most significant to least significant bit order
+================================= ===============================================================================================================
+
+Methods
+-------
+
+.. java:method:: public static ImmutablePixelFormat bgr888()
+   :outertype: ImmutablePixelFormat
+
+   32 bits per pixel stored as XXXXXXXXBBBBBBBBGGGGGGGGRRRRRRRR in most significant to least significant bit order
+
+   For more information, see :cpp:func:`vnc_PixelFormat_bgr888`.
+
+.. java:method:: public int blueMax()
+   :outertype: ImmutablePixelFormat
+
+   Gets the maximum value for the blue pixel value.
+
+   For more information, see :cpp:func:`vnc_PixelFormat_blueMax`.
+
+.. java:method:: public int blueShift()
+   :outertype: ImmutablePixelFormat
+
+   Gets the number of bits the blue pixel value is shifted.
+
+   For more information, see :cpp:func:`vnc_PixelFormat_blueShift`.
+
+.. java:method:: public int bpp()
+   :outertype: ImmutablePixelFormat
+
+   Gets the total number of bits per pixel.
+
+   For more information, see :cpp:func:`vnc_PixelFormat_bpp`.
+
+.. java:method:: public int depth()
+   :outertype: ImmutablePixelFormat
+
+   Gets the number of significant bits that are used to store pixel data.
+
+   For more information, see :cpp:func:`vnc_PixelFormat_depth`.
+
+.. java:method:: public int greenMax()
+   :outertype: ImmutablePixelFormat
+
+   Gets the maximum value for the green pixel value.
+
+   For more information, see :cpp:func:`vnc_PixelFormat_greenMax`.
+
+.. java:method:: public int greenShift()
+   :outertype: ImmutablePixelFormat
+
+   Gets the number of bits the green pixel value is shifted.
+
+   For more information, see :cpp:func:`vnc_PixelFormat_greenShift`.
+
+.. java:method:: public int redMax()
+   :outertype: ImmutablePixelFormat
+
+   Gets the maximum value for the red pixel value.
+
+   For more information, see :cpp:func:`vnc_PixelFormat_redMax`.
+
+.. java:method:: public int redShift()
+   :outertype: ImmutablePixelFormat
+
+   Gets the number of bits the red pixel value is shifted.
+
+   For more information, see :cpp:func:`vnc_PixelFormat_redShift`.
+
+.. java:method:: public static ImmutablePixelFormat rgb555()
+   :outertype: ImmutablePixelFormat
+
+   16 bits per pixel stored as XRRRRRGGGGGBBBBB in most significant to least significant bit order
+
+   For more information, see :cpp:func:`vnc_PixelFormat_rgb555`.
+
+.. java:method:: public static ImmutablePixelFormat rgb565()
+   :outertype: ImmutablePixelFormat
+
+   16 bits per pixel stored as RRRRRGGGGGGBBBBB in most significant to least significant bit order
+
+   For more information, see :cpp:func:`vnc_PixelFormat_rgb565`.
+
+.. java:method:: public static ImmutablePixelFormat rgb888()
+   :outertype: ImmutablePixelFormat
+
+   32 bits per pixel stored as XXXXXXXXRRRRRRRRGGGGGGGGBBBBBBBB in most significant to least significant bit order
+
+   For more information, see :cpp:func:`vnc_PixelFormat_rgb888`.
+

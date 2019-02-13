@@ -1,0 +1,15 @@
+.. _DataStore.Callback.GetType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+DataStore.Callback.GetType
+--------------------------
+
+.. attribute:: DataStore.Callback.GetType
+
+    The type of the :attr:`DataStore.Callback.Get`\  callback.
+
+    
+
+

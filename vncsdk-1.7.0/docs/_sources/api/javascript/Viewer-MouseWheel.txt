@@ -1,0 +1,18 @@
+Viewer.MouseWheel
+=================
+
+.. js:data:: vncsdk.Viewer.MouseWheel
+
+    Enumeration of mouse wheel directions.
+
+Enum Constants
+--------------
+
+.. js:attribute:: vncsdk.Viewer.MouseWheel.MOUSE_WHEEL_HORIZONTAL
+
+    The horizontal scroll wheel.
+
+.. js:attribute:: vncsdk.Viewer.MouseWheel.MOUSE_WHEEL_VERTICAL
+
+    The vertical scroll wheel.
+

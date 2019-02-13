@@ -1,0 +1,7 @@
+ConnectionHandler
+=================
+
+.. py:class:: vncsdk.ConnectionHandler
+
+    Opaque type for a connection handler, enabling a Viewer or Server to perform
+    a connection operation.

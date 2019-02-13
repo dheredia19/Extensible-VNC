@@ -1,0 +1,99 @@
+CloudAddressMonitor
+===================
+
+.. py:class:: vncsdk.CloudAddressMonitor
+
+    Monitor used to query the availability of VNC Cloud addresses.
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.CloudAddressMonitor.Callback`
+
+* :py:class:`vncsdk.CloudAddressMonitor.Availability`
+
+Constructor Summary
+-------------------
+================= ================================================================================
+Modifier and Type Method and Description                                                          
+================= ================================================================================
+\                 `__init__ <#constructor>`_\ (connector, cloud_addresses, callback)              
+                                                                                                  
+                  Creates a monitor, which queries whether a list of cloud addresses is available.
+================= ================================================================================
+
+
+Method Summary
+--------------
+================= ==============================================================================================
+Modifier and Type Method and Description                                                                        
+================= ==============================================================================================
+\                 :py:func:`destroy <CloudAddressMonitor.destroy>`\ ()                                          
+                                                                                                                
+                  Destroys the Cloud monitor.                                                                   
+----------------- ----------------------------------------------------------------------------------------------
+\                 :py:func:`pause <CloudAddressMonitor.pause>`\ ()                                              
+                                                                                                                
+                  Pauses the Cloud monitor.                                                                     
+----------------- ----------------------------------------------------------------------------------------------
+\                 :py:func:`resume <CloudAddressMonitor.resume>`\ ()                                            
+                                                                                                                
+                  Resumes the Cloud monitor.                                                                    
+----------------- ----------------------------------------------------------------------------------------------
+\                 :py:func:`set_pause_on_connect <CloudAddressMonitor.set_pause_on_connect>`\ (pause_on_connect)
+                                                                                                                
+                  Sets whether or not the Cloud monitor pauses automatically when a connection is established.  
+================= ==============================================================================================
+
+
+Constructor
+-----------
+
+.. py:method:: vncsdk.CloudAddressMonitor.__init__(connector, cloud_addresses, callback)
+
+    Creates a monitor, which queries whether a list of cloud addresses is
+    available.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_create`.
+
+    :param connector:
+    :type connector: :py:class:`vncsdk.CloudConnector`
+    :param cloud_addresses:
+    :type cloud_addresses: [str]
+    :param callback:
+    :type callback: :py:class:`vncsdk.CloudAddressMonitor.Callback`
+
+Methods
+-------
+
+.. py:method:: CloudAddressMonitor.destroy()
+
+    Destroys the Cloud monitor.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_destroy`.
+
+
+.. py:method:: CloudAddressMonitor.pause()
+
+    Pauses the Cloud monitor.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_pause`.
+
+
+.. py:method:: CloudAddressMonitor.resume()
+
+    Resumes the Cloud monitor.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_resume`.
+
+
+.. py:method:: CloudAddressMonitor.set_pause_on_connect(pause_on_connect)
+
+    Sets whether or not the Cloud monitor pauses automatically when a connection
+    is established.
+
+    For more information, see :cpp:func:`vnc_CloudAddressMonitor_setPauseOnConnect`.
+
+    :param pause_on_connect:
+    :type pause_on_connect: bool
+

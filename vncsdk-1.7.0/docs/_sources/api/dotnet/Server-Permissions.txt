@@ -1,0 +1,61 @@
+.. _Server.Permissions:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.Permissions
+------------------
+
+.. enum:: Server.Permissions
+
+    Enumeration of session permissions that can be granted to a connecting
+    Viewer.
+
+    For more information, see :cpp:class:`vnc_Server_Permissions`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  Server.Permissions.Zero
+
+    No Permissions bits set.
+
+    
+
+.. attribute::  Server.Permissions.View
+
+    Grants a Viewer permission to see the screen.Rarely omitted.
+
+    
+
+.. attribute::  Server.Permissions.Keyboard
+
+    Grants a Viewer permission to inject keyboard events.
+
+    
+
+.. attribute::  Server.Permissions.Pointer
+
+    Grants a Viewer permission to inject mouse and touch events.
+
+    
+
+.. attribute::  Server.Permissions.Clipboard
+
+    Grants a Viewer permission to copy and paste text to and from the Server.
+
+    
+
+.. attribute::  Server.Permissions.Annotation
+
+    Grants a Viewer permission to draw on the Server screen.
+
+    
+
+.. attribute::  Server.Permissions.All
+
+    Grants a Viewer a full set of permissions (that is, all of the above).
+
+    
+

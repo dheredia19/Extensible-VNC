@@ -1,0 +1,28 @@
+.. _VncException:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+VncException
+------------
+
+.. class:: VncException
+
+    Thrown to indicate that the SDK has encountered an exceptional
+    condition.This could include passing invalid arguments to a
+    method, a networking error occurring, an error creating a file,
+    or a logic error in the SDK user's calling code.
+
+    
+
+
+Properties
+~~~~~~~~~~
+
+.. attribute::  VncException.ErrorCode
+
+    Contains the string code; values are listed for each function
+    in the C API reference.
+
+    
+

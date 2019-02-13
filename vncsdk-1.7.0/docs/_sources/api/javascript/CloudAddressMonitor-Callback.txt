@@ -1,0 +1,51 @@
+CloudAddressMonitor.Callback
+============================
+
+.. js:attribute:: vncsdk.CloudAddressMonitor.Callback
+
+    Callback for a :js:class:`vncsdk.CloudAddressMonitor`.
+
+Method Summary
+--------------
+================= ========================================================================================================================
+Modifier and Type Method and Description                                                                                                  
+================= ========================================================================================================================
+\                 :js:func:`monitorPaused <CloudAddressMonitor.Callback.monitorPaused>`\ (monitor)                                        
+                                                                                                                                          
+                  Notification that monitoring has been paused by an outgoing connection starting.                                        
+----------------- ------------------------------------------------------------------------------------------------------------------------
+\                 :js:func:`availabilityChanged <CloudAddressMonitor.Callback.availabilityChanged>`\ (monitor, cloudAddress, availability)
+                                                                                                                                          
+                  Notification that the availability information for a Cloud address has changed.                                         
+================= ========================================================================================================================
+
+
+Methods
+-------
+
+.. js:function:: CloudAddressMonitor.Callback.monitorPaused(monitor)
+
+    Notification that monitoring has been paused by an outgoing connection
+    starting.
+
+    For more information, see :cpp:member:`vnc_CloudAddressMonitor_Callback::monitorPaused`.
+
+    :param monitor:
+    :type monitor: :js:data:`vncsdk.CloudAddressMonitor`
+    :return: Ignored
+
+.. js:function:: CloudAddressMonitor.Callback.availabilityChanged(monitor, cloudAddress, availability)
+
+    Notification that the availability information for a Cloud address has
+    changed.
+
+    For more information, see :cpp:member:`vnc_CloudAddressMonitor_Callback::availabilityChanged`.
+
+    :param monitor:
+    :type monitor: :js:data:`vncsdk.CloudAddressMonitor`
+    :param cloudAddress:
+    :type cloudAddress: string or null
+    :param availability:
+    :type availability: :js:attr:`vncsdk.CloudAddressMonitor.Availability`
+    :return: Ignored
+

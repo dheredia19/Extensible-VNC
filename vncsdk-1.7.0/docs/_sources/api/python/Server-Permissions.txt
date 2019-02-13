@@ -1,0 +1,35 @@
+Server.Permissions
+==================
+
+.. py:class:: vncsdk.Server.Permissions
+
+    Enumeration of session permissions that can be granted to a connecting
+    Viewer.
+
+Enumeration Attributes
+----------------------
+
+.. py:attribute:: vncsdk.Server.Permissions.PERM_VIEW
+
+    Grants a Viewer permission to see the screen.  Rarely omitted.
+
+.. py:attribute:: vncsdk.Server.Permissions.PERM_KEYBOARD
+
+    Grants a Viewer permission to inject keyboard events.
+
+.. py:attribute:: vncsdk.Server.Permissions.PERM_POINTER
+
+    Grants a Viewer permission to inject mouse and touch events.
+
+.. py:attribute:: vncsdk.Server.Permissions.PERM_CLIPBOARD
+
+    Grants a Viewer permission to copy and paste text to and from the Server.
+
+.. py:attribute:: vncsdk.Server.Permissions.PERM_ANNOTATION
+
+    Grants a Viewer permission to draw on the Server screen.
+
+.. py:attribute:: vncsdk.Server.Permissions.PERM_ALL
+
+    Grants a Viewer a full set of permissions (that is, all of the above).
+

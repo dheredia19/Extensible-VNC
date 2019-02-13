@@ -1,0 +1,42 @@
+Viewer.PeerVerificationCallback
+===============================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface PeerVerificationCallback
+   :outertype: Viewer
+
+   Callback receiving verification requests to check the peer's identity.
+
+Method Summary
+--------------
+================= ==========================================================================================================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                                                                                                    
+================= ==========================================================================================================================================================================================================================================================================
+:java:type:`void` :java:meth:`cancelPeerVerification <PeerVerificationCallback.cancelPeerVerification(Viewer)>`\ (:java:type:`Viewer` viewer)                                                                                                                                               
+                                                                                                                                                                                                                                                                                            
+                  Notification to cancel a prior request for peer verification.                                                                                                                                                                                                             
+----------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`verifyPeer <PeerVerificationCallback.verifyPeer(Viewer, String, String, ImmutableDataBuffer)>`\ (:java:type:`Viewer` viewer, :java:type:`String` hexFingerprint, :java:type:`String` catchphraseFingerprint, :java:type:`ImmutableDataBuffer` serverRsaPublic)
+                                                                                                                                                                                                                                                                                            
+                  Request to verify the identity of the peer (the server).                                                                                                                                                                                                                  
+================= ==========================================================================================================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void cancelPeerVerification(Viewer viewer)
+   :outertype: Viewer.PeerVerificationCallback
+
+   Notification to cancel a prior request for peer verification.
+
+   For more information, see :cpp:member:`vnc_Viewer_PeerVerificationCallback::cancelPeerVerification`.
+
+.. java:method::  void verifyPeer(Viewer viewer, String hexFingerprint, String catchphraseFingerprint, ImmutableDataBuffer serverRsaPublic)
+   :outertype: Viewer.PeerVerificationCallback
+
+   Request to verify the identity of the peer (the server).
+
+   For more information, see :cpp:member:`vnc_Viewer_PeerVerificationCallback::verifyPeer`.
+

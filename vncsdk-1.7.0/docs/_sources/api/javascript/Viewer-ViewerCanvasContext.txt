@@ -1,0 +1,10 @@
+Viewer.ViewerCanvasContext
+==========================
+
+.. js:class:: vncsdk.Viewer.ViewerCanvasContext(canvas[, opaque])
+
+    A ViewerCanvasContext is a helper class which caches a ``CanvasRenderingContext2D``
+    between calls to :js:func:`Viewer.putViewerFbData`.
+
+    :param HTMLCanvasElement canvas:
+    :param boolean opaque: Defaults to `true`

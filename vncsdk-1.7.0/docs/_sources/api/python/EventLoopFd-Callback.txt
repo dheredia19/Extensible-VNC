@@ -1,0 +1,47 @@
+EventLoopFd.Callback
+====================
+
+.. py:attribute:: vncsdk.EventLoopFd.Callback
+
+    Callback receiving notifications for a file-descriptor-based event loop.
+
+Method Summary
+--------------
+================= ===============================================================================
+Modifier and Type Method and Description                                                         
+================= ===============================================================================
+\                 :py:func:`event_updated <EventLoopFd.Callback.event_updated>`\ (fd, event_mask)
+                                                                                                 
+                  Notification that a file descriptor's event mask has changed.                  
+----------------- -------------------------------------------------------------------------------
+\                 :py:func:`timer_updated <EventLoopFd.Callback.timer_updated>`\ (expiry_ms)     
+                                                                                                 
+                  Notification that the timer expiry period has been updated.                    
+================= ===============================================================================
+
+
+Methods
+-------
+
+.. py:function:: EventLoopFd.Callback.event_updated(fd, event_mask)
+
+    Notification that a file descriptor's event mask has changed.
+
+    For more information, see :cpp:member:`vnc_EventLoopFd_Callback::eventUpdated`.
+
+    :param fd:
+    :type fd: int
+    :param event_mask:
+    :type event_mask: {:py:class:`vncsdk.EventLoopFd.Event`}
+    :return: None
+
+.. py:function:: EventLoopFd.Callback.timer_updated(expiry_ms)
+
+    Notification that the timer expiry period has been updated.
+
+    For more information, see :cpp:member:`vnc_EventLoopFd_Callback::timerUpdated`.
+
+    :param expiry_ms:
+    :type expiry_ms: int
+    :return: None
+

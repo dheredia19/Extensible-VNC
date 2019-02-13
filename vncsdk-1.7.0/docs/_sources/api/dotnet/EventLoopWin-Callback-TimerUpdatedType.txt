@@ -1,0 +1,15 @@
+.. _EventLoopWin.Callback.TimerUpdatedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+EventLoopWin.Callback.TimerUpdatedType
+--------------------------------------
+
+.. attribute:: EventLoopWin.Callback.TimerUpdatedType
+
+    The type of the :attr:`EventLoopWin.Callback.TimerUpdated`\  callback.
+
+    
+
+

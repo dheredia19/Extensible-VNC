@@ -1,0 +1,99 @@
+CloudConnector
+==============
+
+.. js:data:: vncsdk.CloudConnector
+
+    Connector used to join VNC Cloud and establish an outgoing connection.
+
+Constructor Summary
+-------------------
+================= =================================================================================
+Modifier and Type Method and Description                                                           
+================= =================================================================================
+\                 `CloudConnector <#constructor>`_\ (localCloudAddress, localCloudPassword)        
+                                                                                                   
+                  Creates a connector, which is used used to create connections to Cloud addresses.
+================= =================================================================================
+
+
+Method Summary
+--------------
+================= ================================================================================================
+Modifier and Type Method and Description                                                                          
+================= ================================================================================================
+\                 :js:func:`connect <CloudConnector.connect>`\ (peerCloudAddress, connectionHandler)              
+                                                                                                                  
+                  Begins an outgoing connection to the given Cloud address.                                       
+----------------- ------------------------------------------------------------------------------------------------
+\                 :js:func:`destroy <CloudConnector.destroy>`\ ()                                                 
+                                                                                                                  
+                  Destroys the Cloud connector.                                                                   
+----------------- ------------------------------------------------------------------------------------------------
+\                 :js:func:`setRelayBandwidthLimit <CloudConnector.setRelayBandwidthLimit>`\ (relayBandwidthLimit)
+                                                                                                                  
+                  Set the bandwidth limit applied to relayed Cloud connections.                                   
+----------------- ------------------------------------------------------------------------------------------------
+\                 :js:func:`setWaitForPeer <CloudConnector.setWaitForPeer>`\ (waitForPeer)                        
+                                                                                                                  
+                  Sets whether new connections created by the connector wait for the peer to start listening.     
+================= ================================================================================================
+
+
+Constructor
+-----------
+
+.. js:class:: vncsdk.CloudConnector(localCloudAddress, localCloudPassword)
+
+    Creates a connector, which is used used to create connections to Cloud
+    addresses.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_create`.
+
+    :param localCloudAddress:
+    :type localCloudAddress: string
+    :param localCloudPassword:
+    :type localCloudPassword: string
+    :throws: :js:data:`vncsdk.VncException` on error
+
+Methods
+-------
+
+.. js:function:: CloudConnector.connect(peerCloudAddress, connectionHandler)
+
+    Begins an outgoing connection to the given Cloud address.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_connect`.
+
+    :param peerCloudAddress:
+    :type peerCloudAddress: string
+    :param connectionHandler:
+    :type connectionHandler: :js:data:`vncsdk.ConnectionHandler`
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: CloudConnector.destroy()
+
+    Destroys the Cloud connector.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_destroy`.
+
+
+.. js:function:: CloudConnector.setRelayBandwidthLimit(relayBandwidthLimit)
+
+    Set the bandwidth limit applied to relayed Cloud connections.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_setRelayBandwidthLimit`.
+
+    :param relayBandwidthLimit:
+    :type relayBandwidthLimit: number
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: CloudConnector.setWaitForPeer(waitForPeer)
+
+    Sets whether new connections created by the connector wait for the peer to
+    start listening.
+
+    For more information, see :cpp:func:`vnc_CloudConnector_setWaitForPeer`.
+
+    :param waitForPeer:
+    :type waitForPeer: boolean
+

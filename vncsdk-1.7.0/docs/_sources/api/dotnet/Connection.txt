@@ -1,0 +1,89 @@
+.. _Connection:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Connection
+----------
+
+.. class:: Connection
+
+    Opaque type for a connection, identifying a Viewer connected to a Server.
+
+    For more information, see :cpp:class:`vnc_Connection`\  in the C API documentation.
+
+
+**Method summary**
+
+================= ==========================================================================
+Modifier and Type Method and Description                                                    
+================= ==========================================================================
+:type:`bool`      :meth:`Connection.Equals`\ (:type:`Connection`)                           
+                                                                                            
+                  Performs equality comparison against another Connection.                  
+----------------- --------------------------------------------------------------------------
+:type:`bool`      :meth:`Connection.Equals`\ (:type:`System.Object`)                        
+                                                                                            
+                  Performs equality comparison against another object.                      
+----------------- --------------------------------------------------------------------------
+:type:`bool`      :meth:`Connection.op_Equality`\ (:type:`Connection`, :type:`Connection`)  
+                                                                                            
+                  Equality comparison operator.                                             
+----------------- --------------------------------------------------------------------------
+:type:`bool`      :meth:`Connection.op_Inequality`\ (:type:`Connection`, :type:`Connection`)
+                                                                                            
+                  Inequality comparison operator.                                           
+----------------- --------------------------------------------------------------------------
+:type:`int`       :meth:`Connection.GetHashCode`\ ()                                        
+                                                                                            
+                  Returns the hash code for this Connection.                                
+================= ==========================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: bool Connection.Equals(Connection a)
+
+    Performs equality comparison against another Connection.
+
+    
+
+    **Return type:** :type:`bool` - Returns a boolean indicating whether this Connection        
+    compares equal to the other Connection.
+
+.. method:: bool Connection.Equals(System.Object a)
+
+    Performs equality comparison against another object.
+
+    
+
+    **Return type:** :type:`bool` - Returns a boolean indicating whether this Connection        
+    compares equal to the other object.
+
+.. method:: bool Connection.op_Equality(Connection a, Connection b)
+
+    Equality comparison operator.
+
+    
+
+    **Return type:** :type:`bool` - Returns a boolean indicating whether this Connection        
+    compares equal to the other Connection.
+
+.. method:: bool Connection.op_Inequality(Connection a, Connection b)
+
+    Inequality comparison operator.
+
+    
+
+    **Return type:** :type:`bool` - Returns a boolean indicating whether this Connection        
+    compares unequal to the other Connection.
+
+.. method:: int Connection.GetHashCode()
+
+    Returns the hash code for this Connection.
+
+    
+
+    **Return type:** :type:`int` - A 32-bit signed integer hash code.
+

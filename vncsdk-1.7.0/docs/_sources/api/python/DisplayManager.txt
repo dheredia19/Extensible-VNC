@@ -1,0 +1,160 @@
+DisplayManager
+==============
+
+.. py:class:: vncsdk.DisplayManager
+
+    Manages the list of displays made available by a Server.
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.DisplayManager.Callback`
+
+
+Method Summary
+--------------
+================= ====================================================================================================================
+Modifier and Type Method and Description                                                                                              
+================= ====================================================================================================================
+int               :py:func:`get_display_count <DisplayManager.get_display_count>`\ ()                                                 
+                                                                                                                                      
+                  Returns the number of displays.                                                                                     
+----------------- --------------------------------------------------------------------------------------------------------------------
+str               :py:func:`get_id <DisplayManager.get_id>`\ (index)                                                                  
+                                                                                                                                      
+                  Gets the ID of the display (typically a short string).                                                              
+----------------- --------------------------------------------------------------------------------------------------------------------
+str               :py:func:`get_name <DisplayManager.get_name>`\ (index)                                                              
+                                                                                                                                      
+                  Gets the name of the display (typically a human-readable string).                                                   
+----------------- --------------------------------------------------------------------------------------------------------------------
+int               :py:func:`get_origin_x <DisplayManager.get_origin_x>`\ (index)                                                      
+                                                                                                                                      
+                  Gets the horizontal origin of the display in pixels.                                                                
+----------------- --------------------------------------------------------------------------------------------------------------------
+int               :py:func:`get_origin_y <DisplayManager.get_origin_y>`\ (index)                                                      
+                                                                                                                                      
+                  Gets the vertical origin of the display in pixels.                                                                  
+----------------- --------------------------------------------------------------------------------------------------------------------
+int               :py:func:`get_resolution_x <DisplayManager.get_resolution_x>`\ (index)                                              
+                                                                                                                                      
+                  Gets the horizontal resolution of the display in pixels.                                                            
+----------------- --------------------------------------------------------------------------------------------------------------------
+int               :py:func:`get_resolution_y <DisplayManager.get_resolution_y>`\ (index)                                              
+                                                                                                                                      
+                  Gets the vertical resolution of the display in pixels.                                                              
+----------------- --------------------------------------------------------------------------------------------------------------------
+bool              :py:func:`is_primary <DisplayManager.is_primary>`\ (index)                                                          
+                                                                                                                                      
+                  Returns whether this is the primary (or main) display.                                                              
+----------------- --------------------------------------------------------------------------------------------------------------------
+\                 :py:func:`select_display <DisplayManager.select_display>`\ (index)                                                  
+                                                                                                                                      
+                  Chooses a particular display to remote to connected Viewer app users.                                               
+----------------- --------------------------------------------------------------------------------------------------------------------
+\                 :py:func:`set_callback <DisplayManager.set_callback>`\ (callback)                                                   
+                                                                                                                                      
+                  Registers a callback notifying when displays are added or removed, or the resolution of an existing display changes.
+================= ====================================================================================================================
+
+
+Methods
+-------
+
+.. py:method:: DisplayManager.get_display_count()
+
+    Returns the number of displays.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getDisplayCount`.
+
+    :rtype: int
+
+.. py:method:: DisplayManager.get_id(index)
+
+    Gets the ID of the display (typically a short string).
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getId`.
+
+    :param index:
+    :type index: int
+    :rtype: str
+
+.. py:method:: DisplayManager.get_name(index)
+
+    Gets the name of the display (typically a human-readable string).
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getName`.
+
+    :param index:
+    :type index: int
+    :rtype: str
+
+.. py:method:: DisplayManager.get_origin_x(index)
+
+    Gets the horizontal origin of the display in pixels.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getOriginX`.
+
+    :param index:
+    :type index: int
+    :rtype: int
+
+.. py:method:: DisplayManager.get_origin_y(index)
+
+    Gets the vertical origin of the display in pixels.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getOriginY`.
+
+    :param index:
+    :type index: int
+    :rtype: int
+
+.. py:method:: DisplayManager.get_resolution_x(index)
+
+    Gets the horizontal resolution of the display in pixels.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getResolutionX`.
+
+    :param index:
+    :type index: int
+    :rtype: int
+
+.. py:method:: DisplayManager.get_resolution_y(index)
+
+    Gets the vertical resolution of the display in pixels.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_getResolutionY`.
+
+    :param index:
+    :type index: int
+    :rtype: int
+
+.. py:method:: DisplayManager.is_primary(index)
+
+    Returns whether this is the primary (or main) display.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_isPrimary`.
+
+    :param index:
+    :type index: int
+    :rtype: bool
+
+.. py:method:: DisplayManager.select_display(index)
+
+    Chooses a particular display to remote to connected Viewer app users.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_selectDisplay`.
+
+    :param index:
+    :type index: int
+
+.. py:method:: DisplayManager.set_callback(callback)
+
+    Registers a callback notifying when displays are added or removed, or the 
+    resolution of an existing display changes.
+
+    For more information, see :cpp:func:`vnc_DisplayManager_setCallback`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.DisplayManager.Callback` or None
+

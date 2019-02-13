@@ -1,0 +1,69 @@
+DataStore
+=========
+
+Nested Classes
+--------------
+
+* :py:class:`vncsdk.DataStore.Callback`
+
+
+Method Summary
+--------------
+================= ==========================================================================================
+Modifier and Type Method and Description                                                                    
+================= ==========================================================================================
+\                 :py:func:`create_custom_store <vncsdk.DataStore.create_custom_store>`\ (callback)         
+                                                                                                            
+                  Creates a custom data store.                                                              
+----------------- ------------------------------------------------------------------------------------------
+\                 :py:func:`create_file_store <vncsdk.DataStore.create_file_store>`\ (path)                 
+                                                                                                            
+                  Creates a file data store.                                                                
+----------------- ------------------------------------------------------------------------------------------
+\                 :py:func:`create_registry_store <vncsdk.DataStore.create_registry_store>`\ (registry_path)
+                                                                                                            
+                  Creates a registry data store.                                                            
+----------------- ------------------------------------------------------------------------------------------
+\                 :py:func:`destroy_store <vncsdk.DataStore.destroy_store>`\ ()                             
+                                                                                                            
+                  Destroys the current data store.                                                          
+================= ==========================================================================================
+
+
+Static methods
+--------------
+
+.. py:function:: vncsdk.DataStore.create_custom_store(callback)
+
+    Creates a custom data store.
+
+    For more information, see :cpp:func:`vnc_DataStore_createCustomStore`.
+
+    :param callback:
+    :type callback: :py:class:`vncsdk.DataStore.Callback`
+
+.. py:function:: vncsdk.DataStore.create_file_store(path)
+
+    Creates a file data store.
+
+    For more information, see :cpp:func:`vnc_DataStore_createFileStore`.
+
+    :param path:
+    :type path: str
+
+.. py:function:: vncsdk.DataStore.create_registry_store(registry_path)
+
+    Creates a registry data store.
+
+    For more information, see :cpp:func:`vnc_DataStore_createRegistryStore`.
+
+    :param registry_path:
+    :type registry_path: str
+
+.. py:function:: vncsdk.DataStore.destroy_store()
+
+    Destroys the current data store.
+
+    For more information, see :cpp:func:`vnc_DataStore_destroyStore`.
+
+

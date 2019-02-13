@@ -1,0 +1,98 @@
+Set
+===
+
+.. js:data:: vncsdk.Set
+
+    This is a JavaScript Set implementation that can be used to represent an
+    argument comprising of a bitmask of enums. For example values in the enumeration
+    :js:attr:`vncsdk.Viewer.MouseButton` may be added to the same set. For browsers that
+    support JavaScript Sets, vncsdk.Set will return directly the browser's
+    implementation. For older browsers that lack support, a basic polyfill is created
+    for use with VNC SDK functions.
+
+Constructor Summary
+-------------------
+================= ===================================================
+Modifier and Type Method and Description                             
+================= ===================================================
+\                 `Set <#constructor>`_\ ()                          
+                                                                     
+                  Creates and returns an empty :js:attr:`vncsdk.Set`.
+================= ===================================================
+
+
+Method Summary
+--------------
+================= ==========================================================================================================================
+Modifier and Type Method and Description                                                                                                    
+================= ==========================================================================================================================
+\                 :js:func:`add <Set.add>`\ (value)                                                                                         
+                                                                                                                                            
+                  Appends a new element with the given value to the :js:attr:`vncsdk.Set` object.                                           
+----------------- --------------------------------------------------------------------------------------------------------------------------
+\                 :js:func:`clear <Set.clear>`\ ()                                                                                          
+                                                                                                                                            
+                  Removes all elements from the :js:attr:`vncsdk.Set` object.                                                               
+----------------- --------------------------------------------------------------------------------------------------------------------------
+\                 :js:func:`delete <Set.delete>`\ (value)                                                                                   
+                                                                                                                                            
+                  Removes the element associated to the value.                                                                              
+----------------- --------------------------------------------------------------------------------------------------------------------------
+boolean           :js:func:`has <Set.has>`\ (value)                                                                                         
+                                                                                                                                            
+                  Returns a boolean asserting whether an element is present with the given value in the :js:attr:`vncsdk.Set` object or not.
+----------------- --------------------------------------------------------------------------------------------------------------------------
+\                 :js:func:`forEach <Set.forEach>`\ (callbackFn, thisArg)                                                                   
+                                                                                                                                            
+                  Calls ``callbackFn`` once for each value present in the :js:attr:`vncsdk.Set` object, in insertion order.                 
+================= ==========================================================================================================================
+
+
+Constructor
+-----------
+
+.. js:class:: vncsdk.Set()
+
+    Creates and returns an empty :js:attr:`vncsdk.Set`. For browsers with ES6 Set support
+    this method will return the browser's Set implementation. The following section
+    describes the methods of the basic polyfill while methods for ES6 Set standard
+    can be found
+    `here <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set>`_.
+
+
+Methods
+-------
+
+.. js:function:: Set.add(value)
+
+    Appends a new element with the given value to the :js:attr:`vncsdk.Set` object.
+
+    :param value:
+    :type value: `enum value`
+
+.. js:function:: Set.clear()
+
+    Removes all elements from the :js:attr:`vncsdk.Set` object.
+
+.. js:function:: Set.delete(value)
+
+    Removes the element associated to the value.
+
+    :param value:
+    :type value: `enum value`
+
+.. js:function:: Set.has(value)
+
+    Returns a boolean asserting whether an element is present with the given
+    value in the :js:attr:`vncsdk.Set` object or not.
+
+    :param value:
+    :type value: `enum value`
+    :rtype: boolean
+
+.. js:function:: Set.forEach(callbackFn, thisArg)
+
+    Calls ``callbackFn`` once for each value present in the :js:attr:`vncsdk.Set` object, in
+    insertion order. If a ``thisArg`` parameter is provided to ``forEach``, it will be
+    used as the ``this`` value for each callback.
+

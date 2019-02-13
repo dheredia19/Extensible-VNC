@@ -1,0 +1,15 @@
+.. _Server.ConnectionCallback.ConnectionStartedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.ConnectionCallback.ConnectionStartedType
+-----------------------------------------------
+
+.. attribute:: Server.ConnectionCallback.ConnectionStartedType
+
+    The type of the :attr:`Server.ConnectionCallback.ConnectionStarted`\  callback.
+
+    
+
+

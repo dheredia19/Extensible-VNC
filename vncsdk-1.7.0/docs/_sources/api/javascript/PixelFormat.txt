@@ -1,0 +1,215 @@
+PixelFormat
+===========
+
+.. js:data:: vncsdk.PixelFormat
+
+    Description of how pixels are stored in a Viewer framebuffer.
+
+Constructor Summary
+-------------------
+================= =========================================================================================================
+Modifier and Type Method and Description                                                                                   
+================= =========================================================================================================
+\                 `PixelFormat <#constructor>`_\ (bitsPerPixel, redMax, greenMax, blueMax, redShift, greenShift, blueShift)
+                                                                                                                           
+                  Creates a custom pixel format based on the given parameters.                                             
+================= =========================================================================================================
+
+
+Method Summary
+--------------
+============================= =============================================================================================================================================================================
+Modifier and Type             Method and Description                                                                                                                                                       
+============================= =============================================================================================================================================================================
+:js:data:`vncsdk.PixelFormat` :js:func:`bgr888 <vncsdk.PixelFormat.bgr888>`\ ()                                                                                                                            
+                                                                                                                                                                                                           
+                              32 bits per pixel stored as XXXXXXXXBBBBBBBBGGGGGGGGRRRRRRRR in most significant to least significant bit order For more information, see :cpp:func:`vnc_PixelFormat_bgr888`.
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:js:data:`vncsdk.PixelFormat` :js:func:`rgb555 <vncsdk.PixelFormat.rgb555>`\ ()                                                                                                                            
+                                                                                                                                                                                                           
+                              16 bits per pixel stored as XRRRRRGGGGGBBBBB in most significant to least significant bit order For more information, see :cpp:func:`vnc_PixelFormat_rgb555`.                
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:js:data:`vncsdk.PixelFormat` :js:func:`rgb565 <vncsdk.PixelFormat.rgb565>`\ ()                                                                                                                            
+                                                                                                                                                                                                           
+                              16 bits per pixel stored as RRRRRGGGGGGBBBBB in most significant to least significant bit order For more information, see :cpp:func:`vnc_PixelFormat_rgb565`.                
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:js:data:`vncsdk.PixelFormat` :js:func:`rgb888 <vncsdk.PixelFormat.rgb888>`\ ()                                                                                                                            
+                                                                                                                                                                                                           
+                              32 bits per pixel stored as XXXXXXXXRRRRRRRRGGGGGGGGBBBBBBBB in most significant to least significant bit order For more information, see :cpp:func:`vnc_PixelFormat_rgb888`.
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+number                        :js:func:`blueMax <PixelFormat.blueMax>`\ ()                                                                                                                                 
+                                                                                                                                                                                                           
+                              Gets the maximum value for the blue pixel value.                                                                                                                             
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+number                        :js:func:`blueShift <PixelFormat.blueShift>`\ ()                                                                                                                             
+                                                                                                                                                                                                           
+                              Gets the number of bits the blue pixel value is shifted.                                                                                                                     
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+number                        :js:func:`bpp <PixelFormat.bpp>`\ ()                                                                                                                                         
+                                                                                                                                                                                                           
+                              Gets the total number of bits per pixel.                                                                                                                                     
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+number                        :js:func:`depth <PixelFormat.depth>`\ ()                                                                                                                                     
+                                                                                                                                                                                                           
+                              Gets the number of significant bits that are used to store pixel data.                                                                                                       
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\                             :js:func:`destroy <PixelFormat.destroy>`\ ()                                                                                                                                 
+                                                                                                                                                                                                           
+                              Destroy a custom pixel format.                                                                                                                                               
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+number                        :js:func:`greenMax <PixelFormat.greenMax>`\ ()                                                                                                                               
+                                                                                                                                                                                                           
+                              Gets the maximum value for the green pixel value.                                                                                                                            
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+number                        :js:func:`greenShift <PixelFormat.greenShift>`\ ()                                                                                                                           
+                                                                                                                                                                                                           
+                              Gets the number of bits the green pixel value is shifted.                                                                                                                    
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+number                        :js:func:`redMax <PixelFormat.redMax>`\ ()                                                                                                                                   
+                                                                                                                                                                                                           
+                              Gets the maximum value for the red pixel value.                                                                                                                              
+----------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+number                        :js:func:`redShift <PixelFormat.redShift>`\ ()                                                                                                                               
+                                                                                                                                                                                                           
+                              Gets the number of bits the red pixel value is shifted.                                                                                                                      
+============================= =============================================================================================================================================================================
+
+
+Constructor
+-----------
+
+.. js:class:: vncsdk.PixelFormat(bitsPerPixel, redMax, greenMax, blueMax, redShift, greenShift, blueShift)
+
+    Creates a custom pixel format based on the given parameters.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_create`.
+
+    :param bitsPerPixel:
+    :type bitsPerPixel: number
+    :param redMax:
+    :type redMax: number
+    :param greenMax:
+    :type greenMax: number
+    :param blueMax:
+    :type blueMax: number
+    :param redShift:
+    :type redShift: number
+    :param greenShift:
+    :type greenShift: number
+    :param blueShift:
+    :type blueShift: number
+    :throws: :js:data:`vncsdk.VncException` on error
+
+Static methods
+--------------
+
+.. js:function:: vncsdk.PixelFormat.bgr888()
+
+    32 bits per pixel stored as XXXXXXXXBBBBBBBBGGGGGGGGRRRRRRRR in most
+    significant to least significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_bgr888`.
+
+    :rtype: :js:data:`vncsdk.PixelFormat`
+
+.. js:function:: vncsdk.PixelFormat.rgb555()
+
+    16 bits per pixel stored as XRRRRRGGGGGBBBBB in most significant to least
+    significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_rgb555`.
+
+    :rtype: :js:data:`vncsdk.PixelFormat`
+
+.. js:function:: vncsdk.PixelFormat.rgb565()
+
+    16 bits per pixel stored as RRRRRGGGGGGBBBBB in most significant to least
+    significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_rgb565`.
+
+    :rtype: :js:data:`vncsdk.PixelFormat`
+
+.. js:function:: vncsdk.PixelFormat.rgb888()
+
+    32 bits per pixel stored as XXXXXXXXRRRRRRRRGGGGGGGGBBBBBBBB in most
+    significant to least significant bit order
+
+    For more information, see :cpp:func:`vnc_PixelFormat_rgb888`.
+
+    :rtype: :js:data:`vncsdk.PixelFormat`
+
+Methods
+-------
+
+.. js:function:: PixelFormat.blueMax()
+
+    Gets the maximum value for the blue pixel value.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_blueMax`.
+
+    :rtype: number
+
+.. js:function:: PixelFormat.blueShift()
+
+    Gets the number of bits the blue pixel value is shifted.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_blueShift`.
+
+    :rtype: number
+
+.. js:function:: PixelFormat.bpp()
+
+    Gets the total number of bits per pixel.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_bpp`.
+
+    :rtype: number
+
+.. js:function:: PixelFormat.depth()
+
+    Gets the number of significant bits that are used to store pixel data.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_depth`.
+
+    :rtype: number
+
+.. js:function:: PixelFormat.destroy()
+
+    Destroy a custom pixel format.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_destroy`.
+
+
+.. js:function:: PixelFormat.greenMax()
+
+    Gets the maximum value for the green pixel value.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_greenMax`.
+
+    :rtype: number
+
+.. js:function:: PixelFormat.greenShift()
+
+    Gets the number of bits the green pixel value is shifted.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_greenShift`.
+
+    :rtype: number
+
+.. js:function:: PixelFormat.redMax()
+
+    Gets the maximum value for the red pixel value.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_redMax`.
+
+    :rtype: number
+
+.. js:function:: PixelFormat.redShift()
+
+    Gets the number of bits the red pixel value is shifted.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_redShift`.
+
+    :rtype: number
+

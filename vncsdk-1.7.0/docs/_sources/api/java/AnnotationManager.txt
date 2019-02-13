@@ -1,0 +1,166 @@
+AnnotationManager
+=================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public abstract class AnnotationManager
+
+   Enables a Viewer or Server to annotate a Server device screen.
+
+Nested Classes
+--------------
+* interface :java:type:`AnnotationManager.Callback`
+
+Method Summary
+--------------
+==================== ===========================================================================================================================================================================
+Modifier and Type    Method and Description                                                                                                                                                     
+==================== ===========================================================================================================================================================================
+:java:type:`void`    :java:meth:`clear <AnnotationManager.clear(boolean, Connection) throws Library.VncException>`\ (:java:type:`boolean` fade, :java:type:`Connection` connection)             
+                                                                                                                                                                                                
+                     Clears particular annotations.                                                                                                                                             
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`clearAll <AnnotationManager.clearAll(boolean)>`\ (:java:type:`boolean` fade)                                                                                   
+                                                                                                                                                                                                
+                     Clears all annotations.                                                                                                                                                    
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`     :java:meth:`getFadeDuration <AnnotationManager.getFadeDuration()>`\ ()                                                                                                     
+                                                                                                                                                                                                
+                     Gets how long annotations take to fade.                                                                                                                                    
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`     :java:meth:`getPenColor <AnnotationManager.getPenColor()>`\ ()                                                                                                             
+                                                                                                                                                                                                
+                     Gets the current pen color.                                                                                                                                                
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`     :java:meth:`getPenSize <AnnotationManager.getPenSize()>`\ ()                                                                                                               
+                                                                                                                                                                                                
+                     Gets the current pen size.                                                                                                                                                 
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`int`     :java:meth:`getPersistDuration <AnnotationManager.getPersistDuration()>`\ ()                                                                                               
+                                                                                                                                                                                                
+                     Gets how long annotations persist as a solid color for.                                                                                                                    
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`boolean` :java:meth:`isAvailable <AnnotationManager.isAvailable()>`\ ()                                                                                                             
+                                                                                                                                                                                                
+                     Queries whether it is possible to annotate.                                                                                                                                
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`movePenTo <AnnotationManager.movePenTo(int, int, boolean) throws Library.VncException>`\ (:java:type:`int` x, :java:type:`int` y, :java:type:`boolean` penDown)
+                                                                                                                                                                                                
+                     Draws a line on the Server screen from the current position to a new position.                                                                                             
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`setCallback <AnnotationManager.setCallback(AnnotationManager.Callback) throws Library.VncException>`\ (:java:type:`AnnotationManager.Callback` callback)       
+                                                                                                                                                                                                
+                     Sets annotation-related callbacks.                                                                                                                                         
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`setFadeDuration <AnnotationManager.setFadeDuration(int)>`\ (:java:type:`int` durationMs)                                                                       
+                                                                                                                                                                                                
+                     Sets how long annotations take to fade.                                                                                                                                    
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`setPenColor <AnnotationManager.setPenColor(int)>`\ (:java:type:`int` color)                                                                                    
+                                                                                                                                                                                                
+                     Sets the pen color, determining the color of the annotation line.                                                                                                          
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`setPenSize <AnnotationManager.setPenSize(int)>`\ (:java:type:`int` size)                                                                                       
+                                                                                                                                                                                                
+                     Sets the pen size, determining the width of the annotation line.                                                                                                           
+-------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void`    :java:meth:`setPersistDuration <AnnotationManager.setPersistDuration(int)>`\ (:java:type:`int` durationMs)                                                                 
+                                                                                                                                                                                                
+                     Sets how long annotations persist as a solid color for.                                                                                                                    
+==================== ===========================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method:: public void clear(boolean fade, Connection connection) throws Library.VncException
+   :outertype: AnnotationManager
+
+   Clears particular annotations.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_clear`.
+
+.. java:method:: public void clearAll(boolean fade)
+   :outertype: AnnotationManager
+
+   Clears all annotations.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_clearAll`.
+
+.. java:method:: public int getFadeDuration()
+   :outertype: AnnotationManager
+
+   Gets how long annotations take to fade.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_getFadeDuration`.
+
+.. java:method:: public int getPenColor()
+   :outertype: AnnotationManager
+
+   Gets the current pen color.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_getPenColor`.
+
+.. java:method:: public int getPenSize()
+   :outertype: AnnotationManager
+
+   Gets the current pen size.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_getPenSize`.
+
+.. java:method:: public int getPersistDuration()
+   :outertype: AnnotationManager
+
+   Gets how long annotations persist as a solid color for.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_getPersistDuration`.
+
+.. java:method:: public boolean isAvailable()
+   :outertype: AnnotationManager
+
+   Queries whether it is possible to annotate.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_isAvailable`.
+
+.. java:method:: public void movePenTo(int x, int y, boolean penDown) throws Library.VncException
+   :outertype: AnnotationManager
+
+   Draws a line on the Server screen from the current position to a new position.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_movePenTo`.
+
+.. java:method:: public void setCallback(AnnotationManager.Callback callback) throws Library.VncException
+   :outertype: AnnotationManager
+
+   Sets annotation-related callbacks.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_setCallback`.
+
+.. java:method:: public void setFadeDuration(int durationMs)
+   :outertype: AnnotationManager
+
+   Sets how long annotations take to fade.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_setFadeDuration`.
+
+.. java:method:: public void setPenColor(int color)
+   :outertype: AnnotationManager
+
+   Sets the pen color, determining the color of the annotation line.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_setPenColor`.
+
+.. java:method:: public void setPenSize(int size)
+   :outertype: AnnotationManager
+
+   Sets the pen size, determining the width of the annotation line.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_setPenSize`.
+
+.. java:method:: public void setPersistDuration(int durationMs)
+   :outertype: AnnotationManager
+
+   Sets how long annotations persist as a solid color for.
+
+   For more information, see :cpp:func:`vnc_AnnotationManager_setPersistDuration`.
+

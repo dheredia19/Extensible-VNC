@@ -1,0 +1,24 @@
+Server.CaptureMethod
+====================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum CaptureMethod
+   :outertype: Server
+
+   Enumeration of screen capture methods.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final Server.CaptureMethod CAPTURE_FALLBACK
+   :outertype: Server.CaptureMethod
+
+   Use a fallback capture method under Windows and Linux. This is likely to be slower, but may solve rendering glitches with certain third-party applications. Not supported under Mac OS X.
+
+.. java:field:: public static final Server.CaptureMethod CAPTURE_OPTIMAL
+   :outertype: Server.CaptureMethod
+
+   Use the optimal capture method for the platform. This is the default.
+

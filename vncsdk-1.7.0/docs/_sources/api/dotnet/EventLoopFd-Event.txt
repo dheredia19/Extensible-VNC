@@ -1,0 +1,45 @@
+.. _EventLoopFd.Event:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+EventLoopFd.Event
+-----------------
+
+.. enum:: EventLoopFd.Event
+
+    Enumeration of file descriptor events for event selection.
+
+    For more information, see :cpp:class:`vnc_EventLoopFd_Event`\  in the C API documentation.
+
+
+Fields
+~~~~~~
+
+.. attribute::  EventLoopFd.Event.Zero
+
+    No Event bits set.
+
+    
+
+.. attribute::  EventLoopFd.Event.Read
+
+    Monitor using :code:`readfds`\  with :code:`select`\ () (the second argument), or
+    :code:`POLLIN`\  with :code:`poll`\ ().
+
+    
+
+.. attribute::  EventLoopFd.Event.Write
+
+    Monitor using :code:`writefds`\  with :code:`select`\ () (the third argument), or
+    :code:`POLLOUT`\  with :code:`poll`\ ().
+
+    
+
+.. attribute::  EventLoopFd.Event.Except
+
+    Monitor using :code:`exceptfds`\  with :code:`select`\ () (the fourth argument), or
+    :code:`POLLPRI`\  with :code:`poll`\ ().
+
+    
+

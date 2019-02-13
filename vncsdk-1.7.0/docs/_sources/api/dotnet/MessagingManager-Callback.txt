@@ -1,0 +1,71 @@
+.. _MessagingManager.Callback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+MessagingManager.Callback
+-------------------------
+
+.. class:: MessagingManager.Callback
+
+    Callback notifying when messages are received.
+
+    For more information, see :cpp:func:`vnc_MessagingManager_Callback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`MessagingManager.Callback.MessageReceivedType`
+
+**Constructor summary**
+
+================= ==========================================================================================
+Modifier and Type Method and Description                                                                    
+================= ==========================================================================================
+\                 :meth:`MessagingManager.Callback`\ (:attr:`MessagingManager.Callback.MessageReceivedType`)
+                                                                                                            
+                  Initializes a new Callback class instance.                                                
+================= ==========================================================================================
+
+
+**Method summary**
+
+================= ================================================================================================================================
+Modifier and Type Method and Description                                                                                                          
+================= ================================================================================================================================
+:type:`void`      :meth:`MessagingManager.Callback.OnMessageReceived`\ (:type:`MessagingManager`, :type:`Connection`, :type:`ImmutableDataBuffer`)
+                                                                                                                                                  
+                  Handles the MessageReceived event.                                                                                              
+                  By default, calls the MessageReceived delegate.                                                                                 
+================= ================================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: MessagingManager.Callback(MessagingManager.Callback.MessageReceivedType a)
+
+    Initializes a new Callback class instance.
+
+    For more information, see :cpp:func:`vnc_MessagingManager_Callback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void MessagingManager.Callback.OnMessageReceived(MessagingManager a, Connection b, ImmutableDataBuffer c)
+
+    Handles the MessageReceived event.
+    By default, calls the MessageReceived delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  MessagingManager.Callback.MessageReceived
+
+    Notification that a message has been received.
+
+    For more information, see :cpp:member:`vnc_MessagingManager_Callback::messageReceived`\  in the C API documentation.
+

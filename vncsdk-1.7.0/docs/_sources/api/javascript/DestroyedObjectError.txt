@@ -1,0 +1,47 @@
+DestroyedObjectError
+====================
+
+:extends: Error
+
+.. js:data:: vncsdk.DestroyedObjectError
+
+    Thrown to indicate that another method has been invoked on an SDK object
+    after the "destroy" method has been used.
+
+Constructor Summary
+-------------------
+================= ======================================================================
+Modifier and Type Method and Description                                                
+================= ======================================================================
+\                 `DestroyedObjectError <#constructor>`_\ ()                            
+                                                                                        
+                  Constructs a ``DestroyedObjectError`` with the default detail message.
+================= ======================================================================
+
+
+Method Summary
+--------------
+================= =======================================================
+Modifier and Type Method and Description                                 
+================= =======================================================
+string            :js:func:`toString <DestroyedObjectError.toString>`\ ()
+                                                                         
+                  Returns the name of this error.                        
+================= =======================================================
+
+
+Constructor
+-----------
+
+.. js:class:: vncsdk.DestroyedObjectError()
+
+    Constructs a ``DestroyedObjectError`` with the default detail message.
+
+Methods
+-------
+
+.. js:function:: DestroyedObjectError.toString()
+
+    Returns the name of this error.
+
+    :rtype: string

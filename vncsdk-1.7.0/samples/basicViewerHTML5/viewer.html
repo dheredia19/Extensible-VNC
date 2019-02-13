@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<!--
+Copyright (C) 2016-2017 RealVNC Limited. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors
+may be used to endorse or promote products derived from this software without
+specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- VNC JavaScript SDK -->
+<script src="vncsdk.js"></script>
+<script src="../../lib/html5/vncsdk.js"></script>
+<!-- Sample app -->
+<link rel="stylesheet" href="viewer.css">
+<script src="viewer.js"></script>
+<title>VNC SDK - basicViewerHTML5</title>
+</head>
+<body>
+
+  <!-- Viewer's desktop UI -->
+  <div id="desktop">
+    <div id="desktop-content">
+      <canvas id="framebuffer" tabindex="0"><!-- Viewer framebuffer --></canvas>
+    </div>
+    <!-- "Disconnect" button and frame -->
+    <div id="desktopBarFrame">
+      <div id="message"></div>
+      <button id="disconnectBtn" class="status-dlg-button">Disconnect</button>
+      <button id="ctrlAltDelBtn" class="status-dlg-button">Ctrl-Alt-Del</button>
+    </div>
+  </div>
+
+  <!-- Status Dialog UI -->
+  <div id="container">
+    <div id="mainView">
+      <div id="statusDialog">
+        <div id="statusFrame">
+          <p id="statusTitle"></p>
+          <p id="statusContent"></p>
+        </div>
+      </div>
+      <!-- "Connect" and "Start Over" buttons -->
+      <div id="buttonBarFrame">
+        <div id="connectBtnFrame" class="center-align">
+          <button id="connectBtn" class="status-dlg-button">Connect</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

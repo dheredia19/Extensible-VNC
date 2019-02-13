@@ -1,0 +1,53 @@
+Viewer.ConnectionCallback
+=========================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public interface ConnectionCallback
+   :outertype: Viewer
+
+   Callback receiving state-change notifications for a Viewer.
+
+Method Summary
+--------------
+================= =================================================================================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                                                                           
+================= =================================================================================================================================================================================================================================================
+:java:type:`void` :java:meth:`connected <ConnectionCallback.connected(Viewer)>`\ (:java:type:`Viewer` viewer)                                                                                                                                                      
+                                                                                                                                                                                                                                                                   
+                  Notification that is called when the viewer successfully connects to a server (after authentication).                                                                                                                                            
+----------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`connecting <ConnectionCallback.connecting(Viewer)>`\ (:java:type:`Viewer` viewer)                                                                                                                                                    
+                                                                                                                                                                                                                                                                   
+                  Notification that is called when the viewer begins a connection attempt to the server.                                                                                                                                                           
+----------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`disconnected <ConnectionCallback.disconnected(Viewer, String, java.util.EnumSet<DisconnectFlags>)>`\ (:java:type:`Viewer` viewer, :java:type:`String` reason, :java:type:`java.util.EnumSet`\ <:java:type:`DisconnectFlags`\ > flags)
+                                                                                                                                                                                                                                                                   
+                  Notification that is called when the viewer disconnects from the server.                                                                                                                                                                         
+================= =================================================================================================================================================================================================================================================
+
+Methods
+-------
+
+.. java:method::  void connected(Viewer viewer)
+   :outertype: Viewer.ConnectionCallback
+
+   Notification that is called when the viewer successfully connects to a server (after authentication).
+
+   For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::connected`.
+
+.. java:method::  void connecting(Viewer viewer)
+   :outertype: Viewer.ConnectionCallback
+
+   Notification that is called when the viewer begins a connection attempt to the server.
+
+   For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::connecting`.
+
+.. java:method::  void disconnected(Viewer viewer, String reason, java.util.EnumSet<DisconnectFlags> flags)
+   :outertype: Viewer.ConnectionCallback
+
+   Notification that is called when the viewer disconnects from the server.
+
+   For more information, see :cpp:member:`vnc_Viewer_ConnectionCallback::disconnected`.
+

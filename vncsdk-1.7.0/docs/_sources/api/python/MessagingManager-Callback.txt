@@ -1,0 +1,35 @@
+MessagingManager.Callback
+=========================
+
+.. py:attribute:: vncsdk.MessagingManager.Callback
+
+    Callback notifying when messages are received.
+
+Method Summary
+--------------
+================= =============================================================================================================
+Modifier and Type Method and Description                                                                                       
+================= =============================================================================================================
+\                 :py:func:`message_received <MessagingManager.Callback.message_received>`\ (messaging_manager, sender, buffer)
+                                                                                                                               
+                  Notification that a message has been received.                                                               
+================= =============================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: MessagingManager.Callback.message_received(messaging_manager, sender, buffer)
+
+    Notification that a message has been received.
+
+    For more information, see :cpp:member:`vnc_MessagingManager_Callback::messageReceived`.
+
+    :param messaging_manager:
+    :type messaging_manager: :py:class:`vncsdk.MessagingManager`
+    :param sender:
+    :type sender: :py:class:`vncsdk.Connection`
+    :param buffer:
+    :type buffer: :py:class:`vncsdk.DataBuffer`
+    :return: None
+

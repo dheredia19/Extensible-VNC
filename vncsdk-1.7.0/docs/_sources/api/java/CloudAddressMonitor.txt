@@ -1,0 +1,84 @@
+CloudAddressMonitor
+===================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public final class CloudAddressMonitor
+
+   Monitor used to query the availability of VNC Cloud addresses.
+
+Nested Classes
+--------------
+* enum :java:type:`CloudAddressMonitor.Availability`
+* interface :java:type:`CloudAddressMonitor.Callback`
+
+Constructor Summary
+-------------------
+* :java:construct:`CloudAddressMonitor <CloudAddressMonitor(CloudConnector, String[] cloudAddresses, CloudAddressMonitor.Callback) throws Library.VncException>`\ (:java:type:`CloudConnector` connector, String[] cloudAddresses, :java:type:`CloudAddressMonitor.Callback` callback)
+
+  Creates a monitor, which queries whether a list of cloud addresses is available.
+
+Method Summary
+--------------
+================= ======================================================================================================================
+Modifier and Type Method and Description                                                                                                
+================= ======================================================================================================================
+:java:type:`void` :java:meth:`destroy <CloudAddressMonitor.destroy()>`\ ()                                                              
+                                                                                                                                        
+                  Destroys the Cloud monitor.                                                                                           
+----------------- ----------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`pause <CloudAddressMonitor.pause()>`\ ()                                                                  
+                                                                                                                                        
+                  Pauses the Cloud monitor.                                                                                             
+----------------- ----------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`resume <CloudAddressMonitor.resume()>`\ ()                                                                
+                                                                                                                                        
+                  Resumes the Cloud monitor.                                                                                            
+----------------- ----------------------------------------------------------------------------------------------------------------------
+:java:type:`void` :java:meth:`setPauseOnConnect <CloudAddressMonitor.setPauseOnConnect(boolean)>`\ (:java:type:`boolean` pauseOnConnect)
+                                                                                                                                        
+                  Sets whether or not the Cloud monitor pauses automatically when a connection is established.                          
+================= ======================================================================================================================
+
+Constructors
+------------
+
+.. java:constructor:: public CloudAddressMonitor(CloudConnector connector, String[] cloudAddresses, CloudAddressMonitor.Callback callback) throws Library.VncException
+   :outertype: CloudAddressMonitor
+
+   Creates a monitor, which queries whether a list of cloud addresses is available.
+
+   For more information, see :cpp:func:`vnc_CloudAddressMonitor_create`.
+
+Methods
+-------
+
+.. java:method:: public void destroy()
+   :outertype: CloudAddressMonitor
+
+   Destroys the Cloud monitor.
+
+   For more information, see :cpp:func:`vnc_CloudAddressMonitor_destroy`.
+
+.. java:method:: public void pause()
+   :outertype: CloudAddressMonitor
+
+   Pauses the Cloud monitor.
+
+   For more information, see :cpp:func:`vnc_CloudAddressMonitor_pause`.
+
+.. java:method:: public void resume()
+   :outertype: CloudAddressMonitor
+
+   Resumes the Cloud monitor.
+
+   For more information, see :cpp:func:`vnc_CloudAddressMonitor_resume`.
+
+.. java:method:: public void setPauseOnConnect(boolean pauseOnConnect)
+   :outertype: CloudAddressMonitor
+
+   Sets whether or not the Cloud monitor pauses automatically when a connection is established.
+
+   For more information, see :cpp:func:`vnc_CloudAddressMonitor_setPauseOnConnect`.
+

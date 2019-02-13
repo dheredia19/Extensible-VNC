@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConnectingViewController">
+            <connections>
+                <outlet property="constraintToLabel" destination="e43-ts-3Ji" id="KWf-Re-EIn"/>
+                <outlet property="constraintToSpinner" destination="QCp-sg-aqv" id="MDc-w8-9Qm"/>
+                <outlet property="messageLabel" destination="T0A-qi-w4G" id="BPY-fB-AoD"/>
+                <outlet property="spinner" destination="eiH-nB-lfa" id="DfO-HT-RnH"/>
+                <outlet property="startBtn" destination="Dd0-1E-7qn" id="90Y-W9-cgo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-nB-lfa">
+                    <rect key="frame" x="290" y="235" width="20" height="20"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbl_message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0A-qi-w4G">
+                    <rect key="frame" x="20" y="200" width="560" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd0-1E-7qn">
+                    <rect key="frame" x="255" y="269" width="90" height="44"/>
+                    <color key="backgroundColor" red="0.1765565814" green="0.72001262629999996" blue="0.21696635889999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Inm-nt-Dvj"/>
+                        <constraint firstAttribute="height" constant="44" id="eG0-ml-gQT">
+                            <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="90" id="kHT-Qa-pDq"/>
+                        <constraint firstAttribute="width" constant="90" id="tvr-5B-oyM">
+                            <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Start">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Inm-nt-Dvj"/>
+                            <exclude reference="kHT-Qa-pDq"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="startBtnPressed:" destination="-1" eventType="touchUpInside" id="9PR-kb-60T"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="T0A-qi-w4G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="F1k-LI-5Sh"/>
+                <constraint firstAttribute="trailing" secondItem="T0A-qi-w4G" secondAttribute="trailing" constant="20" symbolic="YES" id="Fpn-yM-6zf"/>
+                <constraint firstItem="Dd0-1E-7qn" firstAttribute="top" secondItem="eiH-nB-lfa" secondAttribute="bottom" constant="14" id="JMm-hD-e6R"/>
+                <constraint firstAttribute="centerX" secondItem="Dd0-1E-7qn" secondAttribute="centerX" id="MDw-Xc-kC0"/>
+                <constraint firstItem="Dd0-1E-7qn" firstAttribute="top" secondItem="eiH-nB-lfa" secondAttribute="bottom" constant="14" id="QCp-sg-aqv"/>
+                <constraint firstAttribute="centerX" secondItem="T0A-qi-w4G" secondAttribute="centerX" id="YXn-38-Bsh"/>
+                <constraint firstAttribute="centerX" secondItem="eiH-nB-lfa" secondAttribute="centerX" id="cko-fe-zUA"/>
+                <constraint firstItem="T0A-qi-w4G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="dRc-3s-IR4"/>
+                <constraint firstItem="Dd0-1E-7qn" firstAttribute="top" secondItem="T0A-qi-w4G" secondAttribute="bottom" priority="250" constant="14" id="e43-ts-3Ji">
+                    <variation key="heightClass=regular-widthClass=regular" constant="48"/>
+                </constraint>
+                <constraint firstItem="Dd0-1E-7qn" firstAttribute="top" secondItem="T0A-qi-w4G" secondAttribute="bottom" priority="250" constant="48" id="fDD-dG-flm"/>
+                <constraint firstAttribute="centerY" secondItem="T0A-qi-w4G" secondAttribute="centerY" id="lEf-7H-fwU"/>
+                <constraint firstItem="eiH-nB-lfa" firstAttribute="top" secondItem="T0A-qi-w4G" secondAttribute="bottom" constant="14" id="ucP-ZI-ePa"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="lEf-7H-fwU"/>
+                    <exclude reference="JMm-hD-e6R"/>
+                    <exclude reference="fDD-dG-flm"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

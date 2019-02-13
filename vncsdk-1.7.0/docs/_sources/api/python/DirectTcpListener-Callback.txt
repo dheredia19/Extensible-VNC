@@ -1,0 +1,35 @@
+DirectTcpListener.Callback
+==========================
+
+.. py:attribute:: vncsdk.DirectTcpListener.Callback
+
+    Callback for filtering incoming TCP connections.
+
+Method Summary
+--------------
+================= =========================================================================================================
+Modifier and Type Method and Description                                                                                   
+================= =========================================================================================================
+bool              :py:func:`filter_connection <DirectTcpListener.Callback.filter_connection>`\ (listener, ip_address, port)
+                                                                                                                           
+                  Notification to provide address-based filtering of incoming connections.                                 
+================= =========================================================================================================
+
+
+Methods
+-------
+
+.. py:function:: DirectTcpListener.Callback.filter_connection(listener, ip_address, port)
+
+    Notification to provide address-based filtering of incoming connections.
+
+    For more information, see :cpp:member:`vnc_DirectTcpListener_Callback::filterConnection`.
+
+    :param listener:
+    :type listener: :py:class:`vncsdk.DirectTcpListener`
+    :param ip_address:
+    :type ip_address: str or None
+    :param port:
+    :type port: int
+    :rtype: bool
+

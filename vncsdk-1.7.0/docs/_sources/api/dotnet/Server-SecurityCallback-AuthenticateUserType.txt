@@ -1,0 +1,15 @@
+.. _Server.SecurityCallback.AuthenticateUserType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.SecurityCallback.AuthenticateUserType
+--------------------------------------------
+
+.. attribute:: Server.SecurityCallback.AuthenticateUserType
+
+    The type of the :attr:`Server.SecurityCallback.AuthenticateUser`\  callback.
+
+    
+
+

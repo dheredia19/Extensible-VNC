@@ -1,0 +1,15 @@
+.. _Server.SecurityCallback.IsUserNameRequiredType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.SecurityCallback.IsUserNameRequiredType
+----------------------------------------------
+
+.. attribute:: Server.SecurityCallback.IsUserNameRequiredType
+
+    The type of the :attr:`Server.SecurityCallback.IsUserNameRequired`\  callback.
+
+    
+
+

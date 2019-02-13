@@ -1,0 +1,652 @@
+VNC Cloud API
+==============
+
+The VNC Cloud REST API enables you to obtain and manage cloud addresses in order to join devices to VNC Cloud and establish connections between them.
+
+API summary
+-----------
+
+VNC Cloud API resources can be accessed by making HTTPS requests to their URI. All resource URIs have the following structure:
+
+``https://api.vnc.com/cloud/1.1/<resource>``
+
+======================================== ====== =======================================================================================================
+Resource                                 Method Call this to:
+======================================== ====== =======================================================================================================
+``static-address``                       POST   :ref:`Obtain a new cloud address <obtaining_a_new_cloud_address>`
+``static-address``                       GET    :ref:`List all cloud addresses <list_all_cloud_addresses>`
+``static-address/<cloud-address>/ready`` GET    :ref:`Check whether a cloud address is ready to use <checking_whether_a_cloud_address_is_ready_to_use>`
+``static-address/<cloud-address>``       GET    :ref:`Retrieve the details of a cloud address <retrieving_the_details_of_a_cloud_address>`
+``static-address/<cloud-address>``       PUT    :ref:`Change the characteristics of a cloud address <changing_the_characteristics_of_a_cloud_address>`
+``static-address/<cloud-address>``       POST   :ref:`Reset a cloud address password <resetting_a_cloud_address_password>`
+``static-address/<cloud-address>``       DELETE :ref:`Delete a cloud address <deleting_a_cloud_address>`
+======================================== ====== =======================================================================================================
+
+Note that:
+
+* All calls to resources are authenticated using your VNC Cloud API key and secret obtained from RealVNC, using the Basic Authentication scheme.
+* Request bodies, where required, are represented by JSON-encoded objects, using the ``application/json`` content type.
+* Response bodies, where supplied, are represented by JSON-encoded objects, using the ``application/json`` content type.
+* There may be a short delay before a cloud address you've obtained or changed is ready to use.
+
+
+.. _obtaining_a_new_cloud_address:
+
+Obtaining a new cloud address
+-----------------------------
+
+A cloud address must have an action. The ``listen`` action allows incoming connections. The ``connect`` action allows outgoing connections. Typically, Viewers ``connect`` and Servers ``listen``, although you can reverse this methodology if you wish.
+
+A ``connect`` cloud address can be a member of up to 16 groups. Bundling ``connect`` cloud addresses into groups makes it easier to define which ``listen`` cloud addresses they can connect to.
+
+A ``listen`` cloud address should explicitly specify the groups or individual ``connect`` cloud address that can connect to it. It is permissible to omit an access control list, but note that every ``connect`` cloud address obtained using the same VNC Cloud API key will be able to connect. You can nominate up to 24 groups and 8 individual ``connect`` cloud addresses.
+
+HTTP request
+^^^^^^^^^^^^
+
+Method
+    POST
+URI
+    ``https://api.vnc.com/cloud/1.1/static-address``
+Body
+    A JSON-encoded object with the following parameters:
+
+    +--------------------+-----------------+---------------------------------------------------------------------------------+
+    | Parameter          | Type            | Description                                                                     |
+    +====================+=================+=================================================================================+
+    | ``allowedActions`` | Array of string | Mandatory. Specify the action the cloud address performs. The value must be     |
+    |                    |                 | either ``connect`` or ``listen``.                                               |
+    +--------------------+-----------------+---------------------------------------------------------------------------------+
+    | ``groups``         | Array of string | Optional (though recommended) for a ``connect`` cloud address. Specify a list   |
+    |                    |                 | of up to 16 groups the cloud address is a member of. Group names can be up to   |
+    |                    |                 | 256 UTF-8 characters. If omitted, the cloud address is not a member of any      |
+    |                    |                 | group.                                                                          |
+    +--------------------+-----------------+---------------------------------------------------------------------------------+
+    | ``accessControl``  | Array of string | Optional (though recommended) for a ``listen`` cloud address. Specify the       |
+    |                    |                 | ``groups`` parameter in this object with a list of up to 24 groups that can     |
+    |                    |                 | connect. Specify the ``cloudAddresses`` parameter in this object with a list of |
+    |                    |                 | up to 8 individual cloud addresses that can connect. If omitted, every cloud    |
+    |                    |                 | address obtained using the same VNC Cloud API key can connect.                  |
+    +--------------------+-----------------+---------------------------------------------------------------------------------+
+Since
+    1.0
+    
+Usage examples
+    A ``connect`` cloud address:
+
+    ::
+
+        curl https://api.vnc.com/cloud/1.1/static-address
+        -X POST
+        -u <API-key>:<API-secret>
+        -H "Content-Type:application/json"
+        -H "Accept:application/json"
+        -d '{
+              "allowedActions":["connect"],
+              "groups":["developers","testers","marketing","sales"]
+            }'
+
+    A ``listen`` cloud address:
+
+    ::
+
+        curl https://api.vnc.com/cloud/1.1/static-address
+        -X POST
+        -u <API-key>:<API-secret>
+        -H "Content-Type:application/json"
+        -H "Accept:application/json"
+        -d '{
+              "allowedActions":["listen"],
+              "accessControl":
+              {
+                "groups":["developers","sales"],
+                "cloudAddresses":["ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRhAHCcvLXdEQogp"]
+              }
+            }'
+
+HTTP response
+^^^^^^^^^^^^^
+
+Body
+    A JSON-encoded object with the following parameters:
+
+    ================= ====== =====================================
+    Parameter         Type   Description
+    ================= ====== =====================================
+    ``cloudAddress``  string The identifier for the cloud address.
+    ``cloudPassword`` string The password for the cloud address.
+    ================= ====== =====================================
+Content example
+    .. code-block :: json
+
+        {
+          "cloudAddress":"ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M",
+          "cloudPassword":"Zdsf36E8Dy7XR7i4HlpK"
+        }
+
+HTTP status codes
+^^^^^^^^^^^^^^^^^
+
+A successful call returns **201 Created**. An unsuccessful call returns either:
+
+400 Bad Request
+    Note that particular bad requests additionally return a JSON-encoded object with ``errorCode`` set to one of the following codes, and ``errorMessage`` set to the associated description:
+
+    ==== ============================================================================================================================================================================
+    Code Description
+    ==== ============================================================================================================================================================================
+    1001 The content type of the request body is something other than ``application/json``.
+    1002 The content type your user agent is expecting for the response body is something other than ``application/json``.
+    1003 You've specified an action that is not ``connect`` or ``listen``.
+    1004 For a ``connect`` cloud address, you've specified more than 16 groups. For a ``listen`` cloud address, you've specified more than 24 groups or 8 individual cloud addresses.
+    1005 You've created either an ``allowedActions``, ``groups``, or ``cloudAddresses`` list, but not put anything in it.
+    1006 A group name is either empty or longer than 256 characters.
+    1008 You've specified an access control list for a ``listen`` cloud address, but not put any groups or individual cloud addresses in it.
+    1009 Either you've specified an access control list for a ``connect`` cloud address, or a group for a ``listen`` cloud address. It should be the other way around.
+    ==== ============================================================================================================================================================================
+401 Unauthorized
+    You've either not provided a VNC Cloud API key, or the one you have provided is not in our system.
+403 Forbidden
+    Your VNC Cloud API key is not well-formed.
+404 Not Found
+    \ 
+503 Service Unavailable
+    \ 
+    
+    
+.. _list_all_cloud_addresses:
+
+Listing your current cloud addresses
+------------------------------------
+
+You can list all the cloud addresses you currently have available for use. This does not include cloud addresses previously obtained but deleted.
+
+By default, up to 20 cloud addresses are returned on a page. If you have more than 20, the response has a ``Link`` header containing a URI for the next page. If you want to change the number of cloud addresses returned per page, specify the ``limit`` query parameter.
+
+Note that if cloud addresses are added or deleted while paging, and a page already-viewed would be affected, you will have to call the API again to see the change. A page yet-to-be-viewed *is* updated, however.
+
+HTTP request
+^^^^^^^^^^^^
+
+Method
+    GET
+URI
+    ``https://api.vnc.com/cloud/1.1/static-address``
+
+    Note the URI can accept the following query parameter:
+
+    +--------------------+---------------------------------------------------------------------------------+
+    | Query parameter    | Description                                                                     |
+    +====================+=================================================================================+
+    | ``?limit=<1-99>``  | The number of cloud addresses returned on each page. By default, this is 20.    |
+    |                    | Specify a number between 1 and 99.                                              |
+    +--------------------+---------------------------------------------------------------------------------+
+Since
+    1.1
+Usage example
+    ::
+
+        curl https://api.vnc.com/cloud/1.1/static-address?limit=35
+        -X GET
+        -u <API-key>:<API-secret>
+        -H "Accept:application/json"
+
+HTTP response
+^^^^^^^^^^^^^
+
+Link
+    ``<url>; rel="next"``
+Body
+    A JSON-encoded object with the following parameters:
+
+    ================== =============== ==================================================
+    Parameter          Type            Description
+    ================== =============== ==================================================
+    ``cloudAddresses`` Array of string A page containing up to ``limit`` cloud addresses.
+    ================== =============== ==================================================
+
+Content example
+    .. code-block :: json
+
+        {
+          "cloudAddresses":[
+            "ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M",
+            "ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M",
+            "ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M"
+          ]
+        }
+
+HTTP status codes
+^^^^^^^^^^^^^^^^^
+
+A successful call returns **200 OK** if the current page has cloud addresses, and **204 No Content** if you've reached the end of the list. 
+
+An unsuccessful call returns either:
+
+400 Bad Request
+    Note that particular bad requests additionally return a JSON-encoded object with ``errorCode`` set to one of the following codes, and ``errorMessage`` set to the associated description:
+
+    ==== ============================================================================================================================================================================
+    Code Description
+    ==== ============================================================================================================================================================================
+    1002 The content type your user agent is expecting for the response body is something other than ``application/json``.
+    ==== ============================================================================================================================================================================
+401 Unauthorized
+    You've either not provided a VNC Cloud API key, or the one you have provided is not in our system.
+403 Forbidden
+    Your VNC Cloud API key is not well-formed.
+404 Not Found
+    \ 
+503 Service Unavailable
+    \ 
+
+
+.. _checking_whether_a_cloud_address_is_ready_to_use:
+
+Checking whether a cloud address is ready to use
+------------------------------------------------
+
+You may want to do this because there can be a slight delay before a cloud address you've :ref:`obtained <obtaining_a_new_cloud_address>`, :ref:`changed <changing_the_characteristics_of_a_cloud_address>` or :ref:`reset <resetting_a_cloud_address_password>` is ready to use.
+
+HTTP request
+^^^^^^^^^^^^
+
+Method
+    GET
+URI
+    ``https://api.vnc.com/cloud/1.1/static-address/<cloud-address>/ready``
+Since
+    1.0
+Usage example
+    ::
+
+        curl https://api.vnc.com/cloud/1.1/static-address/ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M/ready
+        -X GET
+        -u <API-key>:<API-secret>
+        -H "Accept:application/json"
+
+HTTP response
+^^^^^^^^^^^^^
+
+Body
+    A JSON-encoded object with the following parameters:
+
+    =========== ====== ===================================================================================================
+    Parameter   Type   Description
+    =========== ====== ===================================================================================================
+    ``changes`` string The value is ``none`` if the cloud address is ready to use, and ``pending`` if it is not yet ready.
+    =========== ====== ===================================================================================================
+Content examples
+    If a cloud address is ready to use:
+
+    .. code-block :: json
+
+        {
+          "changes":"none"
+        }
+
+    If a cloud address is not yet ready:
+
+    .. code-block :: json
+
+        {
+          "changes":"pending"
+        }
+
+HTTP status codes
+^^^^^^^^^^^^^^^^^
+
+A successful call returns **200 OK**. An unsuccessful call returns either:
+
+400 Bad Request
+    Note that particular bad requests additionally return a JSON-encoded object with ``errorCode`` set to one of the following codes, and ``errorMessage`` set to the associated description:
+
+    ==== ============================================================================================================================================================================
+    Code Description
+    ==== ============================================================================================================================================================================
+    1002 The content type your user agent is expecting for the response body is something other than ``application/json``.
+    1007 The cloud address you've specified in the URI is not well-formed.
+    ==== ============================================================================================================================================================================
+401 Unauthorized
+    You've either not provided a VNC Cloud API key, or the one you have provided is not in our system.
+403 Forbidden
+    Your VNC Cloud API key is not well-formed.
+404 Not Found
+    \ 
+503 Service Unavailable
+    \ 
+
+.. _retrieving_the_details_of_a_cloud_address:
+
+Retrieving the details of a cloud address
+-----------------------------------------
+
+The response includes an ``ETag`` header so you can subsequently check before you :ref:`change <changing_the_characteristics_of_a_cloud_address>`, :ref:`reset <resetting_a_cloud_address_password>` or :ref:`delete <deleting_a_cloud_address>` the cloud address.
+
+Note the response body does *not* include the cloud password. You must :ref:`reset <resetting_a_cloud_address_password>` the password and generate a new one if you want to learn what it is.
+
+HTTP request
+^^^^^^^^^^^^
+
+Method
+    GET
+URI
+    ``https://api.vnc.com/cloud/1.1/static-address/<cloud-address>``
+Since
+    1.0
+Usage example
+    ::
+
+        curl https://api.vnc.com/cloud/1.1/static-address/ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M
+        -X GET
+        -u <API-key>:<API-secret>
+        -H "Accept:application/json"
+
+HTTP response
+^^^^^^^^^^^^^
+
+ETag
+    ``<entity-version-number>``
+Body
+    A JSON-encoded object with the following parameters:
+
+    +--------------------+-----------------+---------------------------------------------------------------------------------------+
+    | Parameter          | Type            | Description                                                                           |
+    +====================+=================+=======================================================================================+
+    | ``cloudAddress``   | string          | The identifier for the cloud address.                                                 |
+    +--------------------+-----------------+---------------------------------------------------------------------------------------+
+    | ``allowedActions`` | Array of string | The action the cloud address performs. The value is either ``connect`` or ``listen``. |
+    +--------------------+-----------------+---------------------------------------------------------------------------------------+
+    | ``groups``         | Array of string | Optionally returned for a ``connect`` cloud address only. Contains a list of          |
+    |                    |                 | groups the cloud address is a member of. If omitted, the cloud address is not         |
+    |                    |                 | a member of any group.                                                                |
+    +--------------------+-----------------+---------------------------------------------------------------------------------------+
+    | ``accessControl``  | Object          | Optionally returned for a ``listen`` cloud address only. May contain a                |
+    |                    |                 | ``groups`` list with groups that can connect, and/or a ``cloudAddresses`` list        |
+    |                    |                 | with individual cloud addresses that can connect. If omitted, every cloud             |
+    |                    |                 | address obtained using the same VNC Cloud API key can connect.                        |
+    +--------------------+-----------------+---------------------------------------------------------------------------------------+
+Content examples
+    A ``connect`` cloud address:
+
+    .. code-block :: json
+
+        {
+          "cloudAddress":"ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M",
+          "allowedActions":["connect"],
+          "groups":["developer","testers","marketing","sales"]
+        }
+
+    A ``listen`` cloud address:
+
+    .. code-block :: json
+
+        {
+          "cloudAddress":"ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M",
+          "allowedActions":["listen"],
+          "accessControl":
+          {
+            "groups":["developers","sales"],
+            "cloudAddresses":["ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRhAHCcvLXdEQogp"]
+          }
+        }
+
+HTTP status codes
+^^^^^^^^^^^^^^^^^
+
+A successful call returns **200 OK**. An unsuccessful call returns either:
+
+
+400 Bad Request
+    Note that particular bad requests additionally return a JSON-encoded object with ``errorCode`` set to one of the following codes, and ``errorMessage`` set to the associated description:
+
+    ==== =================================================================================================================
+    Code Description
+    ==== =================================================================================================================
+    1002 The content type your user agent is expecting for the response body is something other than ``application/json``.
+    1007 The cloud address you've specified in the URI is not well-formed.
+    ==== =================================================================================================================
+401 Unauthorized
+    You've either not provided a VNC Cloud API key, or the one you have provided is not in our system.
+403 Forbidden
+    Your VNC Cloud API key is not well-formed.
+404 Not Found
+    \ 
+503 Service Unavailable
+    \ 
+
+.. _changing_the_characteristics_of_a_cloud_address:
+
+Changing the characteristics of a Cloud address
+-----------------------------------------------
+
+If you have previously :ref:`retrieved <retrieving_the_details_of_a_cloud_address>` this cloud address, you can use the ``If-Match`` header to make sure it's not been modified since.
+
+Note you must send a fully-formed cloud address in the request body, *including the actual cloud address itself*. There is no concept of patching or appending to a cloud address.
+
+HTTP request
+^^^^^^^^^^^^
+
+Method
+    PUT
+URI
+    ``https://api.vnc.com/cloud/1.1/static-address/<cloud-address>``
+Body
+    A JSON-encoded object with the following parameters:
+
+    +--------------------+-----------------+-------------------------------------------------------------------------------------+
+    | Parameter          | Type            | Description                                                                         |
+    +====================+=================+=====================================================================================+
+    | ``cloudAddress``   | string          | Mandatory. Specify the identifier for the cloud address. This value must match the  |
+    |                    |                 | cloud address in the URI.                                                           |
+    +--------------------+-----------------+-------------------------------------------------------------------------------------+
+    | ``allowedActions`` | Array of string | Mandatory. Specify the action the cloud address performs. The value must be either  |
+    |                    |                 | ``connect`` or ``listen``.                                                          |
+    +--------------------+-----------------+-------------------------------------------------------------------------------------+
+    | ``groups``         | Array of string | Optional (though recommended) for a ``connect`` cloud address. Specify a list of up |
+    |                    |                 | to 16 groups the cloud address is a member of. Group names can be up to 256 UTF-8   |
+    |                    |                 | characters. If omitted, the cloud address is not a member of any group.             |
+    +--------------------+-----------------+-------------------------------------------------------------------------------------+
+    | ``accessControl``  | Object          | Optional (though recommended) for a ``listen`` cloud address. Specify the           |
+    |                    |                 | ``groups`` parameter in this object with a list of up to 24 groups that can         |
+    |                    |                 | connect. Specify the ``cloudAddresses`` parameter in this object with a list of up  |
+    |                    |                 | to 8 individual cloud addresses that can connect. If omitted, every cloud address   |
+    |                    |                 | obtained using the same VNC Cloud API key can connect.                              |
+    +--------------------+-----------------+-------------------------------------------------------------------------------------+
+Since
+    1.0
+Usage examples
+    A ``connect`` cloud address:
+
+    ::
+
+        curl https://api.vnc.com/cloud/1.1/static-address/ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M
+        -X PUT
+        -u <API-key>:<API-secret>
+        -H "Content-Type:application/json"
+        -H 'If-Match:"<entity-version-number>"'
+        -d '{
+              "cloudAddress":"ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M",
+              "allowedActions":["connect"],
+              "groups":["marketing","sales"]
+            }'
+
+    A ``listen`` cloud address:
+
+    ::
+
+        curl https://api.vnc.com/cloud/1.1/static-address/ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M
+        -X PUT
+        -u <API-key>:<API-secret>
+        -H "Content-Type:application/json"
+        -H 'If-Match:"<entity-version-number>"'
+        -d '{
+              "cloudAddress":"ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M",
+              "allowedActions":["listen"],
+              "accessControl":
+              {
+                "groups":["testers","marketing"],
+                "cloudAddresses":["ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRhAHCcvLXdEQogp",
+                                  "ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRPN9iZyuCdGaM7z"]
+              }
+            }'
+
+HTTP response
+^^^^^^^^^^^^^
+
+There is no response body.
+
+HTTP status codes
+^^^^^^^^^^^^^^^^^
+
+A successful call returns **200 OK**. An unsuccessful call returns either:
+
+400 Bad Request
+    Note that particular bad requests additionally return a JSON-encoded object with ``errorCode`` set to one of the following codes, and ``errorMessage`` set to the associated description:
+
+    ==== ============================================================================================================================================================================
+    Code Description
+    ==== ============================================================================================================================================================================
+    1001 The content type of the request body is something other than ``application/json``.
+    1003 You've specified an action that is not ``connect`` or ``listen``.
+    1004 For a ``connect`` cloud address, you've specified more than 16 groups. For a ``listen`` cloud address, you've specified more than 24 groups or 8 individual cloud addresses.
+    1005 You've created either an ``allowedActions``, ``groups``, or ``cloudAddresses`` list, but not put anything in it.
+    1006 A group name is either empty or longer than 256 characters.
+    1007 The cloud address you've specified in the URI is not well-formed.
+    1008 You've specified an access control list for a ``listen`` cloud address, but not put any groups or individual cloud addresses in it.
+    1009 Either you've specified an access control list for a ``connect`` cloud address, or a group for a ``listen`` cloud address. It should be the other way around.
+    ==== ============================================================================================================================================================================
+401 Unauthorized
+    You've either not provided a VNC Cloud API key, or the one you have provided is not in our system.
+403 Forbidden
+    Your VNC Cloud API key is not well-formed.
+404 Not Found
+    \ 
+409 Conflict
+    The ``cloudAddress`` you've specified in the request body may be well-formed, but it does not match the cloud address in the URI.
+412 Precondition Failed
+    You've specified the ``If-Match`` header but the entity version numbers do not match.
+503 Service Unavailable
+    \ 
+
+.. _resetting_a_cloud_address_password:
+
+Resetting a cloud address password
+----------------------------------
+
+If you have previously :ref:`retrieved <retrieving_the_details_of_a_cloud_address>` this cloud address, you can use the ``If-Match`` header to make sure it's not been modified since.
+
+HTTP request
+^^^^^^^^^^^^
+
+Method
+    POST
+URI
+    ``https://api.vnc.com/cloud/1.1/static-address/<cloud-address>``
+Since
+    1.0
+Usage example
+    ::
+
+        curl https://api.vnc.com/cloud/1.1/static-address/ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M
+        -X POST
+        -u <API-key>:<API-secret>
+        -H 'If-Match:"<entity-version-number>"'
+        -H "Accept:application/json"
+
+HTTP response
+^^^^^^^^^^^^^
+
+Body
+    A JSON-encoded object with the following parameters:
+
+    ================= ====== =====================================
+    Parameter         Type   Description
+    ================= ====== =====================================
+    ``cloudAddress``  string The identifier for the cloud address.
+    ``cloudPassword`` string The password for the cloud address.
+    ================= ====== =====================================
+Content example
+    .. code-block :: json
+
+        {
+          "cloudAddress":"ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M",
+          "cloudPassword":"RsBnHCoOoaiulwled71v"
+        }
+
+HTTP status codes
+^^^^^^^^^^^^^^^^^
+
+A successful call returns **200 OK**. An unsuccessful call returns either:
+
+400 Bad Request
+    Note that particular bad requests additionally return a JSON-encoded object with ``errorCode`` set to one of the following codes, and ``errorMessage`` set to the associated description:
+
+    ==== =================================================================================================================
+    Code Description
+    ==== =================================================================================================================
+    1002 The content type your user agent is expecting for the response body is something other than ``application/json``.
+    1007 The cloud address you've specified in the URI is not well-formed.
+    ==== =================================================================================================================
+401 Unauthorized
+    You've either not provided a VNC Cloud API key, or the one you have provided is not in our system.
+403 Forbidden
+    Your VNC Cloud API key is not well-formed.
+404 Not Found
+    \ 
+412 Precondition Failed
+    You've specified the ``If-Match`` header but the entity version numbers do not match.
+503 Service Unavailable
+    \ 
+
+.. _deleting_a_cloud_address:
+
+Deleting a cloud address
+------------------------
+
+If you have previously :ref:`retrieved <retrieving_the_details_of_a_cloud_address>` this cloud address, you can use the ``If-Match`` header to make sure it's not been modified since.
+
+HTTP request
+^^^^^^^^^^^^
+
+Method
+    DELETE
+URI
+    ``https://api.vnc.com/cloud/1.1/static-address/<cloud-address>``
+Since
+    1.0
+Usage example
+    ::
+
+        curl https://api.vnc.com/cloud/1.1/static-address/ztgDAEjLLP4yHwHrdz9.ztgPXJMFsk1NiEGpbAx.livEXXxXXSrGS1urBF5.FCRPRHbrZPyfmS6Nt4M
+        -X DELETE
+        -u <API-key>:<API-secret>
+        -H 'If-Match:"<entity-version-number>"'
+
+HTTP response
+^^^^^^^^^^^^^
+There is no response body.
+
+HTTP status codes
+^^^^^^^^^^^^^^^^^
+A successful call returns **204 No Content**. An unsuccessful call returns either:
+
+
+400 Bad Request
+    Particular bad requests return a JSON-encoded object with ``errorCode`` set to one of the following codes, and ``errorMessage`` set to the associated description:
+
+    ==== =================================================================================================================
+    Code Description
+    ==== =================================================================================================================
+    1007 The cloud address you've specified in the URI is not well-formed.
+    ==== =================================================================================================================
+401 Unauthorized
+    You've either not provided a VNC Cloud API key, or the one you have provided is not in our system.
+403 Forbidden
+    Your VNC Cloud API key is not well-formed.
+404 Not Found
+    \ 
+412 Precondition Failed
+    You've specified the ``If-Match`` header but the entity version numbers do not match.
+503 Service Unavailable
+    \ 

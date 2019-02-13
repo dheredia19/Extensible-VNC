@@ -1,0 +1,110 @@
+.. _CloudListener.Callback:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+CloudListener.Callback
+----------------------
+
+.. class:: CloudListener.Callback
+
+    Callback for a :type:`CloudListener`\ .
+
+    For more information, see :cpp:func:`vnc_CloudListener_Callback`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`CloudListener.Callback.ListeningFailedType`
+- :ref:`CloudListener.Callback.FilterConnectionType`
+- :ref:`CloudListener.Callback.ListeningStatusChangedType`
+
+**Constructor summary**
+
+================= ====================================================================================================================================================================================================
+Modifier and Type Method and Description                                                                                                                                                                              
+================= ====================================================================================================================================================================================================
+\                 :meth:`CloudListener.Callback`\ (:attr:`CloudListener.Callback.ListeningFailedType`, :attr:`CloudListener.Callback.FilterConnectionType`, :attr:`CloudListener.Callback.ListeningStatusChangedType`)
+                                                                                                                                                                                                                      
+                  Initializes a new Callback class instance.                                                                                                                                                          
+================= ====================================================================================================================================================================================================
+
+
+**Method summary**
+
+================= ======================================================================================================================
+Modifier and Type Method and Description                                                                                                
+================= ======================================================================================================================
+:type:`void`      :meth:`CloudListener.Callback.OnListeningFailed`\ (:type:`CloudListener`, :type:`System.String`, :type:`System.Int32`)
+                                                                                                                                        
+                  Handles the ListeningFailed event.                                                                                    
+                  By default, calls the ListeningFailed delegate.                                                                       
+----------------- ----------------------------------------------------------------------------------------------------------------------
+:type:`bool`      :meth:`CloudListener.Callback.OnFilterConnection`\ (:type:`CloudListener`, :type:`System.String`)                     
+                                                                                                                                        
+                  Handles the FilterConnection event.                                                                                   
+                  By default, calls the FilterConnection delegate.                                                                      
+----------------- ----------------------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`CloudListener.Callback.OnListeningStatusChanged`\ (:type:`CloudListener`, :type:`CloudListener.Status`)        
+                                                                                                                                        
+                  Handles the ListeningStatusChanged event.                                                                             
+                  By default, calls the ListeningStatusChanged delegate.                                                                
+================= ======================================================================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: CloudListener.Callback(CloudListener.Callback.ListeningFailedType a, CloudListener.Callback.FilterConnectionType b, CloudListener.Callback.ListeningStatusChangedType c)
+
+    Initializes a new Callback class instance.
+
+    For more information, see :cpp:func:`vnc_CloudListener_Callback`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: void CloudListener.Callback.OnListeningFailed(CloudListener a, System.String b, System.Int32 c)
+
+    Handles the ListeningFailed event.
+    By default, calls the ListeningFailed delegate.
+
+    
+
+.. method:: bool CloudListener.Callback.OnFilterConnection(CloudListener a, System.String b)
+
+    Handles the FilterConnection event.
+    By default, calls the FilterConnection delegate.
+
+    
+
+.. method:: void CloudListener.Callback.OnListeningStatusChanged(CloudListener a, CloudListener.Status b)
+
+    Handles the ListeningStatusChanged event.
+    By default, calls the ListeningStatusChanged delegate.
+
+    
+
+Fields
+~~~~~~
+
+.. attribute::  CloudListener.Callback.ListeningFailed
+
+    Notification that the Cloud listener has stopped listening and is unable
+    to accept any more connections.
+
+    For more information, see :cpp:member:`vnc_CloudListener_Callback::listeningFailed`\  in the C API documentation.
+
+.. attribute::  CloudListener.Callback.FilterConnection
+
+    Notification to provide address-based filtering of incoming connections.
+
+    For more information, see :cpp:member:`vnc_CloudListener_Callback::filterConnection`\  in the C API documentation.
+
+.. attribute::  CloudListener.Callback.ListeningStatusChanged
+
+    Notification that the listener status has changed.
+
+    For more information, see :cpp:member:`vnc_CloudListener_Callback::listeningStatusChanged`\  in the C API documentation.
+

@@ -1,0 +1,50 @@
+.. _MessagingManager:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+MessagingManager
+----------------
+
+.. class:: MessagingManager
+
+    Enables a Viewer or Server to send custom messages.
+
+    For more information, see :cpp:class:`vnc_MessagingManager`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`MessagingManager.Callback`
+
+**Method summary**
+
+================= ==================================================================================
+Modifier and Type Method and Description                                                            
+================= ==================================================================================
+:type:`void`      :meth:`MessagingManager.SetCallback`\ (:type:`MessagingManager.Callback`)         
+                                                                                                    
+                  Registers a callback notifying when messages are received.                        
+----------------- ----------------------------------------------------------------------------------
+:type:`void`      :meth:`MessagingManager.SendMessage`\ (:type:`System.Byte` [], :type:`Connection`)
+                                                                                                    
+                  Sends a message.                                                                  
+================= ==================================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: void MessagingManager.SetCallback(MessagingManager.Callback a)
+
+    Registers a callback notifying when messages are received.
+
+    For more information, see :cpp:func:`vnc_MessagingManager_setCallback`\  in the C API documentation.
+
+.. method:: void MessagingManager.SendMessage(System.Byte[] a, Connection b)
+
+    Sends a message.
+
+    For more information, see :cpp:func:`vnc_MessagingManager_sendMessage`\  in the C API documentation.
+

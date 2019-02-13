@@ -1,0 +1,95 @@
+.. _PixelFormat:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+PixelFormat
+-----------
+
+.. class:: PixelFormat
+
+    Description of how pixels are stored in a Viewer framebuffer.
+
+    For more information, see :cpp:class:`vnc_PixelFormat`\  in the C API documentation.
+
+
+**Constructor summary**
+
+=================== ===============================================================================================================================================================================
+Modifier and Type   Method and Description                                                                                                                                                         
+=================== ===============================================================================================================================================================================
+:type:`PixelFormat` :meth:`PixelFormat`\ (:type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`, :type:`System.Int32`)
+                                                                                                                                                                                                   
+                    Creates a custom pixel format based on the given parameters.                                                                                                                   
+=================== ===============================================================================================================================================================================
+
+
+**Method summary**
+
+============================ ==================================================================
+Modifier and Type            Method and Description                                            
+============================ ==================================================================
+:type:`ImmutablePixelFormat` :meth:`PixelFormat.Rgb888`\ ()                                    
+                                                                                               
+                             A convenience wrapper for :meth:`ImmutablePixelFormat.Rgb888`\ ().
+---------------------------- ------------------------------------------------------------------
+:type:`ImmutablePixelFormat` :meth:`PixelFormat.Bgr888`\ ()                                    
+                                                                                               
+                             A convenience wrapper for :meth:`ImmutablePixelFormat.Bgr888`\ ().
+---------------------------- ------------------------------------------------------------------
+:type:`ImmutablePixelFormat` :meth:`PixelFormat.Rgb565`\ ()                                    
+                                                                                               
+                             A convenience wrapper for :meth:`ImmutablePixelFormat.Rgb565`\ ().
+---------------------------- ------------------------------------------------------------------
+:type:`ImmutablePixelFormat` :meth:`PixelFormat.Rgb555`\ ()                                    
+                                                                                               
+                             A convenience wrapper for :meth:`ImmutablePixelFormat.Rgb555`\ ().
+---------------------------- ------------------------------------------------------------------
+:type:`void`                 :meth:`PixelFormat.Dispose`\ ()                                   
+                                                                                               
+                             Destroy a custom pixel format.                                    
+============================ ==================================================================
+
+
+Constructors
+~~~~~~~~~~~~
+
+.. method:: PixelFormat(System.Int32 a, System.Int32 b, System.Int32 c, System.Int32 d, System.Int32 e, System.Int32 f, System.Int32 g)
+
+    Creates a custom pixel format based on the given parameters.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_create`\  in the C API documentation.
+
+Methods
+~~~~~~~
+
+.. method:: ImmutablePixelFormat PixelFormat.Rgb888()
+
+    A convenience wrapper for :meth:`ImmutablePixelFormat.Rgb888`\ ().
+
+    
+
+.. method:: ImmutablePixelFormat PixelFormat.Bgr888()
+
+    A convenience wrapper for :meth:`ImmutablePixelFormat.Bgr888`\ ().
+
+    
+
+.. method:: ImmutablePixelFormat PixelFormat.Rgb565()
+
+    A convenience wrapper for :meth:`ImmutablePixelFormat.Rgb565`\ ().
+
+    
+
+.. method:: ImmutablePixelFormat PixelFormat.Rgb555()
+
+    A convenience wrapper for :meth:`ImmutablePixelFormat.Rgb555`\ ().
+
+    
+
+.. method:: void PixelFormat.Dispose()
+
+    Destroy a custom pixel format.
+
+    For more information, see :cpp:func:`vnc_PixelFormat_destroy`\  in the C API documentation.
+

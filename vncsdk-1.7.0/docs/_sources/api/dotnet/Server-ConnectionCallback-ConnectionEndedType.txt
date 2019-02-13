@@ -1,0 +1,15 @@
+.. _Server.ConnectionCallback.ConnectionEndedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+Server.ConnectionCallback.ConnectionEndedType
+---------------------------------------------
+
+.. attribute:: Server.ConnectionCallback.ConnectionEndedType
+
+    The type of the :attr:`Server.ConnectionCallback.ConnectionEnded`\  callback.
+
+    
+
+

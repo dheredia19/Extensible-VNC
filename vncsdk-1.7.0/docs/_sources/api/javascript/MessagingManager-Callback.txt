@@ -1,0 +1,35 @@
+MessagingManager.Callback
+=========================
+
+.. js:attribute:: vncsdk.MessagingManager.Callback
+
+    Callback notifying when messages are received.
+
+Method Summary
+--------------
+================= ==========================================================================================================
+Modifier and Type Method and Description                                                                                    
+================= ==========================================================================================================
+\                 :js:func:`messageReceived <MessagingManager.Callback.messageReceived>`\ (messagingManager, sender, buffer)
+                                                                                                                            
+                  Notification that a message has been received.                                                            
+================= ==========================================================================================================
+
+
+Methods
+-------
+
+.. js:function:: MessagingManager.Callback.messageReceived(messagingManager, sender, buffer)
+
+    Notification that a message has been received.
+
+    For more information, see :cpp:member:`vnc_MessagingManager_Callback::messageReceived`.
+
+    :param messagingManager:
+    :type messagingManager: :js:data:`vncsdk.MessagingManager`
+    :param sender:
+    :type sender: :js:data:`vncsdk.Connection`
+    :param buffer:
+    :type buffer: :js:data:`vncsdk.DataBuffer`
+    :return: Ignored
+

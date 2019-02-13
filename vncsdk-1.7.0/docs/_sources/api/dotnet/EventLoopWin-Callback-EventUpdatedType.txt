@@ -1,0 +1,15 @@
+.. _EventLoopWin.Callback.EventUpdatedType:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+EventLoopWin.Callback.EventUpdatedType
+--------------------------------------
+
+.. attribute:: EventLoopWin.Callback.EventUpdatedType
+
+    The type of the :attr:`EventLoopWin.Callback.EventUpdated`\  callback.
+
+    
+
+

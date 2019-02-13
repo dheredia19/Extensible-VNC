@@ -1,0 +1,162 @@
+.. _AnnotationManager:
+
+.. default-domain:: csharp
+.. namespace:: RealVNC.VncSdk
+
+AnnotationManager
+-----------------
+
+.. class:: AnnotationManager
+
+    Enables a Viewer or Server to annotate a Server device screen.
+
+    For more information, see :cpp:class:`vnc_AnnotationManager`\  in the C API documentation.
+
+
+Nested classes
+~~~~~~~~~~~~~~
+
+- :ref:`AnnotationManager.Callback`
+
+**Method summary**
+
+================= =========================================================================================================
+Modifier and Type Method and Description                                                                                   
+================= =========================================================================================================
+:type:`void`      :meth:`AnnotationManager.SetCallback`\ (:type:`AnnotationManager.Callback`)                              
+                                                                                                                           
+                  Sets annotation-related callbacks.                                                                       
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`AnnotationManager.Clear`\ (:type:`System.Boolean`, :type:`Connection`)                            
+                                                                                                                           
+                  Clears particular annotations.                                                                           
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`AnnotationManager.ClearAll`\ (:type:`System.Boolean`)                                             
+                                                                                                                           
+                  Clears all annotations.                                                                                  
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`bool`      :meth:`AnnotationManager.IsAvailable`\ ()                                                                
+                                                                                                                           
+                  Queries whether it is possible to annotate.                                                              
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`int`       :meth:`AnnotationManager.GetPenColor`\ ()                                                                
+                                                                                                                           
+                  Gets the current pen color.                                                                              
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`AnnotationManager.SetPenColor`\ (:type:`System.Int32`)                                            
+                                                                                                                           
+                  Sets the pen color, determining the color of the annotation line.                                        
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`int`       :meth:`AnnotationManager.GetPenSize`\ ()                                                                 
+                                                                                                                           
+                  Gets the current pen size.                                                                               
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`AnnotationManager.SetPenSize`\ (:type:`System.Int32`)                                             
+                                                                                                                           
+                  Sets the pen size, determining the width of the annotation line.                                         
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`int`       :meth:`AnnotationManager.GetPersistDuration`\ ()                                                         
+                                                                                                                           
+                  Gets how long annotations persist as a solid color for.                                                  
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`AnnotationManager.SetPersistDuration`\ (:type:`System.Int32`)                                     
+                                                                                                                           
+                  Sets how long annotations persist as a solid color for.                                                  
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`int`       :meth:`AnnotationManager.GetFadeDuration`\ ()                                                            
+                                                                                                                           
+                  Gets how long annotations take to fade.                                                                  
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`AnnotationManager.SetFadeDuration`\ (:type:`System.Int32`)                                        
+                                                                                                                           
+                  Sets how long annotations take to fade.                                                                  
+----------------- ---------------------------------------------------------------------------------------------------------
+:type:`void`      :meth:`AnnotationManager.MovePenTo`\ (:type:`System.Int32`, :type:`System.Int32`, :type:`System.Boolean`)
+                                                                                                                           
+                  Draws a line on the Server screen from the current position to a                                         
+                  new position.                                                                                            
+================= =========================================================================================================
+
+
+Methods
+~~~~~~~
+
+.. method:: void AnnotationManager.SetCallback(AnnotationManager.Callback a)
+
+    Sets annotation-related callbacks.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setCallback`\  in the C API documentation.
+
+.. method:: void AnnotationManager.Clear(System.Boolean a, Connection b)
+
+    Clears particular annotations.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_clear`\  in the C API documentation.
+
+.. method:: void AnnotationManager.ClearAll(System.Boolean a)
+
+    Clears all annotations.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_clearAll`\  in the C API documentation.
+
+.. method:: bool AnnotationManager.IsAvailable()
+
+    Queries whether it is possible to annotate.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_isAvailable`\  in the C API documentation.
+
+.. method:: int AnnotationManager.GetPenColor()
+
+    Gets the current pen color.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getPenColor`\  in the C API documentation.
+
+.. method:: void AnnotationManager.SetPenColor(System.Int32 a)
+
+    Sets the pen color, determining the color of the annotation line.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setPenColor`\  in the C API documentation.
+
+.. method:: int AnnotationManager.GetPenSize()
+
+    Gets the current pen size.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getPenSize`\  in the C API documentation.
+
+.. method:: void AnnotationManager.SetPenSize(System.Int32 a)
+
+    Sets the pen size, determining the width of the annotation line.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setPenSize`\  in the C API documentation.
+
+.. method:: int AnnotationManager.GetPersistDuration()
+
+    Gets how long annotations persist as a solid color for.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getPersistDuration`\  in the C API documentation.
+
+.. method:: void AnnotationManager.SetPersistDuration(System.Int32 a)
+
+    Sets how long annotations persist as a solid color for.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setPersistDuration`\  in the C API documentation.
+
+.. method:: int AnnotationManager.GetFadeDuration()
+
+    Gets how long annotations take to fade.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_getFadeDuration`\  in the C API documentation.
+
+.. method:: void AnnotationManager.SetFadeDuration(System.Int32 a)
+
+    Sets how long annotations take to fade.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_setFadeDuration`\  in the C API documentation.
+
+.. method:: void AnnotationManager.MovePenTo(System.Int32 a, System.Int32 b, System.Boolean c)
+
+    Draws a line on the Server screen from the current position to a
+    new position.
+
+    For more information, see :cpp:func:`vnc_AnnotationManager_movePenTo`\  in the C API documentation.
+

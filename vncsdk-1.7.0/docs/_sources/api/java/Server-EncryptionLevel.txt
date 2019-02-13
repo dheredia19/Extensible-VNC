@@ -1,0 +1,24 @@
+Server.EncryptionLevel
+======================
+
+.. java:package:: com.realvnc.vncsdk
+   :noindex:
+
+.. java:type:: public enum EncryptionLevel
+   :outertype: Server
+
+   Enumeration of encryption levels.
+
+Enum Constants
+--------------
+
+.. java:field:: public static final Server.EncryptionLevel DEFAULT
+   :outertype: Server.EncryptionLevel
+
+   Use strong encryption. This is the default.
+
+.. java:field:: public static final Server.EncryptionLevel MAXIMUM
+   :outertype: Server.EncryptionLevel
+
+   Use the strongest available encryption, possibly at the cost of speed.
+

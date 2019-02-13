@@ -1,0 +1,115 @@
+The vncsdk module
+=================
+
+Method Summary
+--------------
+================= =========================================================================================================
+Modifier and Type Method and Description                                                                                   
+================= =========================================================================================================
+\                 :js:func:`init <vncsdk.init>`\ ()                                                                        
+                                                                                                                           
+                  Initializes the SDK.                                                                                     
+----------------- ---------------------------------------------------------------------------------------------------------
+\                 :js:func:`enableAddOn <vncsdk.enableAddOn>`\ (addOnCode)                                                 
+                                                                                                                           
+                  Enable an SDK add-on by passing in the content of the add-on code, obtained from RealVNC.                
+----------------- ---------------------------------------------------------------------------------------------------------
+number            :js:func:`getBuildNumber <vncsdk.getBuildNumber>`\ ()                                                    
+                                                                                                                           
+                  Returns the runtime build number of the SDK.                                                             
+----------------- ---------------------------------------------------------------------------------------------------------
+number            :js:func:`getMajorVersion <vncsdk.getMajorVersion>`\ ()                                                  
+                                                                                                                           
+                  Returns the runtime major version number of the SDK.                                                     
+----------------- ---------------------------------------------------------------------------------------------------------
+number            :js:func:`getMinorVersion <vncsdk.getMinorVersion>`\ ()                                                  
+                                                                                                                           
+                  Returns the runtime minor version number of the SDK.                                                     
+----------------- ---------------------------------------------------------------------------------------------------------
+number            :js:func:`getPatchVersion <vncsdk.getPatchVersion>`\ ()                                                  
+                                                                                                                           
+                  Returns the runtime patch version number of the SDK.                                                     
+----------------- ---------------------------------------------------------------------------------------------------------
+\                 :js:func:`shutdown <vncsdk.shutdown>`\ ()                                                                
+                                                                                                                           
+                  Shuts down the SDK, ensuring that any resources are cleared up.                                          
+----------------- ---------------------------------------------------------------------------------------------------------
+number            :js:func:`unicodeToKeysym <vncsdk.unicodeToKeysym>`\ (unicodeChar)                                       
+                                                                                                                           
+                  Converts a unicode character to a keysym, suitable for passing to :js:func:`vncsdk.Viewer.sendKeyDown()`.
+================= =========================================================================================================
+
+
+Static methods
+--------------
+
+
+.. js:function:: vncsdk.init()
+
+    Initializes the SDK. Only call functions in ``DataStore`` or ``Logger``
+    before you call this function.
+
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: vncsdk.enableAddOn(addOnCode)
+
+    Enable an SDK add-on by passing in the content of the add-on code,
+    obtained from RealVNC.
+
+    For more information, see :cpp:func:`vnc_enableAddOn`.
+
+    :param addOnCode:
+    :type addOnCode: string
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: vncsdk.getBuildNumber()
+
+    Returns the runtime build number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getBuildNumber`.
+
+    :rtype: number
+
+.. js:function:: vncsdk.getMajorVersion()
+
+    Returns the runtime major version number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getMajorVersion`.
+
+    :rtype: number
+
+.. js:function:: vncsdk.getMinorVersion()
+
+    Returns the runtime minor version number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getMinorVersion`.
+
+    :rtype: number
+
+.. js:function:: vncsdk.getPatchVersion()
+
+    Returns the runtime patch version number of the SDK.
+
+    For more information, see :cpp:func:`vnc_getPatchVersion`.
+
+    :rtype: number
+
+.. js:function:: vncsdk.shutdown()
+
+    Shuts down the SDK, ensuring that any resources are cleared up.
+
+    For more information, see :cpp:func:`vnc_shutdown`.
+
+    :throws: :js:data:`vncsdk.VncException` on error
+
+.. js:function:: vncsdk.unicodeToKeysym(unicodeChar)
+
+    Converts a unicode character to a keysym, suitable for passing to
+    :js:func:`vncsdk.Viewer.sendKeyDown()`.
+
+    For more information, see :cpp:func:`vnc_unicodeToKeysym`.
+
+    :param unicodeChar:
+    :type unicodeChar: number
+    :rtype: number
+
