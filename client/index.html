@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Extensible VNC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="jquery-3.3.1.min.js"></script>
+<style>
+body {
+  opacity: 1;
+  transition: 0.7s opacity;
+}
+
+body.fade {
+    opacity: 0;
+    transition: none;
+}
+
+.center { 
+  //height: 200px;
+  position: relative;
+  border: 3px solid green;
+  //margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+
+</head>
+
+<body style="background-color:#E6E6FA">
+  <script>
+    document.body.classList.add('fade');
+  </script>
+
+  <header class="w3-container w3-teal center">
+    <h1 class="w3-center w3-animate-left">Extensible VNC - Client Mode</h1>
+    <a href="start.html">click</a>
+  </header>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(e) {
+      document.body.classList.remove('fade');
+    });
+  </script>
+</body>
+
+</html>
